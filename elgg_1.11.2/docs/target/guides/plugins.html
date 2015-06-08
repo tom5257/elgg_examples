@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plugins &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Plugin skeleton" href="plugins/plugin-skeleton.html"/>
+        <link rel="prev" title="Don’t Modify Core" href="dont-modify-core.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Plugins</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/plugins.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="plugins">
+<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<p>Plugins must provide a start.php and manifest.xml file in the plugin root
+in order to be recognized by Elgg.</p>
+<div class="section" id="start-php">
+<h2>start.php<a class="headerlink" href="#start-php" title="Permalink to this headline">¶</a></h2>
+<p>The start.php file bootstraps plugin by registering event listeners and plugin
+hooks.</p>
+</div>
+<div class="section" id="activate-php-deactivate-php">
+<h2>activate.php, deactivate.php<a class="headerlink" href="#activate-php-deactivate-php" title="Permalink to this headline">¶</a></h2>
+<p>The activate.php and deactivate.php files contain procedural code that will run
+upon plugin activation and deactivation. Use these files to perform one-time
+events such as registering a persistent admin notice, registering subtypes, or performing
+garbage collection when deactivated.</p>
+</div>
+<div class="section" id="manifest-xml">
+<h2>manifest.xml<a class="headerlink" href="#manifest-xml" title="Permalink to this headline">¶</a></h2>
+<p>Elgg plugins are required to have a <code class="docutils literal"><span class="pre">manifest.xml</span></code> file in the root of a plugin.</p>
+<p>The <code class="docutils literal"><span class="pre">manifest.xml</span></code> file includes information about the plugin itself, requirements to run the plugin, and optional information including where to display the plugin in the admin area and what APIs the plugin provides.</p>
+<div class="section" id="syntax">
+<h3>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<p>The manifest file is a standard XML file in UTF-8. Everything is a child of the <code class="docutils literal"><span class="pre">&lt;plugin_manifest&gt;</span></code> element.</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;plugin_manifest xmlns=&quot;http://www.elgg.org/plugin_manifest/1.8&quot;&gt;
+</pre></div>
+</div>
+<p>The manifest syntax is as follows:</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;name&gt;value&lt;/name&gt;
+</pre></div>
+</div>
+<p>Many elements can contain children attributes:</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;parent_name&gt;
+        &lt;child_name&gt;value&lt;/child_name&gt;
+        &lt;child_name_2&gt;value_2&lt;/child_name_2&gt;
+&lt;/parent_name&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="required-elements">
+<h3>Required Elements<a class="headerlink" href="#required-elements" title="Permalink to this headline">¶</a></h3>
+<p>All plugins are required to define the following elements in their manifest files:</p>
+<ul class="simple">
+<li>id - This has the name as the directory that the plugin uses.</li>
+<li>name - The display name of the plugin.</li>
+<li>author - The name of the author who wrote the plugin.</li>
+<li>version - The version of the plugin.</li>
+<li>description - A description of the what the plugin provides, its features, and other relevant information</li>
+<li>requires - Each plugin must specify the release of Elgg it was developed for. See the plugin Dependencies page for more information.</li>
+</ul>
+</div>
+<div class="section" id="available-elements">
+<h3>Available Elements<a class="headerlink" href="#available-elements" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the require elements above, the follow elements are available to use:</p>
+<ul class="simple">
+<li>blurb - A short description of the plugin.</li>
+<li>category - The category of the plugin. It is recommended to follow the [[Plugin_Guidelines|plugin guidelines]] and use one of the defined categories. There can be multiple entries.</li>
+<li>conflicts - Specifies that the plugin conflicts with a certain system configuration.</li>
+<li>copyright - The plugin&#8217;s copyright information.</li>
+<li>license - The plugin&#8217;s license information.</li>
+<li>provides - Specifies that this plugin provides the same functionality as another Elgg plugin or a PHP extension.</li>
+<li>screenshot - Screenshots of the plugin. There can be multiple entries. See the advanced example for syntax.</li>
+<li>suggests - Parallels the requires system, but doesn&#8217;t affect if the plugin can be enabled. Used to suggest other plugins that interact or build on the plugin.</li>
+<li>website - A link to the website for the plugin.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="plugins/dependencies.html"><em>Plugin Dependencies</em></a></p>
+</div>
+</div>
+<div class="section" id="simple-example">
+<h3>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h3>
+<p>This manifest file is the bare minimum a plugin must have.</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;plugin_manifest xmlns=&quot;http://www.elgg.org/plugin_manifest/1.8&quot;&gt;
+        &lt;name&gt;Example Manifest&lt;/name&gt;
+        &lt;author&gt;Elgg&lt;/author&gt;
+        &lt;version&gt;1.0&lt;/version&gt;
+        &lt;description&gt;This is a simple example of a manifest file. In this example, there are not screenshots, dependencies, or additional information about the plugin.&lt;/description&gt;
+
+        &lt;requires&gt;
+                &lt;type&gt;elgg_release&lt;/type&gt;
+                &lt;version&gt;1.9&lt;/version&gt;
+        &lt;/requires&gt;
+&lt;/plugin_manifest&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="advanced-example">
+<h3>Advanced example<a class="headerlink" href="#advanced-example" title="Permalink to this headline">¶</a></h3>
+<p>This example uses all of the available elements:</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;plugin_manifest xmlns=&quot;http://www.elgg.org/plugin_manifest/1.8&quot;&gt;
+        &lt;name&gt;Example Manifest&lt;/name&gt;
+        &lt;author&gt;Brett Profitt&lt;/author&gt;
+        &lt;version&gt;1.0&lt;/version&gt;
+        &lt;blurb&gt;This is an example manifest file.&lt;/blurb&gt;
+        &lt;description&gt;This is a simple example of a manifest file. In this example, there are many options used, including screenshots, dependencies, and additional information about the plugin.&lt;/description&gt;
+        &lt;website&gt;http://www.elgg.org/&lt;/website&gt;
+        &lt;copyright&gt;(C) Brett Profitt 2014&lt;/copyright&gt;
+        &lt;license&gt;GNU Public License version 2&lt;/license&gt;
+
+        &lt;category&gt;3rd_party_integration&lt;/category&gt;
+
+        &lt;requires&gt;
+                &lt;type&gt;elgg_release&lt;/type&gt;
+                &lt;version&gt;1.9.1&lt;/version&gt;
+        &lt;/requires&gt;
+
+        &lt;!-- The path is relative to the plugin&#39;s root. --&gt;
+        &lt;screenshot&gt;
+                &lt;description&gt;Elgg profile.&lt;/description&gt;
+                &lt;path&gt;screenshots/profile.png&lt;/path&gt;
+        &lt;/screenshot&gt;
+
+        &lt;provides&gt;
+                &lt;type&gt;plugin&lt;/type&gt;
+                &lt;name&gt;example_plugin&lt;/name&gt;
+                &lt;version&gt;1.5&lt;/version&gt;
+        &lt;/provides&gt;
+
+        &lt;suggests&gt;
+                &lt;type&gt;plugin&lt;/type&gt;
+                &lt;name&gt;twitter&lt;/name&gt;
+                &lt;version&gt;1.0&lt;/version&gt;
+        &lt;/suggests&gt;
+&lt;/plugin_manifest&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="related">
+<h2>Related<a class="headerlink" href="#related" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plugins/plugin-skeleton.html">Plugin skeleton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins/dependencies.html">Plugin Dependencies</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plugins/plugin-skeleton.html" class="btn btn-neutral float-right" title="Plugin skeleton">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dont-modify-core.html" class="btn btn-neutral" title="Don’t Modify Core"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

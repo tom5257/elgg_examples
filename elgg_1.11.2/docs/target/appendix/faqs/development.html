@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../../index.html"/>
+        <link rel="up" title="FAQs and Other Troubleshooting" href="../faqs.html"/>
+        <link rel="next" title="Roadmap" href="../roadmap.html"/>
+        <link rel="prev" title="Security" href="security.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../../index.html"><img src="../../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Appendix</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Appendix</a> &raquo;</li>
+      
+          <li><a href="../faqs.html">FAQs and Other Troubleshooting</a> &raquo;</li>
+      
+    <li>Development</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/appendix/faqs/development.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="development">
+<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-should-i-use-to-edit-php-code">
+<h2>What should I use to edit php code<a class="headerlink" href="#what-should-i-use-to-edit-php-code" title="Permalink to this headline">¶</a></h2>
+<p>There are two main options: text editor or <a class="reference external" href="http://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a> (IDE).</p>
+<div class="section" id="text-editor">
+<h3>Text Editor<a class="headerlink" href="#text-editor" title="Permalink to this headline">¶</a></h3>
+<p>If you are new to software development or do not have much experience with IDEs, using a text editor will get you up and running the quickest. At a minimum, you will want one that does syntax highlighting to make the code easier to read. If you think you might submit patches to the bug tracker, you will want to make sure that your text editor does not change line endings. If you are using Windows, <a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a> is a good choice. If you are on a Mac, <a class="reference external" href="http://www.barebones.com/products/textwrangler/index.html">TextWrangler</a> is a popular choice. You could also give <a class="reference external" href="http://macromates.com/">TextMate</a> a try.</p>
+</div>
+<div class="section" id="integrated-development-environment">
+<h3>Integrated Development Environment<a class="headerlink" href="#integrated-development-environment" title="Permalink to this headline">¶</a></h3>
+<p>An IDE does just what it&#8217;s name implies: it includes a set of tools that you would normally use separately. Most IDEs will include source code control which will allow you to directly commit and update your code from your cvs repository. It may have an FTP client built into it to make the transfer of files to a remote server easier. It will have syntax checking to catch errors before you try to execute the code on a server.</p>
+<p>The two most popular free IDEs for PHP developers are <a class="reference external" href="http://www.eclipse.org/">Eclipse</a> and <a class="reference external" href="http://netbeans.org/">NetBeans</a>. Eclipse has two different plugins for working with PHP code: <a class="reference external" href="http://www.eclipse.org/pdt/">PDT</a> and <a class="reference external" href="http://www.phpeclipse.com/">PHPEclipse</a>.</p>
+</div>
+</div>
+<div class="section" id="i-don-t-like-the-wording-of-something-in-elgg-how-do-i-change-it">
+<h2>I don&#8217;t like the wording of something in Elgg. How do I change it?<a class="headerlink" href="#i-don-t-like-the-wording-of-something-in-elgg-how-do-i-change-it" title="Permalink to this headline">¶</a></h2>
+<p>The best way to do this is with a plugin.</p>
+<div class="section" id="create-the-plugin-skeleton">
+<h3>Create the plugin skeleton<a class="headerlink" href="#create-the-plugin-skeleton" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../../guides/plugins/plugin-skeleton.html"><em>Plugin skeleton</em></a></p>
+</div>
+<div class="section" id="locate-the-string-that-you-want-to-change">
+<h3>Locate the string that you want to change<a class="headerlink" href="#locate-the-string-that-you-want-to-change" title="Permalink to this headline">¶</a></h3>
+<p>All the strings that a user sees should be in the <code class="docutils literal"><span class="pre">/languages</span></code> directory or in a plugin&#8217;s languages directory (<code class="docutils literal"><span class="pre">/mod/&lt;plugin</span> <span class="pre">name&gt;/languages</span></code>). This is done so that it is easy to change what language Elgg uses. For more information on this see the developer documentation on <a class="reference internal" href="../../guides/i18n.html"><em>Internationalization</em></a> .</p>
+<p>To find the string use <code class="docutils literal"><span class="pre">grep</span></code> or a text editor that provides searching through files to locate the string. (A good text editor for Windows is <a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a> ) Let&#8217;s say we want to change the string &#8220;Add friend&#8221; to &#8220;Make a new friend&#8221;. The <code class="docutils literal"><span class="pre">grep</span></code> command to find this string would be <code class="docutils literal"><span class="pre">grep</span> <span class="pre">-r</span> <span class="pre">&quot;Add</span> <span class="pre">friend&quot;</span> <span class="pre">*</span></code>. Using <a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a> , you would use the &#8220;Find in files&#8221; command. You would search for the string, set the filter to <code class="docutils literal"><span class="pre">*.php</span></code>, set the directory to the base directory of Elgg, and make sure it searches all subdirectories. You might want to set it to be case sensitive also.</p>
+<p>You should locate the string &#8220;Add friend&#8221; in <code class="docutils literal"><span class="pre">/languages/en.php</span></code>. You should see something like this in the file:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&#39;friend:add&#39; =&gt; &quot;Add friend&quot;,
+</pre></div>
+</div>
+<p>This means every time Elgg sees <code class="docutils literal"><span class="pre">friend:add</span></code> it replaces it with &#8220;Add friend&#8221;. We want to change the definition of <code class="docutils literal"><span class="pre">friend:add</span></code>.</p>
+</div>
+<div class="section" id="override-the-string">
+<h3>Override the string<a class="headerlink" href="#override-the-string" title="Permalink to this headline">¶</a></h3>
+<p>To override this definition, we will add a languages file to the plugin that we built in the first step.</p>
+<ol class="arabic simple">
+<li>Create a new directory: <code class="docutils literal"><span class="pre">/mod/&lt;your</span> <span class="pre">plugin</span> <span class="pre">name&gt;/languages</span></code></li>
+<li>Create a file in that directory called <code class="docutils literal"><span class="pre">en.php</span></code></li>
+<li>Add these lines to that file</li>
+</ol>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+return array(
+   &#39;friend:add&#39; =&gt; &#39;Make a new friend&#39;,
+);
+</pre></div>
+</div>
+<p>Make sure that you do not have any spaces or newlines before the <code class="docutils literal"><span class="pre">&lt;?php</span></code>.</p>
+<p>You&#8217;re done now and should be able to enable the plugin and see the change. If you are override the language of a plugin, make sure your plugin is loaded after the one you are trying to modify. The loading order is determined in the Tools Administration page of the admin section. As you find more things that you&#8217;d like to change, you can keep adding them to this plugin.</p>
+</div>
+</div>
+<div class="section" id="how-do-i-find-the-code-that-does-x">
+<h2>How do I find the code that does x?<a class="headerlink" href="#how-do-i-find-the-code-that-does-x" title="Permalink to this headline">¶</a></h2>
+<p>The best way to find the code that does something that you would like to change is to use <code class="docutils literal"><span class="pre">grep</span></code> or a similar search tool. If you do not have <code class="docutils literal"><span class="pre">grep</span></code> as a part of your operating system, you will want to install a grep tool or use a text-editor/IDE that has good searching in files. <a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a> is a good choice for Windows users. <a class="reference external" href="http://www.eclipse.org/">Eclipse</a> with PHP and <a class="reference external" href="http://netbeans.org/">NetBeans</a> are good choices for any platform.</p>
+<div class="section" id="string-example">
+<h3>String Example<a class="headerlink" href="#string-example" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s say that you want to find where the <em>Log In</em> box code is located. A string from the <em>Log In</em> box that should be fairly unique is <code class="docutils literal"><span class="pre">Remember</span> <span class="pre">me</span></code>. <code class="docutils literal"><span class="pre">Grep</span></code> for that string. You will find that it is only used in the <code class="docutils literal"><span class="pre">en.php</span></code> file in the <code class="docutils literal"><span class="pre">/languages</span></code> directory. There it is used to define the <a class="reference internal" href="../../guides/i18n.html"><em>Internationalization</em></a> string <code class="docutils literal"><span class="pre">user:persistent</span></code>. <code class="docutils literal"><span class="pre">Grep</span></code> for that string now. You will find it in two places: the same <code class="docutils literal"><span class="pre">en.php</span></code> language file and in <code class="docutils literal"><span class="pre">/views/default/forms/login.php</span></code>. The latter defines the html code that makes up the <em>Log In</em> box.</p>
+</div>
+<div class="section" id="action-example">
+<h3>Action Example<a class="headerlink" href="#action-example" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s say that you want to find the code that is run when a user clicks on the <em>Save</em> button when arranging widgets on a profile page. View the Profile page for a test user. Use Firebug to drill down through the html of the page until you come to the action of the edit widgets form. You&#8217;ll see the url from the base is <code class="docutils literal"><span class="pre">action/widgets/move</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Grep</span></code> on <code class="docutils literal"><span class="pre">widgets/move</span></code> and two files are returned. One is the JavaScript code for the widgets : <code class="docutils literal"><span class="pre">/js/lib/ui.widgets.js</span></code>. The other one, <code class="docutils literal"><span class="pre">/engine/lib/widgets.php</span></code>, is where the action is registered using <code class="docutils literal"><span class="pre">elgg_register_action('widgets/reorder')</span></code>. You may not be familiar with that function in which case, you should look it up at the API reference. Do a search on the function and it returns the documentation on the function. This tells you that the action is in the default location since a file location was not specified. The default location for actions is <code class="docutils literal"><span class="pre">/actions</span></code> so you will find the file at <code class="docutils literal"><span class="pre">/actions/widgets/move.php</span></code>.</p>
+</div>
+</div>
+<div class="section" id="debug-mode">
+<h2>Debug mode<a class="headerlink" href="#debug-mode" title="Permalink to this headline">¶</a></h2>
+<p>During the installation process you might have noticed a checkbox that controlled whether debug mode was turned on or off. This setting can also be changed on the Site Administration page. Debug mode writes a lot of extra data to your php log. For example, when running in this mode every query to the database is written to your logs. It may be useful for debugging a problem though it can produce an overwhelming amount of data that may not be related to the problem at all. You may want to experiment with this mode to understand what it does, but make sure you run Elgg in normal mode on a production server.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Because of the amount of data being logged, don&#8217;t enable this on a production server as it can fill up the log files really quick.</p>
+</div>
+<div class="section" id="what-goes-into-the-log-in-debug-mode">
+<h3>What goes into the log in debug mode?<a class="headerlink" href="#what-goes-into-the-log-in-debug-mode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>All database queries</li>
+<li>Database query profiling</li>
+<li>Page generation time</li>
+<li>Number of queries per page</li>
+<li>List of plugin language files</li>
+<li>Additional errors/warnings compared to normal mode (it&#8217;s very rare for these types of errors to be related to any problem that you might be having)</li>
+</ul>
+</div>
+<div class="section" id="what-does-the-data-look-like">
+<h3>What does the data look like?<a class="headerlink" href="#what-does-the-data-look-like" title="Permalink to this headline">¶</a></h3>
+<div class="code highlight-python"><div class="highlight"><pre>[07-Mar-2009 14:27:20] Query cache invalidated
+[07-Mar-2009 14:27:20] ** GUID:1 loaded from DB
+[07-Mar-2009 14:27:20] SELECT * from elggentities where guid=1 and ( (1 = 1)  and enabled=&#39;yes&#39;) results cached
+[07-Mar-2009 14:27:20] SELECT guid from elggsites_entity where guid = 1 results cached
+[07-Mar-2009 14:27:20] Query cache invalidated
+[07-Mar-2009 14:27:20] ** GUID:1 loaded from DB
+[07-Mar-2009 14:27:20] SELECT * from elggentities where guid=1 and ( (1 = 1)  and enabled=&#39;yes&#39;) results cached
+[07-Mar-2009 14:27:20] ** GUID:1 loaded from DB
+[07-Mar-2009 14:27:20] SELECT * from elggentities where guid=1 and ( (1 = 1)  and enabled=&#39;yes&#39;) results returned from cache
+[07-Mar-2009 14:27:20] ** Sub part of GUID:1 loaded from DB
+[07-Mar-2009 14:27:20] SELECT * from elggsites_entity where guid=1 results cached
+[07-Mar-2009 14:27:20] Query cache invalidated
+[07-Mar-2009 14:27:20] DEBUG: 2009-03-07 14:27:20 (MST): &quot;Undefined index:  user&quot; in file /var/www/elgg/engine/lib/elgglib.php (line 62)
+[07-Mar-2009 14:27:20] DEBUG: 2009-03-07 14:27:20 (MST): &quot;Undefined index:  pass&quot; in file /var/www/elgg/engine/lib/elgglib.php (line 62)
+[07-Mar-2009 14:27:20] ***************** DB PROFILING ********************
+[07-Mar-2009 14:27:20] 1 times: &#39;SELECT * from elggdatalists&#39;
+[07-Mar-2009 14:27:20] 1 times: &#39;SELECT * from elggentities where guid=1 and (  (access_id in (2) or (owner_guid = -1) or (access_id = 0 and owner_guid = -1)) and enabled=&#39;yes&#39;)&#39;
+...
+[07-Mar-2009 14:27:20] 2 times: &#39;update elggmetadata set access_id = 2 where entity_guid = 1&#39;
+[07-Mar-2009 14:27:20] 1 times: &#39;UPDATE elggentities set owner_guid=&#39;0&#39;, access_id=&#39;2&#39;, container_guid=&#39;0&#39;, time_updated=&#39;1236461868&#39; WHERE guid=1&#39;
+[07-Mar-2009 14:27:20] 1 times: &#39;SELECT guid from elggsites_entity where guid = 1&#39;
+[07-Mar-2009 14:27:20] 1 times: &#39;UPDATE elggsites_entity set name=&#39;3124/944&#39;, description=&#39;&#39;, url=&#39;http://example.org/&#39; where guid=1&#39;
+[07-Mar-2009 14:27:20] 1 times: &#39;UPDATE elggusers_entity set prev_last_action = last_action, last_action = 1236461868 where guid = 2&#39;
+[07-Mar-2009 14:27:20] DB Queries for this page: 56
+[07-Mar-2009 14:27:20] ***************************************************
+[07-Mar-2009 14:27:20] Page /action/admin/site/update_basic generated in 0.36997294426 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-events-are-triggered-on-every-page-load">
+<h2>What events are triggered on every page load?<a class="headerlink" href="#what-events-are-triggered-on-every-page-load" title="Permalink to this headline">¶</a></h2>
+<p>There are 5 <a class="reference internal" href="../../design/events.html"><em>Elgg events</em></a> that are triggered on every page load:</p>
+<ol class="arabic simple">
+<li>boot, system</li>
+<li>plugins_boot, system</li>
+<li>init, system</li>
+<li>pagesetup, system</li>
+<li>shutdown, system</li>
+</ol>
+<p>The <em>boot</em>, <em>system</em> event is triggered before the plugins get loaded. There does not appear to be any difference between the timing of the next two events: <em>plugins_boot</em>, <em>system</em> and <em>init</em>, <em>system</em> so plugins tend to use <em>init</em>, <em>system</em>. This event is triggered just after the plugins are loaded near the end of the boot script (<code class="docutils literal"><span class="pre">/engine/start.php</span></code>). The <em>pagesetup</em>, <em>system</em> event is thrown the first time <code class="docutils literal"><span class="pre">elgg_view()</span></code> is called. Some pages like the default <code class="docutils literal"><span class="pre">index.php</span></code> do not call <code class="docutils literal"><span class="pre">elgg_view()</span></code> so it is not triggered for them. The <em>shutdown</em>, <em>system</em> event is triggered after the page has been sent to the requester and is handled through the PHP function <code class="docutils literal"><span class="pre">register_shutdown_function()</span></code>.</p>
+<p>There are <a class="reference internal" href="../../guides/events-list.html"><em>other events</em></a> that are triggered by the Elgg core but they happen occasionally (such as when a user logs in).</p>
+</div>
+<div class="section" id="what-variables-are-reserved-by-elgg">
+<h2>What variables are reserved by Elgg?<a class="headerlink" href="#what-variables-are-reserved-by-elgg" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$CONFIG</span></code></li>
+<li><code class="docutils literal"><span class="pre">$vars</span></code></li>
+<li><code class="docutils literal"><span class="pre">$autofeed</span></code></li>
+<li><code class="docutils literal"><span class="pre">$_GET['action']</span></code> / <code class="docutils literal"><span class="pre">$_POST['action']</span></code></li>
+<li><code class="docutils literal"><span class="pre">$viewtype</span></code></li>
+</ul>
+</div>
+<div class="section" id="copy-a-plugin">
+<h2>Copy a plugin<a class="headerlink" href="#copy-a-plugin" title="Permalink to this headline">¶</a></h2>
+<p>There are many questions asked about how to copy a plugin. Let&#8217;s say you want to copy the <code class="docutils literal"><span class="pre">blog</span></code> plugin in order to run one plugin called <code class="docutils literal"><span class="pre">blog</span></code> and another called <code class="docutils literal"><span class="pre">poetry</span></code>. This is not difficult but it does require a lot of work. You would need to</p>
+<ul class="simple">
+<li>change the directory name</li>
+<li>change the names of every function (having two functions causes PHP to crash)</li>
+<li>change the name of every view (so as not to override the views on the original plugin)</li>
+<li>change any data model subtypes</li>
+<li>change the language file</li>
+<li>change anything else that was specific to the original plugin</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are trying to clone the <code class="docutils literal"><span class="pre">groups</span></code> plugin, you will have the additional difficulty that the group plugin does not set a subtype.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../roadmap.html" class="btn btn-neutral float-right" title="Roadmap">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="security.html" class="btn btn-neutral" title="Security"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

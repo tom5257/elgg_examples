@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Getting Started" href="index.html"/>
+        <link rel="next" title="Developer Overview" href="development.html"/>
+        <link rel="prev" title="License" href="license.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      
+    <li>Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/intro/install.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>Get your own instance of Elgg running in no time.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#requirements" id="id1">Requirements</a></li>
+<li><a class="reference internal" href="#overview" id="id2">Overview</a></li>
+<li><a class="reference internal" href="#other-configurations" id="id3">Other Configurations</a></li>
+<li><a class="reference internal" href="#troubleshooting" id="id4">Troubleshooting</a></li>
+</ul>
+</div>
+<div class="section" id="requirements">
+<h2><a class="toc-backref" href="#id1">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>MySQL 5+</li>
+<li>PHP 5.4+ with the following extensions:<ul>
+<li>GD (for graphics processing)</li>
+<li><a class="reference external" href="http://www.php.net/mbstring">Multibyte String support</a> (for i18n)</li>
+<li>Proper configuration and ability to send email through an MTA</li>
+</ul>
+</li>
+<li>Web server with support for URL rewriting</li>
+</ul>
+<p>Official support is provided for the following configurations:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Apache server</dt>
+<dd><ul class="first last simple">
+<li>Apache with the <a class="reference external" href="http://httpd.apache.org/docs/2.0/mod/mod_rewrite.html">rewrite module</a> enabled</li>
+<li>PHP running as an Apache module</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Nginx server</dt>
+<dd><ul class="first last simple">
+<li>Nginx with PHP-FPM using FastCGI</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>By &#8220;official support&#8221;, we mean that:</p>
+<ul class="simple">
+<li>Most development and testing is performed with these configurations</li>
+<li>Much of the installation documentation is written assuming Apache or Nginx is used</li>
+<li>Priority on bug reports is given to Apache and Nginx users if the bug is web server specific
+(but those are rare).</li>
+</ul>
+<div class="section" id="browser-support-policy">
+<h3>Browser support policy<a class="headerlink" href="#browser-support-policy" title="Permalink to this headline">¶</a></h3>
+<p>Feature branches support the latest 2 versions of all major browsers
+as were available at the time of the first stable release on that branch.</p>
+<p>Bugfix release will not alter browser support,
+even if a new version of the browser has since been released.</p>
+<p>Major browsers here means all of the following, plus their mobile counterparts:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Android Browser</li>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>IE</li>
+<li>Safari</li>
+</ul>
+</div></blockquote>
+<p>&#8220;Support&#8221; may mean that we take advantage of newer, unimplemented technologies
+but provide a JavaScript polyfill for the browsers that need it.</p>
+<p>You may find that Elgg happens to work on unsupported browsers,
+but compatibility may break at any time, even during a bugfix release.</p>
+</div>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="upload-elgg">
+<h3>Upload Elgg<a class="headerlink" href="#upload-elgg" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Download the <a class="reference external" href="http://elgg.org/download.php">latest version of Elgg</a></li>
+<li>Upload the ZIP file with an FTP client to your server</li>
+<li>Unzip the files in your domain&#8217;s document root (/home/username/www).</li>
+</ul>
+</div>
+<div class="section" id="create-a-data-folder">
+<h3>Create a data folder<a class="headerlink" href="#create-a-data-folder" title="Permalink to this headline">¶</a></h3>
+<p>Elgg needs a special folder to store uploaded files including profile
+icons and photos. You will need to create this directory.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">For security reasons, this folder MUST be stored outside of your
+document root. If you created it under /www/ or /public_html/, you&#8217;re
+doing it wrong.</p>
+</div>
+<p>Once this folder has been created, you&#8217;ll need to make sure the web
+server Elgg is running on has permission to write to and create
+directories in it. This shouldn&#8217;t be a problem on Windows-based servers,
+but if your server runs Linux, Mac OS X or a UNIX variant, you&#8217;ll need
+to <a class="reference external" href="http://en.wikipedia.org/wiki/Filesystem_permissions#Traditional_Unix_permissions">set the permissions on the directory</a>.</p>
+<p>If you are using a graphical FTP client to upload files, you can
+usually set permissions by right clicking on the folder and
+selecting &#8216;properties&#8217; or &#8216;Get Info&#8217;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Directories must be executable to be read and written to. The
+suggested permissions depend upon the exact server and user
+configuration. If the data directory is owned by the web server
+user, the recommended permissions are 770.</p>
+<p class="last">Setting your data directory to 777 will work, but it is insecure
+and is not recommended. If you are unsure how to correctly set
+permissions, contact your host for more information.</p>
+</div>
+</div>
+<div class="section" id="create-a-mysql-database">
+<h3>Create a MySQL database<a class="headerlink" href="#create-a-mysql-database" title="Permalink to this headline">¶</a></h3>
+<p>Using your database administration tool of choice (if you&#8217;re unsure
+about this, ask your system administrator), create a new MySQL database
+for Elgg. You can create a MySQL database with any of the following
+tools:</p>
+<p>Make sure you add a user to the database with all privileges and record
+the database name, username and password. You will need this information
+when installing Elgg.</p>
+</div>
+<div class="section" id="visit-your-elgg-site">
+<h3>Visit your Elgg site<a class="headerlink" href="#visit-your-elgg-site" title="Permalink to this headline">¶</a></h3>
+<p>Once you&#8217;ve performed these steps, visit your Elgg site in your web
+browser. Elgg will take you through the rest of the installation process
+from there. The first account that you create at the end of the
+installation process will be an administrator account.</p>
+</div>
+<div class="section" id="a-note-on-settings-php-and-htaccess">
+<h3>A note on settings.php and .htaccess<a class="headerlink" href="#a-note-on-settings-php-and-htaccess" title="Permalink to this headline">¶</a></h3>
+<p>The Elgg installer will try to create two files for you:</p>
+<ul class="simple">
+<li>engine/settings.php, which contains the database settings for your
+installation</li>
+<li>.htaccess, which allows Elgg to generate dynamic URLs</li>
+</ul>
+<p>If these files can&#8217;t be automatically generated, for example because the
+web server doesn&#8217;t have write permissions in the directories, Elgg will
+tell you how to create them. You could also temporarily change the
+permissions on the root directory and the engine directory. Set the
+permissions on those two directories so that the web server can write
+those two files, complete the install process, and them change the
+permissions back to their original settings. If, for some reason, this
+won&#8217;t work, you will need to:</p>
+<ul class="simple">
+<li>Copy engine/settings.example.php to engine/settings.php, open it up
+in a text editor and fill in your database details</li>
+<li>On Apache server, copy <code class="docutils literal"><span class="pre">install/config/htaccess.dist</span></code> to <code class="docutils literal"><span class="pre">.htaccess</span></code></li>
+<li>On Nginx server copy <code class="docutils literal"><span class="pre">install/config/nginx.dist</span></code> to <code class="docutils literal"><span class="pre">/etc/nginx/sites-enabled</span></code> and adjust it&#8217;s contents</li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-configurations">
+<h2><a class="toc-backref" href="#id3">Other Configurations</a><a class="headerlink" href="#other-configurations" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="install/cloud9.html"><em>Cloud9</em></a></li>
+<li><a class="reference internal" href="install/easyphp.html"><em>EasyPHP</em></a></li>
+<li><a class="reference internal" href="install/iis.html"><em>IIS</em></a></li>
+<li><a class="reference internal" href="install/mamp.html"><em>MAMP</em></a></li>
+<li><a class="reference internal" href="install/mariadb.html"><em>MariaDB</em></a></li>
+<li><a class="reference internal" href="install/nginx.html"><em>Nginx</em></a></li>
+<li><a class="reference internal" href="install/ubuntu.html"><em>Ubuntu</em></a></li>
+<li><a class="reference internal" href="install/virtual.html"><em>Virtual hosts</em></a></li>
+<li><a class="reference internal" href="install/xampp.html"><em>XAMPP</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="troubleshooting">
+<h2><a class="toc-backref" href="#id4">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="help-i-m-having-trouble-installing-elgg">
+<h3>Help! I&#8217;m having trouble installing Elgg<a class="headerlink" href="#help-i-m-having-trouble-installing-elgg" title="Permalink to this headline">¶</a></h3>
+<p>First:</p>
+<ul class="simple">
+<li>Recheck that your server meets the technical requirements for Elgg.</li>
+<li>Follow the environment-specific instructions if need be</li>
+<li>Have you verified that <code class="docutils literal"><span class="pre">mod_rewrite</span></code> is being loaded?</li>
+<li>Is the mysql apache being loaded?</li>
+</ul>
+<p>Keep notes on steps that you take to fix the install. Sometimes changing
+some setting or file to try to fix a problem may cause some other
+problem later on. If you need to start over, just delete all the files,
+drop your database, and begin again.</p>
+</div>
+<div class="section" id="i-can-t-save-my-settings-on-installation-i-get-a-404-error-when-saving-settings">
+<h3>I can&#8217;t save my settings on installation (I get a 404 error when saving settings)<a class="headerlink" href="#i-can-t-save-my-settings-on-installation-i-get-a-404-error-when-saving-settings" title="Permalink to this headline">¶</a></h3>
+<p>Elgg relies on the <code class="docutils literal"><span class="pre">mod_rewrite</span></code> Apache extension in order to simulate
+certain URLs. For example, whenever you perform an action in Elgg, or
+when you visit a user&#8217;s profile, the URL is translated by the server
+into something Elgg understands internally. This is done using rules
+defined in an <code class="docutils literal"><span class="pre">.htaccess</span></code> file, which is Apache&#8217;s standard way of
+defining extra configuration for a site.</p>
+<p>This error suggests that the <code class="docutils literal"><span class="pre">mod_rewrite</span></code> rules aren&#8217;t being picked
+up correctly. This may be for several reasons. If you&#8217;re not comfortable
+implementing the solutions provided below, we strongly recommend that
+you contact your system administrator or technical support and forward
+this page to them.</p>
+<p>The <code class="docutils literal"><span class="pre">.htaccess</span></code>, if not generated automatically (that happens when you
+have problem with <code class="docutils literal"><span class="pre">mod_rewrite</span></code>), you can create it by renaming
+<code class="docutils literal"><span class="pre">install/config/htaccess.dist</span></code> file you find with elgg package to <code class="docutils literal"><span class="pre">.htaccess</span></code>. Also
+if you find a <code class="docutils literal"><span class="pre">.htaccess</span></code> file inside the installation path, but you
+are still getting 404 error, make sure the contents of <code class="docutils literal"><span class="pre">.htaccess</span></code> are
+same as that of <code class="docutils literal"><span class="pre">install/config/htaccess.dist</span></code>.</p>
+<p><strong>``mod_rewrite`` isn&#8217;t installed.</strong></p>
+<p>Check your <code class="docutils literal"><span class="pre">httpd.conf</span></code> to make sure that this module is being loaded
+by Apache. You may have to restart Apache to get it to pick up any
+changes in configuration. You can also use <a class="reference external" href="http://uk.php.net/manual/en/function.phpinfo.php">PHP info</a> to check to see
+if the module is being loaded.</p>
+<p><strong>The rules in ``.htaccess`` aren&#8217;t being obeyed.</strong></p>
+<p>In your virtual host configuration settings (which may be contained
+within <code class="docutils literal"><span class="pre">httpd.conf</span></code>), change the AllowOverride setting so that it
+reads:</p>
+<p><code class="docutils literal"><span class="pre">AllowOverride</span> <span class="pre">all</span></code></p>
+<p>This will tell Apache to pick up the <code class="docutils literal"><span class="pre">mod_rewrite</span></code> rules from
+<code class="docutils literal"><span class="pre">.htaccess</span></code>.</p>
+<p><strong>Elgg is not installed in the root of your web directory (ex:
+http://example.org/elgg/ instead of http://example.org/)</strong></p>
+</div>
+<div class="section" id="the-install-script-redirects-me-to-action-when-it-should-be-actions">
+<h3>The install script redirects me to &#8220;action&#8221; when it should be &#8220;actions&#8221;<a class="headerlink" href="#the-install-script-redirects-me-to-action-when-it-should-be-actions" title="Permalink to this headline">¶</a></h3>
+<p>This is a problem with your <code class="docutils literal"><span class="pre">mod_rewrite</span></code> setup.
+DO NOT, REPEAT, DO NOT change any directory names!</p>
+</div>
+<div class="section" id="i-installed-in-a-subdirectory-and-my-install-action-isn-t-working">
+<h3>I installed in a subdirectory and my install action isn&#8217;t working!<a class="headerlink" href="#i-installed-in-a-subdirectory-and-my-install-action-isn-t-working" title="Permalink to this headline">¶</a></h3>
+<p>If you installed Elgg so that it is reached with an address like
+<a class="reference external" href="http://example.org/mysite/">http://example.org/mysite/</a> rather than <a class="reference external" href="http://example.org/">http://example.org/</a>, there is a
+small chance that the rewrite rules in .htaccess will not be processed
+correctly. This is usually due to using an alias with Apache. You may
+need to give mod_rewrite a pointer to where your Elgg installation is.</p>
+<ul class="simple">
+<li>Open up .htaccess in a text editor</li>
+<li>Where prompted, add a line like
+<code class="docutils literal"><span class="pre">RewriteBase</span> <span class="pre">/path/to/your/elgg/installation/</span></code> (Don&#8217;t forget the
+trailing slash)</li>
+<li>Save the file and refresh your browser.</li>
+</ul>
+<p>Please note that the path you are using is the <strong>web</strong> path, minus the
+host.</p>
+<p>For example, if you reach your elgg install at <a class="reference external" href="http://example.org/elgg/">http://example.org/elgg/</a>,
+you would set the base like this:</p>
+<p><code class="docutils literal"><span class="pre">RewriteBase</span> <span class="pre">/elgg/</span></code></p>
+<p>Please note that installing in a subdirectory does not require using
+RewriteBase. There are only some rare circumstances when it is needed
+due to the set up of the server.</p>
+</div>
+<div class="section" id="i-did-everything-mod-rewrite-is-working-fine-but-still-the-404-error">
+<h3>I did everything! mod_rewrite is working fine, but still the 404 error<a class="headerlink" href="#i-did-everything-mod-rewrite-is-working-fine-but-still-the-404-error" title="Permalink to this headline">¶</a></h3>
+<p>Maybe there is a problem with the file .htaccess. Sometimes the elgg
+install routine is unable to create one and unable to tell you that. If
+you are on this point and tried everything that is written above:</p>
+<ul class="simple">
+<li>check if it is really the elgg-created .htaccess (not only a dummy
+provided from the server provider)</li>
+<li>if it is not the elgg provided htaccess file, use the htaccess_dist
+(rename it to .htaccess)</li>
+</ul>
+</div>
+<div class="section" id="i-get-an-error-message-that-the-rewrite-test-failed-after-the-requirements-check-page">
+<h3>I get an error message that the rewrite test failed after the requirements check page<a class="headerlink" href="#i-get-an-error-message-that-the-rewrite-test-failed-after-the-requirements-check-page" title="Permalink to this headline">¶</a></h3>
+<p>I get the following messages after the requirements check step (step 2) of the install:</p>
+<blockquote>
+<div><p>We think your server is running the Apache web server.</p>
+<p>The rewrite test failed and the most likely cause is that AllowOverride is not set to All for Elgg&#8217;s directory. This prevents
+Apache from processing the .htaccess file which contains the rewrite rules.</p>
+<p>A less likely cause is Apache is configured with an alias for your Elgg directory and you need to set the RewriteBase in
+your .htaccess. There are further instructions in the .htaccess file in your Elgg directory.</p>
+</div></blockquote>
+<p>After this error, everinteraction with the web interface results in a error 500 (Internal Server Error)</p>
+<p>This is likely caused by not loading the &#8220;filter module by un-commenting the</p>
+<blockquote>
+<div>#LoadModule filter_module modules/mod_filter.so</div></blockquote>
+<p>line in the &#8220;httpd.conf&#8221; file.</p>
+<p>the Apache &#8220;error.log&#8221; file will contain an entry similar to:</p>
+<blockquote>
+<div>... .htaccess: Invalid command &#8216;AddOutputFilterByType&#8217;, perhaps misspelled or defined by a module not included in the server configuration</div></blockquote>
+</div>
+<div class="section" id="there-is-a-white-page-after-i-submit-my-database-settings">
+<h3>There is a white page after I submit my database settings<a class="headerlink" href="#there-is-a-white-page-after-i-submit-my-database-settings" title="Permalink to this headline">¶</a></h3>
+<p>Check that the Apache mysql module is installed and is being loaded.</p>
+</div>
+<div class="section" id="i-m-getting-a-404-error-with-a-really-long-url">
+<h3>I&#8217;m getting a 404 error with a really long url<a class="headerlink" href="#i-m-getting-a-404-error-with-a-really-long-url" title="Permalink to this headline">¶</a></h3>
+<p>If you see a 404 error during the install or on the creation of the
+first user with a url like:
+<code class="docutils literal"><span class="pre">http://example.com/homepages/26/d147515119/htdocs/elgg/action/register</span></code>
+that means your site url is incorrect in your sites_entity table in
+your database. This was set by you on the second page of the install.
+Elgg tries to guess the correct value but has difficulty with shared
+hosting sites. Use phpMyAdmin to edit this value to the correct base
+url.</p>
+</div>
+<div class="section" id="i-am-having-trouble-setting-my-data-path">
+<h3>I am having trouble setting my data path<a class="headerlink" href="#i-am-having-trouble-setting-my-data-path" title="Permalink to this headline">¶</a></h3>
+<p>This is highly server specific so it is difficult to give specific
+advice. If you have created a directory for uploading data, make sure
+your http server can access it. The easiest (but least secure) way to do
+this is give it permissions 777. It is better to give the web server
+ownership of the directory and limit the permissions.</p>
+<p>The top cause of this issue is PHP configured to prevent access to most
+directories using <a class="reference external" href="http://www.php.net/manual/en/ini.core.php#ini.open-basedir">open_basedir</a>. You may want to check with your
+hosting provider on this.</p>
+<p>Make sure the path is correct and ends with a /. You can check the path
+in your database in the datalists table.</p>
+<p>If you only have ftp access to your server and created a directory but
+do not know the path of it, you might be able to figure it out from the
+www file path set in your datalists database table. Asking for help from
+your hosting help team is recommended at this stage.</p>
+</div>
+<div class="section" id="i-can-t-validate-my-admin-account-because-i-don-t-have-an-email-server">
+<h3>I can&#8217;t validate my admin account because I don&#8217;t have an email server!<a class="headerlink" href="#i-can-t-validate-my-admin-account-because-i-don-t-have-an-email-server" title="Permalink to this headline">¶</a></h3>
+<p>While it&#8217;s true that normal accounts (aside from those created from the
+admin panel) require their email address to be authenticated before they
+can log in, the admin account does not.</p>
+<p>Once you have registered your first account you will be able to log in
+using the credentials you have provided!</p>
+</div>
+<div class="section" id="i-have-tried-all-of-these-suggestions-and-i-still-cannot-install-elgg">
+<h3>I have tried all of these suggestions and I still cannot install Elgg<a class="headerlink" href="#i-have-tried-all-of-these-suggestions-and-i-still-cannot-install-elgg" title="Permalink to this headline">¶</a></h3>
+<p>It is possible that during the process of debugging your install you
+have broken something else. Try doing a clean install:</p>
+<ul class="simple">
+<li>drop your elgg database</li>
+<li>delete your data directory</li>
+<li>delete the Elgg source files</li>
+<li>start over</li>
+</ul>
+<p>If that fails, seek the help of the <a class="reference external" href="http://community.elgg.org/">Elgg community</a>.
+Be sure to mention what version of Elgg you are installing, details of
+your server platform, and any error messages that you may have received
+including ones in the error log of your server.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="development.html" class="btn btn-neutral float-right" title="Developer Overview">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="license.html" class="btn btn-neutral" title="License"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

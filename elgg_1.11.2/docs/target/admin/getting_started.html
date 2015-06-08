@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Administrator Guides" href="index.html"/>
+        <link rel="next" title="Upgrading Elgg" href="upgrading.html"/>
+        <link rel="prev" title="Administrator Guides" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Administrator Guides</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/admin/getting_started.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>You have installed Elgg and worked through any potential initial issues. What now? Here are some
+suggestions on how to to familiarize yourself with Elgg.</p>
+<div class="section" id="focus-first-on-core-functionality">
+<h2>Focus first on core functionality<a class="headerlink" href="#focus-first-on-core-functionality" title="Permalink to this headline">¶</a></h2>
+<p>When you&#8217;re new to Elgg, it&#8217;s best to explore the stock features in core and its bundled plugins before installing any third party plugins. It&#8217;s tempting install every interesting plugin from the community site, but exploring the core features builds a familiarity with Elgg&#8217;s expected behavior, and prevents introducing any confusing bugs from third party plugin into your new Elgg network.</p>
+<p>Elgg installs with a basic set of social network plugins activated: blogs, social bookmarking, files, groups, likes, message boards, wiki-like pages, user profiles, and microblogging. To change the plugins that are activated, log in as an admin user, then use the topbar to browse to Administration, then to Plugins on the right sidebar.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The user you create during installation is an admin user.</p>
+</div>
+</div>
+<div class="section" id="create-test-users">
+<h2>Create test users<a class="headerlink" href="#create-test-users" title="Permalink to this headline">¶</a></h2>
+<p>Users can be created two ways in stock Elgg:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Complete the signup process using a different email address and username. (Logout first or use a different browser!)</li>
+<li>Add a user through the Admin section by browsing to Administration -&gt; Users -&gt; Add New User.</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Users that self-register must validate their account through email before they can log in. Users that an admin creates are already validated.</p>
+</div>
+</div>
+<div class="section" id="explore-user-functionality">
+<h2>Explore user functionality<a class="headerlink" href="#explore-user-functionality" title="Permalink to this headline">¶</a></h2>
+<p>Use your test users to create blogs, add widgets to your profile or dashboard, post to the Wire (microblogging), and create pages (wiki-like page creation). Investigate the Settings on the topbar. This is where a user sets notification settings and configures tools (which will be blank because none of the default plugins add controls here).</p>
+</div>
+<div class="section" id="explore-admin-functionality">
+<h2>Explore admin functionality<a class="headerlink" href="#explore-admin-functionality" title="Permalink to this headline">¶</a></h2>
+<p>All of the admin controls are found by clicking Administration in the topbar. The has a dashboard with a widget that explains the various sections. Change options in the Configure menu to change how Elgg looks and acts.</p>
+</div>
+<div class="section" id="extending-elgg">
+<h2>Extending Elgg<a class="headerlink" href="#extending-elgg" title="Permalink to this headline">¶</a></h2>
+<p>After exploring what Elgg can do out of the box, install some themes and plugins. You can find many plugins and themes at the community site that have been developed by third parties. These plugins do everything from changing language strings, to adding chat, to completely redesigning Elgg&#8217;s interface. Because these plugins are not official, be certain to check the comments to make sure you only install well-written plugins by high quality developers.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="upgrading.html" class="btn btn-neutral float-right" title="Upgrading Elgg">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Administrator Guides"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

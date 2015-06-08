@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cron &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Administrator Guides" href="index.html"/>
+        <link rel="next" title="Backup and Restore" href="backup-restore.html"/>
+        <link rel="prev" title="Performance" href="performance.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Administrator Guides</a> &raquo;</li>
+      
+    <li>Cron</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/admin/cron.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="cron">
+<h1>Cron<a class="headerlink" href="#cron" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Cron">Cron</a> is a program available on Unix-based operating systems that enables
+users to run commands and scripts at set intervals or at specific times.</p>
+<p>Elgg&#8217;s cron handler allows administrators and plugin developers to setup jobs
+that need to be executed at set intervals.</p>
+<p>Most common examples of cron jobs in Elgg include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>sending out queued notifications</li>
+<li>rotating the system log in the database</li>
+<li>collecting garbage in the database (compacting the database by removing
+entries that are no longer required)</li>
+</ul>
+</div></blockquote>
+<p>Currently, Elgg supports the following hooks:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">minute</span></code> - Run every minute</li>
+<li><code class="docutils literal"><span class="pre">fiveminute</span></code> - Run every 5 minutes</li>
+<li><code class="docutils literal"><span class="pre">fifteenmin</span></code> - Run every 15 minutes</li>
+<li><code class="docutils literal"><span class="pre">halfhour</span></code> - Run every 30 minutes</li>
+<li><code class="docutils literal"><span class="pre">hourly</span></code> - Run every hour</li>
+<li><code class="docutils literal"><span class="pre">daily</span></code> - Run every day</li>
+<li><code class="docutils literal"><span class="pre">weekly</span></code> - Run every week</li>
+<li><code class="docutils literal"><span class="pre">monthly</span></code> - Run every month</li>
+<li><code class="docutils literal"><span class="pre">yearly</span></code> - Run every year</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">reboot</span></code> cron hook has been deprecated and should not be used</p>
+</div>
+<div class="section" id="how-does-it-work">
+<h2>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h2>
+<p>Elgg activates its cron handler when particular cron pages are loaded.
+As an example, loading <a class="reference external" href="http://example.com/cron/hourly/">http://example.com/cron/hourly/</a> in a web browser
+activates the hourly hook. To automate this, cron jobs are setup to hit those
+pages at certain times. This is done by setting up a <code class="docutils literal"><span class="pre">crontab</span></code> which is a
+configuration file that determines what cron jobs do and at what interval.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">crontab</span></code> needs to specify a script or command that will hit the Elgg cron pages.
+Two commonly available programs for this are <cite>GET</cite> and <cite>wget</cite>. You will need
+to determine the location of one of these on your server. Your crontab also needs
+to specify the location of your website.</p>
+<div class="highlight-python"><div class="highlight"><pre># Crontab example.
+#
+# This file is an example of triggering Elgg cron events. It hits a URL to
+# trigger the events. For testing, you can simulate the cronjob by loading the
+# URL in a browser.
+#
+# See http://learn.elgg.org/en/stable/admin/cron.html for more information
+#
+
+# Location of your site (don&#39;t forget the trailing slash!)
+ELGG=&#39;http://www.example.com/&#39;
+
+# Location of lwp-request
+LWPR=&#39;/usr/bin/lwp-request&#39;
+
+# Make GET request and discard content
+GET=&quot;$LWPR -m GET -d&quot;
+
+# The crontab
+# Don&#39;t edit below this line unless you know what you are doing
+* * * * * $GET ${ELGG}cron/minute/
+*/5 * * * * $GET ${ELGG}cron/fiveminute/
+15,30,45,59 * * * * $GET ${ELGG}cron/fifteenmin/
+30,59 * * * * $GET ${ELGG}cron/halfhour/
+@hourly $GET ${ELGG}cron/hourly/
+@daily $GET ${ELGG}cron/daily/
+@weekly $GET ${ELGG}cron/weekly/
+@monthly $GET ${ELGG}cron/monthly/
+@yearly $GET ${ELGG}cron/yearly/
+# reboot is deprecated and probably doesn&#39;t work
+@reboot $GET ${ELGG}cron/reboot/
+</pre></div>
+</div>
+<p>In the above example, change the <code class="docutils literal"><span class="pre">ELGG</span></code> and <code class="docutils literal"><span class="pre">GET</span></code> variables to match you server setup.
+If you have SSH access to your Linux servers, type <code class="docutils literal"><span class="pre">crontab</span> <span class="pre">-e</span></code> and add
+your crontab configuration. If you already have a crontab configured, you will have to
+merge Elgg information into it. If you don&#8217;t have SSH access, you will have to use
+a web-based configuration tool. This will vary depending on hosting provider.</p>
+<p>If you choose the <code class="docutils literal"><span class="pre">wget</span></code> utility, you might want to consider these flags:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">--output-document</span></code> or <code class="docutils literal"><span class="pre">-O</span></code> to specify the location of the concatenated output file.
+For example, under Debian: <code class="docutils literal"><span class="pre">/usr/bin/wget</span> <span class="pre">--output-document=/dev/null</span></code>. If you don&#8217;t do
+that, a new file will be created for each cron page load in the home directory of the cron user.</li>
+<li><code class="docutils literal"><span class="pre">--spider</span></code> to prevent the cron page from being downloaded.</li>
+</ul>
+</div></blockquote>
+<p>On Windows servers, there is a number of cron emulators available.</p>
+<p>For information on setting up cron jobs using cPanel see <a class="reference external" href="http://docs.cpanel.net/twiki/bin/view/AllDocumentation/CpanelDocs/CronJobs">cPanel Docs</a>.</p>
+<p>In the <code class="docutils literal"><span class="pre">command</span></code> field, enter the appropriate link of the cron page.
+For example, for a weekly cron job, enter the command as <a class="reference external" href="http://www.example.com/cron/weekly/">http://www.example.com/cron/weekly/</a>.</p>
+<p>To see if your cron jobs are running, visit Statistics &gt; Cron in your Elgg admin
+panel.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backup-restore.html" class="btn btn-neutral float-right" title="Backup and Restore">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="performance.html" class="btn btn-neutral" title="Performance"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

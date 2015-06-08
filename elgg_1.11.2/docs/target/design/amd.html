@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AMD &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Design Docs" href="index.html"/>
+        <link rel="next" title="Security" href="security.html"/>
+        <link rel="prev" title="Internationalization" href="i18n.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Design Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Design Docs</a> &raquo;</li>
+      
+    <li>AMD</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/design/amd.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="amd">
+<h1>AMD<a class="headerlink" href="#amd" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>There are two JavaScript system in Elgg: the deprecated 1.8 system, and the newer <a class="reference external" href="http://requirejs.org/docs/whyamd.html">AMD (Asynchronous Module
+Definition)</a> compatible system introduced in 1.9.</p>
+<p>This discusses the benefits of using AMD in Elgg.</p>
+</div>
+<div class="section" id="why-amd">
+<h2>Why AMD?<a class="headerlink" href="#why-amd" title="Permalink to this headline">¶</a></h2>
+<p>We have been working hard to make Elgg&#8217;s JavaScript more maintainable and useful.
+We made some strides in 1.8 with the introduction of the &#8220;<code class="docutils literal"><span class="pre">elgg</span></code>&#8221; JavaScript object and library, but
+have quickly realized the approach we were taking was not scalable.</p>
+<p>The size of <a class="reference external" href="http://httparchive.org/trends.php?s=All&amp;minlabel=Feb+11+2011&amp;maxlabel=Feb+1+2013#bytesJS&amp;reqJS">JS on the web is growing</a>
+quickly, and JS in Elgg is growing too. We want Elgg to be able to offer a solution that makes JS
+development as productive and maintainable as possible going forward.</p>
+<p>The <a class="reference external" href="http://requirejs.org/docs/whyamd.html">reasons to choose AMD</a> are plenteous and
+well-documented. Let&#8217;s highlight just a few of the most relevant reasons as they relate to Elgg
+specifically.</p>
+<div class="section" id="simplified-dependency-management">
+<h3>1. Simplified dependency management<a class="headerlink" href="#simplified-dependency-management" title="Permalink to this headline">¶</a></h3>
+<p>AMD modules load asynchronously and execute as soon as their dependencies are available, so this
+eliminates the need to specify &#8220;priority&#8221; and &#8220;location&#8221; when registering JS libs in Elgg. Also, you
+don&#8217;t need to worry about explicitly loading a module&#8217;s dependencies in PHP. The AMD loader (RequireJS in this
+case) takes care of all that hassle for you. It&#8217;s also possible have
+<a class="reference external" href="http://requirejs.org/docs/api.html#text">text dependencies</a> with the RequireJS text plugin,
+so client-side templating should be a breeze.</p>
+</div>
+<div class="section" id="amd-works-in-all-browsers-today">
+<h3>2. AMD works in all browsers. Today.<a class="headerlink" href="#amd-works-in-all-browsers-today" title="Permalink to this headline">¶</a></h3>
+<p>Elgg developers are already writing lots of JavaScript. We know you want to write more. We cannot
+accept waiting 5-10 years for a native JS modules solution to be available in all browsers before
+we can organize our JavaScript in a maintainable way.</p>
+</div>
+<div class="section" id="you-do-not-need-a-build-step-to-develop-in-amd">
+<h3>3. You do not need a build step to develop in AMD.<a class="headerlink" href="#you-do-not-need-a-build-step-to-develop-in-amd" title="Permalink to this headline">¶</a></h3>
+<p>We like the edit-refresh cycle of web development. We wanted to make sure everyone developing in
+Elgg could continue experiencing that joy. Synchronous module formats like Closure or CommonJS just
+weren&#8217;t an option for us. But even though AMD doesn&#8217;t require a build step, <em>it is still very
+build-friendly</em>. Because of the <code class="docutils literal"><span class="pre">define()</span></code> wrapper, it&#8217;s possible to concatenate multiple modules
+into a single file and ship them all at once in a production environment. <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+<p>AMD is a battle-tested and well thought out module loading system for the web today. We&#8217;re very
+thankful for the work that has gone into it, and are excited to offer it as the standard solution
+for JavaScript development in Elgg starting with Elgg 1.9.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>This is not currently supported by Elgg core, but we&#8217;ll be looking into it since reducing round-trips is critical for a good first-view experience, especially on mobile devices.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="security.html" class="btn btn-neutral float-right" title="Security">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="i18n.html" class="btn btn-neutral" title="Internationalization"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

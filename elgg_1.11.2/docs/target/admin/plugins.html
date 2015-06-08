@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plugins &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Administrator Guides" href="index.html"/>
+        <link rel="next" title="Performance" href="performance.html"/>
+        <link rel="prev" title="Upgrading Elgg" href="upgrading.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Administrator Guides</a> &raquo;</li>
+      
+    <li>Plugins</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/admin/plugins.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="plugins">
+<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
+<p>Plugins can modify the behavior of and add new features to Elgg.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#where-to-get-plugins" id="id2">Where to get plugins</a></li>
+<li><a class="reference internal" href="#id1" id="id3">The Elgg Community</a><ul>
+<li><a class="reference internal" href="#finding-plugins" id="id4">Finding Plugins</a></li>
+<li><a class="reference internal" href="#evaluating-plugins" id="id5">Evaluating Plugins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#types-of-plugins" id="id6">Types of plugins</a><ul>
+<li><a class="reference internal" href="#themes" id="id7">Themes</a></li>
+<li><a class="reference internal" href="#language-packs" id="id8">Language Packs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation" id="id9">Installation</a></li>
+<li><a class="reference internal" href="#plugin-order" id="id10">Plugin order</a></li>
+<li><a class="reference internal" href="#pre-1-8-notes" id="id11">Pre-1.8 notes</a></li>
+</ul>
+</div>
+<div class="section" id="where-to-get-plugins">
+<h2><a class="toc-backref" href="#id2">Where to get plugins</a><a class="headerlink" href="#where-to-get-plugins" title="Permalink to this headline">¶</a></h2>
+<p>Plugins can be obtained from:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://community.elgg.org/plugins">The Elgg Community</a></li>
+<li><a class="reference external" href="https://github.com/Elgg">Github</a></li>
+<li>Third-party sites (typically for a price)</li>
+</ul>
+</div></blockquote>
+<p>If no existing plugins meet your needs, you can <a class="reference external" href="http://community.elgg.org/groups/profile/75603/professional-services">hire a developer</a> or <a class="reference internal" href="../guides/index.html"><em>create your own</em></a>.</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id3">The Elgg Community</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="finding-plugins">
+<h3><a class="toc-backref" href="#id4">Finding Plugins</a><a class="headerlink" href="#finding-plugins" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sort-based-on-most-popular">
+<h4>Sort based on most popular<a class="headerlink" href="#sort-based-on-most-popular" title="Permalink to this headline">¶</a></h4>
+<p>On the community plugin page, you can sort by date uploaded (Filter: Newest) or number of downloads (Filter: Most downloads). Sorting by the number of downloads is a good idea if you are new to Elgg and want to see which plugins are frequently used by other administrators. These will often (but not always) be higher quality plugins that provide significant capabilities.</p>
+</div>
+<div class="section" id="use-the-plugin-tag-search">
+<h4>Use the plugin tag search<a class="headerlink" href="#use-the-plugin-tag-search" title="Permalink to this headline">¶</a></h4>
+<p>Next to the filtering control on the plugin page is a search box. It enables you to search by tags. Plugins authors choose the tags.</p>
+</div>
+<div class="section" id="look-for-particular-plugin-authors">
+<h4>Look for particular plugin authors<a class="headerlink" href="#look-for-particular-plugin-authors" title="Permalink to this headline">¶</a></h4>
+<p>The quality of plugins varies substantially. If you find a plugin that works well on your site, you can check what else that plugin author has developed by clicking on their name when viewing a plugin.</p>
+</div>
+</div>
+<div class="section" id="evaluating-plugins">
+<h3><a class="toc-backref" href="#id5">Evaluating Plugins</a><a class="headerlink" href="#evaluating-plugins" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="look-at-the-comments-and-ratings">
+<h4>Look at the comments and ratings<a class="headerlink" href="#look-at-the-comments-and-ratings" title="Permalink to this headline">¶</a></h4>
+<p>Before downloading and using a plugin, it is always a good idea to read through the comments that others have left. If you see people complaining that the plugin does not work or makes their site unstable, you probably want to stay away from that plugin. The caveat to that is that sometimes users ignore installation instructions or incorrectly install a plugin and then leave negative feedback. Further, some plugin authors have chosen to not allow comments.</p>
+</div>
+<div class="section" id="install-on-a-test-site">
+<h4>Install on a test site<a class="headerlink" href="#install-on-a-test-site" title="Permalink to this headline">¶</a></h4>
+<p>If you are trying out a plugin for the first time, it is a bad idea to install it on your production site. You should maintain a separate test site for evaluating plugins. It is a good idea to slowly roll out new plugins to your production site even after they pass your evaluation on your test site. This enables you to isolate problems introduced by a new plugin.</p>
+</div>
+</div>
+</div>
+<div class="section" id="types-of-plugins">
+<h2><a class="toc-backref" href="#id6">Types of plugins</a><a class="headerlink" href="#types-of-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="themes">
+<h3><a class="toc-backref" href="#id7">Themes</a><a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h3>
+<p>Themes are plugins that modify the look-and-feel of your site. They generally
+include stylesheets, client-side scripts and views that alter the default
+presentation and behavior of Elgg.</p>
+</div>
+<div class="section" id="language-packs">
+<h3><a class="toc-backref" href="#id8">Language Packs</a><a class="headerlink" href="#language-packs" title="Permalink to this headline">¶</a></h3>
+<p>Language packs are plugins that provide support for other languages.</p>
+<p>Language packs can extend and include translations for language strings
+found in the core, core plugins and/or third-party plugins.</p>
+<p>Some of the language packs are already included in the core, and can be found in
+<code class="docutils literal"><span class="pre">languages</span></code> directory off Elgg&#8217;s root directory. Individual plugins tend to
+include their translations under the <code class="docutils literal"><span class="pre">languages</span></code> directory within the plugin&#8217;s
+root.</p>
+<p>This structure makes it easy to create new language packs that supercede existing
+language strings or add support for new languages.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#id9">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>All plugins reside in the <code class="docutils literal"><span class="pre">mod</span></code> directory of your Elgg installation.</p>
+<dl class="docutils">
+<dt>To install a new plugin:</dt>
+<dd><ul class="first last simple">
+<li>extract (unzip) contents of the plugin distribution package</li>
+<li>copy/FTP the extracted folder into the <code class="docutils literal"><span class="pre">mod</span></code> directory of your Elgg
+installation, making sure that <code class="docutils literal"><span class="pre">manifest.xml</span></code> and <code class="docutils literal"><span class="pre">start.php</span></code> are
+directly under the plugin directory (e.g. if you were to install a plugin called
+<code class="docutils literal"><span class="pre">my_elgg_plugin</span></code>, plugin&#8217;s manifest would need to be found at
+<code class="docutils literal"><span class="pre">mod/my_elgg_plugin/manifest.xml</span></code>)</li>
+<li>activate the plugin from your admin panel</li>
+</ul>
+</dd>
+<dt>To activate a plugin:</dt>
+<dd><ul class="first last simple">
+<li>Log in to your Elgg site with your administrator account</li>
+<li>Go to Administration -&gt; Configure -&gt; Plugins</li>
+<li>Find your plugin in the list of installed plugins and click on the
+&#8216;enable&#8217; button.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="plugin-order">
+<span id="admin-plugins-plugin-order"></span><h2><a class="toc-backref" href="#id10">Plugin order</a><a class="headerlink" href="#plugin-order" title="Permalink to this headline">¶</a></h2>
+<p>Plugins are loaded according to the order they are listed on the Plugins page. The initial ordering after an install is more or less random. As more plugins are added by an administrator, they are placed at the bottom of the list.</p>
+<p>Some general rules for ordering plugins:</p>
+<ul class="simple">
+<li>A theme plugin should be last or at least near the bottom</li>
+<li>A plugin that modifies the behavior of another plugin should be lower in the plugin list</li>
+</ul>
+</div>
+<div class="section" id="pre-1-8-notes">
+<h2><a class="toc-backref" href="#id11">Pre-1.8 notes</a><a class="headerlink" href="#pre-1-8-notes" title="Permalink to this headline">¶</a></h2>
+<p>In Elgg 1.7 and below, the interface for managing installed plugins is located at
+Administration -&gt; Tool Administration.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="performance.html" class="btn btn-neutral float-right" title="Performance">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="upgrading.html" class="btn btn-neutral" title="Upgrading Elgg"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

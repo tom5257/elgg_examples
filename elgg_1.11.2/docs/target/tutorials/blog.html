@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building a Blog Plugin &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Plugin Tutorials" href="index.html"/>
+        <link rel="next" title="Integrating a Rich Text Editor" href="wysiwyg.html"/>
+        <link rel="prev" title="Customizing the Home Page" href="indexpage.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Plugin Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Plugin Tutorials</a> &raquo;</li>
+      
+    <li>Building a Blog Plugin</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/tutorials/blog.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="building-a-blog-plugin">
+<h1>Building a Blog Plugin<a class="headerlink" href="#building-a-blog-plugin" title="Permalink to this headline">¶</a></h1>
+<p>Build a simple blogging plugin using Elgg.</p>
+<p>This duplicates features in the bundled blog plugin,
+so be sure to disable that while working on your own version.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#create-the-plugin-skeleton" id="id1">Create the plugin skeleton</a></li>
+<li><a class="reference internal" href="#create-a-page-for-composing-the-blogs" id="id2">Create a page for composing the blogs</a></li>
+<li><a class="reference internal" href="#create-the-form-for-creating-a-new-my-blog-post" id="id3">Create the form for creating a new my_blog post</a></li>
+<li><a class="reference internal" href="#the-action-file" id="id4">The action file</a></li>
+<li><a class="reference internal" href="#the-object-view" id="id5">The object view</a></li>
+<li><a class="reference internal" href="#plugin-start-php" id="id6">Plugin start.php</a></li>
+<li><a class="reference internal" href="#registering-a-page-handler" id="id7">Registering a page handler</a></li>
+<li><a class="reference internal" href="#trying-it-out" id="id8">Trying it out</a></li>
+<li><a class="reference internal" href="#displaying-list-of-my-blogs" id="id9">Displaying list of my_blogs</a></li>
+<li><a class="reference internal" href="#a-user-s-blog-page" id="id10">A user&#8217;s blog page</a></li>
+<li><a class="reference internal" href="#the-end" id="id11">The end</a></li>
+</ul>
+</div>
+<div class="section" id="create-the-plugin-skeleton">
+<h2><a class="toc-backref" href="#id1">Create the plugin skeleton</a><a class="headerlink" href="#create-the-plugin-skeleton" title="Permalink to this headline">¶</a></h2>
+<p>The name of the directory under &#8220;mod&#8221; becomes the id of your plugin:</p>
+<div class="highlight-python"><div class="highlight"><pre>/mod/my_blog/pages/my_blog/
+/mod/my_blog/actions/my_blog/
+/mod/my_blog/views/default/my_blog/
+</pre></div>
+</div>
+<p>You&#8217;ll need to add a manifest file in <code class="docutils literal"><span class="pre">/mod/my_blog/manifest.xml</span></code>.
+This file stores basic information about the plugin. See <a class="reference internal" href="../guides/plugins.html"><em>Plugins</em></a> for the template.
+You can also just copy the manifest file from another plugin and then change the values to fit your new plugin.
+Be sure to change the author and website, and remove the “bundled” category!</p>
+</div>
+<div class="section" id="create-a-page-for-composing-the-blogs">
+<h2><a class="toc-backref" href="#id2">Create a page for composing the blogs</a><a class="headerlink" href="#create-a-page-for-composing-the-blogs" title="Permalink to this headline">¶</a></h2>
+<p>Create the file <code class="docutils literal"><span class="pre">add.php</span></code> in <code class="docutils literal"><span class="pre">/mod/my_blog/pages/my_blog/</span></code>.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+// make sure only logged in users can see this page
+gatekeeper();
+
+// set the title
+// for distributed plugins, be sure to use elgg_echo() for internationalization
+$title = &quot;Create a new my_blog post&quot;;
+
+// start building the main column of the page
+$content = elgg_view_title($title);
+
+// add the form to this section
+$content .= elgg_view_form(&quot;my_blog/save&quot;);
+
+// optionally, add the content for the sidebar
+$sidebar = &quot;&quot;;
+
+// layout the page
+$body = elgg_view_layout(&#39;one_sidebar&#39;, array(
+   &#39;content&#39; =&gt; $content,
+   &#39;sidebar&#39; =&gt; $sidebar
+));
+
+// draw the page
+echo elgg_view_page($title, $body);
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-the-form-for-creating-a-new-my-blog-post">
+<h2><a class="toc-backref" href="#id3">Create the form for creating a new my_blog post</a><a class="headerlink" href="#create-the-form-for-creating-a-new-my-blog-post" title="Permalink to this headline">¶</a></h2>
+<p>Create a file at <code class="docutils literal"><span class="pre">/mod/my_blog/views/default/forms/my_blog/save.php</span></code>
+that contains the form body. This corresponds to view that is called above:
+<code class="docutils literal"><span class="pre">elgg_view_form(&quot;my_blog/save&quot;)</span></code>.</p>
+<p>The form should have input fields for the title, body and tags.
+Because you used <code class="docutils literal"><span class="pre">elgg_view_form()</span></code>, you do not need to include form tag markup.
+The view will be automatically wrapped with:</p>
+<blockquote>
+<div><ul class="simple">
+<li>a <code class="docutils literal"><span class="pre">&lt;form&gt;</span></code> tag and the necessary attributes</li>
+<li>anti-csrf tokens</li>
+</ul>
+</div></blockquote>
+<p>The form&#8217;s action will be <code class="docutils literal"><span class="pre">&quot;&lt;?php</span> <span class="pre">echo</span> <span class="pre">elgg_get_site_url()</span> <span class="pre">?&gt;action/my_blog/save&quot;</span></code>,
+which we will create in a moment. Here is the content of
+<code class="docutils literal"><span class="pre">/mod/my_blog/views/default/forms/my_blog/save.php</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;div&gt;
+    &lt;label&gt;&lt;?php echo elgg_echo(&quot;title&quot;); ?&gt;&lt;/label&gt;&lt;br /&gt;
+    &lt;?php echo elgg_view(&#39;input/text&#39;,array(&#39;name&#39; =&gt; &#39;title&#39;)); ?&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;label&gt;&lt;?php echo elgg_echo(&quot;body&quot;); ?&gt;&lt;/label&gt;&lt;br /&gt;
+    &lt;?php echo elgg_view(&#39;input/longtext&#39;,array(&#39;name&#39; =&gt; &#39;body&#39;)); ?&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;label&gt;&lt;?php echo elgg_echo(&quot;tags&quot;); ?&gt;&lt;/label&gt;&lt;br /&gt;
+    &lt;?php echo elgg_view(&#39;input/tags&#39;,array(&#39;name&#39; =&gt; &#39;tags&#39;)); ?&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;?php echo elgg_view(&#39;input/submit&#39;, array(&#39;value&#39; =&gt; elgg_echo(&#39;save&#39;))); ?&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+<p>Notice how the form is calling input views like <code class="docutils literal"><span class="pre">input/longtext</span></code>.
+These are built into Elgg and make it easy to add form components.
+You can see a complete list of input views in the <code class="docutils literal"><span class="pre">/views/default/input/</span></code> directory.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The above code is not accessibility-friendly.</p>
+</div>
+</div>
+<div class="section" id="the-action-file">
+<h2><a class="toc-backref" href="#id4">The action file</a><a class="headerlink" href="#the-action-file" title="Permalink to this headline">¶</a></h2>
+<p>Create the file <code class="docutils literal"><span class="pre">/mod/my_blog/actions/my_blog/save.php</span></code>.
+This will save the blog post to the database.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+// get the form inputs
+$title = get_input(&#39;title&#39;);
+$body = get_input(&#39;body&#39;);
+$tags = string_to_tag_array(get_input(&#39;tags&#39;));
+
+// create a new my_blog object
+$blog = new ElggObject();
+$blog-&gt;subtype = &quot;my_blog&quot;;
+$blog-&gt;title = $title;
+$blog-&gt;description = $body;
+
+// for now make all my_blog posts public
+$blog-&gt;access_id = ACCESS_PUBLIC;
+
+// owner is logged in user
+$blog-&gt;owner_guid = elgg_get_logged_in_user_guid();
+
+// save tags as metadata
+$blog-&gt;tags = $tags;
+
+// save to database and get id of the new my_blog
+$blog_guid = $blog-&gt;save();
+
+// if the my_blog was saved, we want to display the new post
+// otherwise, we want to register an error and forward back to the form
+if ($blog_guid) {
+   system_message(&quot;Your blog post was saved&quot;);
+   forward($blog-&gt;getURL());
+} else {
+   register_error(&quot;The blog post could not be saved&quot;);
+   forward(REFERER); // REFERER is a global variable that defines the previous page
+}
+</pre></div>
+</div>
+<p>A few fields are built into Elgg objects. Title and description are two of these.
+It makes sense to use description to contain the my_blog text.
+Every entity can have a subtype and in this we are using <code class="docutils literal"><span class="pre">&quot;my_blog&quot;</span></code>.
+The tags are stored as metadata.</p>
+<p>Every object in Elgg has a built-in URL automatically,
+although you can override this if you wish.
+The <code class="docutils literal"><span class="pre">getURL()</span></code> method is called to get that unique URL.</p>
+</div>
+<div class="section" id="the-object-view">
+<h2><a class="toc-backref" href="#id5">The object view</a><a class="headerlink" href="#the-object-view" title="Permalink to this headline">¶</a></h2>
+<p>Elgg will automatically call the <code class="docutils literal"><span class="pre">object/my_blog</span></code> view to view the
+my_blog post so we need to create the object view.</p>
+<p>Objects in Elgg are a subclass of something called an “entity”.
+Users, sites, and groups are also subclasses of entity.
+All entities can (and should) have a subtype,
+which allows granular control for listing and displaying.
+Here, we have used the subtype &#8220;<code class="docutils literal"><span class="pre">my_blog</span></code>&#8221; to identify a my_blog post,
+but any alphanumeric string can be a valid subtype.
+When picking subtypes, be sure to pick ones that make sense for your plugin.</p>
+<p>In <code class="docutils literal"><span class="pre">/mod/my_blog/views/default/</span></code>, create a folder <code class="docutils literal"><span class="pre">/object/</span></code> and
+then create a file <code class="docutils literal"><span class="pre">my_blog.php</span></code> in it.</p>
+<p>Each my_blog post will be passed to this PHP file as
+<code class="docutils literal"><span class="pre">$vars['entity']</span></code>. (<code class="docutils literal"><span class="pre">$vars</span></code> is an array used in the views system to
+pass variables to a view.) The content of <code class="docutils literal"><span class="pre">object/my_blog.php</span></code> can
+just be something like:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+echo elgg_view_title($vars[&#39;entity&#39;]-&gt;title);
+echo elgg_view(&#39;output/longtext&#39;, array(&#39;value&#39; =&gt; $vars[&#39;entity&#39;]-&gt;description));
+echo elgg_view(&#39;output/tags&#39;, array(&#39;tags&#39; =&gt; $vars[&#39;entity&#39;]-&gt;tags));
+</pre></div>
+</div>
+<p>The last line takes the tags on the my_blog post and automatically
+displays them as a series of clickable links. Search is handled
+automatically.</p>
+<p>(If you&#8217;re wondering about the &#8216;<code class="docutils literal"><span class="pre">default</span></code>&#8216; in <code class="docutils literal"><span class="pre">/views/default/</span></code>,
+you can create alternative views. RSS, OpenDD, FOAF, mobile and others
+are all valid view types.)</p>
+</div>
+<div class="section" id="plugin-start-php">
+<h2><a class="toc-backref" href="#id6">Plugin start.php</a><a class="headerlink" href="#plugin-start-php" title="Permalink to this headline">¶</a></h2>
+<p>Every plugin has a <code class="docutils literal"><span class="pre">start.php</span></code> that initializes it.
+For this example, we just need to register the action file we created earlier:
+Also see a related guide about <a class="reference internal" href="../guides/actions.html"><em>Forms + Actions</em></a>.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+elgg_register_action(&quot;my_blog/save&quot;, elgg_get_plugins_path() . &quot;my_blog/actions/my_blog/save.php&quot;);
+</pre></div>
+</div>
+<p>The action will now be available as <code class="docutils literal"><span class="pre">/action/my_blog/save</span></code>.
+By default, all actions are available only to logged in users.
+If you want to make an action available to only admins or open it up to unauthenticated users,
+you can pass &#8216;admin&#8217; or &#8216;public&#8217; as the third parameter of <code class="docutils literal"><span class="pre">elgg_register_action()</span></code>, respectively.</p>
+</div>
+<div class="section" id="registering-a-page-handler">
+<h2><a class="toc-backref" href="#id7">Registering a page handler</a><a class="headerlink" href="#registering-a-page-handler" title="Permalink to this headline">¶</a></h2>
+<p>In order to be able to serve the page that generates the form, you&#8217;ll
+need to register a page handler. Add the following to your start.php:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_page_handler(&#39;my_blog&#39;, &#39;my_blog_page_handler&#39;);
+
+function my_blog_page_handler($segments) {
+    if ($segments[0] == &#39;add&#39;) {
+        include elgg_get_plugins_path() . &#39;my_blog/pages/my_blog/add.php&#39;;
+        return true;
+    }
+    return false;
+}
+</pre></div>
+</div>
+<p>Page handling functions need to return <code class="docutils literal"><span class="pre">true</span></code> or <code class="docutils literal"><span class="pre">false</span></code>. <code class="docutils literal"><span class="pre">true</span></code>
+means the page exists and has been handled by the page handler.
+<code class="docutils literal"><span class="pre">false</span></code> means that the page does not exist and the user will be
+forwarded to the site&#8217;s 404 page (requested page does not exist or not found).
+In this particular example, the URL must contain
+<code class="docutils literal"><span class="pre">/my_blog/add</span></code> for the user to view a page with a form, otherwise the
+user will see a 404 page.</p>
+</div>
+<div class="section" id="trying-it-out">
+<h2><a class="toc-backref" href="#id8">Trying it out</a><a class="headerlink" href="#trying-it-out" title="Permalink to this headline">¶</a></h2>
+<p>If you have not enabled the plugin yet, you will need to go to
+Administration =&gt; Configure =&gt; Plugins =&gt; Advanced.
+Scroll to the bottom until you see your plugin. Click the Enable button.</p>
+<p>The page to create a new my_blog post is accessible at <a class="reference external" href="http://yoursite/my_blog/add">http://yoursite/my_blog/add</a>.
+Try it out.</p>
+</div>
+<div class="section" id="displaying-list-of-my-blogs">
+<h2><a class="toc-backref" href="#id9">Displaying list of my_blogs</a><a class="headerlink" href="#displaying-list-of-my-blogs" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s also create a page that lists my_blog entries that have been created.</p>
+<p>Create <code class="docutils literal"><span class="pre">/mod/my_blog/pages/my_blog/all.php</span></code>.</p>
+<p>To grab the latest my_blog posts, we&#8217;ll use <code class="docutils literal"><span class="pre">elgg_list_entities</span></code>.
+Note that this function returns only the posts that the user can see,
+so access restrictions are handled transparently:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$body = elgg_list_entities(array(
+    &#39;type&#39; =&gt; &#39;object&#39;,
+    &#39;subtype&#39; =&gt; &#39;my_blog&#39;,
+));
+</pre></div>
+</div>
+<p>The function `elgg_list_entities` (and its cousins) also
+transparently handle pagination, and even create an RSS feeds for your
+my_blogs if you have defined these views.</p>
+<p>Finally, we&#8217;ll draw the page:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$body = elgg_view_layout(&#39;one_column&#39;, array(&#39;content&#39; =&gt; $body));
+
+echo elgg_view_page(&quot;All Site Blogs&quot;, $body);
+</pre></div>
+</div>
+<p>We will then need to modify our my_blog page handler to grab the new
+page when the URL is set to <code class="docutils literal"><span class="pre">/my_blog/all</span></code>. So, your new
+<code class="docutils literal"><span class="pre">my_blog_page_handler()</span></code> function in start.php should look like:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function my_blog_page_handler($segments) {
+    switch ($segments[0]) {
+        case &#39;add&#39;:
+           include elgg_get_plugins_path() . &#39;my_blog/pages/my_blog/add.php&#39;;
+           break;
+
+        case &#39;all&#39;:
+        default:
+           include elgg_get_plugins_path() . &#39;my_blog/pages/my_blog/all.php&#39;;
+           break;
+    }
+
+    return true;
+}
+</pre></div>
+</div>
+<p>Now, if the URL contains just <code class="docutils literal"><span class="pre">/my_blog</span></code> or <code class="docutils literal"><span class="pre">/my_blog/all</span></code>,
+the user will see an &#8220;All Site Blogs&#8221; page.</p>
+</div>
+<div class="section" id="a-user-s-blog-page">
+<h2><a class="toc-backref" href="#id10">A user&#8217;s blog page</a><a class="headerlink" href="#a-user-s-blog-page" title="Permalink to this headline">¶</a></h2>
+<p>If we grab the Global Unique IDentifier (GUID) of the logged in user, we
+can limit the my_blog posts to those posted by specifying the
+owner_guid argument in the list function above.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>echo elgg_list_entities(array(
+    &#39;type&#39; =&gt; &#39;object&#39;,
+    &#39;subtype&#39; =&gt; &#39;my_blog&#39;,
+    &#39;owner_guid&#39; =&gt; elgg_get_logged_in_user_guid()
+));
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-end">
+<h2><a class="toc-backref" href="#id11">The end</a><a class="headerlink" href="#the-end" title="Permalink to this headline">¶</a></h2>
+<p>There&#8217;s much more that could be done for this plugin,
+but hopefully this gives you a good idea of how to get started with your own.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="wysiwyg.html" class="btn btn-neutral float-right" title="Integrating a Rich Text Editor">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="indexpage.html" class="btn btn-neutral" title="Customizing the Home Page"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

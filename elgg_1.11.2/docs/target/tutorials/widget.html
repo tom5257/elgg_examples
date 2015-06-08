@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Widget &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Plugin Tutorials" href="index.html"/>
+        <link rel="next" title="Design Docs" href="../design/index.html"/>
+        <link rel="prev" title="Integrating a Rich Text Editor" href="wysiwyg.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Plugin Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Plugin Tutorials</a> &raquo;</li>
+      
+    <li>Basic Widget</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/tutorials/widget.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="basic-widget">
+<h1>Basic Widget<a class="headerlink" href="#basic-widget" title="Permalink to this headline">¶</a></h1>
+<p>Create a widget that will display “Hello, World!” and optionally any text the user wants.</p>
+<p>In Elgg, widgets are those components that you can drag onto your profile or admin dashboard.</p>
+<p>This tutorial assumes you are familiar with basic Elgg concepts such as:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../guides/views.html"><em>Views</em></a></li>
+<li><a class="reference internal" href="../admin/plugins.html"><em>Plugins</em></a></li>
+</ul>
+</div></blockquote>
+<p>You should review those if you get confused along the way.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#registering-your-plugin" id="id1">Registering your plugin</a></li>
+<li><a class="reference internal" href="#adding-the-widget-view-code" id="id2">Adding the widget view code</a></li>
+<li><a class="reference internal" href="#registering-your-widget" id="id3">Registering your widget</a></li>
+<li><a class="reference internal" href="#allow-user-customization" id="id4">Allow user customization</a></li>
+</ul>
+</div>
+<div class="section" id="registering-your-plugin">
+<h2><a class="toc-backref" href="#id1">Registering your plugin</a><a class="headerlink" href="#registering-your-plugin" title="Permalink to this headline">¶</a></h2>
+<p>Plugins are always placed in the <code class="docutils literal"><span class="pre">/mod</span></code> directory.
+Create a subdirectory there called <code class="docutils literal"><span class="pre">hello</span></code>.
+This will be the name of your plugin
+and will show up in the Plugins Administration section of Elgg by this name.</p>
+<p>In <code class="docutils literal"><span class="pre">/mod/hello</span></code>, create an empty file called <code class="docutils literal"><span class="pre">start.php</span></code>.
+If this file exists, Elgg will load your plugin.
+Otherwise, you will see a misconfigured plugin error.
+Go to the admin section of your Elgg install and enable your plugin.
+Click on the “more info” link under your plugin name.
+You will notice that nothing happens.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Copy the <code class="docutils literal"><span class="pre">manifest.xml</span></code> file from one of the plugins in your elgg install into <code class="docutils literal"><span class="pre">/mod/hello</span></code>.</li>
+<li>Update its values so you are listed as the author and change the description to describe this new plugin.</li>
+<li>Reload the Tools Administration page in your browser and check “more info” again.</li>
+<li>It will now display the information that you&#8217;ve entered.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="adding-the-widget-view-code">
+<h2><a class="toc-backref" href="#id2">Adding the widget view code</a><a class="headerlink" href="#adding-the-widget-view-code" title="Permalink to this headline">¶</a></h2>
+<p>Elgg automatically scans particular directories under plugins looking for particular files.
+<a class="reference internal" href="../guides/views.html"><em>Views</em></a> make it easy to add your display code or do other things like override default Elgg behavior.
+For now, we will just be adding the view code for your widget.
+Create a file at <code class="docutils literal"><span class="pre">/mod/hello/views/default/widgets/helloworld/content.php</span></code>.
+“helloworld” will be the name of your widget within the hello plugin.
+In this file add the code:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+echo &quot;Hello, world!&quot;;
+</pre></div>
+</div>
+<p>This will add these words to the widget canvas when it is drawn.
+Elgg takes care of loading the widget.</p>
+</div>
+<div class="section" id="registering-your-widget">
+<h2><a class="toc-backref" href="#id3">Registering your widget</a><a class="headerlink" href="#registering-your-widget" title="Permalink to this headline">¶</a></h2>
+<p>Elgg needs to be told explicitly that the plugin contains a widget
+so that it will scan the widget views directory.
+This is done by calling the elgg_register_widget_type() function.
+Edit <code class="docutils literal"><span class="pre">/mod/hello/start.php</span></code>. In it add these lines:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+function hello_init() {
+    elgg_register_widget_type(&#39;helloworld&#39;, &#39;Hello, world!&#39;, &#39;The &quot;Hello, world!&quot; widget&#39;);
+}
+
+elgg_register_event_handler(&#39;init&#39;, &#39;system&#39;, &#39;hello_init&#39;);
+</pre></div>
+</div>
+<p>Now go to your profile page using a web browser and add the “hello, world” widget.
+It should display “Hello, world!”.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For real widgets, it is always a good idea to support <a class="reference internal" href="../guides/i18n.html"><em>Internationalization</em></a>.</p>
+</div>
+</div>
+<div class="section" id="allow-user-customization">
+<h2><a class="toc-backref" href="#id4">Allow user customization</a><a class="headerlink" href="#allow-user-customization" title="Permalink to this headline">¶</a></h2>
+<p>Click on the edit link on the toolbar of the widget that you&#8217;ve created.
+You will notice that the only control it gives you by default is over
+access (over who can see the widget).</p>
+<p>Suppose you want to allow the user to control what greeting is displayed in the widget.
+Just as Elgg automatically loads <code class="docutils literal"><span class="pre">content.php</span></code> when viewing a widget,
+it loads <code class="docutils literal"><span class="pre">edit.php</span></code> when a user attempts to edit a widget.
+In <code class="docutils literal"><span class="pre">/mod/hello/views/default/widgets/helloworld/</span></code>, create a file named <code class="docutils literal"><span class="pre">edit.php</span></code>.
+In this file, add the following code:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;div&gt;
+    &lt;label&gt;Message:&lt;/label&gt;
+    &lt;?php
+        //This is an instance of the ElggWidget class that represents our widget.
+        $widget = $vars[&#39;entity&#39;];
+
+        // Give the user a plain text box to input a message
+        echo elgg_view(&#39;input/text&#39;, array(
+            &#39;name&#39; =&gt; &#39;params[message]&#39;,
+            &#39;value&#39; =&gt; $widget-&gt;message,
+            &#39;class&#39; =&gt; &#39;hello-input-text&#39;,
+        ));
+    ?&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+<p>Notice the relationship between the values passed to the &#8216;name&#8217; and the
+&#8216;value&#8217; fields of input/text.
+The name of the input text box is <code class="docutils literal"><span class="pre">params[message]</span></code>
+because Elgg will automatically handle widget variables put in the array <code class="docutils literal"><span class="pre">params</span></code>.
+The actual php variable name will be <code class="docutils literal"><span class="pre">message</span></code>.
+If we wanted to use the field <code class="docutils literal"><span class="pre">greeting</span></code> instead of <code class="docutils literal"><span class="pre">message</span></code>
+we would pass the values <code class="docutils literal"><span class="pre">params[greeting]</span></code> and <code class="docutils literal"><span class="pre">$widget-&gt;greeting</span></code> respectively.</p>
+<p>The reason we set the &#8216;value&#8217; option of the array is so that the edit
+view remembers what the user typed in the previous time he changed the
+value of his message text.</p>
+<p>Now to display the user&#8217;s message we need to modify content.php to use this <em>message</em> variable.
+Edit content.php and change it to:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+$widget = $vars[&#39;entity&#39;];
+
+// Always use the corresponding output/* view for security!
+echo elgg_view(&#39;output/text&#39;, array(&#39;value&#39; =&gt; $widget-&gt;message));
+</pre></div>
+</div>
+<p>You should now be able to enter a message in the text box and see it appear in the widget.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../design/index.html" class="btn btn-neutral float-right" title="Design Docs">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="wysiwyg.html" class="btn btn-neutral" title="Integrating a Rich Text Editor"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

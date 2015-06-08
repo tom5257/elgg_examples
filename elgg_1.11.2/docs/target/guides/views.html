@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Views &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Page structure best practice" href="views/page-structure.html"/>
+        <link rel="prev" title="Themes" href="themes.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Views</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/views.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="views">
+<h1>Views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a></li>
+<li><a class="reference internal" href="#using-views" id="id2">Using views</a></li>
+<li><a class="reference internal" href="#views-as-templates" id="id3">Views as templates</a></li>
+<li><a class="reference internal" href="#viewtypes" id="id4">Viewtypes</a></li>
+<li><a class="reference internal" href="#altering-views-via-plugins" id="id5">Altering views via plugins</a></li>
+<li><a class="reference internal" href="#displaying-entities" id="id6">Displaying entities</a></li>
+<li><a class="reference internal" href="#full-and-partial-entity-views" id="id7">Full and partial entity views</a></li>
+<li><a class="reference internal" href="#listing-entities" id="id8">Listing entities</a></li>
+<li><a class="reference internal" href="#using-a-different-templating-system" id="id9">Using a different templating system</a></li>
+<li><a class="reference internal" href="#related" id="id10">Related</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Elgg follows a MVC pattern and Views are the V in MVC. Views are responsible for creating the output. Generally, this will be HTML sent to a web browser, but it could also be RSS, JSON or any number of other data formats.</p>
+<p>The Views system handles everything from the layout of pages and chunks of presentation output (like a footer or a toolbar) down to individual links and form inputs. It also allows for advanced features like automatic RSS generation, a swift-to-develop mobile interface, and the alternative interfaces suggested below.</p>
+</div>
+<div class="section" id="using-views">
+<h2><a class="toc-backref" href="#id2">Using views</a><a class="headerlink" href="#using-views" title="Permalink to this headline">¶</a></h2>
+<p>At their most basic level, the default views are just PHP files with snippets of html. For example:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+<p>Assuming this view is located at <code class="docutils literal"><span class="pre">/views/default/hello.php</span></code>, we could output it like so:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_view(&#39;hello&#39;);</span>
+</pre></div>
+</div>
+<p>For your convenience, Elgg comes with quite a lot of views by default. In order to keep things manageable, they are organized into subdirectories. Elgg handles this situation quite nicely. For example, our simple view might live in <code class="docutils literal"><span class="pre">/views/default/hello/world.php</span></code>, in which case it would be called like so:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_view(&#39;hello/world&#39;);</span>
+</pre></div>
+</div>
+<p>Well that&#8217;s easy enough to remember! The name of the view simply reflects the location of the view in the views directory.</p>
+</div>
+<div class="section" id="views-as-templates">
+<h2><a class="toc-backref" href="#id3">Views as templates</a><a class="headerlink" href="#views-as-templates" title="Permalink to this headline">¶</a></h2>
+<p>Views would be pretty useless if they could only contain static information. Fortunately, you can pass arbitrary data to a view via the <code class="docutils literal"><span class="pre">$vars</span></code> array. Our <code class="docutils literal"><span class="pre">hello/world</span></code> view might be modified to accept a variable like so:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;h1&gt;Hello, </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$vars</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">!&lt;/h1&gt;</span>
+</pre></div>
+</div>
+<p>In this case, we can pass an arbitrary name parameter to the view like so:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_view(&#39;hello/world&#39;, array(&#39;name&#39; =&gt; &#39;World&#39;));</span>
+</pre></div>
+</div>
+<p>which would produce the following output:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="viewtypes">
+<span id="guides-views-viewtypes"></span><h2><a class="toc-backref" href="#id4">Viewtypes</a><a class="headerlink" href="#viewtypes" title="Permalink to this headline">¶</a></h2>
+<p>You might be wondering, &#8220;what&#8217;s with the &#8216;default&#8217; in the directory structure? Why don&#8217;t we just put the <code class="docutils literal"><span class="pre">hello/world</span></code> view at <code class="docutils literal"><span class="pre">/views/hello/world.php</span></code>?&#8221;.</p>
+<p>Great question.</p>
+<p>This subdirectory (the one under <code class="docutils literal"><span class="pre">/views</span></code>) determines the <em>viewtype</em> of the views below it. It&#8217;s possible that you might want your Elgg site to have several sets of interface pages. For example:</p>
+<ul class="simple">
+<li>Standard HTML for desktop browsing (This is the default view)</li>
+<li>HTML optimized for Mobile devices (iPhone, Android, Blackberry, etc.)</li>
+<li>HTML optimized Tablet devices (iPad, etc.)</li>
+<li>RSS</li>
+<li>Atom</li>
+<li>JSON</li>
+<li>etc...</li>
+</ul>
+<p>In Elgg, one set of these interface pages is called a <em>viewtype</em>. You can force Elgg to use a particular viewtype to render the page simply by setting the <code class="docutils literal"><span class="pre">$view</span></code> input variable. For example, to get an RSS version of the home page, you would access <code class="docutils literal"><span class="pre">http://localhost/elgg/?view=rss</span></code>.</p>
+<p>You could also write a plugin to set this automatically using the <code class="docutils literal"><span class="pre">set_input()</span></code> function. For example, your plugin might detect that the page was accessed with an iPhone&#8217;s browser string, and set the viewtype to <em>handheld</em> by calling:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">set_input(&#39;view&#39;, &#39;handheld&#39;);</span>
+</pre></div>
+</div>
+<p>The plugin would presumably also supply a set of views optimized for handheld devices.</p>
+</div>
+<div class="section" id="altering-views-via-plugins">
+<span id="guides-views-altering-views-via-plugin"></span><h2><a class="toc-backref" href="#id5">Altering views via plugins</a><a class="headerlink" href="#altering-views-via-plugins" title="Permalink to this headline">¶</a></h2>
+<p>Without modifying Elgg&#8217;s core, Elgg provides several ways to customize almost all output:</p>
+<ul class="simple">
+<li>You can <a class="reference external" href="#overriding-views">override a view</a>, completely changing the file used to render it.</li>
+<li>You can <a class="reference external" href="#extending-views">extend a view</a> by prepending or appending the output of another view to it.</li>
+<li>You can <a class="reference external" href="#altering-view-input">alter a view&#8217;s inputs</a> by plugin hook.</li>
+<li>You can <a class="reference external" href="#altering-view-output">alter a view&#8217;s output</a> by plugin hook.</li>
+</ul>
+<div class="section" id="overriding-views">
+<h3>Overriding views<a class="headerlink" href="#overriding-views" title="Permalink to this headline">¶</a></h3>
+<p>Via plugin you can completely replace the rendering strategy of a view provided by Elgg or another plugin. Each plugin may have its own <code class="docutils literal"><span class="pre">/views</span></code> directory, and within it define its own view implementations.</p>
+<p>Views in plugin directories always override views in the core directory, however, when plugins override the views of other plugins, <a class="reference internal" href="../admin/plugins.html#admin-plugins-plugin-order"><span>later plugins take precedent</span></a>.</p>
+<p>For example, if we wanted to customize the <code class="docutils literal"><span class="pre">hello/world</span></code> view to use an <code class="docutils literal"><span class="pre">h2</span></code> instead of an <code class="docutils literal"><span class="pre">h1</span></code>, we could create a file at <code class="docutils literal"><span class="pre">/mod/example/views/default/hello/world.php</span></code> like this:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;h2&gt;Hello, </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$vars</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
+</pre></div>
+</div>
+<p>While it is <strong>not recommended</strong>, one <em>could</em> alternatively force the location of a view using the <code class="docutils literal"><span class="pre">set_view_location</span></code> function:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">set_view_location($view_name, $full_path_to_view_file);</span>
+</pre></div>
+</div>
+<p>Again, the best way to override views is to place them in the appropriate place in the views hierarchy.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When considering long-term maintenance, overriding views in the core and bundled plugins has a cost: Upgrades may bring changes in views, and if you have overridden them, you will not get those changes. You may instead want to <a class="reference internal" href="#guides-views-altering-view-input"><span>alter the input</span></a> or the <a class="reference internal" href="#guides-views-altering-view-output"><span>the output</span></a> of the view via plugin hooks.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Elgg caches view locations. This means that you should disable the system cache while working with views. When you install the changes to a production environment you mush flush the caches.</p>
+</div>
+</div>
+<div class="section" id="extending-views">
+<h3>Extending views<a class="headerlink" href="#extending-views" title="Permalink to this headline">¶</a></h3>
+<p>There may be other situations in which you don&#8217;t want to override the whole view, you just want to prepend or append some more content to it. In Elgg this is called <em>extending</em> a view.</p>
+<p>For example, instead of overriding the <code class="docutils literal"><span class="pre">hello/world</span></code> view, we could extend it like so:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">elgg_extend_view(&#39;hello/world&#39;, &#39;hello/greeting&#39;);</span>
+</pre></div>
+</div>
+<p>If the contents of <code class="docutils literal"><span class="pre">/views/default/hello/greeting.php</span></code> is:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">&lt;h2&gt;How are you today?&lt;/h2&gt;</span>
+</pre></div>
+</div>
+<p>Then every time we call <code class="docutils literal"><span class="pre">elgg_view('hello/world');</span></code>, we&#8217;ll get:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>How are you today?<span class="nt">&lt;/h2&gt;</span>
+</pre></div>
+</div>
+<p>You can prepend views by passing a value to the 3rd parameter that is less than 500:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// appends &#39;hello/greeting&#39; to every occurrence of &#39;hello/world&#39;</span>
+<span class="x">elgg_extend_view(&#39;hello/world&#39;, &#39;hello/greeting&#39;);</span>
+
+<span class="x">// prepends &#39;hello/greeting&#39; to every occurrence of &#39;hello/world&#39;</span>
+<span class="x">elgg_extend_view(&#39;hello/world&#39;, &#39;hello/greeting&#39;, 450);</span>
+</pre></div>
+</div>
+<p>Note that if you extend the core css view like this:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">elgg_extend_view(&#39;css&#39;, &#39;custom/css&#39;);</span>
+</pre></div>
+</div>
+<p>You <strong>must</strong> do so within code that is executed by engine/start.php (normally this would mean your plugin&#8217;s init code).  Because the core css view is loaded separately via a <code class="docutils literal"><span class="pre">&lt;link&gt;</span></code> tag, any extensions you add will not have the same context as the rest of your page.</p>
+</div>
+<div class="section" id="altering-view-input">
+<span id="guides-views-altering-view-input"></span><h3>Altering view input<a class="headerlink" href="#altering-view-input" title="Permalink to this headline">¶</a></h3>
+<p>It may be useful to alter a view&#8217;s <code class="docutils literal"><span class="pre">$vars</span></code> array before it&#8217;s rendered.</p>
+<p>Since 1.11, before each view rendering the <code class="docutils literal"><span class="pre">$vars</span></code> array is filtered by the <a class="reference internal" href="hooks-list.html#guides-hooks-list-views"><span>plugin hook</span></a> <code class="docutils literal"><span class="pre">[view_vars,</span> <span class="pre">view_name]</span></code>. Each registered handler function is passed these arguments:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$hook</span></code> - the string <code class="docutils literal"><span class="pre">&quot;view_vars&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">$type</span></code> - the view name being rendered (the first argument passed to <code class="docutils literal"><span class="pre">elgg_view()</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">$returnvalue</span></code> - the <code class="docutils literal"><span class="pre">$vars</span></code> array</li>
+<li><code class="docutils literal"><span class="pre">$params</span></code> - an array containing: the unaltered <code class="docutils literal"><span class="pre">$vars</span></code> under the key <code class="docutils literal"><span class="pre">vars</span></code>; <a class="reference internal" href="#guides-views-viewtypes"><span>viewtype</span></a> being rendered under the key <code class="docutils literal"><span class="pre">viewtype</span></code>; the view name under the key <code class="docutils literal"><span class="pre">view</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="altering-view-input-example">
+<h3>Altering view input example<a class="headerlink" href="#altering-view-input-example" title="Permalink to this headline">¶</a></h3>
+<p>Here we&#8217;ll alter the default pagination limit for the comments view:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// inside myplugin_init()</span>
+<span class="x">elgg_register_plugin_hook_handler(&#39;view_vars&#39;, &#39;page/elements/comments&#39;, &#39;myplugin_alter_comments_limit&#39;);</span>
+
+<span class="x">function myplugin_alter_comments_limit($hook, $type, $vars, $params) {</span>
+<span class="x">    // only 10 comments per page</span>
+<span class="x">    $vars[&#39;limit&#39;] = elgg_extract(&#39;limit&#39;, $vars, 10);</span>
+<span class="x">    return $vars;</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="altering-view-output">
+<span id="guides-views-altering-view-output"></span><h3>Altering view output<a class="headerlink" href="#altering-view-output" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes it is preferable to alter the output of a view instead of overriding it.</p>
+<p>The output of each view is run through the <a class="reference internal" href="hooks-list.html#guides-hooks-list-views"><span>plugin hook</span></a> <code class="docutils literal"><span class="pre">[view,</span> <span class="pre">view_name]</span></code> before being returned by <code class="docutils literal"><span class="pre">elgg_view()</span></code>. Each registered handler function is passed these arguments:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$hook</span></code> - the string <code class="docutils literal"><span class="pre">&quot;view&quot;</span></code></li>
+<li><code class="docutils literal"><span class="pre">$type</span></code> - the view name being rendered (the first argument passed to <code class="docutils literal"><span class="pre">elgg_view()</span></code>)</li>
+<li><code class="docutils literal"><span class="pre">$returnvalue</span></code> - the rendered output of the view (or the return value of the last handler)</li>
+<li><code class="docutils literal"><span class="pre">$params</span></code> - an array containing the key <code class="docutils literal"><span class="pre">viewtype</span></code> with value being the <a class="reference internal" href="#guides-views-viewtypes"><span>viewtype</span></a> being rendered</li>
+</ul>
+<p>To alter the view output, the handler just needs to alter <code class="docutils literal"><span class="pre">$returnvalue</span></code> and return a new string.</p>
+</div>
+<div class="section" id="altering-view-output-example">
+<h3>Altering view output example<a class="headerlink" href="#altering-view-output-example" title="Permalink to this headline">¶</a></h3>
+<p>Here we&#8217;ll eliminate breadcrumbs that don&#8217;t have at least one link.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// inside myplugin_init()</span>
+<span class="x">elgg_register_plugin_hook_handler(&#39;view&#39;, &#39;navigation/breadcrumbs&#39;, &#39;myplugin_alter_breadcrumb&#39;);</span>
+
+<span class="x">function myplugin_alter_breadcrumb($hook, $type, $returnvalue, $params) {</span>
+<span class="x">    // we only want to alter when viewtype is &quot;default&quot;</span>
+<span class="x">    if ($params[&#39;viewtype&#39;] !== &#39;default&#39;) {</span>
+<span class="x">        return $returnvalue;</span>
+<span class="x">    }</span>
+<span class="x">    // output nothing if the content doesn&#39;t have a single link</span>
+<span class="x">    if (false === strpos($returnvalue, &#39;&lt;a &#39;)) {</span>
+<span class="x">        return &#39;&#39;;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-entities">
+<h2><a class="toc-backref" href="#id6">Displaying entities</a><a class="headerlink" href="#displaying-entities" title="Permalink to this headline">¶</a></h2>
+<p>If you don&#8217;t know what an entity is, <a class="reference internal" href="../design/database.html"><em>check this page out first</em></a>.</p>
+<p>The following code will automatically display the entity in <code class="docutils literal"><span class="pre">$entity</span></code>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_view_entity($entity);</span>
+</pre></div>
+</div>
+<p>As you&#8217;ll know from the data model introduction, all entities have a <em>type</em> (object, site, user or group), and optionally a subtype (which could be anything - &#8216;blog&#8217;, &#8216;forumpost&#8217;, &#8216;banana&#8217;). <code class="docutils literal"><span class="pre">elgg_view_entity</span></code> will automatically look for a view called <code class="docutils literal"><span class="pre">type/subtype</span></code>; if there&#8217;s no subtype, it will look for <code class="docutils literal"><span class="pre">type/type</span></code>. Failing that, before it gives up completely it tries <code class="docutils literal"><span class="pre">type/default</span></code>. (RSS feeds in Elgg generally work by outputting the <code class="docutils literal"><span class="pre">object/default</span></code> view in the &#8216;rss&#8217; viewtype.)</p>
+<p>So for example, the view to display a blogpost might be <code class="docutils literal"><span class="pre">object/blog</span></code>. The view to display a user is <code class="docutils literal"><span class="pre">user/user</span></code>.</p>
+</div>
+<div class="section" id="full-and-partial-entity-views">
+<h2><a class="toc-backref" href="#id7">Full and partial entity views</a><a class="headerlink" href="#full-and-partial-entity-views" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">elgg_view_entity</span></code> actually has a number of parameters, although only the very first one is required. The first three are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">$entity</span></code> - The entity to display</li>
+<li><code class="docutils literal"><span class="pre">$viewtype</span></code> - The viewtype to display in (defaults to the one we&#8217;re currently in, but it can be forced - eg to display a snippet of RSS within an HTML page)</li>
+<li><code class="docutils literal"><span class="pre">$full_view</span></code> - Whether to display a <em>full</em> version of the entity. (Defaults to false.)</li>
+</ul>
+<p>This last parameter is passed to the view as <code class="docutils literal"><span class="pre">$vars['full_view']</span></code>. It&#8217;s up to you what you do with it; the usual behaviour is to only display comments and similar information if this is set to true.</p>
+</div>
+<div class="section" id="listing-entities">
+<span id="guides-views-listing-entities"></span><h2><a class="toc-backref" href="#id8">Listing entities</a><a class="headerlink" href="#listing-entities" title="Permalink to this headline">¶</a></h2>
+<p>This is then used in the provided listing functions. To automatically display a list of blog posts (<a class="reference internal" href="../tutorials/blog.html"><em>see the full tutorial</em></a>), you can call:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_list_entities(array(</span>
+<span class="x">    &#39;type&#39; =&gt; &#39;object&#39;,</span>
+<span class="x">    &#39;subtype&#39; =&gt; &#39;blog&#39;,</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<p>This function checks to see if there are any entities; if there are, it first displays the <code class="docutils literal"><span class="pre">navigation/pagination</span></code> view in order to display a way to move from page to page. It then repeatedly calls <code class="docutils literal"><span class="pre">elgg_view_entity</span></code> on each entity, before returning the result.</p>
+<p>Note that <code class="docutils literal"><span class="pre">elgg_list_entities</span></code> allows the URL to set its <code class="docutils literal"><span class="pre">limit</span></code> and <code class="docutils literal"><span class="pre">offset</span></code> options, so set those explicitly if you need particular values (e.g. if you&#8217;re not using it for pagination).</p>
+<p>Because it does this, Elgg knows that it can automatically supply an RSS feed - it extends the <code class="docutils literal"><span class="pre">metatags</span></code> view (which is called by the header) in order to provide RSS autodiscovery, which is why you can see the orange RSS icon on those pages.</p>
+<p>If your entity list will display the entity owners, you can improve performance a bit by preloading all owner entities:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_list_entities(array(</span>
+<span class="x">    &#39;type&#39; =&gt; &#39;object&#39;,</span>
+<span class="x">    &#39;subtype&#39; =&gt; &#39;blog&#39;,</span>
+
+<span class="x">    // enable owner preloading</span>
+<span class="x">    &#39;preload_owners&#39; =&gt; true,</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../design/database.html"><em>check this page out first</em></a>.</p>
+<p>Since 1.11, you can define an alternative view to render list items using <code class="docutils literal"><span class="pre">`'item_view'`</span></code> parameter.</p>
+<p>In some cases, default entity views may be unsuitable for your needs. Using <code class="docutils literal"><span class="pre">`item_view`</span></code> allows you to customize the look, while preserving pagination, list&#8217;s HTML markup etc.</p>
+<p>Consider these two examples:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_list_entities_from_relationship(array(</span>
+<span class="x">    &#39;type&#39; =&gt; &#39;group&#39;,</span>
+<span class="x">    &#39;relationship&#39; =&gt; &#39;member&#39;,</span>
+<span class="x">    &#39;relationship_guid&#39; =&gt; elgg_get_logged_in_user_guid(),</span>
+<span class="x">    &#39;inverse_relationship&#39; =&gt; false,</span>
+<span class="x">    &#39;full_view&#39; =&gt; false,</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">echo elgg_list_entities_from_relationship(array(</span>
+<span class="x">    &#39;type&#39; =&gt; &#39;group&#39;,</span>
+<span class="x">    &#39;relationship&#39; =&gt; &#39;invited&#39;,</span>
+<span class="x">    &#39;relationship_guid&#39; =&gt; (int) $user_guid,</span>
+<span class="x">    &#39;inverse_relationship&#39; =&gt; true,</span>
+<span class="x">    &#39;item_view&#39; =&gt; &#39;group/format/invitationrequest&#39;,</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<p>In the first example, we are displaying a list of groups a user is a member of using the default group view. In the second example, we want to display a list of groups the user was invited to. Since invitations are not entities, they do not have their own views and can not be listed using <code class="docutils literal"><span class="pre">elgg_list_*</span></code>. We are providing an alternative item view, that will use the group entity to display an invitation that contains a group name and buttons to access or reject the invitation.</p>
+</div>
+<div class="section" id="using-a-different-templating-system">
+<h2><a class="toc-backref" href="#id9">Using a different templating system</a><a class="headerlink" href="#using-a-different-templating-system" title="Permalink to this headline">¶</a></h2>
+<p>You can write your own templating system if you want to.</p>
+<p>Before going through the motions of drawing views, Elgg checks the <code class="docutils literal"><span class="pre">$CONFIG-&gt;template_handler</span></code> variable to see if it contains the name of a callable function. If it does, the function will be passed the view name and template vars, and the return value of this function will be returned instead of the standard output:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">return $template_handler($view, $vars);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="related">
+<h2><a class="toc-backref" href="#id10">Related</a><a class="headerlink" href="#related" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="views/page-structure.html">Page structure best practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views/simplecache.html">Simplecache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views/foot-vs-footer.html">Page/elements/foot vs footer</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="views/page-structure.html" class="btn btn-neutral float-right" title="Page structure best practice">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="themes.html" class="btn btn-neutral" title="Themes"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

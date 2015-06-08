@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Themes &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Views" href="views.html"/>
+        <link rel="prev" title="Routing" href="routing.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Themes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/themes.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="themes">
+<h1>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h1>
+<p>Customize the look and feel of Elgg.</p>
+<p>A theme is a type of <a class="reference internal" href="../admin/plugins.html"><em>plugin</em></a> that overrides display aspects of Elgg.</p>
+<dl class="docutils">
+<dt>This guide assumes you are familiar with:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../admin/plugins.html"><em>Plugins</em></a></li>
+<li><a class="reference internal" href="views.html"><em>Views</em></a></li>
+</ul>
+</dd>
+</dl>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#create-your-plugin" id="id1">Create your plugin</a></li>
+<li><a class="reference internal" href="#customize-the-css" id="id2">Customize the CSS</a><ul>
+<li><a class="reference internal" href="#view-extension" id="id3">View extension</a></li>
+<li><a class="reference internal" href="#view-overloading" id="id4">View overloading</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tools" id="id5">Tools</a></li>
+<li><a class="reference internal" href="#customizing-the-front-page" id="id6">Customizing the front page</a></li>
+</ul>
+</div>
+<div class="section" id="create-your-plugin">
+<h2><a class="toc-backref" href="#id1">Create your plugin</a><a class="headerlink" href="#create-your-plugin" title="Permalink to this headline">¶</a></h2>
+<p>Create your plugin as described in the <a class="reference internal" href="index.html"><em>developer guide</em></a>.</p>
+<ul class="simple">
+<li>Create a new directory under mod/</li>
+<li>Create a new start.php</li>
+<li>Create a manifest.xml file describing your theme.</li>
+</ul>
+</div>
+<div class="section" id="customize-the-css">
+<h2><a class="toc-backref" href="#id2">Customize the CSS</a><a class="headerlink" href="#customize-the-css" title="Permalink to this headline">¶</a></h2>
+<p>As of Elgg 1.8, the css is split into several files based on what
+aspects of the site you&#8217;re theming. This allows you to tackle them one
+at a time, giving you a chance to make real progress without getting
+overwhelmed.</p>
+<p>Here is a list of the existing CSS views:</p>
+<blockquote>
+<div><ul class="simple">
+<li>css/elements/buttons: Provides a way to style all the different kinds of buttons your site will use. There are 5 kinds of buttons that plugins will expect to be available: action, cancel, delete, submit, and special.</li>
+<li>css/elements/chrome: This file has some miscellaneous look-and-feel classes.</li>
+<li>css/elements/components: This file contains many “css objects” that are used all over the site: media block, list, gallery, table, owner block, system messages, river, tags, photo, and comments.</li>
+<li>css/elements/forms: This file determines what your forms and input elements will look like.</li>
+<li>css/elements/icons: Contains styles for the sprite icons and avatars used on your site.</li>
+<li>css/elements/layout: Determines what your page layout will look like: sidebars, page wrapper, main body, header, footer, etc.</li>
+<li>css/elements/modules: Lots of content in Elgg is displayed in boxes with a title and a content body. We called these modules. There are a few kinds: info, aside, featured, dropdown, popup, widget. Widget styles are included in this file too, since they are a subset of modules.</li>
+<li>css/elements/navigation: This file determines what all your menus will look like.</li>
+<li>css/elements/typography: This file determines what the content and headings of your site will look like.</li>
+<li>css/rtl: Custom rules for users viewing your site in a right-to-left language.</li>
+<li>css/admin: A completely separate theme for the admin area (usually not overridden).</li>
+<li>css/elgg: Compiles all the core css/elements/* files into one file (DO NOT OVERRIDE).</li>
+<li>css/elements/core: Contains base styles for the more complicated “css objects”. If you find yourself wanting to override this, you probably need to report a bug to Elgg core instead (DO NOT OVERRIDE).</li>
+<li>css/elements/reset: Contains a reset stylesheet that forces elements to have the same default</li>
+</ul>
+</div></blockquote>
+<div class="section" id="view-extension">
+<h3><a class="toc-backref" href="#id3">View extension</a><a class="headerlink" href="#view-extension" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways you can modify views:</p>
+<p>The first way is to add extra stuff to an existing view via the extend
+view function from within your start.php’s initialization function.</p>
+<p>For example, the following start.php will add mytheme/css to Elgg&#8217;s core
+css file:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+    function mytheme_init() {
+        elgg_extend_view(&#39;css/elgg&#39;, &#39;mytheme/css&#39;);
+    }
+
+    elgg_register_event_handler(&#39;init&#39;, &#39;system&#39;, &#39;mytheme_init&#39;);
+?&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="view-overloading">
+<h3><a class="toc-backref" href="#id4">View overloading</a><a class="headerlink" href="#view-overloading" title="Permalink to this headline">¶</a></h3>
+<p>Plugins can have a view hierarchy, any file that exists here will
+replace any files in the existing core view hierarchy... so for example,
+if my plugin has a file:</p>
+<p><code class="docutils literal"><span class="pre">/mod/myplugin/views/default/css/elements/typography.php</span></code></p>
+<p>it will replace:</p>
+<p><code class="docutils literal"><span class="pre">/views/default/css/elements/typography.php</span></code></p>
+<p>But only when the plugin is active.</p>
+<p>This gives you total control over the way Elgg looks and behaves. It
+gives you the option to either slightly modify or totally replace
+existing views.</p>
+</div>
+</div>
+<div class="section" id="tools">
+<h2><a class="toc-backref" href="#id5">Tools</a><a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>Starting in Elgg 1.8, we&#8217;ve provided you with some development tools to help you
+with theming: Turn on the “Developers” plugin and go to the “Theme
+Preview” page to start tracking your theme&#8217;s progress.</p>
+</div>
+<div class="section" id="customizing-the-front-page">
+<h2><a class="toc-backref" href="#id6">Customizing the front page</a><a class="headerlink" href="#customizing-the-front-page" title="Permalink to this headline">¶</a></h2>
+<p>The main Elgg index page runs a plugin hook called &#8216;index,system&#8217;. If this
+returns true, it assumes that another front page has been drawn and
+doesn&#8217;t display the default page.</p>
+<p>Therefore, you can override it by registering a function to the
+&#8216;index,system&#8217; plugin hook and then returning true from that function.</p>
+<p>Here&#8217;s a quick overview:</p>
+<ul class="simple">
+<li>Create your new plugin</li>
+<li>In the start.php you will need something like the following:</li>
+</ul>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+
+function pluginname_init() {
+    // Replace the default index page
+    elgg_register_plugin_hook_handler(&#39;index&#39;, &#39;system&#39;, &#39;new_index&#39;);
+}
+
+function new_index() {
+    if (!include_once(dirname(dirname(__FILE__)) . &quot;/pluginname/pages/index.php&quot;))
+        return false;
+
+    return true;
+}
+
+// register for the init, system event when our plugin start.php is loaded
+elgg_register_event_handler(&#39;init&#39;, &#39;system&#39;, &#39;pluginname_init&#39;);
+?&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li>Then, create an index page (/pluginname/pages/index.php) and use that
+to put the content you would like on the front page of your Elgg
+site.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="views.html" class="btn btn-neutral float-right" title="Views">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="routing.html" class="btn btn-neutral" title="Routing"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Upgrading Plugins &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="List of events in core" href="events-list.html"/>
+        <link rel="prev" title="HMAC Authentication" href="web-services/hmac.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Upgrading Plugins</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/upgrading.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="upgrading-plugins">
+<h1>Upgrading Plugins<a class="headerlink" href="#upgrading-plugins" title="Permalink to this headline">¶</a></h1>
+<p>Prepare your plugin for the next version of Elgg.</p>
+<p>See the administator guides for <a class="reference internal" href="../admin/upgrading.html"><em>how to upgrade a live site</em></a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#from-1-10-to-1-11" id="id1">From 1.10 to 1.11</a><ul>
+<li><a class="reference internal" href="#comment-highlighting" id="id2">Comment highlighting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#from-1-9-to-1-10" id="id3">From 1.9 to 1.10</a><ul>
+<li><a class="reference internal" href="#file-uploads" id="id4">File uploads</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#from-1-8-to-1-9" id="id5">From 1.8 to 1.9</a><ul>
+<li><a class="reference internal" href="#the-manifest-file" id="id6">The manifest file</a></li>
+<li><a class="reference internal" href="#config-and-vars-config" id="id7">$CONFIG and $vars[&#8216;config&#8217;]</a></li>
+<li><a class="reference internal" href="#language-files" id="id8">Language files</a></li>
+<li><a class="reference internal" href="#notifications" id="id9">Notifications</a></li>
+<li><a class="reference internal" href="#adding-items-to-the-activity-listing" id="id10">Adding items to the Activity listing</a></li>
+<li><a class="reference internal" href="#entity-url-handlers" id="id11">Entity URL handlers</a></li>
+<li><a class="reference internal" href="#web-services" id="id12">Web services</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#from-1-7-to-1-8" id="id13">From 1.7 to 1.8</a><ul>
+<li><a class="reference internal" href="#updating-core" id="id14">Updating core</a></li>
+<li><a class="reference internal" href="#updating-plugins" id="id15">Updating plugins</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="from-1-10-to-1-11">
+<h2><a class="toc-backref" href="#id1">From 1.10 to 1.11</a><a class="headerlink" href="#from-1-10-to-1-11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comment-highlighting">
+<h3><a class="toc-backref" href="#id2">Comment highlighting</a><a class="headerlink" href="#comment-highlighting" title="Permalink to this headline">¶</a></h3>
+<p>If your theme is using the file <code class="docutils literal"><span class="pre">views/default/css/elements/components.php</span></code>, you must add the following style definitions in it to enable highlighting for comments and discussion replies:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>.elgg-comments .elgg-state-highlight {
+        -webkit-animation: comment-highlight 5s;
+        animation: comment-highlight 5s;
+}
+@-webkit-keyframes comment-highlight {
+        from {background: #dff2ff;}
+        to {background: white;}
+}
+@keyframes comment-highlight {
+        from {background: #dff2ff;}
+        to {background: white;}
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="from-1-9-to-1-10">
+<h2><a class="toc-backref" href="#id3">From 1.9 to 1.10</a><a class="headerlink" href="#from-1-9-to-1-10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file-uploads">
+<h3><a class="toc-backref" href="#id4">File uploads</a><a class="headerlink" href="#file-uploads" title="Permalink to this headline">¶</a></h3>
+<p>If your plugin is using a snippet copied from the <code class="docutils literal"><span class="pre">file/upload</span></code> action to fix detected mime types for Microsoft zipped formats, it can now be safely removed.</p>
+<p>If your upload action performs other manipulations on detected mime and simple types, it is recommended to make use of available plugin hooks:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">'mime_type','file'</span></code> for filtering detected mime types</li>
+<li><code class="docutils literal"><span class="pre">'simple_type','file'</span></code> for filtering parsed simple types</li>
+</ul>
+</div>
+</div>
+<div class="section" id="from-1-8-to-1-9">
+<h2><a class="toc-backref" href="#id5">From 1.8 to 1.9</a><a class="headerlink" href="#from-1-8-to-1-9" title="Permalink to this headline">¶</a></h2>
+<p>In the examples we are upgrading an imaginary &#8220;Photos&#8221; plugin.</p>
+<p>Only the key changes are included. For example some of the deprecated functions are not mentioned here separately.</p>
+<p>Each section will include information whether the change is backwards compatible with Elgg 1.8.</p>
+<div class="section" id="the-manifest-file">
+<h3><a class="toc-backref" href="#id6">The manifest file</a><a class="headerlink" href="#the-manifest-file" title="Permalink to this headline">¶</a></h3>
+<p>No changes are needed if your plugin is compatible with 1.8.</p>
+<p>It&#8217;s however recommended to add the <code class="docutils literal"><span class="pre">&lt;id&gt;</span></code> tag. It&#8217;s value should be the name of the directory where the plugin is located inside the <code class="docutils literal"><span class="pre">mod/</span></code> directory.</p>
+<p>If you make changes that break BC, you must update the plugin version and the required Elgg release.</p>
+<p>Example of (shortened) old version:</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;plugin_manifest xmlns=&quot;http://www.elgg.org/plugin_manifest/1.8&quot;&gt;
+    &lt;name&gt;Photos&lt;/name&gt;
+    &lt;author&gt;John Doe&lt;/author&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;description&gt;Adds possibility to upload photos and arrange them into albums.&lt;/description&gt;
+    &lt;requires&gt;
+        &lt;type&gt;elgg_release&lt;/type&gt;
+        &lt;version&gt;1.8&lt;/version&gt;
+    &lt;/requires&gt;
+&lt;/plugin_manifest&gt;
+</pre></div>
+</div>
+<p>Example of (shortened) new version:</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;plugin_manifest xmlns=&quot;http://www.elgg.org/plugin_manifest/1.8&quot;&gt;
+    &lt;name&gt;Photos&lt;/name&gt;
+    &lt;id&gt;photos&lt;/id&gt;
+    &lt;author&gt;John Doe&lt;/author&gt;
+    &lt;version&gt;2.0&lt;/version&gt;
+    &lt;description&gt;Adds possibility to upload photos and arrange them into albums.&lt;/description&gt;
+    &lt;requires&gt;
+        &lt;type&gt;elgg_release&lt;/type&gt;
+        &lt;version&gt;1.9&lt;/version&gt;
+    &lt;/requires&gt;
+&lt;/plugin_manifest&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="config-and-vars-config">
+<h3><a class="toc-backref" href="#id7">$CONFIG and $vars[&#8216;config&#8217;]</a><a class="headerlink" href="#config-and-vars-config" title="Permalink to this headline">¶</a></h3>
+<p>Both the global <code class="docutils literal"><span class="pre">$CONFIG</span></code> variable and the <code class="docutils literal"><span class="pre">$vars['config']</span></code> parameter have been deprecated. They should be replaced with the <code class="docutils literal"><span class="pre">elgg_get_config()</span></code> function.</p>
+<p>Example of old code:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Using the global $CONFIG variable:
+global $CONFIG;
+$plugins_path = $CONFIG-&gt;plugins_path
+
+// Using the $vars view parameter:
+$plugins_path = $vars[&#39;plugins_path&#39;];
+</pre></div>
+</div>
+<p>Example of new code:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$plugins_path = elgg_get_config(&#39;plugins_path&#39;);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Compatible with 1.8</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See how the community_plugins plugin was updated: <a class="reference external" href="https://github.com/Elgg/community_plugins/commit/f233999bbd1478a200ee783679c2e2897c9a0483">https://github.com/Elgg/community_plugins/commit/f233999bbd1478a200ee783679c2e2897c9a0483</a></p>
+</div>
+</div>
+<div class="section" id="language-files">
+<h3><a class="toc-backref" href="#id8">Language files</a><a class="headerlink" href="#language-files" title="Permalink to this headline">¶</a></h3>
+<p>In Elgg 1.8 the language files needed to use the <code class="docutils literal"><span class="pre">add_translation()</span></code> function. In 1.9 it is enough to just return the array that was
+previously passed to the function as a parameter. Elgg core will use the file name (e.g. en.php) to tell which language the file contains.</p>
+<p>Example of the old way in <code class="docutils literal"><span class="pre">languages/en.php</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$english = array(
+    &#39;photos:all&#39; =&gt; &#39;All photos&#39;,
+);
+add_translation(&#39;en&#39;, $english);
+</pre></div>
+</div>
+<p>Example of new way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>return array(
+    &#39;photos:all&#39; =&gt; &#39;All photos&#39;,
+);
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Not compatible with 1.8</p>
+</div>
+</div>
+<div class="section" id="notifications">
+<h3><a class="toc-backref" href="#id9">Notifications</a><a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h3>
+<p>One of the biggest changes in Elgg 1.9 is the notifications system. The new system allows more flexible and scalable way of sending notifications.</p>
+<p>Example of the old way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function photos_init() {
+    // Tell core that we want to send notifications about new photos
+    register_notification_object(&#39;object&#39;, &#39;photo&#39;, elgg_echo(&#39;photo:new&#39;));
+
+    // Register a handler that creates the notification message
+    elgg_register_plugin_hook_handler(&#39;notify:entity:message&#39;, &#39;object&#39;, &#39;photos_notify_message&#39;);
+}
+
+/**
+ * Set the notification message body
+ *
+ * @param string $hook    Hook name
+ * @param string $type    Hook type
+ * @param string $message The current message body
+ * @param array  $params  Parameters about the photo
+ * @return string
+ */
+function photos_notify_message($hook, $type, $message, $params) {
+    $entity = $params[&#39;entity&#39;];
+    $to_entity = $params[&#39;to_entity&#39;];
+    $method = $params[&#39;method&#39;];
+    if (elgg_instanceof($entity, &#39;object&#39;, &#39;photo&#39;)) {
+        $descr = $entity-&gt;excerpt;
+        $title = $entity-&gt;title;
+        $owner = $entity-&gt;getOwnerEntity();
+        return elgg_echo(&#39;photos:notification&#39;, array(
+            $owner-&gt;name,
+            $title,
+            $descr,
+            $entity-&gt;getURL()
+        ));
+    }
+    return null;
+}
+</pre></div>
+</div>
+<p>Example of the new way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function photos_init() {
+    elgg_register_notification_event(&#39;object&#39;, &#39;photo&#39;, array(&#39;create&#39;));
+    elgg_register_plugin_hook_handler(&#39;prepare&#39;, &#39;notification:publish:object:photo&#39;, &#39;photos_prepare_notification&#39;);
+}
+
+/**
+ * Prepare a notification message about a new photo
+ *
+ * @param string                          $hook         Hook name
+ * @param string                          $type         Hook type
+ * @param Elgg_Notifications_Notification $notification The notification to prepare
+ * @param array                           $params       Hook parameters
+ * @return Elgg_Notifications_Notification
+ */
+function photos_prepare_notification($hook, $type, $notification, $params) {
+    $entity = $params[&#39;event&#39;]-&gt;getObject();
+    $owner = $params[&#39;event&#39;]-&gt;getActor();
+    $recipient = $params[&#39;recipient&#39;];
+    $language = $params[&#39;language&#39;];
+    $method = $params[&#39;method&#39;];
+
+    // Title for the notification
+    $notification-&gt;subject = elgg_echo(&#39;photos:notify:subject&#39;, array($entity-&gt;title), $language);
+
+    // Message body for the notification
+    $notification-&gt;body = elgg_echo(&#39;photos:notify:body&#39;, array(
+        $owner-&gt;name,
+        $entity-&gt;title,
+        $entity-&gt;getExcerpt(),
+        $entity-&gt;getURL()
+    ), $language);
+
+    // The summary text is used e.g. by the site_notifications plugin
+    $notification-&gt;summary = elgg_echo(&#39;photos:notify:summary&#39;, array($entity-&gt;title), $language);
+
+    return $notification;
+}
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Not compatible with 1.8</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See how the community_plugins plugin was updated to use the new system: <a class="reference external" href="https://github.com/Elgg/community_plugins/commit/bfa356cfe8fb99ebbca4109a1b8a1383b70ff123">https://github.com/Elgg/community_plugins/commit/bfa356cfe8fb99ebbca4109a1b8a1383b70ff123</a></p>
+</div>
+<p>Notifications can also be sent with the <code class="docutils literal"><span class="pre">notify_user()</span></code> function.</p>
+<p>It has however been updated to support three new optional parameters passed inside an array as the fifth parameter.</p>
+<p>The parameters give notification plugins more control over the notifications, so they should be included whenever possible. For example the bundled site_notifications plugin won&#8217;t work properly if the parameters are missing.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><strong>object</strong> The object that we are notifying about (e.g. ElggEntity or ElggAnnotation). This is needed so that notification plugins can provide a link to the object.</li>
+<li><strong>action</strong> String that describes the action that triggered the notification (e.g. &#8220;create&#8221;, &#8220;update&#8221;, etc).</li>
+<li><strong>summary</strong> String that contains a summary of the notification. (It should be more informative than the notification subject but less informative than the notification body.)</li>
+</ul>
+<p>Example of the old way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Notify $owner that $user has added a $rating to an $entity created by him
+
+$subject = elgg_echo(&#39;rating:notify:subject&#39;);
+$body = elgg_echo(&#39;rating:notify:body&#39;, array(
+        $owner-&gt;name,
+        $user-&gt;name,
+        $entity-&gt;title,
+        $entity-&gt;getURL(),
+));
+
+notify_user($owner-&gt;guid,
+                        $user-&gt;guid,
+                        $subject,
+                        $body
+                );
+</pre></div>
+</div>
+<p>Example of the new way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Notify $owner that $user has added a $rating to an $entity created by him
+
+$subject = elgg_echo(&#39;rating:notify:subject&#39;);
+$summary = elgg_echo(&#39;rating:notify:summary&#39;, array($entity-&gt;title));
+$body = elgg_echo(&#39;rating:notify:body&#39;, array(
+        $owner-&gt;name,
+        $user-&gt;name,
+        $entity-&gt;title,
+        $entity-&gt;getURL(),
+));
+
+$params = array(
+        &#39;object&#39; =&gt; $rating,
+        &#39;action&#39; =&gt; &#39;create&#39;,
+        &#39;summary&#39; =&gt; $summary,
+);
+
+notify_user($owner-&gt;guid,
+                        $user-&gt;guid,
+                        $subject,
+                        $body,
+                        $params
+                );
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Compatible with 1.8</p>
+</div>
+</div>
+<div class="section" id="adding-items-to-the-activity-listing">
+<h3><a class="toc-backref" href="#id10">Adding items to the Activity listing</a><a class="headerlink" href="#adding-items-to-the-activity-listing" title="Permalink to this headline">¶</a></h3>
+<div class="code php highlight-python"><div class="highlight"><pre>add_to_river(&#39;river/object/photo/create&#39;, &#39;create&#39;, $user_guid, $photo_guid);
+</pre></div>
+</div>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_create_river_item(array(
+    &#39;view&#39; =&gt; &#39;river/object/photo/create&#39;,
+    &#39;action_type&#39; =&gt; &#39;create&#39;,
+    &#39;subject_guid&#39; =&gt; $user_guid,
+    &#39;object_guid&#39; =&gt; $photo_guid,
+));
+</pre></div>
+</div>
+<p>You can also add the optional <code class="docutils literal"><span class="pre">target_guid</span></code> parameter which tells the target of the create action.</p>
+<p>If the photo would had been added for example into a photo album, we could add it by passing in also:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&#39;target_guid&#39; =&gt; $album_guid,
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Not compatible with 1.8</p>
+</div>
+</div>
+<div class="section" id="entity-url-handlers">
+<h3><a class="toc-backref" href="#id11">Entity URL handlers</a><a class="headerlink" href="#entity-url-handlers" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">elgg_register_entity_url_handler()</span></code> function has been deprecated. In 1.9 you should use the <code class="docutils literal"><span class="pre">'entity:url',</span> <span class="pre">'object'</span></code> plugin hook instead.</p>
+<p>Example of the old way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>/**
+ * Initialize the photo plugin
+ */
+my_plugin_init() {
+    elgg_register_entity_url_handler(&#39;object&#39;, &#39;photo&#39;, &#39;photo_url_handler&#39;);
+}
+
+/**
+ * Returns the URL from a photo entity
+ *
+ * @param ElggEntity $entity
+ * @return string
+ */
+function photo_url_handler($entity) {
+    return &quot;photo/view/{$entity-&gt;guid}&quot;;
+}
+</pre></div>
+</div>
+<p>Example of the new way:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>/**
+ * Initialize the photo plugin
+ */
+my_plugin_init() {
+    elgg_register_plugin_hook_handler(&#39;entity:url&#39;, &#39;object&#39;, &#39;photo_url_handler&#39;);
+}
+
+/**
+ * Returns the URL from a photo entity
+ *
+ * @param string $hook   &#39;entity:url&#39;
+ * @param string $type   &#39;object&#39;
+ * @param string $url    The current URL
+ * @param array  $params Hook parameters
+ * @return string
+ */
+function photo_url_handler($hook, $type, $url, $params) {
+    $entity = $params[&#39;entity&#39;];
+
+    // Check that the entity is a photo object
+    if ($entity-&gt;getSubtype() !== &#39;photo&#39;) {
+        // This is not a photo object, so there&#39;s no need to go further
+        return;
+    }
+
+    return &quot;photo/view/{$entity-&gt;guid}&quot;;
+}
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Not compatible with 1.8</p>
+</div>
+</div>
+<div class="section" id="web-services">
+<h3><a class="toc-backref" href="#id12">Web services</a><a class="headerlink" href="#web-services" title="Permalink to this headline">¶</a></h3>
+<p>In Elgg 1.8 the web services API was included in core and methods were exposed
+using <code class="docutils literal"><span class="pre">expose_function()</span></code>. To enable the same functionality for Elgg 1.9,
+enable the &#8220;Web services 1.9&#8221; plugin and replace all calls to
+<code class="docutils literal"><span class="pre">expose_function()</span></code> with  <code class="docutils literal"><span class="pre">elgg_ws_expose_function()</span></code>.</p>
+</div>
+</div>
+<div class="section" id="from-1-7-to-1-8">
+<h2><a class="toc-backref" href="#id13">From 1.7 to 1.8</a><a class="headerlink" href="#from-1-7-to-1-8" title="Permalink to this headline">¶</a></h2>
+<p>Elgg 1.8 is the biggest leap forward in the development of Elgg since version 1.0.
+As such, there is more work to update core and plugins than with previous upgrades.
+There were a small number of API changes and following our standard practice,
+the methods we deprecated have been updated to work with the new API.
+The biggest changes are in the standardization of plugins and in the views system.</p>
+<div class="section" id="updating-core">
+<h3><a class="toc-backref" href="#id14">Updating core</a><a class="headerlink" href="#updating-core" title="Permalink to this headline">¶</a></h3>
+<p>Delete the following core directories (same level as _graphics and engine):</p>
+<ul class="simple">
+<li>_css</li>
+<li>account</li>
+<li>admin</li>
+<li>dashboard</li>
+<li>entities</li>
+<li>friends</li>
+<li>search</li>
+<li>settings</li>
+<li>simplecache</li>
+<li>views</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you do not delete these directories before an upgrade, you will have problems!</p>
+</div>
+</div>
+<div class="section" id="updating-plugins">
+<h3><a class="toc-backref" href="#id15">Updating plugins</a><a class="headerlink" href="#updating-plugins" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="use-standardized-routing-with-page-handlers">
+<h4>Use standardized routing with page handlers<a class="headerlink" href="#use-standardized-routing-with-page-handlers" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>All: /page_handler/all</li>
+<li>User’s content: /page_handler/owner/:username</li>
+<li>User’s friends&#8217; content: /page_handler/friends/:username</li>
+<li>Single entity: /page_handler/view/:guid/:title</li>
+<li>Added: /page_handler/add/:container_guid</li>
+<li>Editing: /page_handler/edit/:guid</li>
+<li>Group list: /page_handler/group/:guid/all</li>
+</ul>
+</div>
+<div class="section" id="include-page-handler-scripts-from-the-page-handler">
+<h4>Include page handler scripts from the page handler<a class="headerlink" href="#include-page-handler-scripts-from-the-page-handler" title="Permalink to this headline">¶</a></h4>
+<p>Almost every page handler should have a page handler script.
+(Example: <code class="docutils literal"><span class="pre">bookmarks/all</span> <span class="pre">=&gt;</span> <span class="pre">mod/bookmarks/pages/bookmarks/all.php</span></code>)</p>
+<ul class="simple">
+<li>Call <code class="docutils literal"><span class="pre">set_input()</span></code> for entity guids in the page handler and use <code class="docutils literal"><span class="pre">get_input()</span></code> in the page handler scripts.</li>
+<li>Call <code class="docutils literal"><span class="pre">gatekeeper()</span></code> and <code class="docutils literal"><span class="pre">admin_gatekeeper()</span></code> in the page handler function if required.</li>
+<li>The group URL should use the <code class="docutils literal"><span class="pre">pages/:handler/owner.php</span></code> script.</li>
+<li>Page handlers should not contain HTML.</li>
+<li>Update the URLs throughout the plugin. (Don&#8217;t forget to remove <code class="docutils literal"><span class="pre">/pg/</span></code>!)</li>
+</ul>
+</div>
+<div class="section" id="use-standardized-page-handlers-and-scripts">
+<h4>Use standardized page handlers and scripts<a class="headerlink" href="#use-standardized-page-handlers-and-scripts" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Store page handler scripts in <code class="docutils literal"><span class="pre">mod/:plugin/pages/:page_handler/:page_name.php</span></code></p>
+</li>
+<li><p class="first">Use the content page layout in page handler scripts:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$content = elgg_view_layout(&#39;content&#39;, $options);
+</pre></div>
+</div>
+</li>
+<li><p class="first">Page handler scripts should not contain HTML.</p>
+</li>
+<li><p class="first">Call <code class="docutils literal"><span class="pre">elgg_push_breadcrumb()</span></code> in the page handler scripts.</p>
+</li>
+<li><p class="first">No need to set page owner if the URLs are in the standardized format.</p>
+</li>
+<li><p class="first">For group content, check the container_guid by using elgg_get_page_owner_entity().</p>
+</li>
+</ul>
+</div>
+<div class="section" id="the-object-subtype-view">
+<h4>The <code class="docutils literal"><span class="pre">object/:subtype</span></code> view<a class="headerlink" href="#the-object-subtype-view" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Make sure there are views for <code class="docutils literal"><span class="pre">$vars['full_view']</span> <span class="pre">==</span> <span class="pre">true</span></code> and <code class="docutils literal"><span class="pre">$vars['full_view']</span> <span class="pre">==</span> <span class="pre">false</span></code>. <code class="docutils literal"><span class="pre">$vars['full_view']</span></code> replaced <code class="docutils literal"><span class="pre">$vars['full]</span></code>.</li>
+<li>Check for the object in <code class="docutils literal"><span class="pre">$vars['entity']</span></code>. Use <code class="docutils literal"><span class="pre">elgg_instance_of()</span></code> to make sure it&#8217;s the type of entity you want.</li>
+<li>Return <code class="docutils literal"><span class="pre">true</span></code> to short circuit the view if the entity is missing or wrong.</li>
+<li>Use <code class="docutils literal"><span class="pre">elgg_view(‘object/elements/summary’,</span> <span class="pre">array(‘entity’</span> <span class="pre">=&gt;</span> <span class="pre">$entity));</span></code> and <code class="docutils literal"><span class="pre">elgg_view_menu(‘entity’,</span> <span class="pre">array(‘entity’</span> <span class="pre">=&gt;</span> <span class="pre">$entity));</span></code> to help format. You should use very little markup in these views.</li>
+</ul>
+</div>
+<div class="section" id="update-action-structure">
+<h4>Update action structure<a class="headerlink" href="#update-action-structure" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Namespace action files and action names (example: <code class="docutils literal"><span class="pre">mod/blog/actions/blog/save.php</span></code> =&gt; <code class="docutils literal"><span class="pre">action/blog/save</span></code>)</li>
+<li>Use the following action URLs:<ul>
+<li>Add: <code class="docutils literal"><span class="pre">action/:plugin/save</span></code></li>
+<li>Edit: <code class="docutils literal"><span class="pre">action/:plugin/save</span></code></li>
+<li>Delete: <code class="docutils literal"><span class="pre">action/:plugin/delete</span></code></li>
+</ul>
+</li>
+<li>Make the delete action accept <code class="docutils literal"><span class="pre">action/:handler/delete?guid=:guid</span></code> so the metadata entity menu has the correct URL by default.</li>
+</ul>
+</div>
+<div class="section" id="update-deprecated-functions">
+<h4>Update deprecated functions<a class="headerlink" href="#update-deprecated-functions" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Functions deprecated in 1.7 will produce visible errors in 1.8.<ul>
+<li>See <code class="docutils literal"><span class="pre">/engine/lib/deprecated-1.7.php</span></code> for the full list.</li>
+</ul>
+</li>
+<li>You can also update functions deprecated in 1.8.<ul>
+<li>Many registration functions simply added an <code class="docutils literal"><span class="pre">elgg_</span></code> prefix for consistency, and should be easy to update.</li>
+<li>See <code class="docutils literal"><span class="pre">/engine/lib/deprecated-1.8.php</span></code> for the full list.</li>
+<li>You can set the debug level to “warning” to get visual reminders of deprecated functions.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="update-the-widget-views">
+<h4>Update the widget views<a class="headerlink" href="#update-the-widget-views" title="Permalink to this headline">¶</a></h4>
+<p>See the blog or file widgets for examples.</p>
+</div>
+<div class="section" id="update-the-group-profile-module">
+<h4>Update the group profile module<a class="headerlink" href="#update-the-group-profile-module" title="Permalink to this headline">¶</a></h4>
+<p>Use the blog or file plugins for examples. This will help with making your plugin themeable by the new CSS framework.</p>
+</div>
+<div class="section" id="update-forms">
+<h4>Update forms<a class="headerlink" href="#update-forms" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Move form bodies to the <code class="docutils literal"><span class="pre">forms/:action</span></code> view to use Evan&#8217;s new <code class="docutils literal"><span class="pre">elgg_view_form</span></code>.</li>
+<li>Use input views in form bodies rather than html. This helps with theming and future-proofing.</li>
+<li>Add a function that prepares the form (see <code class="docutils literal"><span class="pre">mod/file/lib/file.php</span></code> for an example)</li>
+<li>Make your forms sticky (see the file plugin&#8217;s upload action and form prepare function).</li>
+</ul>
+<p>The forms API is discussed in more detail in <a class="reference internal" href="actions.html"><em>Forms + Actions</em></a>.</p>
+</div>
+<div class="section" id="clean-up-css-html">
+<h4>Clean up CSS/HTML<a class="headerlink" href="#clean-up-css-html" title="Permalink to this headline">¶</a></h4>
+<p>We have added many CSS patterns to the base CSS file (modules, image block, spacing primitives). We encourage you to use these patterns and classes wherever possible. Doing so should:</p>
+<ol class="arabic simple">
+<li>Reduce maintenance costs, since you can delete most custom CSS.</li>
+<li>Make your plugin more compatible with community themes.</li>
+</ol>
+<p>Look for patterns that can be moved into core if you need significant CSS.</p>
+<p>We use hyphens rather than underscores in classes/ids and encourage you do the same for consistency.</p>
+<p>If you do need your own CSS, you should use your own namespace, rather than <code class="docutils literal"><span class="pre">elgg-</span></code>.</p>
+</div>
+<div class="section" id="update-manifest-xml">
+<h4>Update manifest.xml<a class="headerlink" href="#update-manifest-xml" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Use <a class="reference external" href="http://el.gg/manifest17to18">http://el.gg/manifest17to18</a> to automate this.</li>
+<li>Don&#8217;t use the &#8220;bundled&#8221; category with your plugins. That is only for plugins distributed with Elgg.</li>
+</ul>
+</div>
+<div class="section" id="update-settings-and-user-settings-views">
+<h4>Update settings and user settings views<a class="headerlink" href="#update-settings-and-user-settings-views" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>The view for settings is now <code class="docutils literal"><span class="pre">plugins/:plugin/settings</span></code> (previously <code class="docutils literal"><span class="pre">settings/:plugin/edit</span></code>).</li>
+<li>The view for user settings is now <code class="docutils literal"><span class="pre">plugins/:plugin/usersettings</span></code> (previously <code class="docutils literal"><span class="pre">usersettings/:plugin/edit</span></code>).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="events-list.html" class="btn btn-neutral float-right" title="List of events in core">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="web-services/hmac.html" class="btn btn-neutral" title="HMAC Authentication"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

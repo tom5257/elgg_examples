@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Writing Code &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Contributor Guides" href="index.html"/>
+        <link rel="next" title="Writing Documentation" href="docs.html"/>
+        <link rel="prev" title="Reporting Issues" href="issues.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues.html">Reporting Issues</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Contributor Guides</a> &raquo;</li>
+      
+    <li>Writing Code</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/contribute/code.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="writing-code">
+<h1>Writing Code<a class="headerlink" href="#writing-code" title="Permalink to this headline">¶</a></h1>
+<p>Understand Elgg&#8217;s standards and processes to get your changes accepted as quickly as possible.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#license-agreement" id="id7">License agreement</a></li>
+<li><a class="reference internal" href="#pull-requests" id="id8">Pull requests</a></li>
+<li><a class="reference internal" href="#testing" id="id9">Testing</a></li>
+<li><a class="reference internal" href="#coding-best-practices" id="id10">Coding best practices</a></li>
+<li><a class="reference internal" href="#deprecating-apis" id="id11">Deprecating APIs</a></li>
+</ul>
+</div>
+<div class="section" id="license-agreement">
+<h2><a class="toc-backref" href="#id7">License agreement</a><a class="headerlink" href="#license-agreement" title="Permalink to this headline">¶</a></h2>
+<p>By submitting a patch you are agreeing to license the code
+under a <a class="reference external" href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2 license</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>.</p>
+</div>
+<div class="section" id="pull-requests">
+<h2><a class="toc-backref" href="#id8">Pull requests</a><a class="headerlink" href="#pull-requests" title="Permalink to this headline">¶</a></h2>
+<p>Pull requests (PRs) are the best way to get code contributed to Elgg core.
+The core development team uses them even for the most trivial changes.</p>
+<p>For new features, <a class="reference external" href="https://github.com/Elgg/Elgg/issues">submit a feature request</a> or <a class="reference external" href="http://community.elgg.org/groups/profile/211069/feedback-and-planning">talk to us</a> first and make
+sure the core team approves of your direction before spending lots of time on code.</p>
+<div class="section" id="checklists">
+<h3>Checklists<a class="headerlink" href="#checklists" title="Permalink to this headline">¶</a></h3>
+<p>Use these markdown checklists for new PRs on github to ensure high-quality contributions
+and help everyone understand the status of open PRs.</p>
+<p>Bugfix PRs:</p>
+<div class="code highlight-python"><div class="highlight"><pre>- [ ] Commit messages are in the standard format
+- [ ] Includes regression test
+- [ ] Includes documentation update (if applicable)
+- [ ] Is submitted against the correct branch
+- [ ] Has LGTM from at least one core developer
+</pre></div>
+</div>
+<p>Feature PRs:</p>
+<div class="code highlight-python"><div class="highlight"><pre>- [ ] Commit messages are in the standard format
+- [ ] Includes tests
+- [ ] Includes documentation
+- [ ] Is submitted against the correct branch
+- [ ] Has LGTM from at least two core developers
+</pre></div>
+</div>
+</div>
+<div class="section" id="choosing-a-branch-to-submit-to">
+<h3>Choosing a branch to submit to<a class="headerlink" href="#choosing-a-branch-to-submit-to" title="Permalink to this headline">¶</a></h3>
+<p>The following table assumes the latest stable release is 1.9.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type of change</th>
+<th class="head">Branch to submit against</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Security fix</td>
+<td>1.8 (Email <a class="reference external" href="mailto:security&#37;&#52;&#48;elgg&#46;org">security<span>&#64;</span>elgg<span>&#46;</span>org</a> first!)</td>
+</tr>
+<tr class="row-odd"><td>Bug fix</td>
+<td>1.9</td>
+</tr>
+<tr class="row-even"><td>Deprecation</td>
+<td>1.x</td>
+</tr>
+<tr class="row-odd"><td>Minor feature</td>
+<td>1.x</td>
+</tr>
+<tr class="row-even"><td>Major feature</td>
+<td>master</td>
+</tr>
+<tr class="row-odd"><td>Breaking</td>
+<td>master</td>
+</tr>
+</tbody>
+</table>
+<p>The difference between minor and major feature is subjective and up to the core team.</p>
+</div>
+<div class="section" id="commit-message-format">
+<h3>Commit message format<a class="headerlink" href="#commit-message-format" title="Permalink to this headline">¶</a></h3>
+<p>We require a particular format to allow releasing more often, and with improved changelogs and source history. Just
+follow these steps:</p>
+<ol class="arabic">
+<li><p class="first">Start with the <code class="docutils literal"><span class="pre">type</span></code> by selecting the <em>last category which applies</em> from this list:</p>
+<ul class="simple">
+<li><strong>docs</strong> - <em>only</em> docs are being updated</li>
+<li><strong>chore</strong> - this include refactoring, code style changes, adding missing tests, Travis stuff, etc.</li>
+<li><strong>perf</strong> - the primary purpose is to improve performance</li>
+<li><strong>fix</strong> - this fixes a bug</li>
+<li><strong>deprecate</strong> - the change deprecates any part of the API</li>
+<li><strong>feature</strong> - this adds a new user-facing or developer feature</li>
+<li><strong>security</strong> - the change affects a security issue in any way. <em>Please do not push this commit to any public repo.</em> Instead contact <a class="reference external" href="mailto:security&#37;&#52;&#48;elgg&#46;org">security<span>&#64;</span>elgg<span>&#46;</span>org</a>.</li>
+</ul>
+<p>E.g. if your commit refactors to fix a bug, it&#8217;s still a &#8220;fix&#8221;. If that bug is security-related, however, the type
+must be &#8220;security&#8221; and you should email <a class="reference external" href="mailto:security&#37;&#52;&#48;elgg&#46;org">security<span>&#64;</span>elgg<span>&#46;</span>org</a> before proceeding. When in doubt, make your best guess
+and a reviewer will provide guidance.</p>
+</li>
+<li><p class="first">In parenthesis, add the <code class="docutils literal"><span class="pre">component</span></code>, a short string which describes the subsystem being changed.</p>
+<p>Some examples: &#8220;views&#8221;, &#8220;i18n&#8221;, &#8220;seo&#8221;, &#8220;a11y&#8221;, &#8220;cache&#8221;, &#8220;db&#8221;, &#8220;session&#8221;, &#8220;router&#8221;, &#8220;&lt;plugin_name&gt;&#8221;.</p>
+</li>
+<li><p class="first">Add a colon, a space, and a brief <code class="docutils literal"><span class="pre">summary</span></code> of the changes, which will appear in the changelog.</p>
+<p>No line may exceed 100 characters in length, so keep your summary concise.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Good summary</th>
+<th class="head">Bad summary (problem)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>page owners see their own owner blocks on pages</td>
+<td>bug fix (vague)</td>
+</tr>
+<tr class="row-odd"><td>bar view no longer dies if &#8216;foo&#8217; not set</td>
+<td>updates views/default/bar.php so bar view no longer... (redundant info)</td>
+</tr>
+<tr class="row-even"><td>narrows river layout to fit iPhone</td>
+<td>alters the river layout (vague)</td>
+</tr>
+<tr class="row-odd"><td>elgg_foo() handles arrays for $bar</td>
+<td>in elgg_foo() you can now pass an array for $bar and the function will... (move detail to description)</td>
+</tr>
+<tr class="row-even"><td>removes link color from comments header in river</td>
+<td>fixes db so that... (redundant info)</td>
+</tr>
+<tr class="row-odd"><td>requires non-empty title when saving pages</td>
+<td>can save pages with no title (confusingly summarizes old behavior)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">(recommended) Skip a line and add a <code class="docutils literal"><span class="pre">description</span></code> of the changes. Include the motivation for making them, any info
+about back or forward compatibility, and any rationale of why the change had to be done a certain way. Example:</p>
+<blockquote>
+<div><p>We speed up the Remember Me table migration by using a single INSERT INTO ... SELECT query instead of row-by-row.
+This migration takes place during the upgrade to 1.9.</p>
+</div></blockquote>
+<p>Unless your change is trivial/obvious, a description is required.</p>
+</li>
+<li><p class="first">If the commit resolves a GitHub issue, skip a line and add <code class="docutils literal"><span class="pre">Fixes</span> <span class="pre">#</span></code> followed by the issue number. E.g.
+<code class="docutils literal"><span class="pre">Fixes</span> <span class="pre">#1234</span></code>. You can include multiple issues by separating with commas.</p>
+<p>GitHub will auto-close the issue when the commit is merged. If you just want to reference an issue, use
+<code class="docutils literal"><span class="pre">Refs</span> <span class="pre">#</span></code> instead.</p>
+</li>
+</ol>
+<p>When done, your commit message will have the format:</p>
+<div class="code highlight-python"><div class="highlight"><pre>type(component): summary
+
+Optional body
+Details about the solution.
+Opportunity to call out as breaking change.
+
+Closes/Fixes/Refs #123, #456, #789
+</pre></div>
+</div>
+<p>Here is an example of a good commit message:</p>
+<div class="code highlight-python"><div class="highlight"><pre>perf(upgrade): speeds up migrating remember me codes
+
+We speed up the Remember Me table migration by using a single INSERT INTO ... SELECT query instead of row-by-row.
+This migration takes place during the upgrade to 1.9.
+
+Fixes #6204
+</pre></div>
+</div>
+<p>To validate commit messages locally, make sure <code class="docutils literal"><span class="pre">.scripts/validate_commit_msg.php</span></code> is executable, and make a copy
+or symlink to it in the directory <code class="docutils literal"><span class="pre">.git/hooks/commit-msg</span></code>.</p>
+<div class="code highlight-python"><div class="highlight"><pre>chmod u+x .scripts/validate_commit_msg.php
+ln -s .scripts/validate_commit_msg.php .git/hooks/commit-msg/validate_commit_msg.php
+</pre></div>
+</div>
+</div>
+<div class="section" id="rewriting-commit-messages">
+<h3>Rewriting commit messages<a class="headerlink" href="#rewriting-commit-messages" title="Permalink to this headline">¶</a></h3>
+<p>If your PR does not conform to the standard commit message format, we&#8217;ll ask you to rewrite it.</p>
+<p>To edit just the last commit:</p>
+<ol class="arabic simple">
+<li>Amend the commit: <code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code> (git opens the message in a text editor).</li>
+<li>Change the message and save/exit the editor.</li>
+<li>Force push your branch: <code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span> <span class="pre">your_remote</span> <span class="pre">your_branch</span></code> (your PR with be updated).</li>
+</ol>
+<p>Otherwise you may need to perform an interactive rebase:</p>
+<ol class="arabic simple">
+<li>Rebase the last N commits: <code class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">HEAD~N</span></code> where N is a number.
+(Git will open the git-rebase-todo file for editing)</li>
+<li>For the commits that need to change, change <code class="docutils literal"><span class="pre">pick</span></code> to <code class="docutils literal"><span class="pre">r</span></code> (for reword) and save/exit the editor.</li>
+<li>Change the commit message(s), save/exit the editor (git will present a file for each commit that needs rewording).</li>
+<li><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span> <span class="pre">your_remote</span> <span class="pre">your_branch</span></code> to force push the branch (updating your PR).</li>
+</ol>
+</div>
+</div>
+<div class="section" id="testing">
+<h2><a class="toc-backref" href="#id9">Testing</a><a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Elgg has automated tests for both PHP and JavaScript functionality.
+All new contributions are required to come with appropriate tests.</p>
+<div class="section" id="phpunit-tests">
+<h3>PHPUnit Tests<a class="headerlink" href="#phpunit-tests" title="Permalink to this headline">¶</a></h3>
+<p>TODO</p>
+</div>
+<div class="section" id="jasmine-tests">
+<h3>Jasmine Tests<a class="headerlink" href="#jasmine-tests" title="Permalink to this headline">¶</a></h3>
+<p>Test files must be named <code class="docutils literal"><span class="pre">*Test.js</span></code> and should go in either <code class="docutils literal"><span class="pre">js/tests/</span></code> or next
+to their source files in <code class="docutils literal"><span class="pre">views/default/js</span></code>. Karma will automatically pick up
+on new <code class="docutils literal"><span class="pre">*Test.js</span></code> files and run those tests.</p>
+</div>
+<div class="section" id="test-boilerplate">
+<h3>Test boilerplate<a class="headerlink" href="#test-boilerplate" title="Permalink to this headline">¶</a></h3>
+<div class="code js highlight-python"><div class="highlight"><pre>define(function(require) {
+        var elgg = require(&#39;elgg&#39;);
+
+        describe(&quot;This new test&quot;, function() {
+                it(&quot;fails automatically&quot;, function() {
+                        expect(true).toBe(false);
+                });
+        });
+});
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-tests">
+<h3>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h3>
+<p>Elgg uses <a class="reference external" href="http://karma-runner.github.io/0.8/index.html">Karma</a> with <a class="reference external" href="http://pivotal.github.io/jasmine/">Jasmine</a> to run JS unit tests.</p>
+<p>You will need to have nodejs and npm installed.</p>
+<p>First install all the development dependencies:</p>
+<div class="code highlight-python"><div class="highlight"><pre>npm install
+</pre></div>
+</div>
+<p>Run through the tests just once and then quit:</p>
+<div class="code highlight-python"><div class="highlight"><pre>npm test
+</pre></div>
+</div>
+<p>You can also run tests continuously during development so they run on each save:</p>
+<div class="code highlight-python"><div class="highlight"><pre>karma start js/tests/karma.conf.js
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="coding-best-practices">
+<h2><a class="toc-backref" href="#id10">Coding best practices</a><a class="headerlink" href="#coding-best-practices" title="Permalink to this headline">¶</a></h2>
+<p>Make your code easier to read, easier to maintain, and easier to debug.
+Consistent use of these guidelines means less guess work for developers,
+which means happier, more productive developers.</p>
+<div class="section" id="general-coding">
+<h3>General coding<a class="headerlink" href="#general-coding" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="don-t-repeat-yourself">
+<h4>Don&#8217;t Repeat Yourself<a class="headerlink" href="#don-t-repeat-yourself" title="Permalink to this headline">¶</a></h4>
+<p>If you are copy-pasting code a significant amount of code, consider whether there&#8217;s an opportunity to reduce
+duplication by introducing a function, an additional argument, a view, or a new component class.</p>
+<p>E.g. If you find views that are identical except for a single value, refactor into a single view
+that takes an option.</p>
+<p><strong>Note:</strong> In a bugfix release, <em>some duplication is preferrable to refactoring</em>. Fix bugs in the simplest
+way possible and refactor to reduce duplication in the next minor release branch.</p>
+</div>
+<div class="section" id="embrace-solid-and-grasp">
+<h4>Embrace SOLID and GRASP<a class="headerlink" href="#embrace-solid-and-grasp" title="Permalink to this headline">¶</a></h4>
+<p>Use these <a class="reference external" href="http://nikic.github.io/2011/12/27/Dont-be-STUPID-GRASP-SOLID.html">principles for OO design</a> to solve problems using loosely coupled
+components, and try to make all components and integration code testable.</p>
+</div>
+<div class="section" id="whitespace-is-free">
+<h4>Whitespace is free<a class="headerlink" href="#whitespace-is-free" title="Permalink to this headline">¶</a></h4>
+<p>Don&#8217;t be afraid to use it to separate blocks of code.
+Use a single space to separate function params and string concatenation.</p>
+</div>
+<div class="section" id="variable-names">
+<h4>Variable names<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h4>
+<p>Use self-documenting variable names.  <code class="docutils literal"><span class="pre">$group_guids</span></code> is better than <code class="docutils literal"><span class="pre">$array</span></code>.</p>
+<p>Avoid double-negatives. Prefer <code class="docutils literal"><span class="pre">$enable</span> <span class="pre">=</span> <span class="pre">true</span></code> to <code class="docutils literal"><span class="pre">$disable</span> <span class="pre">=</span> <span class="pre">false</span></code>.</p>
+</div>
+<div class="section" id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Where possible, have functions/methods return a single type.
+Use empty values such as array(), &#8220;&#8221;, or 0 to indicate no results.</p>
+<p>Be careful where valid return values (like <code class="docutils literal"><span class="pre">&quot;0&quot;</span></code>) could be interpreted as empty.</p>
+<p>Functions not throwing an exception on error should return <code class="docutils literal"><span class="pre">false</span></code> upon failure.</p>
+<p>Functions returning only boolean should be prefaced with <code class="docutils literal"><span class="pre">is_</span></code> or <code class="docutils literal"><span class="pre">has_</span></code>
+(eg, <code class="docutils literal"><span class="pre">elgg_is_logged_in()</span></code>, <code class="docutils literal"><span class="pre">elgg_has_access_to_entity()</span></code>).</p>
+</div>
+<div class="section" id="ternary-syntax">
+<h4>Ternary syntax<a class="headerlink" href="#ternary-syntax" title="Permalink to this headline">¶</a></h4>
+<p>Acceptable only for single-line, non-embedded statements.</p>
+</div>
+<div class="section" id="minimize-complexity">
+<h4>Minimize complexity<a class="headerlink" href="#minimize-complexity" title="Permalink to this headline">¶</a></h4>
+<p>Minimize nested blocks and distinct execution paths through code. Use
+<a class="reference external" href="http://www.mrclay.org/2013/09/18/when-reasonable-return-early/">Return Early</a> to reduce nesting levels and cognitive load when reading code.</p>
+</div>
+<div class="section" id="use-comments-effectively">
+<h4>Use comments effectively<a class="headerlink" href="#use-comments-effectively" title="Permalink to this headline">¶</a></h4>
+<p>Good comments describe the &#8220;why.&#8221;  Good code describes the &#8220;how.&#8221; E.g.:</p>
+<p>Bad:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// increment $i only when the entity is marked as active.
+foreach ($entities as $entity) {
+        if ($entity-&gt;active) {
+                $i++;
+        }
+}
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// find the next index for inserting a new active entity.
+foreach ($entities as $entity) {
+        if ($entity-&gt;active) {
+                $i++;
+        }
+}
+</pre></div>
+</div>
+<p>Always include a comment if it&#8217;s not obvious that something must be done in a certain way. Other
+developers looking at the code should be discouraged from refactoring in a way that would break the code.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Can&#39;t use empty()/boolean: &quot;0&quot; is a valid value
+if ($str === &#39;&#39;) {
+    register_error(elgg_echo(&#39;foo:string_cannot_be_empty&#39;));
+    forward(REFERER);
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="commit-effectively">
+<h4>Commit effectively<a class="headerlink" href="#commit-effectively" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Err on the side of <a class="reference external" href="http://en.wikipedia.org/wiki/Atomic_commit#Atomic_Commit_Convention">atomic commits</a> which are highly focused on changing one aspect of the system.</li>
+<li>Avoid mixing in unrelated changes or extensive whitespace changes. Commits with many changes are scary and
+make pull requests difficult to review.</li>
+<li>Use visual git tools to craft <a class="reference external" href="http://www.mrclay.org/2014/02/14/gitx-for-cleaner-commits/">highly precise and readable diffs</a>.</li>
+</ul>
+<div class="section" id="include-tests">
+<h5>Include tests<a class="headerlink" href="#include-tests" title="Permalink to this headline">¶</a></h5>
+<p>When at all possible include unit tests for code you add or alter. We use:</p>
+<ul class="simple">
+<li>PHPUnit for PHP unit tests.</li>
+<li>SimpleTest for legacy PHP tests that require use of the database. Our long-term goal
+is to move all tests to PHPUnit.</li>
+<li>Karma for JavaScript unit tests</li>
+</ul>
+</div>
+<div class="section" id="naming-tests">
+<h5>Naming tests<a class="headerlink" href="#naming-tests" title="Permalink to this headline">¶</a></h5>
+<p>Break tests up by the behaviors you want to test and use names that describe the
+behavior. E.g.:</p>
+<ul class="simple">
+<li>Not so good: One big method <cite>testAdd()</cite>.</li>
+<li>Better: Methods <cite>testAddingZeroChangesNothing</cite> and <cite>testAddingNegativeNumberSubtracts</cite></li>
+</ul>
+</div>
+<div class="section" id="keep-bugfixes-simple">
+<h5>Keep bugfixes simple<a class="headerlink" href="#keep-bugfixes-simple" title="Permalink to this headline">¶</a></h5>
+<p>Avoid the temptation to refactor code for a bugfix release. Doing so tends to
+introduce regressions, breaking functionality in what should be a stable release.</p>
+</div>
+</div>
+</div>
+<div class="section" id="php-guidelines">
+<h3>PHP guidelines<a class="headerlink" href="#php-guidelines" title="Permalink to this headline">¶</a></h3>
+<p>These are the required coding standards for Elgg core and all bundled plugins.
+Plugin developers are strongly encouraged to adopt these standards.</p>
+<p>Developers should first read the <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2 Coding Standard Guide</a>.</p>
+<p>Elgg&#8217;s standards extend PSR-2, but differ in the following ways:</p>
+<ul class="simple">
+<li>Indent using one tab character, not spaces.</li>
+<li>Opening braces for classes, methods, and functions must go on the same line.</li>
+<li>If a line reaches over 100 characters, consider refactoring (e.g. introduce variables).</li>
+<li>Compliance with <a class="reference external" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a> is encouraged, but not strictly required.</li>
+</ul>
+<div class="section" id="documentation">
+<h4>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Include PHPDoc comments on functions and classes (all methods; declared
+properties when appropriate), including types and descriptions of all
+parameters.</li>
+<li>In lists of <code class="docutils literal"><span class="pre">&#64;param</span></code> declarations, the beginnings of variable names and
+descriptions must line up.</li>
+<li>Annotate classes, methods, properties, and functions with <code class="docutils literal"><span class="pre">&#64;access</span> <span class="pre">private</span></code>
+unless they are intended for public use, are already of limited visibility,
+or are within a class already marked as private.</li>
+<li>Use <code class="docutils literal"><span class="pre">//</span></code> or <code class="docutils literal"><span class="pre">/*</span> <span class="pre">*/</span></code> when commenting.</li>
+<li>Use only <code class="docutils literal"><span class="pre">//</span></code> comments inside function/method bodies.</li>
+</ul>
+</div>
+<div class="section" id="naming">
+<h4>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Use underscores to separate words in the names of functions, variables,
+and properties. Method names are camelCase.</li>
+<li>Names of functions for public use must begin with <code class="docutils literal"><span class="pre">elgg_</span></code>.</li>
+<li>All other function names must begin with <code class="docutils literal"><span class="pre">_elgg_</span></code>.</li>
+<li>Name globals and constants in <code class="docutils literal"><span class="pre">ALL_CAPS</span></code> (<code class="docutils literal"><span class="pre">ACCESS_FRIENDS</span></code>, <code class="docutils literal"><span class="pre">$CONFIG</span></code>).</li>
+</ul>
+</div>
+<div class="section" id="miscellaneous">
+<h4>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h4>
+<p>For PHP requirements, see <code class="docutils literal"><span class="pre">composer.json</span></code>.</p>
+<p>Do not use PHP shortcut tags (<code class="docutils literal"><span class="pre">&lt;?</span></code> or <code class="docutils literal"><span class="pre">&lt;?=</span></code> or <code class="docutils literal"><span class="pre">&lt;%</span></code>).</p>
+<p>When creating strings with variables:</p>
+<ul class="simple">
+<li>use double-quoted strings</li>
+<li>wrap variables with braces only when necessary.</li>
+</ul>
+<p>Bad (hard to read, misuse of quotes and {}s):</p>
+<div class="code php highlight-python"><div class="highlight"><pre>echo &#39;Hello, &#39;.$name.&quot;!  How is your {$time_of_day}?&quot;;
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>echo &quot;Hello, $name!  How is your $time_of_day?&quot;;
+</pre></div>
+</div>
+<p>Remove trailing whitespace at the end of lines. An easy way to do this before you commit is to run
+<code class="docutils literal"><span class="pre">php</span> <span class="pre">.scripts/fix_style.php</span></code> from the installation root.</p>
+</div>
+</div>
+<div class="section" id="css-guidelines">
+<h3>CSS guidelines<a class="headerlink" href="#css-guidelines" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="use-shorthand-where-possible">
+<h4>Use shorthand where possible<a class="headerlink" href="#use-shorthand-where-possible" title="Permalink to this headline">¶</a></h4>
+<p>Bad:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>background-color: #333333;
+background-image:  url(...);
+background-repeat:  repeat-x;
+background-position:  left 10px;
+padding: 2px 9px 2px 9px;
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>background: #333 url(...) repeat-x left 10px;
+padding: 2px 9px;
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-hyphens-not-underscores">
+<h4>Use hyphens, not underscores<a class="headerlink" href="#use-hyphens-not-underscores" title="Permalink to this headline">¶</a></h4>
+<p>Bad:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>.example_class {}
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>.example-class {}
+</pre></div>
+</div>
+</div>
+<div class="section" id="one-property-per-line">
+<h4>One property per line<a class="headerlink" href="#one-property-per-line" title="Permalink to this headline">¶</a></h4>
+<p>Bad:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>color: white;font-size: smaller;
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>color: white;
+font-size: smaller;
+</pre></div>
+</div>
+</div>
+<div class="section" id="property-declarations">
+<h4>Property declarations<a class="headerlink" href="#property-declarations" title="Permalink to this headline">¶</a></h4>
+<p>These should be spaced like so: <cite>property: value;</cite></p>
+<p>Bad:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>color:value;
+color :value;
+color : value;
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>color: value;
+</pre></div>
+</div>
+</div>
+<div class="section" id="vendor-prefixes">
+<h4>Vendor prefixes<a class="headerlink" href="#vendor-prefixes" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li>Group vendor-prefixes for the same property together</li>
+<li>Longest vendor-prefixed version first</li>
+<li>Always include non-vendor-prefixed version</li>
+<li>Put an extra newline between vendor-prefixed groups and other properties</li>
+</ul>
+</div></blockquote>
+<p>Bad:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>-moz-border-radius: 5px;
+border: 1px solid #999999;
+-webkit-border-radius: 5px;
+width: auto;
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>border: 1px solid #999999;
+
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+
+width: auto;
+</pre></div>
+</div>
+</div>
+<div class="section" id="group-subproperties">
+<h4>Group subproperties<a class="headerlink" href="#group-subproperties" title="Permalink to this headline">¶</a></h4>
+<p>Bad:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>background-color: white;
+color: #0054A7;
+background-position: 2px -257px;
+</pre></div>
+</div>
+<p>Good:</p>
+<div class="code css highlight-python"><div class="highlight"><pre>background-color: white;
+background-position: 2px -257px;
+color: #0054A7;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="javascript-guidelines">
+<h3>Javascript guidelines<a class="headerlink" href="#javascript-guidelines" title="Permalink to this headline">¶</a></h3>
+<p>Same formatting standards as PHP apply.</p>
+<p>All functions should be in the <code class="docutils literal"><span class="pre">elgg</span></code> namespace.</p>
+<p>Function expressions should end with a semi-colon.</p>
+<div class="code js highlight-python"><div class="highlight"><pre>elgg.ui.toggles = function(event) {
+        event.preventDefault();
+        $(target).slideToggle(&#39;medium&#39;);
+};
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deprecating-apis">
+<h2><a class="toc-backref" href="#id11">Deprecating APIs</a><a class="headerlink" href="#deprecating-apis" title="Permalink to this headline">¶</a></h2>
+<p>Occasionally functions and classes must be deprecated in favor of newer
+replacements. Since 3rd party plugin authors rely on a consistent API,
+backward compatibility must be maintained, but will not be maintained
+indefinitely as plugin authors are expected to properly update their plugins.
+In order to maintain backward compatibility, deprecated APIs will follow
+these guidelines:</p>
+<ul class="simple">
+<li>Minor version (1.x) that deprecates an API must include a wrapper
+function/class (or otherwise appropriate means) to maintain backward
+compatibility, including any bugs in the original function/class.
+This compatibility layer uses <code class="docutils literal"><span class="pre">elgg_deprecated_notice('...',</span> <span class="pre">'1.11')</span></code>
+to log that the function is deprecated.</li>
+<li>The next major revision (2.0) removes the compatibility layer.
+Any use of the deprecated API should be corrected before this.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docs.html" class="btn btn-neutral float-right" title="Writing Documentation">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="issues.html" class="btn btn-neutral" title="Reporting Issues"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

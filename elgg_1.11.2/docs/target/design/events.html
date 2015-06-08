@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Events and Plugin Hooks &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Design Docs" href="index.html"/>
+        <link rel="next" title="Internationalization" href="i18n.html"/>
+        <link rel="prev" title="Database" href="database.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Design Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Design Docs</a> &raquo;</li>
+      
+    <li>Events and Plugin Hooks</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/design/events.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="events-and-plugin-hooks">
+<h1>Events and Plugin Hooks<a class="headerlink" href="#events-and-plugin-hooks" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a><ul>
+<li><a class="reference internal" href="#elgg-events-vs-plugin-hooks" id="id2">Elgg Events vs. Plugin Hooks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#elgg-events" id="id3">Elgg Events</a><ul>
+<li><a class="reference internal" href="#before-and-after-events" id="id4">Before and After Events</a></li>
+<li><a class="reference internal" href="#elgg-event-handlers" id="id5">Elgg Event Handlers</a></li>
+<li><a class="reference internal" href="#register-to-handle-an-elgg-event" id="id6">Register to handle an Elgg Event</a></li>
+<li><a class="reference internal" href="#trigger-an-elgg-event" id="id7">Trigger an Elgg Event</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plugin-hooks" id="id8">Plugin Hooks</a><ul>
+<li><a class="reference internal" href="#plugin-hook-handlers" id="id9">Plugin Hook Handlers</a></li>
+<li><a class="reference internal" href="#register-to-handle-a-plugin-hook" id="id10">Register to handle a Plugin Hook</a></li>
+<li><a class="reference internal" href="#trigger-a-plugin-hook" id="id11">Trigger a Plugin Hook</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id1">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Elgg has an event system that can be used to replace or extend core
+functionality.</p>
+<p>Plugins influence the system by creating handlers (<a class="reference external" href="http://php.net/manual/en/language.types.callable.php">callables</a>
+such as functions and methods) and registering them to handle
+two types of events: <a class="reference internal" href="#elgg-events">Elgg Events</a> and <a class="reference internal" href="#plugin-hooks">Plugin Hooks</a>.</p>
+<p>When an event is triggered, a set of handlers is executed in order
+of priority. Each handler is passed arguments
+and has a chance to influence the process. After execution, the &#8220;trigger&#8221;
+function returns a value based on the behavior of the handlers.</p>
+<div class="section" id="elgg-events-vs-plugin-hooks">
+<h3><a class="toc-backref" href="#id2">Elgg Events vs. Plugin Hooks</a><a class="headerlink" href="#elgg-events-vs-plugin-hooks" title="Permalink to this headline">¶</a></h3>
+<p>The main differences between <a class="reference internal" href="#elgg-events">Elgg Events</a> and <a class="reference internal" href="#plugin-hooks">Plugin Hooks</a> are:</p>
+<ol class="arabic simple">
+<li>Most Elgg events can be cancelled; unless the event is an &#8220;after&#8221; event,
+a handler that returns <cite>false</cite> can cancel the event, and no more handlers
+are called.</li>
+<li>Plugin hooks cannot be cancelled; all handlers are always called.</li>
+<li>Plugin hooks pass an arbitrary value through the handlers, giving each
+a chance to alter along the way.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="elgg-events">
+<h2><a class="toc-backref" href="#id3">Elgg Events</a><a class="headerlink" href="#elgg-events" title="Permalink to this headline">¶</a></h2>
+<p>Elgg Events are triggered when an Elgg object is created, updated, or
+deleted; and at important milestones while the Elgg framework is
+loading. Examples: a blog post being created or a user logging in.</p>
+<p>Unlike <a class="reference internal" href="#plugin-hooks">Plugin Hooks</a>, <em>most Elgg events can be cancelled</em>, halting the
+execution of the handlers, and possibly cancelling an some
+action in the Elgg core.</p>
+<p>Each Elgg event has a name and an object type (system, user, object,
+relationship name, annotation, group) describing the type of object
+passed to the handlers.</p>
+<div class="section" id="before-and-after-events">
+<h3><a class="toc-backref" href="#id4">Before and After Events</a><a class="headerlink" href="#before-and-after-events" title="Permalink to this headline">¶</a></h3>
+<p>Some events are split into &#8220;before&#8221; and &#8220;after&#8221;. This avoids confusion
+around the state of the system while in flux. E.g. Is the user
+logged in during the [login, user] event?</p>
+<p>Before Events have names ending in &#8221;:before&#8221; and are triggered before
+something happens. Like traditional events, handlers can cancel the
+event by returning <cite>false</cite>.</p>
+<p>After Events, with names ending in &#8221;:after&#8221;, are triggered after
+something happens. Unlike traditional events, handlers <em>cannot</em> cancel
+these events; all handlers will always be called.</p>
+<p>Where before and after events are available, developers are encouraged
+to transition to them, though older events will be supported for
+backwards compatibility.</p>
+</div>
+<div class="section" id="elgg-event-handlers">
+<h3><a class="toc-backref" href="#id5">Elgg Event Handlers</a><a class="headerlink" href="#elgg-event-handlers" title="Permalink to this headline">¶</a></h3>
+<p>Elgg event handlers should have the following prototype:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>/**
+ * @param string $event       The name of the event
+ * @param string $object_type The type of $object (e.g. &quot;user&quot;, &quot;group&quot;)
+ * @param mixed  $object      The object of the event
+ *
+ * @return bool if false, the handler is requesting to cancel the event
+ */
+function event_handler($event, $object_type, $object) {
+    ...
+}
+</pre></div>
+</div>
+<p>If the handler returns <cite>false</cite>, the event is cancelled, preventing
+execution of the other handlers. All other return values are ignored.</p>
+</div>
+<div class="section" id="register-to-handle-an-elgg-event">
+<h3><a class="toc-backref" href="#id6">Register to handle an Elgg Event</a><a class="headerlink" href="#register-to-handle-an-elgg-event" title="Permalink to this headline">¶</a></h3>
+<p>Register your handler to an event using <code class="docutils literal"><span class="pre">elgg_register_event_handler</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_event_handler($event, $object_type, $handler, $priority);
+</pre></div>
+</div>
+<p>Parameters:</p>
+<ul class="simple">
+<li><strong>$event</strong> The event name.</li>
+<li><strong>$object_type</strong> The object type (e.g. &#8220;user&#8221; or &#8220;object&#8221;) or &#8216;all&#8217; for
+all types on which the event is fired.</li>
+<li><strong>$handler</strong> The callback of the handler function.</li>
+<li><strong>$priority</strong> The priority - 0 is first and the default is 500.</li>
+</ul>
+<p><strong>Object</strong> here does not refer to an <code class="docutils literal"><span class="pre">ElggObject</span></code> but rather a string describing any object
+in the framework: system, user, object, relationship, annotation, group.</p>
+<p>Example:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Register the function myPlugin_handle_login() to handle the
+// user login event with priority 400.
+elgg_register_event_handler(&#39;login&#39;, &#39;user&#39;, &#39;myPlugin_handle_login&#39;, 400);
+</pre></div>
+</div>
+</div>
+<div class="section" id="trigger-an-elgg-event">
+<h3><a class="toc-backref" href="#id7">Trigger an Elgg Event</a><a class="headerlink" href="#trigger-an-elgg-event" title="Permalink to this headline">¶</a></h3>
+<p>You can trigger a custom Elgg event using <code class="docutils literal"><span class="pre">elgg_trigger_event</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>if (elgg_trigger_event($event, $object_type, $object)) {
+    // Proceed with doing something.
+} else {
+    // Event was cancelled. Roll back any progress made before the event.
+}
+</pre></div>
+</div>
+<p>For events with ambiguous states, like logging in a user, you should use <a class="reference internal" href="#before-and-after-events">Before and After Events</a>
+by calling <code class="docutils literal"><span class="pre">elgg_trigger_before_event</span></code> or <code class="docutils literal"><span class="pre">elgg_trigger_after_event</span></code>.
+This makes it clear for the event handler what state to expect and which events can be cancelled.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// handlers for the user, login:before event know the user isn&#39;t logged in yet.
+if (!elgg_trigger_before_event(&#39;login&#39;, &#39;user&#39;, $user)) {
+        return false;
+}
+
+// handlers for the user, login:after event know the user is logged in.
+elgg_trigger_after_event(&#39;login&#39;, &#39;user&#39;, $user);
+</pre></div>
+</div>
+<p>Parameters:</p>
+<ul class="simple">
+<li><strong>$event</strong> The event name.</li>
+<li><strong>$object_type</strong> The object type (e.g. &#8220;user&#8221; or &#8220;object&#8221;).</li>
+<li><strong>$object</strong> The object (e.g. an instance of <code class="docutils literal"><span class="pre">ElggUser</span></code> or <code class="docutils literal"><span class="pre">ElggGroup</span></code>)</li>
+</ul>
+<p>The function will return <code class="docutils literal"><span class="pre">false</span></code> if any of the selected handlers returned
+<code class="docutils literal"><span class="pre">false</span></code> and the event is stoppable, otherwise it will return <code class="docutils literal"><span class="pre">true</span></code>.</p>
+</div>
+</div>
+<div class="section" id="plugin-hooks">
+<span id="design-events-plugin-hooks"></span><h2><a class="toc-backref" href="#id8">Plugin Hooks</a><a class="headerlink" href="#plugin-hooks" title="Permalink to this headline">¶</a></h2>
+<p>Plugin Hooks provide a way for plugins to collaboratively determine or alter
+a value. For example, to decide whether a user has permission to edit an entity
+or to add additional configuration options to a plugin.</p>
+<p>A plugin hook has a value passed into the trigger function, and each handler
+has an opportunity to alter the value before it&#8217;s passed to the next handler.
+After the last handler has completed, the final value is returned by the
+trigger.</p>
+<div class="section" id="plugin-hook-handlers">
+<h3><a class="toc-backref" href="#id9">Plugin Hook Handlers</a><a class="headerlink" href="#plugin-hook-handlers" title="Permalink to this headline">¶</a></h3>
+<p>Plugin hook handlers should have the following prototype:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>/**
+ * @param string $hook    The name of the plugin hook
+ * @param string $type    The type of the plugin hook
+ * @param mixed  $value   The current value of the plugin hook
+ * @param mixed  $params  Data passed from the trigger
+ *
+ * @return mixed if not null, this will be the new value of the plugin hook
+ */
+function plugin_hook_handler($hook, $type, $value, $params) {
+    ...
+}
+</pre></div>
+</div>
+<p>If the handler returns no value (or <cite>null</cite> explicitly), the plugin hook value
+is not altered. Otherwise the return value becomes the new value of the plugin
+hook. It will then be passed to the next handler as <cite>$value</cite>.</p>
+</div>
+<div class="section" id="register-to-handle-a-plugin-hook">
+<h3><a class="toc-backref" href="#id10">Register to handle a Plugin Hook</a><a class="headerlink" href="#register-to-handle-a-plugin-hook" title="Permalink to this headline">¶</a></h3>
+<p>Register your handler to a plugin hook using <code class="docutils literal"><span class="pre">elgg_register_plugin_hook_handler</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_plugin_hook_handler($hook, $type, $handler, $priority);
+</pre></div>
+</div>
+<p>Parameters:</p>
+<ul class="simple">
+<li><strong>$hook</strong> The name of the plugin hook.</li>
+<li><strong>$type</strong> The type of the hook or &#8216;all&#8217; for all types.</li>
+<li><strong>$handler</strong> The callback of the handler function.</li>
+<li><strong>$priority</strong> The priority - 0 is first and the default is 500.</li>
+</ul>
+<p><strong>Type</strong> can vary in meaning. It may mean an Elgg entity type or something
+specific to the plugin hook name.</p>
+<p>Example:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Register the function myPlugin_hourly_job() to be called with priority 400.
+elgg_register_plugin_hook_handler(&#39;cron&#39;, &#39;hourly&#39;, &#39;myPlugin_hourly_job&#39;, 400);
+</pre></div>
+</div>
+</div>
+<div class="section" id="trigger-a-plugin-hook">
+<h3><a class="toc-backref" href="#id11">Trigger a Plugin Hook</a><a class="headerlink" href="#trigger-a-plugin-hook" title="Permalink to this headline">¶</a></h3>
+<p>You can trigger a custom plugin hook using <code class="docutils literal"><span class="pre">elgg_trigger_plugin_hook</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// filter $value through the handlers
+$value = elgg_trigger_plugin_hook($hook, $type, $params, $value);
+</pre></div>
+</div>
+<p>Parameters:</p>
+<ul class="simple">
+<li><strong>$hook</strong> The name of the plugin hook.</li>
+<li><strong>$type</strong> The type of the hook or &#8216;all&#8217; for all types.</li>
+<li><strong>$params</strong> Arbitrary data passed from the trigger to the handlers.</li>
+<li><strong>$value</strong> The initial value of the plugin hook.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <cite>$params</cite> and <cite>$value</cite> arguments are reversed between the plugin hook handlers and trigger functions!</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="i18n.html" class="btn btn-neutral float-right" title="Internationalization">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database.html" class="btn btn-neutral" title="Database"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

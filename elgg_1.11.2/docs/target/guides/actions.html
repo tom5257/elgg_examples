@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Forms + Actions &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Helper functions" href="helpers.html"/>
+        <link rel="prev" title="Database" href="database.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Forms + Actions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/actions.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="forms-actions">
+<h1>Forms + Actions<a class="headerlink" href="#forms-actions" title="Permalink to this headline">¶</a></h1>
+<p>Create, update, or delete content.</p>
+<p>Elgg forms submit to actions. Actions define the behavior for form submission.</p>
+<p>This guide assumes basic familiarity with:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../admin/plugins.html"><em>Plugins</em></a></li>
+<li><a class="reference internal" href="views.html"><em>Views</em></a></li>
+<li><a class="reference internal" href="i18n.html"><em>Internationalization</em></a></li>
+</ul>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#registering-actions" id="id1">Registering actions</a><ul>
+<li><a class="reference internal" href="#permissions" id="id2">Permissions</a></li>
+<li><a class="reference internal" href="#writing-action-files" id="id3">Writing action files</a></li>
+<li><a class="reference internal" href="#customizing-actions" id="id4">Customizing actions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#files-and-images" id="id5">Files and images</a></li>
+<li><a class="reference internal" href="#sticky-forms" id="id6">Sticky forms</a><ul>
+<li><a class="reference internal" href="#helper-functions" id="id7">Helper functions</a></li>
+<li><a class="reference internal" href="#overview" id="id8">Overview</a></li>
+<li><a class="reference internal" href="#example-user-registration" id="id9">Example: User registration</a></li>
+<li><a class="reference internal" href="#example-bookmarks" id="id10">Example: Bookmarks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ajax" id="id11">Ajax</a></li>
+<li><a class="reference internal" href="#security" id="id12">Security</a></li>
+<li><a class="reference internal" href="#security-tokens" id="id13">Security Tokens</a></li>
+</ul>
+</div>
+<div class="section" id="registering-actions">
+<h2><a class="toc-backref" href="#id1">Registering actions</a><a class="headerlink" href="#registering-actions" title="Permalink to this headline">¶</a></h2>
+<p>Actions must be registered before use. Use <code class="docutils literal"><span class="pre">elgg_register_action</span></code> for this:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_action(&quot;example&quot;, __DIR__ . &quot;/actions/example.php&quot;);
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">mod/example/actions/example.php</span></code> script will now be run whenever a form is submitted to <code class="docutils literal"><span class="pre">http://localhost/elgg/action/example</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">A stumbling point for many new developers is the URL for actions. The URL always uses <code class="docutils literal"><span class="pre">/action/</span></code> (singular) and never <code class="docutils literal"><span class="pre">/actions/</span></code> (plural). However, action script files are usually saved under the directory <code class="docutils literal"><span class="pre">/actions/</span></code> (plural) and always have an extension.</p>
+</div>
+<div class="section" id="permissions">
+<h3><a class="toc-backref" href="#id2">Permissions</a><a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h3>
+<p>By default, actions are only available to logged in users.</p>
+<p>To make an action available to logged out users, pass <code class="docutils literal"><span class="pre">&quot;public&quot;</span></code> as the third parameter:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_action(&quot;example&quot;, $filepath, &quot;public&quot;);
+</pre></div>
+</div>
+<p>To restrict an action to only administrators, pass <code class="docutils literal"><span class="pre">&quot;admin&quot;</span></code> for the last parameter:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_action(&quot;example&quot;, $filepath, &quot;admin&quot;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="writing-action-files">
+<h3><a class="toc-backref" href="#id3">Writing action files</a><a class="headerlink" href="#writing-action-files" title="Permalink to this headline">¶</a></h3>
+<p>Use the <code class="docutils literal"><span class="pre">get_input</span></code> function to get access to request parameters:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$field = get_input(&#39;input_field_name&#39;, &#39;default_value&#39;);
+</pre></div>
+</div>
+<p>You can then use the <a class="reference internal" href="database.html"><em>Database</em></a> api to load entities and perform actions on them accordingly.</p>
+<p>To redirect the page once you&#8217;ve completed your actions, use the <code class="docutils literal"><span class="pre">forward</span></code> function:</p>
+<div class="code php highlight-python"><div class="highlight"><pre><span class="n">forward</span><span class="p">(</span><span class="s">&#39;url/to/forward/to&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For example, to forward to the user&#8217;s profile:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$user = elgg_get_logged_in_user_entity();
+forward($user-&gt;getURL());
+</pre></div>
+</div>
+<p>URLs can be relative to the Elgg root:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$user = elgg_get_logged_in_user_entity();
+forward(&quot;/example/$user-&gt;username&quot;);
+</pre></div>
+</div>
+<p>Redirect to the referring page by using the <code class="docutils literal"><span class="pre">REFERRER</span></code> constant:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>forward(REFERRER);
+forward(REFERER); // equivalent
+</pre></div>
+</div>
+<p>Give feedback to the user about the status of the action by using
+<code class="docutils literal"><span class="pre">system_message</span></code> for positive feedback or <code class="docutils literal"><span class="pre">register_error</span></code> for warnings and errors:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>if ($success) {
+  system_message(elgg_echo(‘actions:example:success’));
+} else {
+  register_error(elgg_echo(‘actions:example:error’));
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="customizing-actions">
+<h3><a class="toc-backref" href="#id4">Customizing actions</a><a class="headerlink" href="#customizing-actions" title="Permalink to this headline">¶</a></h3>
+<p>Before executing any action, Elgg triggers a hook:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$result = elgg_trigger_plugin_hook(&#39;action&#39;, $action, null, true);
+</pre></div>
+</div>
+<p>Where <code class="docutils literal"><span class="pre">$action</span></code> is the action being called. If the hook returns <code class="docutils literal"><span class="pre">false</span></code> then the action will not be executed.</p>
+<div class="section" id="example-captcha">
+<h4>Example: Captcha<a class="headerlink" href="#example-captcha" title="Permalink to this headline">¶</a></h4>
+<p>The captcha module uses this to intercept the <code class="docutils literal"><span class="pre">register</span></code> and <code class="docutils literal"><span class="pre">user/requestnewpassword</span></code> actions and redirect them to a function which checks the captcha code. This check returns <code class="docutils literal"><span class="pre">true</span></code> if valid or <code class="docutils literal"><span class="pre">false</span></code> if not (which prevents the associated action from executing).</p>
+<p>This is done as follows:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_plugin_hook_handler(&quot;action&quot;, &quot;register&quot;, &quot;captcha_verify_action_hook&quot;);
+elgg_register_plugin_hook_handler(&quot;action&quot;, &quot;user/requestnewpassword&quot;, &quot;captcha_verify_action_hook&quot;);
+
+...
+
+function captcha_verify_action_hook($hook, $entity_type, $returnvalue, $params) {
+  $token = get_input(&#39;captcha_token&#39;);
+  $input = get_input(&#39;captcha_input&#39;);
+
+  if (($token) &amp;&amp; (captcha_verify_captcha($input, $token))) {
+    return true;
+  }
+
+  register_error(elgg_echo(&#39;captcha:captchafail&#39;));
+
+  return false;
+}
+</pre></div>
+</div>
+<p>This lets a plugin extend an existing action without the need to replace the whole action. In the case of the captcha plugin it allows the plugin to provide captcha support in a very loosely coupled way.</p>
+<p>To output a form, use the elgg_view_form function like so:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>echo elgg_view_form(&#39;example&#39;);
+</pre></div>
+</div>
+<p>Doing this generates something like the following markup:</p>
+<div class="code html highlight-python"><div class="highlight"><pre>&lt;form action=&quot;http://localhost/elgg/action/example&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;__elgg_ts&quot; value=&quot;1234567890&quot; /&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;__elgg_token&quot; value=&quot;3874acfc283d90e34&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+<p>Elgg does some things automatically for you when you generate forms this way:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>It sets the action to the appropriate URL based on the name of the action you pass to it</li>
+<li>It adds some anti-csrf tokens (<code class="docutils literal"><span class="pre">__elgg_ts</span></code> and <code class="docutils literal"><span class="pre">__elgg_token</span></code>) to help keep your actions secure</li>
+<li>It automatically looks for the body of the form in the <code class="docutils literal"><span class="pre">forms/example</span></code> view.</li>
+</ol>
+</div></blockquote>
+<p>Put the content of your form in your plugin’s <code class="docutils literal"><span class="pre">forms/example</span></code> view:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// /mod/example/views/default/forms/example.php
+echo elgg_view(&#39;input/text&#39;, array(&#39;name&#39; =&gt; &#39;example&#39;));
+echo elgg_view(&#39;input/submit&#39;);
+</pre></div>
+</div>
+<p>Now when you call <code class="docutils literal"><span class="pre">elgg_view_form('example')</span></code>, Elgg will produce:</p>
+<div class="code html highlight-python"><div class="highlight"><pre>&lt;form action=&quot;http://localhost/elgg/action/example&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;__elgg_ts&quot; value=&quot;...&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;__elgg_token&quot; value=&quot;...&quot;&gt;
+
+    &lt;input type=&quot;text&quot; class=&quot;elgg-input-text&quot; name=&quot;example&quot;&gt;
+    &lt;input type=&quot;submit&quot; class=&quot;elgg-button elgg-button-submit&quot; value=&quot;Submit&quot;&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="files-and-images">
+<h2><a class="toc-backref" href="#id5">Files and images</a><a class="headerlink" href="#files-and-images" title="Permalink to this headline">¶</a></h2>
+<p>Use the input/file view in your form’s content view.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// /mod/example/views/default/forms/example.php
+echo elgg_view(‘input/file’, array(‘name’ =&gt; ‘icon’));
+</pre></div>
+</div>
+<p>Set the enctype of the form to multipart/form-data:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>echo elgg_view_form(‘example’, array(
+  ‘enctype’ =&gt; ‘multipart/form-data’
+));
+</pre></div>
+</div>
+<p>In your action file, use the <code class="docutils literal"><span class="pre">$_FILES</span></code> global to access the uploaded file:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$icon = $_FILES[‘icon’]
+</pre></div>
+</div>
+</div>
+<div class="section" id="sticky-forms">
+<h2><a class="toc-backref" href="#id6">Sticky forms</a><a class="headerlink" href="#sticky-forms" title="Permalink to this headline">¶</a></h2>
+<p>Sticky forms are forms that retain user input if saving fails. They are &#8220;sticky&#8221; because the user&#8217;s data &#8220;sticks&#8221; in the form after submitting, though it was never saved to the database. This greatly improves the user experience by minimizing data loss. Elgg 1.8 includes helper functions so you can make any form sticky.</p>
+<div class="section" id="helper-functions">
+<h3><a class="toc-backref" href="#id7">Helper functions</a><a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h3>
+<p>Sticky forms are implemented in Elgg 1.8 by the following functions:</p>
+<p><code class="docutils literal"><span class="pre">elgg_make_sticky_form($name)</span></code>
+Tells the engine to make all input on a form sticky.</p>
+<p><code class="docutils literal"><span class="pre">elgg_clear_sticky_form($name)</span></code>
+Tells the engine to discard all sticky input on a form.</p>
+<p><code class="docutils literal"><span class="pre">elgg_is_sticky_form($name)</span></code>
+Checks if $name is a valid sticky form.</p>
+<p><code class="docutils literal"><span class="pre">elgg_get_sticky_values($name)</span></code>
+Returns all sticky values saved for $name by elgg_make_sticky_form().</p>
+</div>
+<div class="section" id="overview">
+<h3><a class="toc-backref" href="#id8">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>The basic flow of using sticky forms is:
+Call <code class="docutils literal"><span class="pre">elgg_make_sticky_form($name)</span></code> at the top of actions for forms you want to be sticky.
+Use <code class="docutils literal"><span class="pre">elgg_is_sticky_form($name)</span></code> and <code class="docutils literal"><span class="pre">elgg_get_sticky_values($name)</span></code> to get sticky values when rendering a form view.
+Call <code class="docutils literal"><span class="pre">elgg_clear_sticky_form($name)</span></code> after the action has completed successfully or after data has been loaded by <code class="docutils literal"><span class="pre">elgg_get_sticky_values($name)</span></code>.</p>
+</div>
+<div class="section" id="example-user-registration">
+<h3><a class="toc-backref" href="#id9">Example: User registration</a><a class="headerlink" href="#example-user-registration" title="Permalink to this headline">¶</a></h3>
+<p>Simple sticky forms require little logic to determine the input values for the form. This logic is placed at the top of the form body view itself.</p>
+<p>The registration form view first sets default values for inputs, then checks if there are sticky values. If so, it loads the sticky values before clearing the sticky form:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// views/default/forms/register.php
+$password = $password2 = &#39;&#39;;
+$username = get_input(&#39;u&#39;);
+$email = get_input(&#39;e&#39;);
+$name = get_input(&#39;n&#39;);
+
+if (elgg_is_sticky_form(&#39;register&#39;)) {
+     extract(elgg_get_sticky_values(&#39;register&#39;));
+     elgg_clear_sticky_form(&#39;register&#39;);
+}
+</pre></div>
+</div>
+<p>The registration action sets creates the sticky form and clears it once the action is completed:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// actions/register.php
+elgg_make_sticky_form(&#39;register&#39;);
+
+...
+
+$guid = register_user($username, $password, $name, $email, false, $friend_guid, $invitecode);
+
+if ($guid) {
+     elgg_clear_sticky_form(&#39;register&#39;);
+     ....
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-bookmarks">
+<h3><a class="toc-backref" href="#id10">Example: Bookmarks</a><a class="headerlink" href="#example-bookmarks" title="Permalink to this headline">¶</a></h3>
+<p>The bundled plugin Bookmarks&#8217; save form and action is an example of a complex sticky form.</p>
+<p>The form view for the save bookmark action uses <code class="docutils literal"><span class="pre">elgg_extract()</span></code> to pull values from the <code class="docutils literal"><span class="pre">$vars</span></code> array:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// mod/bookmarks/views/default/forms/bookmarks/save.php
+$title = elgg_extract(&#39;title&#39;, $vars, &#39;&#39;);
+$desc = elgg_extract(&#39;description&#39;, $vars, &#39;&#39;);
+$address = elgg_extract(&#39;address&#39;, $vars, &#39;&#39;);
+$tags = elgg_extract(&#39;tags&#39;, $vars, &#39;&#39;);
+$access_id = elgg_extract(&#39;access_id&#39;, $vars, ACCESS_DEFAULT);
+$container_guid = elgg_extract(&#39;container_guid&#39;, $vars);
+$guid = elgg_extract(&#39;guid&#39;, $vars, null);
+$shares = elgg_extract(&#39;shares&#39;, $vars, array());
+</pre></div>
+</div>
+<p>The page handler scripts prepares the form variables and calls <code class="docutils literal"><span class="pre">elgg_view_form()</span></code> passing the correct values:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// mod/bookmarks/pages/add.php
+$vars = bookmarks_prepare_form_vars();
+$content = elgg_view_form(&#39;bookmarks/save&#39;, array(), $vars);
+</pre></div>
+</div>
+<p>Similarly, <code class="docutils literal"><span class="pre">mod/bookmarks/pages/edit.php</span></code> uses the same function, but passes the entity that is being edited as an argument:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$bookmark_guid = get_input(&#39;guid&#39;);
+$bookmark = get_entity($bookmark_guid);
+
+...
+
+$vars = bookmarks_prepare_form_vars($bookmark);
+$content = elgg_view_form(&#39;bookmarks/save&#39;, array(), $vars);
+</pre></div>
+</div>
+<p>The library file defines <code class="docutils literal"><span class="pre">bookmarks_prepare_form_vars()</span></code>. This function accepts an <code class="docutils literal"><span class="pre">ElggEntity</span></code> as an argument and does 3 things:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Defines the input names and default values for form inputs.</li>
+<li>Extracts the values from a bookmark object if it&#8217;s passed.</li>
+<li>Extracts the values from a sticky form if it exists.</li>
+</ol>
+</div></blockquote>
+<p>TODO: Include directly from lib/bookmarks.php</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// mod/bookmarks/lib/bookmarks.php
+function bookmarks_prepare_form_vars($bookmark = null) {
+     // input names =&gt; defaults
+  $values = array(
+    &#39;title&#39; =&gt; get_input(&#39;title&#39;, &#39;&#39;), // bookmarklet support
+    &#39;address&#39; =&gt; get_input(&#39;address&#39;, &#39;&#39;),
+    &#39;description&#39; =&gt; &#39;&#39;,
+    &#39;access_id&#39; =&gt; ACCESS_DEFAULT,
+    &#39;tags&#39; =&gt; &#39;&#39;,
+    &#39;shares&#39; =&gt; array(),
+    &#39;container_guid&#39; =&gt; elgg_get_page_owner_guid(),
+    &#39;guid&#39; =&gt; null,
+    &#39;entity&#39; =&gt; $bookmark,
+  );
+
+  if ($bookmark) {
+       foreach (array_keys($values) as $field) {
+       if (isset($bookmark-&gt;$field)) {
+         $values[$field] = $bookmark-&gt;$field;
+       }
+    }
+  }
+
+  if (elgg_is_sticky_form(&#39;bookmarks&#39;)) {
+       $sticky_values = elgg_get_sticky_values(&#39;bookmarks&#39;);
+       foreach ($sticky_values as $key =&gt; $value) {
+      $values[$key] = $value;
+    }
+  }
+
+  elgg_clear_sticky_form(&#39;bookmarks&#39;);
+
+  return $values;
+}
+</pre></div>
+</div>
+<p>The save action checks the input, then clears the sticky form upon success:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// mod/bookmarks/actions/bookmarks/save.php
+elgg_make_sticky_form(&#39;bookmarks&#39;);
+...
+
+if ($bookmark-&gt;save()) {
+     elgg_clear_sticky_form(&#39;bookmarks&#39;);
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ajax">
+<h2><a class="toc-backref" href="#id11">Ajax</a><a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference internal" href="ajax.html"><em>Ajax guide</em></a> for instructions on calling actions from JavaScript.</p>
+</div>
+<div class="section" id="security">
+<h2><a class="toc-backref" href="#id12">Security</a><a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<p>For enhanced security, all actions require an CSRF token. Calls to action URLs that do not include security tokens will be ignored and a warning will be generated.</p>
+<p>A few views and functions automatically generate security tokens:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_view(&#39;output/url&#39;, array(&#39;is_action&#39; =&gt; TRUE));
+elgg_view(&#39;input/securitytoken&#39;);
+$url = elgg_add_action_tokens_to_url(&quot;http://localhost/elgg/action/example&quot;);
+</pre></div>
+</div>
+<p>In rare cases, you may need to generate tokens manually:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$__elgg_ts = time();
+$__elgg_token = generate_action_token($__elgg_ts);
+</pre></div>
+</div>
+<p>You can also access the tokens from javascript:</p>
+<div class="code js highlight-python"><div class="highlight"><pre><span class="n">elgg</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">token</span><span class="o">.</span><span class="n">__elgg_ts</span><span class="p">;</span>
+<span class="n">elgg</span><span class="o">.</span><span class="n">security</span><span class="o">.</span><span class="n">token</span><span class="o">.</span><span class="n">__elgg_token</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>These are refreshed periodically so should always be up-to-date.</p>
+</div>
+<div class="section" id="security-tokens">
+<h2><a class="toc-backref" href="#id13">Security Tokens</a><a class="headerlink" href="#security-tokens" title="Permalink to this headline">¶</a></h2>
+<p>On occasion we need to pass data through an untrusted party or generate an &#8220;unguessable token&#8221; based on some data.
+The industry-standard <a class="reference external" href="http://security.stackexchange.com/a/20301/4982">HMAC</a> algorithm is the right tool for this.
+It allows us to verify that received data were generated by our site, and were not tampered with. Note that even
+strong hash functions like SHA-2 should <em>not</em> be used without HMAC for these tasks.</p>
+<p>Elgg provides <code class="docutils literal"><span class="pre">elgg_build_hmac()</span></code> to generate and validate HMAC message authentication codes that are unguessable
+without the site&#8217;s private key.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// generate a querystring such that $a and $b can&#39;t be altered
+$a = 1234;
+$b = &quot;hello&quot;;
+$query = http_build_query([
+    &#39;a&#39; =&gt; $a,
+    &#39;b&#39; =&gt; $b,
+    &#39;mac&#39; =&gt; elgg_build_hmac([$a, $b])-&gt;getToken(),
+]);
+$url = &quot;action/foo?$query&quot;;
+
+
+// validate the querystring
+$a = (int) get_input(&#39;a&#39;, &#39;&#39;, false);
+$b = (string) get_input(&#39;b&#39;, &#39;&#39;, false);
+$mac = get_input(&#39;mac&#39;, &#39;&#39;, false);
+
+if (elgg_build_hmac([$a, $b])-&gt;matchesToken($mac)) {
+    // $a and $b have not been altered
+}
+</pre></div>
+</div>
+<p>Note: If you use a non-string as HMAC data, you must use types consistently. Consider the following:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$mac = elgg_build_hmac([123, 456])-&gt;getToken();
+
+// type of first array element differs
+elgg_build_hmac([&quot;123&quot;, 456])-&gt;matchesToken($mac); // false
+
+// types identical to original
+elgg_build_hmac([123, 456])-&gt;matchesToken($mac); // true
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="helpers.html" class="btn btn-neutral float-right" title="Helper functions">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database.html" class="btn btn-neutral" title="Database"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

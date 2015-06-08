@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>General &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../../index.html"/>
+        <link rel="up" title="FAQs and Other Troubleshooting" href="../faqs.html"/>
+        <link rel="next" title="Security" href="security.html"/>
+        <link rel="prev" title="FAQs and Other Troubleshooting" href="../faqs.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../../index.html"><img src="../../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Appendix</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Appendix</a> &raquo;</li>
+      
+          <li><a href="../faqs.html">FAQs and Other Troubleshooting</a> &raquo;</li>
+      
+    <li>General</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/appendix/faqs/general.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="general">
+<h1>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h1>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../../admin/getting-help.html"><em>Getting Help</em></a></p>
+</div>
+<div class="section" id="plugin-cannot-start-and-has-been-deactivated-or-this-plugin-is-invalid">
+<h2>&#8220;Plugin cannot start and has been deactivated&#8221; or &#8220;This plugin is invalid&#8221;<a class="headerlink" href="#plugin-cannot-start-and-has-been-deactivated-or-this-plugin-is-invalid" title="Permalink to this headline">¶</a></h2>
+<p>This error is usually accompanied by more details explaining why the plugin is invalid. This is usually
+caused by an incorrectly installed plugin.</p>
+<p>If you are installing a plugin called &#8220;test&#8221;, there will be a test directory under mod. In that test directory there needs to be a start.php file: <code class="docutils literal"><span class="pre">/mod/test/start.php</span></code> and a manifest.xml file <code class="docutils literal"><span class="pre">/mod/test/manifest.xml</span></code>.</p>
+<dl class="docutils">
+<dt>If these files do not exist, it could be caused by:</dt>
+<dd><ul class="first last simple">
+<li>installing a plugin to the wrong directory</li>
+<li>creating a directory under /mod that does not contain a plugin</li>
+<li>a bad ftp transfer</li>
+<li>unzipping a plugin into an extra directory (myplugin.zip unzips to <code class="docutils literal"><span class="pre">myplugin/myplugin</span></code>)</li>
+</ul>
+</dd>
+</dl>
+<p>If you are on a Unix-based host and the files exist in the correct directory, check the permissions. Elgg must have read access to the files and read + execute access on the directories.</p>
+</div>
+<div class="section" id="white-page-wsod">
+<h2>White Page (WSOD)<a class="headerlink" href="#white-page-wsod" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>A blank, white page (often called a &#8220;white screen of death&#8221;) means there is a PHP syntax error. There are a few possible causes of this:</dt>
+<dd><ul class="first last simple">
+<li>corrupted file - try transfering the code again to your server</li>
+<li>a call to a php module that was not loaded - this can happen after you install a plugin that requires a specific module.</li>
+<li>bad plugin - not all plugins have been written to the same quality so you should be careful which ones you install.</li>
+</ul>
+</dd>
+</dl>
+<p>To find where the error is occurring, change the .htaccess file to display errors to the browser. Set display_errors to 1 and load the same page again. You should see a PHP error in your browser. Change the setting back once you&#8217;ve resolved the problem.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using the Developer&#8217;s Tools plugin, go to its settings page and make sure you have &#8220;Display fatal PHP errors&#8221; enabled.</p>
+</div>
+<p>If the white screen is due to a bad plugin, remove the latest plugins that you have installed by deleting their directories and then reload the page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can temporarily disable all plugins by creating an empty file at <code class="docutils literal"><span class="pre">mod/disabled</span></code>. You can then disable the offending module via the administrator tools panel.</p>
+</div>
+<p>If you are getting a WSOD when performing an action, like logging in or posting a blog, but there are no error messages, it&#8217;s most likely caused by non-printable characters in plugin code. Check the plugin for white spaces/new lines characters after finishing php tag (<code class="docutils literal"><span class="pre">?&gt;</span></code>) and remove them.</p>
+</div>
+<div class="section" id="page-not-found">
+<h2>Page not found<a class="headerlink" href="#page-not-found" title="Permalink to this headline">¶</a></h2>
+<p>If you have recently installed your Elgg site, the most likely cause for a page not found error is that <code class="docutils literal"><span class="pre">mod_rewrite</span></code> is not setup correctly on your server. There is information in the <a class="reference internal" href="../../intro/install.html"><em>Install Troubleshooting</em></a> page on fixing this. The second most likely cause is that your site url in your database is incorrect.</p>
+<p>If you&#8217;ve been running your site for a while and suddenly start getting page not found errors, you need to ask yourself what has changed. Have you added any plugins? Did you change your server configuration?</p>
+<p>To debug a page not found error:</p>
+<ul class="simple">
+<li>Confirm that the link leading to the missing page is correct. If not, how is that link being generated?</li>
+<li>Confirm that the <code class="docutils literal"><span class="pre">.htaccess</span></code> rewrite rules are being picked up.</li>
+</ul>
+</div>
+<div class="section" id="login-token-mismatch">
+<h2>Login token mismatch<a class="headerlink" href="#login-token-mismatch" title="Permalink to this headline">¶</a></h2>
+<p>If you have to log in twice to your site and the error message after the first attempt says there was a token mismatch error, the URL in Elgg&#8217;s settings does not match the URL used to access it. The most common cause for this is adding or removing the &#8220;www&#8221; when accessing the site. For example, www.elgg.org vs elgg.org. This causes a problem with session handling because of the way that web browsers save cookies.</p>
+<p>To fix this, you can add rewrite rules. To redirect from www.elgg.org to elgg.org in Apache, the rules might look like:</p>
+<div class="highlight-python"><div class="highlight"><pre>RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^elgg\.org
+RewriteRule (.*) http://elgg.org/$1 [R=301,L]
+</pre></div>
+</div>
+<p>Redirecting from non-www to www could look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>RewriteCond %{HTTP_HOST} ^elgg\.org
+RewriteRule ^(.*)$ http://www.elgg.org/$1 [R=301,L]
+</pre></div>
+</div>
+<p>If you don&#8217;t know how to configure rewrite rules, ask your host for more information.</p>
+</div>
+<div class="section" id="form-is-missing-token-or-ts-fields">
+<h2>Form is missing __token or __ts fields<a class="headerlink" href="#form-is-missing-token-or-ts-fields" title="Permalink to this headline">¶</a></h2>
+<p>All Elgg actions require a security token, and this error occurs when that token is missing. This is either a problem with your server configuration or with a 3rd party plugin.</p>
+<p>If you experience this on a new installation, make sure that your server is properly configured and your rewrite rules are correct. If you experience this on an upgrade, make sure you have updated your rewrite rules either in .htaccess (Apache) or in the server configuration.</p>
+<p>If you are experiencing this, disable all 3rd party plugins and try again. Very old plugins for Elgg don&#8217;t use security tokens. If the problem goes away when plugins are disabled, it&#8217;s due to a plugin that should be updated by its author.</p>
+</div>
+<div class="section" id="maintenance-mode">
+<h2>Maintenance mode<a class="headerlink" href="#maintenance-mode" title="Permalink to this headline">¶</a></h2>
+<p>To take your site temporarily offline, go to Administration -&gt; Utilities -&gt; Maintenance Mode. Complete the form and hit save to disable your site for everyone except admin users.</p>
+</div>
+<div class="section" id="missing-email">
+<h2>Missing email<a class="headerlink" href="#missing-email" title="Permalink to this headline">¶</a></h2>
+<p>If your users are reporting that validation emails are not showing up, have them check their spam folder. It is possible that the emails coming from your server are being marked as spam. This depends on many factors such as whether your hosting provider has a problem with spammers, how your PHP mail configuration is set up, what mail transport agent your server is using, or your host limiting the number of email that you can send in an hour.</p>
+<p>If no one gets email at all, it is quite likely your server is not configured properly for email. Your server needs a program to send email (called a Mail Transfer Agent - MTA) and PHP must be configured to use the MTA.</p>
+<p>To quickly check if PHP and an MTA are correctly configured, create a file on your server with the following content:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;?php
+$address = &quot;your_email@your_host.com&quot;;
+
+$subject = &#39;Test email.&#39;;
+
+$body = &#39;If you can read this, your email is working.&#39;;
+
+echo &quot;Attempting to email $address...&lt;br /&gt;&quot;;
+
+if (mail($address, $subject, $body)) {
+        echo &#39;SUCCESS!  PHP successfully delivered email to your MTA.  If you don\&#39;t see the email in your inbox in a few minutes, there is a problem with your MTA.&#39;;
+} else {
+        echo &#39;ERROR!  PHP could not deliver email to your MTA.  Check that your PHP settings are correct for your MTA and your MTA will deliver email.&#39;;
+}
+</pre></div>
+</div>
+<p>Be sure to replace &#8220;<a class="reference external" href="mailto:your_email&#37;&#52;&#48;your_host&#46;com">your_email<span>&#64;</span>your_host<span>&#46;</span>com</a>&#8221; with your actual email address.  Take care to keep quotes around it!  When you access this page through your web browser, it will attempt to send a test email.  This test will let you know that PHP and your MTA are correctly configured.  If it fails&#8211;either you get an error or you never receive the email&#8211;you will need to do more investigating and possibly contact your service provider.</p>
+<p>Fully configuring an MTA and PHP&#8217;s email functionality is beyond the scope of this FAQ and you should search the Internet for more resources on this. Some basic information on php parameters can be found on <a class="reference external" href="http://php.net/manual/en/mail.configuration.php">PHP&#8217;s site</a></p>
+</div>
+<div class="section" id="server-logs">
+<h2>Server logs<a class="headerlink" href="#server-logs" title="Permalink to this headline">¶</a></h2>
+<p>Most likely you are using Apache as your web server. Warnings and errors are written to a log by the web server and can be useful for debugging problems. You will commonly see two types of log files: access logs and error logs. Information from PHP and Elgg is written to the server error log.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Linux &#8211; The error log is probably in /var/log/httpd or /var/log/apache2.</li>
+<li>Windows - It is probably inside your Apache directory.</li>
+<li>Mac OS - The error log is probably in /var/log/apache2/error_log</li>
+</ul>
+</div></blockquote>
+<p>If you are using shared hosting without ssh access, your hosting provider may provide a mechanism for obtaining access to your server logs. You will need to ask them about this.</p>
+</div>
+<div class="section" id="how-does-registration-work">
+<h2>How does registration work?<a class="headerlink" href="#how-does-registration-work" title="Permalink to this headline">¶</a></h2>
+<p>With a default setup, this is how registration works:</p>
+<ol class="arabic simple">
+<li>User fills out registration form and submits it</li>
+<li>User account is created and disabled until validated</li>
+<li>Email is sent to user with a link to validate the account</li>
+<li>When a user clicks on the link, the account is validated</li>
+<li>The user can now log in</li>
+</ol>
+<p>Failures during this process include the user entering an incorrect email address, the validation email being marked as spam, or a user never bothering to validate the account.</p>
+</div>
+<div class="section" id="user-validation">
+<h2>User validation<a class="headerlink" href="#user-validation" title="Permalink to this headline">¶</a></h2>
+<p>By default, all users who self-register must validate their accounts through email. If a user has
+problems validating an account, you can validate users manually by going to Administration -&gt; Users -&gt; Unvalidated.</p>
+<p>You can remove this requirement by deactivating the User Validation by Email plugin.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Removing validation has some consequences: There is no way to know that a user registered with a working email address, and it may leave you system open to spammers.</p>
+</div>
+</div>
+<div class="section" id="manually-add-user">
+<h2>Manually add user<a class="headerlink" href="#manually-add-user" title="Permalink to this headline">¶</a></h2>
+<p>To manually add a user, under the Administer controls go to Users. There you will see a link title &#8220;Add new User&#8221;. After you fill out the information and submit the form, the new user will receive an email with username and password and a reminder to change the password.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Elgg does not force the user to change the password.</p>
+</div>
+</div>
+<div class="section" id="i-m-making-or-just-installed-a-new-theme-but-graphics-or-other-elements-aren-t-working">
+<h2>I&#8217;m making or just installed a new theme, but graphics or other elements aren&#8217;t working<a class="headerlink" href="#i-m-making-or-just-installed-a-new-theme-but-graphics-or-other-elements-aren-t-working" title="Permalink to this headline">¶</a></h2>
+<p>Make sure the theme is at the bottom of the plugin list.</p>
+<p>Clear your browser cache and reload the page. To lighten the load on the server, Elgg instructs the browser to rarely load the CSS file. A new theme will completely change the CSS file and a refresh should cause the browser to request the CSS file again.</p>
+<p>If you&#8217;re building or modifying a theme, make sure you have disabled the simple and system caches. This can be done by
+enabling the Developer Tools plugin, then browsing to Administration -&gt; Develop -&gt; Settings. Once you&#8217;re satisfied with the changes, enable the caches or performance will suffer.</p>
+</div>
+<div class="section" id="changing-profile-fields">
+<h2>Changing profile fields<a class="headerlink" href="#changing-profile-fields" title="Permalink to this headline">¶</a></h2>
+<p>Within the Administration settings of Elgg is a page for replacing the default profile fields. Elgg by default gives the administrator two choices:</p>
+<ul class="simple">
+<li>Use the default profile fields</li>
+<li>Replace the default with a set of custom profile fields</li>
+</ul>
+<p>You cannot add new profile fields to the default ones. Adding a new profile field through the replace profile fields option clears the default ones. Before letting in users, it is best to determine what profile fields you want, what field types they should be, and the order they should appear. You cannot change the field type or order or delete fields after they have been created without wiping the entire profile blank.</p>
+<p>More flexibility can be gained through plugins. There is at least two plugins on the community site that enable you to have more control over profile fields. The <a class="reference external" href="https://community.elgg.org/plugins/385114">Profile Manager</a> plugin has become quite popular in the Elgg community. It lets you add new profile fields whenever you want, change the order, group profile fields, and add them to registration.</p>
+</div>
+<div class="section" id="changing-registration">
+<h2>Changing registration<a class="headerlink" href="#changing-registration" title="Permalink to this headline">¶</a></h2>
+<p>The registration process can be changed through a plugin. Everything about registration can be changed: the look and feel, different registration fields, additional validation of the fields, additional steps and so on. These types of changes require some basic knowledge of HTML, CSS, PHP.</p>
+<p>Another option is to use the <a class="reference external" href="https://community.elgg.org/plugins/385114">Profile Manager</a> plugin that lets you add fields to both user profiles and the registration form.</p>
+<dl class="docutils">
+<dt>Create the plugin skeleton</dt>
+<dd><a class="reference internal" href="../../guides/plugins/plugin-skeleton.html"><em>Plugin skeleton</em></a></dd>
+<dt>Changing registration display</dt>
+<dd>Override the <code class="docutils literal"><span class="pre">account/forms/register</span></code> view</dd>
+<dt>Changing the registration action handler</dt>
+<dd>You can write your own action to create the user&#8217;s account</dd>
+</dl>
+</div>
+<div class="section" id="how-do-i-change-php-settings-using-htaccess">
+<h2>How do I change PHP settings using .htaccess?<a class="headerlink" href="#how-do-i-change-php-settings-using-htaccess" title="Permalink to this headline">¶</a></h2>
+<p>You may want to change php settings in your <code class="docutils literal"><span class="pre">.htaccess</span></code> file. This is especially true if your hosting provider does not give you access to the server&#8217;s <code class="docutils literal"><span class="pre">php.ini</span></code> file. The variables could be related to file upload size limits, security, session length, or any number of other php attributes. For examples of how to do this, see the <a class="reference external" href="http://us2.php.net/configuration.changes">PHP documentation</a> on this.</p>
+</div>
+<div class="section" id="https-login-turned-on-accidently">
+<h2>HTTPS login turned on accidently<a class="headerlink" href="#https-login-turned-on-accidently" title="Permalink to this headline">¶</a></h2>
+<p>If you have turned on HTTPS login but do not have SSL configured, you are now locked out of your Elgg install. To turn off this configuration parameter, you will need to edit your database. Use a tool like phpMyAdmin to view your database. Select the <code class="docutils literal"><span class="pre">config</span></code> table and delete the row that has the name <code class="docutils literal"><span class="pre">https_login</span></code>.</p>
+</div>
+<div class="section" id="using-a-test-site">
+<h2>Using a test site<a class="headerlink" href="#using-a-test-site" title="Permalink to this headline">¶</a></h2>
+<p>It is recommended to always try out new releases or new plugins on a test site before running them on a production site (a site with actual users). The easiest way to do this is to maintain a separate install of Elgg with dummy accounts. When testing changes it is important to use dummy accounts that are not admins to test what your users will see.</p>
+<p>A more realistic test is to mirror the content from your production site to your test site. Following the instructions for <a class="reference internal" href="../../admin/duplicate-installation.html"><em>duplicating a site</em></a>. Then make sure you prevent emails from being sent to your users. You could write a small plugin that redirects all email to your own account (be aware of plugins that include their own custom email sending code so you&#8217;ll have to modify those plugins). After this is done you can view all of the content to make sure the upgrade or new plugin is functioning as desired and is not breaking anything. If this process sounds overwhelming, please stick with running a simple test site.</p>
+</div>
+<div class="section" id="internal-server-error">
+<h2>500 - Internal Server Error<a class="headerlink" href="#internal-server-error" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-it">
+<h3>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>500 - Internal Server Error</strong> means the web server experienced a problem serving a request.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_Error">The Wikipedia page on HTTP status codes</a></p>
+</div>
+</div>
+<div class="section" id="possible-causes">
+<h3>Possible causes<a class="headerlink" href="#possible-causes" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Web server configuration</dt>
+<dd>The most common cause for this is an incorrectly configured server. If you edited the <code class="docutils literal"><span class="pre">.htaccess</span></code> file and added something incorrect, Apache will send a 500 error.</dd>
+<dt>Permissions on files</dt>
+<dd>It could also be a permissions problem on a file. Apache needs to be able to read Elgg&#8217;s files. Using permissions 755 on directories and 644 on files will allow Apache to read the files.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="when-i-upload-a-photo-or-change-my-profile-picture-i-get-a-white-screen">
+<h2>When I upload a photo or change my profile picture I get a white screen<a class="headerlink" href="#when-i-upload-a-photo-or-change-my-profile-picture-i-get-a-white-screen" title="Permalink to this headline">¶</a></h2>
+<p>Most likely you don&#8217;t have the PHP GD library installed or configured properly. You may need assistance from the administrator of your server.</p>
+</div>
+<div class="section" id="css-is-missing">
+<h2>CSS is missing<a class="headerlink" href="#css-is-missing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="wrong-url">
+<h3>Wrong URL<a class="headerlink" href="#wrong-url" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes people install Elgg so that the base URL is <code class="docutils literal"><span class="pre">localhost</span></code> and then try to view the site using a hostname. In this case, the browser won&#8217;t be able to load the CSS file. Try viewing the source of the web page and copying the link for the CSS file. Paste that into your browser. If you get a 404 error, it is likely this is your problem. You will need to change the base URL of your site.</p>
+</div>
+<div class="section" id="syntax-error">
+<h3>Syntax error<a class="headerlink" href="#syntax-error" title="Permalink to this headline">¶</a></h3>
+<p>Elgg stores its CSS as PHP code to provide flexibility and power. If there is a syntax error, the CSS file served to the browser may be blank. Disabling non-bundled plugins is the recommended first step.</p>
+</div>
+<div class="section" id="rewrite-rules-errors">
+<h3>Rewrite rules errors<a class="headerlink" href="#rewrite-rules-errors" title="Permalink to this headline">¶</a></h3>
+<p>A bad <code class="docutils literal"><span class="pre">.htaccess</span></code> file could also result in a 404 error when requesting the CSS file. This could happen when doing an upgrade and forgetting to also upgrade <code class="docutils literal"><span class="pre">.htaccess</span></code>.</p>
+</div>
+</div>
+<div class="section" id="should-i-edit-the-database-manually">
+<h2>Should I edit the database manually?<a class="headerlink" href="#should-i-edit-the-database-manually" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">No, you should never manually edit the database!</p>
+</div>
+<div class="section" id="will-editing-the-database-manually-break-my-site">
+<h3>Will editing the database manually break my site?<a class="headerlink" href="#will-editing-the-database-manually-break-my-site" title="Permalink to this headline">¶</a></h3>
+<p>Yes.</p>
+</div>
+<div class="section" id="can-i-add-extra-fields-to-tables-in-the-database">
+<h3>Can I add extra fields to tables in the database?<a class="headerlink" href="#can-i-add-extra-fields-to-tables-in-the-database" title="Permalink to this headline">¶</a></h3>
+<p>(AKA: I don&#8217;t understand the Elgg <a class="reference internal" href="../../design/database.html"><em>data model</em></a> so I&#8217;m going to add columns. Will you help?)</p>
+<p>No, this is a bad idea. Learn the <a class="reference internal" href="../../design/database.html"><em>data model</em></a> and you will see that unless it&#8217;s a very specific and highly customized installation, you can do everything you need within Elgg&#8217;s current data model.</p>
+</div>
+<div class="section" id="i-want-to-remove-users-can-t-i-just-delete-them-from-the-elgg-users-entity-table">
+<h3>I want to remove users. Can&#8217;t I just delete them from the elgg_users_entity table?<a class="headerlink" href="#i-want-to-remove-users-can-t-i-just-delete-them-from-the-elgg-users-entity-table" title="Permalink to this headline">¶</a></h3>
+<p>No, it will corrupt your database. Delete them through the site.</p>
+</div>
+<div class="section" id="i-want-to-remove-spam-can-t-i-just-search-and-delete-it-from-the-elgg-objects-entity-table">
+<h3>I want to remove spam. Can&#8217;t I just search and delete it from the elgg_objects_entity table?<a class="headerlink" href="#i-want-to-remove-spam-can-t-i-just-search-and-delete-it-from-the-elgg-objects-entity-table" title="Permalink to this headline">¶</a></h3>
+<p>No, it will corrupt your database. Delete it through the site.</p>
+</div>
+<div class="section" id="someone-on-the-community-site-told-me-to-edit-the-database-manually-should-i">
+<h3>Someone on the community site told me to edit the database manually. Should I?<a class="headerlink" href="#someone-on-the-community-site-told-me-to-edit-the-database-manually-should-i" title="Permalink to this headline">¶</a></h3>
+<p>Who was it? Is it someone experienced with Elgg, like one of the core developers or a well-known plugin author? Did he or she give you clear and specific instructions on what to edit? If you don&#8217;t know who it is, or if you can&#8217;t understand or aren&#8217;t comfortable following the instructions, do not edit the database manually.</p>
+</div>
+<div class="section" id="i-know-php-and-mysql-and-have-a-legitimate-reason-to-edit-the-database-is-it-okay-to-manually-edit-the-database">
+<h3>I know PHP and MySQL and have a legitimate reason to edit the database. Is it okay to manually edit the database?<a class="headerlink" href="#i-know-php-and-mysql-and-have-a-legitimate-reason-to-edit-the-database-is-it-okay-to-manually-edit-the-database" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you understand Elgg&#8217;s <a class="reference internal" href="../../design/database.html"><em>data model</em></a> and schema first. Make a backup, edit carefully, then test copiously.</p>
+</div>
+</div>
+<div class="section" id="internet-explorer-ie-login-problem">
+<h2>Internet Explorer (IE) login problem<a class="headerlink" href="#internet-explorer-ie-login-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="canonical-url">
+<h3>Canonical URL<a class="headerlink" href="#canonical-url" title="Permalink to this headline">¶</a></h3>
+<p>IE does not like working with sites that use both <a class="reference external" href="http://example.org">http://example.org</a> and <a class="reference external" href="http://www.example.org">http://www.example.org</a>. It stores multiple cookies and this causes problems. Best to only use one base URL. For details on how to do this see Login token mismatch error.</p>
+</div>
+<div class="section" id="chrome-frame">
+<h3>Chrome Frame<a class="headerlink" href="#chrome-frame" title="Permalink to this headline">¶</a></h3>
+<p>Using the chrome frame within IE can break the login process.</p>
+</div>
+</div>
+<div class="section" id="emails-don-t-support-non-latin-characters">
+<h2>Emails don&#8217;t support non-Latin characters<a class="headerlink" href="#emails-don-t-support-non-latin-characters" title="Permalink to this headline">¶</a></h2>
+<p>In order to support non-Latin characters, (such as Cyrillic or Chinese) Elgg requires <a class="reference external" href="http://uk.php.net/manual/en/mbstring.installation.php">multibyte string support</a> to be compiled into PHP.</p>
+<p>On many installs (e.g. Debian &amp; Ubuntu) this is turned on by default. If it is not, you need to turn it on (or recompile PHP to include it). To check whether your server supports multibyte strings, check <a class="reference external" href="http://php.net/manual/en/function.phpinfo.php">phpinfo</a>.</p>
+</div>
+<div class="section" id="session-length">
+<h2>Session length<a class="headerlink" href="#session-length" title="Permalink to this headline">¶</a></h2>
+<p>Session length is controlled by your php configuration. You will first need to locate your <code class="docutils literal"><span class="pre">php.ini</span></code> file. In that file will be several session variables. A complete list and what they do can be found in the <a class="reference external" href="http://php.net/manual/en/session.configuration.php">php manual</a>.</p>
+</div>
+<div class="section" id="file-is-missing-an-owner">
+<h2>File is missing an owner<a class="headerlink" href="#file-is-missing-an-owner" title="Permalink to this headline">¶</a></h2>
+<p>There are three causes for this error. You could have an entity in your database that has an <code class="docutils literal"><span class="pre">owner_guid</span></code> of <code class="docutils literal"><span class="pre">0</span></code>. This should be extremely rare and may only occur if your database/server crashes during a write operation.</p>
+<p>The second cause would be an entity where the owner no longer exists. This could occur if a plugin is turned off that was involved in the creation of the entity and then the owner is deleted but the delete operation failed (because the plugin is turned off). If you can figure out entity is causing this, look in your <code class="docutils literal"><span class="pre">entities</span></code> table and change the <code class="docutils literal"><span class="pre">owner_guid</span></code> to your own and then you can delete the entity through Elgg.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Reed the section &#8220;Should I edit the database manually?&#8221;. Be very carefull when editing the database directly. It can break your site. <strong>Always</strong> make a backup before doing this.</p>
+</div>
+<p>The third cause is a user not having a username. This also indicates a database problem as this should not be possible. If it does occur, you could see this error when viewing a list of users (such as with the Members plugin). To fix, check your <code class="docutils literal"><span class="pre">users_entity</span></code> table for users without a username and if so, create a fake a username for that person. You should probably then delete the user through Elgg.</p>
+<div class="section" id="fixes">
+<h3>Fixes<a class="headerlink" href="#fixes" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://community.elgg.org/plugins/438616">Database Validator</a> plugin will check your database for these causes and provide an option to fix them. Be sure to backup the database before you try the fix option.</p>
+</div>
+</div>
+<div class="section" id="no-images">
+<h2>No images<a class="headerlink" href="#no-images" title="Permalink to this headline">¶</a></h2>
+<p>If profile images, group images, or other files have stopped working on your site it is likely due to a misconfiguration, especially if you have migrated to a new server.</p>
+<p>These are the most common misconfigurations that cause images and other files to stop working.</p>
+<div class="section" id="wrong-path-for-data-directory">
+<h3>Wrong path for data directory<a class="headerlink" href="#wrong-path-for-data-directory" title="Permalink to this headline">¶</a></h3>
+<p>Make sure the data directory&#8217;s path is correct in the Site Administration admin area. It should have a trailing slash.</p>
+</div>
+<div class="section" id="wrong-permissions-on-the-data-directory">
+<h3>Wrong permissions on the data directory<a class="headerlink" href="#wrong-permissions-on-the-data-directory" title="Permalink to this headline">¶</a></h3>
+<p>Check the permissions for the data directory. The data directory should be readable and writeable by the web server user.</p>
+</div>
+<div class="section" id="different-timezone">
+<h3>Different timezone<a class="headerlink" href="#different-timezone" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This only applies to Elgg versions before 1.9</p>
+</div>
+<p>If you migrated servers or upgraded PHP, check that PHP&#8217;s timezone settings are the same between the old and the new. If you cannot or don&#8217;t want to change the system-wide <code class="docutils literal"><span class="pre">php.ini</span></code> file, you can put the following at the top of <code class="docutils literal"><span class="pre">engine/settings.php</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre><span class="n">date_default_timezone_set</span><span class="p">(</span><span class="s">&#39;MY_TIME_ZONE&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal"><span class="pre">MY_TIME_ZONE</span></code> is a valid <a class="reference external" href="http://php.net/manual/en/timezones.php">PHP timezone</a>.</p>
+</div>
+<div class="section" id="migrated-installation-with-new-data-directory-location">
+<h3>Migrated installation with new data directory location<a class="headerlink" href="#migrated-installation-with-new-data-directory-location" title="Permalink to this headline">¶</a></h3>
+<p>If you migrated an installation and need to change your data directory path, be sure to update the SQL for the filestore location as documented in the <a class="reference internal" href="../../admin/duplicate-installation.html"><em>Duplicate Installation</em></a> instructions.</p>
+</div>
+</div>
+<div class="section" id="deprecation-warnings">
+<h2>Deprecation warnings<a class="headerlink" href="#deprecation-warnings" title="Permalink to this headline">¶</a></h2>
+<p>If you are seeing many deprecation warnings that say things like</p>
+<div class="code highlight-python"><div class="highlight"><pre>Deprecated in 1.7: extend_view() was deprecated by elgg_extend_view()!
+</pre></div>
+</div>
+<p>then you are using a plugin that was written for an older version of Elgg. This means the plugin is using functions that are scheduled to be removed in a future version of Elgg. You can ask the plugin developer if the plugin will be updated or you can update the plugin yourself. If neither of those are likely to happen, you should not use that plugin.</p>
+</div>
+<div class="section" id="javascript-not-working">
+<h2>Javascript not working<a class="headerlink" href="#javascript-not-working" title="Permalink to this headline">¶</a></h2>
+<p>If the user hover menu stops working or you cannot dismiss system messages, that means JavaScript is broken on your site. This usually due to a plugin having bad JavaScript code. You should find the plugin causing the problem and disable it. You can do this be disabling non-bundled plugins one at a time until the problem goes away. Another approach is disabling all non-bundled plugins and then enabling them one by one until the problem occurs again.</p>
+<p>Most web browsers will give you a hint as to what is breaking the JavaScript code. They often have a console for JavaScript errors or an advanced mode for displaying errors. Once you see the error message, you may have an easier time locating the problem.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="security.html" class="btn btn-neutral float-right" title="Security">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../faqs.html" class="btn btn-neutral" title="FAQs and Other Troubleshooting"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

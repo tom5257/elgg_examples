@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Duplicate Installation &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Administrator Guides" href="index.html"/>
+        <link rel="next" title="Getting Help" href="getting-help.html"/>
+        <link rel="prev" title="Duplicate Installation" href=""/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Administrator Guides</a> &raquo;</li>
+      
+    <li>Duplicate Installation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/admin/duplicate-installation.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="duplicate-installation">
+<h1>Duplicate Installation<a class="headerlink" href="#duplicate-installation" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a><ul>
+<li><a class="reference internal" href="#why-duplicate-an-elgg-installation" id="id2">Why Duplicate an Elgg Installation?</a></li>
+<li><a class="reference internal" href="#what-is-not-covered-in-this-tutorial" id="id3">What Is Not Covered in This Tutorial</a></li>
+<li><a class="reference internal" href="#before-you-start" id="id4">Before You Start</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#copy-elgg-code-to-the-test-server" id="id5">Copy Elgg Code to the Test Server</a></li>
+<li><a class="reference internal" href="#copy-data-to-the-test-server" id="id6">Copy Data to the Test Server</a></li>
+<li><a class="reference internal" href="#edit-engine-settings-php" id="id7">Edit engine/settings.php</a></li>
+<li><a class="reference internal" href="#copy-elgg-database" id="id8">Copy Elgg Database</a></li>
+<li><a class="reference internal" href="#database-entries" id="id9">Database Entries</a><ul>
+<li><a class="reference internal" href="#change-the-installation-path" id="id10">Change the installation path</a></li>
+<li><a class="reference internal" href="#change-the-data-directory" id="id11">Change the data directory</a></li>
+<li><a class="reference internal" href="#change-the-site-url" id="id12">Change the site URL</a></li>
+<li><a class="reference internal" href="#change-the-filestore-data-directory" id="id13">Change the filestore data directory</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#check-htaccess" id="id14">Check .htaccess</a></li>
+<li><a class="reference internal" href="#update-webserver-config" id="id15">Update Webserver Config</a></li>
+<li><a class="reference internal" href="#run-upgrade-php" id="id16">Run upgrade.php</a></li>
+<li><a class="reference internal" href="#tips" id="id17">Tips</a></li>
+<li><a class="reference internal" href="#related" id="id18">Related</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-duplicate-an-elgg-installation">
+<h3><a class="toc-backref" href="#id2">Why Duplicate an Elgg Installation?</a><a class="headerlink" href="#why-duplicate-an-elgg-installation" title="Permalink to this headline">¶</a></h3>
+<p>There are many reasons you may want to duplicate an Elgg installation: moving the site to another server, creating a test or development server, and creating functional backups are the most common. To create a successful duplicate of an Elgg site, 3 things need to be copied:</p>
+<ul class="simple">
+<li>Database</li>
+<li>Data from the data directory</li>
+<li>Code</li>
+</ul>
+<p>Also at least 5 pieces of information must be changed from the copied installation:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">engine/settings.php</span></code> file</li>
+<li><code class="docutils literal"><span class="pre">.htaccess</span></code> file (Apache) or Nginx configuration depending on server used</li>
+<li>database entry for your site entity</li>
+<li>database entry for the installation path</li>
+<li>database entry for the data path</li>
+</ul>
+</div>
+<div class="section" id="what-is-not-covered-in-this-tutorial">
+<h3><a class="toc-backref" href="#id3">What Is Not Covered in This Tutorial</a><a class="headerlink" href="#what-is-not-covered-in-this-tutorial" title="Permalink to this headline">¶</a></h3>
+<p>This tutorial expects a basic knowledge of Apache, MySQL, and Linux commands. As such, a few things will not be covered in this tutorial. These include:</p>
+<ul class="simple">
+<li>How to backup and restore MySQL databases</li>
+<li>How to configure Apache to work with Elgg</li>
+<li>How to transfer files to and from your production server</li>
+</ul>
+</div>
+<div class="section" id="before-you-start">
+<h3><a class="toc-backref" href="#id4">Before You Start</a><a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h3>
+<p>Before you start, make sure the Elgg installation you want to duplicate is fully functional. You will also need the following items:</p>
+<ul>
+<li><p class="first">A backup of the live Elgg database</p>
+</li>
+<li><p class="first">A place to copy the live database</p>
+</li>
+<li><dl class="first docutils">
+<dt>A server suitable for installing duplicate Elgg site</dt>
+<dd><p class="first last">(This can be the same server as your production Elgg installation.)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Backups of the database can be obtained various ways, including phpMyAdmin, the MySQL official GUI, and the command line. Talk to your host for information on how to backup and restore databases or use Google to find information on this.</p>
+<p>During this tutorial, we will make these assumptions about the production Elgg site:</p>
+<ul class="simple">
+<li>The URL is <code class="docutils literal"><span class="pre">http://www.myelgg.org/</span></code></li>
+<li>The installation path is <code class="docutils literal"><span class="pre">/var/www/elgg/</span></code></li>
+<li>The data directory is <code class="docutils literal"><span class="pre">/var/data/elgg/</span></code></li>
+<li>The database host is <code class="docutils literal"><span class="pre">localhost</span></code></li>
+<li>The database name is <code class="docutils literal"><span class="pre">production_elgg</span></code></li>
+<li>The database user is <code class="docutils literal"><span class="pre">db_user</span></code></li>
+<li>The database password is <code class="docutils literal"><span class="pre">db_password</span></code></li>
+<li>The database prefix is <code class="docutils literal"><span class="pre">elgg</span></code></li>
+</ul>
+<p>At the end of the tutorial, our test Elgg installation details will be:</p>
+<ul class="simple">
+<li>The URL is <code class="docutils literal"><span class="pre">http://test.myelgg.org/</span></code></li>
+<li>The installation path is <code class="docutils literal"><span class="pre">/var/www/elgg_test/</span></code></li>
+<li>The data directory is <code class="docutils literal"><span class="pre">/var/data/elgg_test/</span></code></li>
+<li>The database host is <code class="docutils literal"><span class="pre">localhost</span></code></li>
+<li>The database name is <code class="docutils literal"><span class="pre">test_elgg</span></code></li>
+<li>The database user is <code class="docutils literal"><span class="pre">db_user</span></code></li>
+<li>The database password is <code class="docutils literal"><span class="pre">db_password</span></code></li>
+<li>The database prefix is <code class="docutils literal"><span class="pre">elgg</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="copy-elgg-code-to-the-test-server">
+<h2><a class="toc-backref" href="#id5">Copy Elgg Code to the Test Server</a><a class="headerlink" href="#copy-elgg-code-to-the-test-server" title="Permalink to this headline">¶</a></h2>
+<p>The very first step is to duplicate the production Elgg code. In our example, this is as simple as copying <code class="docutils literal"><span class="pre">/var/www/elgg/</span></code> to <code class="docutils literal"><span class="pre">/var/www/elgg_test/</span></code>.</p>
+<div class="code highlight-python"><div class="highlight"><pre>cp -a /var/www/elgg/ /var/www/elgg_test/
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy-data-to-the-test-server">
+<h2><a class="toc-backref" href="#id6">Copy Data to the Test Server</a><a class="headerlink" href="#copy-data-to-the-test-server" title="Permalink to this headline">¶</a></h2>
+<p>In this example, this is as simple as copying <code class="docutils literal"><span class="pre">/var/data/elgg/</span></code> to <code class="docutils literal"><span class="pre">/var/data/elgg_test/</span></code>.</p>
+<div class="code highlight-python"><div class="highlight"><pre>cp -a /var/data/elgg/ /var/data/elgg_test/
+</pre></div>
+</div>
+<p>If you don&#8217;t have shell access to your server and have to ftp the data, you may need to change ownership and permissions on the files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You also need to delete the views cache on the test server after the copy process. This is a directory called <code class="docutils literal"><span class="pre">views_simplecache</span></code> in your data directory and the directory called <code class="docutils literal"><span class="pre">system_cache</span></code> .</p>
+</div>
+</div>
+<div class="section" id="edit-engine-settings-php">
+<h2><a class="toc-backref" href="#id7">Edit engine/settings.php</a><a class="headerlink" href="#edit-engine-settings-php" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">engine/settings.php</span></code> file contains the database configuration details. These need to be adjusted for your new test Elgg installation. In our example, we&#8217;ll look in <code class="docutils literal"><span class="pre">/var/www/elgg_test/engine/settings.php</span></code> and find the lines that look like this:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Database username
+$CONFIG-&gt;dbuser = &#39;db_user&#39;;
+
+// Database password
+$CONFIG-&gt;dbpass = &#39;db_password&#39;;
+
+// Database name
+$CONFIG-&gt;dbname = &#39;elgg_production&#39;;
+
+// Database server
+// (For most configurations, you can leave this as &#39;localhost&#39;)
+$CONFIG-&gt;dbhost = &#39;localhost&#39;;
+
+// Database table prefix
+// If you&#39;re sharing a database with other applications, you will want to use this
+// to differentiate Elgg&#39;s tables.
+$CONFIG-&gt;dbprefix = &#39;elgg&#39;;
+</pre></div>
+</div>
+<p>We need to change these lines to match our new installation:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Database username
+$CONFIG-&gt;dbuser = &#39;db_user&#39;;
+
+// Database password
+$CONFIG-&gt;dbpass = &#39;db_password&#39;;
+
+// Database name
+$CONFIG-&gt;dbname = &#39;elgg_test&#39;;
+
+// Database server
+// (For most configurations, you can leave this as &#39;localhost&#39;)
+$CONFIG-&gt;dbhost = &#39;localhost&#39;;
+
+// Database table prefix
+// If you&#39;re sharing a database with other applications, you will want to use this
+// to differentiate Elgg&#39;s tables.
+$CONFIG-&gt;dbprefix = &#39;elgg&#39;;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Notice the <code class="docutils literal"><span class="pre">$CONFIG-&gt;dbname</span></code> has changed to reflect our new database.</p>
+</div>
+</div>
+<div class="section" id="copy-elgg-database">
+<h2><a class="toc-backref" href="#id8">Copy Elgg Database</a><a class="headerlink" href="#copy-elgg-database" title="Permalink to this headline">¶</a></h2>
+<p>Now the database must be copied from <code class="docutils literal"><span class="pre">elgg_production</span></code> to <code class="docutils literal"><span class="pre">elgg_test</span></code>. See your favorite MySQL manager&#8217;s documentation for how to make a duplicate database. You will generally export the current database tables to a file, create the new database, and then import the tables that you previously exported.</p>
+<p>You have two options on updating the values in the database. You could change the values in the export file or you could import the file and change the values with database queries. One advantage of modifying the dump file is that you can also change links that people have created to content within your site. For example, if people have bookmarked pages using the bookmark plugin, the bookmarks will point to the old site unless your update their URLs.</p>
+</div>
+<div class="section" id="database-entries">
+<h2><a class="toc-backref" href="#id9">Database Entries</a><a class="headerlink" href="#database-entries" title="Permalink to this headline">¶</a></h2>
+<p>We must now change 4 entries in the database. This is easily accomplished with 4 simple SQL commands:</p>
+<div class="section" id="change-the-installation-path">
+<h3><a class="toc-backref" href="#id10">Change the installation path</a><a class="headerlink" href="#change-the-installation-path" title="Permalink to this headline">¶</a></h3>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE `elgg_datalists` SET `value` = &quot;/var/www/elgg_test/&quot; WHERE `name` = &quot;path&quot;;
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-data-directory">
+<h3><a class="toc-backref" href="#id11">Change the data directory</a><a class="headerlink" href="#change-the-data-directory" title="Permalink to this headline">¶</a></h3>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE `elgg_datalists` SET `value` = &quot;/var/data/elgg_test/&quot; WHERE `name` = &quot;dataroot&quot;;
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-site-url">
+<h3><a class="toc-backref" href="#id12">Change the site URL</a><a class="headerlink" href="#change-the-site-url" title="Permalink to this headline">¶</a></h3>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE `elgg_sites_entity` SET `url` = &quot;http://test.myelgg.org/&quot;;
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-the-filestore-data-directory">
+<h3><a class="toc-backref" href="#id13">Change the filestore data directory</a><a class="headerlink" href="#change-the-filestore-data-directory" title="Permalink to this headline">¶</a></h3>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE elgg_metastrings SET string = &#39;/var/data/elgg_test/&#39;
+WHERE id = (
+   SELECT value_id
+   FROM elgg_metadata
+   WHERE name_id = (
+      SELECT *
+      FROM (
+         SELECT id
+         FROM elgg_metastrings
+         WHERE string = &#39;filestore::dir_root&#39;
+      ) as ms2
+   )
+   LIMIT 1
+);
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Only change the first path here!!</p>
+</div>
+</div>
+</div>
+<div class="section" id="check-htaccess">
+<h2><a class="toc-backref" href="#id14">Check .htaccess</a><a class="headerlink" href="#check-htaccess" title="Permalink to this headline">¶</a></h2>
+<p>If you have made changes to .htaccess that modify any paths, make sure you update them in the test installation.</p>
+</div>
+<div class="section" id="update-webserver-config">
+<h2><a class="toc-backref" href="#id15">Update Webserver Config</a><a class="headerlink" href="#update-webserver-config" title="Permalink to this headline">¶</a></h2>
+<p>For this example, you must edit the Apache config to enable a subdomain with a document root of <code class="docutils literal"><span class="pre">/var/www/elgg_test/</span></code>. If you plan to install into a subdirectory of your document root, this step is unnecessary.</p>
+<p>If you&#8217;re using Nginx, you need to update server config to match new paths based on <code class="docutils literal"><span class="pre">install/config/nginx.dist</span></code>.</p>
+</div>
+<div class="section" id="run-upgrade-php">
+<h2><a class="toc-backref" href="#id16">Run upgrade.php</a><a class="headerlink" href="#run-upgrade-php" title="Permalink to this headline">¶</a></h2>
+<p>To regenerate cached data, make sure to run <code class="docutils literal"><span class="pre">http://test.myelgg.org/upgrade.php</span></code></p>
+</div>
+<div class="section" id="tips">
+<h2><a class="toc-backref" href="#id17">Tips</a><a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>It is a good idea to keep a test server around to experiment with installing new mods and doing development work. If you automate restorations to the <code class="docutils literal"><span class="pre">elgg_test</span></code> database, changing the <code class="docutils literal"><span class="pre">$CONFIG</span></code> values and adding the follow lines to the end of the <code class="docutils literal"><span class="pre">elgg_test/engine/settings.php</span></code> file will allow seamless re-writing of the MySQL database entries.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$con = mysql_connect($CONFIG-&gt;dbhost, $CONFIG-&gt;dbuser, $CONFIG-&gt;dbpass);
+mysql_select_db($CONFIG-&gt;dbname, $con);
+
+$sql = &quot;UPDATE {$CONFIG-&gt;dbprefix}datalists
+   SET value = &#39;/var/www/test_elgg/&#39;
+   WHERE name = &#39;path&#39;&quot;;
+mysql_query($sql);
+print mysql_error();
+
+$sql = &quot;UPDATE {$CONFIG-&gt;dbprefix}datalists
+   SET value = &#39;/var/data/test_elgg/&#39;
+   WHERE name = &#39;dataroot&#39;&quot;;
+mysql_query($sql);
+print mysql_error();
+
+$sql = &quot;UPDATE {$CONFIG-&gt;dbprefix}sites_entity
+   SET url = &#39;http://test.myelgg.org/&#39;&quot;;
+mysql_query($sql);
+
+$sql = &quot;UPDATE {$CONFIG-&gt;dbprefix}metastrings
+  SET string = &#39;/var/data/elgg_test/&#39;
+  WHERE id = (
+     SELECT value_id
+     FROM {$CONFIG-&gt;dbprefix}metadata
+     WHERE name_id = (
+        SELECT *
+        FROM (
+           SELECT id
+           FROM {$CONFIG-&gt;dbprefix}metastrings
+           WHERE string = &#39;filestore::dir_root&#39;
+        ) as ms2
+     )
+     LIMIT 1
+  )&quot;;
+mysql_query($sql);
+
+print mysql_error();
+</pre></div>
+</div>
+</div>
+<div class="section" id="related">
+<h2><a class="toc-backref" href="#id18">Related</a><a class="headerlink" href="#related" title="Permalink to this headline">¶</a></h2>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="backup-restore.html"><em>Backup and Restore</em></a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting-help.html" class="btn btn-neutral float-right" title="Getting Help">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="" class="btn btn-neutral" title="Duplicate Installation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

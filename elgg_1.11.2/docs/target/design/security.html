@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Security &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Design Docs" href="index.html"/>
+        <link rel="next" title="Loggable" href="loggable.html"/>
+        <link rel="prev" title="AMD" href="amd.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Design Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amd.html">AMD</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Design Docs</a> &raquo;</li>
+      
+    <li>Security</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/design/security.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="security">
+<h1>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h1>
+<p>Elgg’s approach to the various security issues common to all web applications.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">To report a potential vulnerability in Elgg, email <a class="reference external" href="mailto:security&#37;&#52;&#48;elgg&#46;org">security<span>&#64;</span>elgg<span>&#46;</span>org</a>.</p>
+</div>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#passwords" id="id1">Passwords</a><ul>
+<li><a class="reference internal" href="#password-validation" id="id2">Password validation</a></li>
+<li><a class="reference internal" href="#password-salting" id="id3">Password salting</a></li>
+<li><a class="reference internal" href="#password-hashing" id="id4">Password hashing</a></li>
+<li><a class="reference internal" href="#password-storage" id="id5">Password storage</a></li>
+<li><a class="reference internal" href="#password-throttling" id="id6">Password throttling</a></li>
+<li><a class="reference internal" href="#password-resetting" id="id7">Password resetting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sessions" id="id8">Sessions</a><ul>
+<li><a class="reference internal" href="#session-fixation" id="id9">Session fixation</a></li>
+<li><a class="reference internal" href="#session-hijacking" id="id10">Session hijacking</a></li>
+<li><a class="reference internal" href="#remember-me-cookie" id="id11">“Remember me” cookie</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alternative-authentication" id="id12">Alternative authentication</a></li>
+<li><a class="reference internal" href="#https" id="id13">HTTPS</a></li>
+<li><a class="reference internal" href="#xss" id="id14">XSS</a></li>
+<li><a class="reference internal" href="#csrf-xsrf" id="id15">CSRF / XSRF</a></li>
+<li><a class="reference internal" href="#sql-injection" id="id16">SQL Injection</a></li>
+<li><a class="reference internal" href="#privacy" id="id17">Privacy</a></li>
+</ul>
+</div>
+<div class="section" id="passwords">
+<h2><a class="toc-backref" href="#id1">Passwords</a><a class="headerlink" href="#passwords" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="password-validation">
+<h3><a class="toc-backref" href="#id2">Password validation</a><a class="headerlink" href="#password-validation" title="Permalink to this headline">¶</a></h3>
+<p>The only restriction that Elgg places on a password is that it must be at least 6 characters long by default, though this may be changed in /engine/settings.php. Additional criteria can be added by a plugin by registering for the <code class="docutils literal"><span class="pre">registeruser:validate:password</span></code> plugin hook.</p>
+</div>
+<div class="section" id="password-salting">
+<h3><a class="toc-backref" href="#id3">Password salting</a><a class="headerlink" href="#password-salting" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Elgg salts passwords with a unique 8 character random string. The salt is generated each time the password is set. The main security advantages of the salting are:</dt>
+<dd><ul class="first last simple">
+<li>preventing anyone with access to the database from conducting a precomputed dictionary attack</li>
+<li>preventing a site administration from noting users with the same password.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="password-hashing">
+<h3><a class="toc-backref" href="#id4">Password hashing</a><a class="headerlink" href="#password-hashing" title="Permalink to this headline">¶</a></h3>
+<p>The hashed password is computed using md5 from the user&#8217;s password text and the salt.</p>
+</div>
+<div class="section" id="password-storage">
+<h3><a class="toc-backref" href="#id5">Password storage</a><a class="headerlink" href="#password-storage" title="Permalink to this headline">¶</a></h3>
+<p>The hashed password and the salt are stored in the users table. Neither are stored in any cookies on a user&#8217;s computer.</p>
+</div>
+<div class="section" id="password-throttling">
+<h3><a class="toc-backref" href="#id6">Password throttling</a><a class="headerlink" href="#password-throttling" title="Permalink to this headline">¶</a></h3>
+<p>Elgg has a password throttling mechanism to make dictionary attacks from the outside very difficult. A user is only allowed 5 login attempts over a 5 minute period.</p>
+</div>
+<div class="section" id="password-resetting">
+<h3><a class="toc-backref" href="#id7">Password resetting</a><a class="headerlink" href="#password-resetting" title="Permalink to this headline">¶</a></h3>
+<p>If a user forgets his password, a new random password can be requested. After the request, an email is sent with a unique URL. When the user visits that URL, a new random password is sent to the user through email.</p>
+</div>
+</div>
+<div class="section" id="sessions">
+<h2><a class="toc-backref" href="#id8">Sessions</a><a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h2>
+<p>Elgg uses PHP&#8217;s session handling with custom handlers. Session data is stored in the database. The session cookie contains the session id that links the user to the browser. The user&#8217;s metadata is stored in the session including GUID, username, email address. The session&#8217;s lifetime is controlled through the server&#8217;s PHP configuration.</p>
+<div class="section" id="session-fixation">
+<h3><a class="toc-backref" href="#id9">Session fixation</a><a class="headerlink" href="#session-fixation" title="Permalink to this headline">¶</a></h3>
+<p>Elgg protects against session fixation by regenerating the session id when a user logs in.</p>
+</div>
+<div class="section" id="session-hijacking">
+<h3><a class="toc-backref" href="#id10">Session hijacking</a><a class="headerlink" href="#session-hijacking" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This section is questionable.</p>
+</div>
+<p>Besides protecting against session fixation attacks, Elgg also has a further check to try to defeat session hijacking if the session identifier is compromised. Elgg stores a hash of the browser&#8217;s user agent and a site secret as a session fingerprint. The use of the site secret is rather superfluous but checking the user agent might prevent some session hijacking attempts.</p>
+</div>
+<div class="section" id="remember-me-cookie">
+<h3><a class="toc-backref" href="#id11">“Remember me” cookie</a><a class="headerlink" href="#remember-me-cookie" title="Permalink to this headline">¶</a></h3>
+<p>To allow users to stay logged in for a longer period of time regardless of whether the browser has been closed, Elgg uses a cookie (called elggperm) that contains what could be considered a super session identifier. This identifier is stored in a cookies table. When a session is being initiated, Elgg checks for the presence of the elggperm cookie. If it exists and the session code in the cookie matches the code in the cookies table, the corresponding user is automatically logged in.</p>
+</div>
+</div>
+<div class="section" id="alternative-authentication">
+<h2><a class="toc-backref" href="#id12">Alternative authentication</a><a class="headerlink" href="#alternative-authentication" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section is very hand-wavy</p>
+</div>
+<p>To replace Elgg&#8217;s default user authentication system, a plugin would have to replace the default action with its own through <code class="docutils literal"><span class="pre">register_action()</span></code>. It would also have to register its own pam handler using <code class="docutils literal"><span class="pre">register_pam_handler()</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">pam_authenticate()</span></code> function used to call the different modules has a bug related to the importance variable.</p>
+</div>
+</div>
+<div class="section" id="https">
+<h2><a class="toc-backref" href="#id13">HTTPS</a><a class="headerlink" href="#https" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must enable SSL support on your server for any of these techniques to work.</p>
+</div>
+<p>To make the login form submit over https, turn on login-over-ssl from Elgg’s admin panel.</p>
+<p>You can also serve your whole site over SSL by simply changing the site URL to include “https” instead of just “http.”</p>
+</div>
+<div class="section" id="xss">
+<h2><a class="toc-backref" href="#id14">XSS</a><a class="headerlink" href="#xss" title="Permalink to this headline">¶</a></h2>
+<p>Filtering is used in Elgg to make XSS attacks more difficult. The purpose of the filtering is to remove Javascript and other dangerous input from users.</p>
+<p>Filtering is performed through the function <code class="docutils literal"><span class="pre">filter_tags()</span></code>. This function takes in a string and returns a filtered string. It triggers a <code class="docutils literal"><span class="pre">validate,</span> <span class="pre">input</span></code> plugin hook.</p>
+<p>By default Elgg comes with the htmLawed filtering code as a plugin. Developers can drop in any additional or replacement filtering code as a plugin.</p>
+<p>The <code class="docutils literal"><span class="pre">filter_tags()</span></code> function is called on any user input as long as the input is obtained through a call to <code class="docutils literal"><span class="pre">get_input()</span></code>. If for some reason a developer did not want to perform the default filtering on some user input, the <code class="docutils literal"><span class="pre">get_input()</span></code> function has a parameter for turning off filtering.</p>
+</div>
+<div class="section" id="csrf-xsrf">
+<h2><a class="toc-backref" href="#id15">CSRF / XSRF</a><a class="headerlink" href="#csrf-xsrf" title="Permalink to this headline">¶</a></h2>
+<p>Elgg generates security tokens to prevent <a class="reference external" href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">cross-site request forgery</a>. These are embedded in all forms and state-modifying AJAX requests as long as the correct API is used. Read more in the <a class="reference internal" href="../guides/actions.html"><em>Forms + Actions</em></a> developer guide.</p>
+</div>
+<div class="section" id="sql-injection">
+<h2><a class="toc-backref" href="#id16">SQL Injection</a><a class="headerlink" href="#sql-injection" title="Permalink to this headline">¶</a></h2>
+<p>Elgg’s API sanitizes all input before issuing DB queries. Read more in the <a class="reference internal" href="database.html"><em>Database</em></a> design doc.</p>
+</div>
+<div class="section" id="privacy">
+<h2><a class="toc-backref" href="#id17">Privacy</a><a class="headerlink" href="#privacy" title="Permalink to this headline">¶</a></h2>
+<p>Elgg uses an ACL system to control which users have access to various pieces of content. Read more in the <a class="reference internal" href="database.html"><em>Database</em></a> design doc.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="loggable.html" class="btn btn-neutral float-right" title="Loggable">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="amd.html" class="btn btn-neutral" title="AMD"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

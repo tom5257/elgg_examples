@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Backup and Restore &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Administrator Guides" href="index.html"/>
+        <link rel="next" title="FTP backup script" href="backup/ftp-backup-script.html"/>
+        <link rel="prev" title="Cron" href="cron.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cron.html">Cron</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Administrator Guides</a> &raquo;</li>
+      
+    <li>Backup and Restore</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/admin/backup-restore.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="backup-and-restore">
+<h1>Backup and Restore<a class="headerlink" href="#backup-and-restore" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a><ul>
+<li><a class="reference internal" href="#why" id="id2">Why</a></li>
+<li><a class="reference internal" href="#what" id="id3">What</a></li>
+<li><a class="reference internal" href="#assumptions" id="id4">Assumptions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-a-usable-backup-automatically" id="id5">Creating a usable backup - automatically</a><ul>
+<li><a class="reference internal" href="#customize-the-backup-script" id="id6">Customize the backup script</a></li>
+<li><a class="reference internal" href="#configure-the-backup-cron-job" id="id7">Configure the backup Cron job</a></li>
+<li><a class="reference internal" href="#configure-the-cleanup-cron-job" id="id8">Configure the cleanup Cron job</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#restoring-from-backup" id="id9">Restoring from backup</a><ul>
+<li><a class="reference internal" href="#prepare-your-backup-files" id="id10">Prepare your backup files</a></li>
+<li><a class="reference internal" href="#restore-the-files" id="id11">Restore the files</a></li>
+<li><a class="reference internal" href="#restore-the-mysql-database" id="id12">Restore the MySQL Database</a></li>
+<li><a class="reference internal" href="#edit-the-mysql-backup" id="id13">Edit the MySQL backup</a></li>
+<li><a class="reference internal" href="#create-the-new-database" id="id14">Create the new database</a></li>
+<li><a class="reference internal" href="#restore-the-production-database" id="id15">Restore the production database</a></li>
+<li><a class="reference internal" href="#bringing-it-all-together" id="id16">Bringing it all together</a></li>
+<li><a class="reference internal" href="#finalizing-the-new-installation" id="id17">Finalizing the new installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#congratulations" id="id18">Congratulations!</a></li>
+<li><a class="reference internal" href="#related" id="id19">Related</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why">
+<h3><a class="toc-backref" href="#id2">Why</a><a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h3>
+<p>Shared hosting providers typically don&#8217;t provide an automated way to backup your Elgg installation. This article will address a method of accomplishing this task.</p>
+<p>In IT there are often many ways to accomplish the same thing. Keep that in mind. This article will explain one method to backup and restore your Elgg installation on a shared hosting provider that uses the CPanel application. However, the ideas presented here can be tailored to other applications as well. The following are typical situations that might require a procedure such as this:</p>
+<ul class="simple">
+<li>Disaster Recovery</li>
+<li>Moving your Elgg site to a new host</li>
+<li>Duplicating an installation</li>
+</ul>
+</div>
+<div class="section" id="what">
+<h3><a class="toc-backref" href="#id3">What</a><a class="headerlink" href="#what" title="Permalink to this headline">¶</a></h3>
+<p>Topics covered:</p>
+<ul class="simple">
+<li>Full backups of the Elgg directories and MySQL databases are performed daily (automated)</li>
+<li>The backups are sent to an off-site location via FTP (automated)</li>
+<li>The local backups are deleted after successful transfer to the off-site location (automatic)</li>
+<li>Five days of backups will be maintained (automated)</li>
+<li>Restoration of data to the new host (manual)</li>
+</ul>
+<p>This process was composed with assistance from previous articles in the Elgg documentation wiki.</p>
+</div>
+<div class="section" id="assumptions">
+<h3><a class="toc-backref" href="#id4">Assumptions</a><a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h3>
+<p>The following assumptions have been made:</p>
+<ul class="simple">
+<li>The Elgg program directory is <code class="docutils literal"><span class="pre">/home/userx/public_html</span></code></li>
+<li>The Elgg data directory is <code class="docutils literal"><span class="pre">/home/userx/elggdata</span></code></li>
+<li>You&#8217;ve created a local directory for your backups at <code class="docutils literal"><span class="pre">/home/userx/sitebackups</span></code></li>
+<li>You have an off-site FTP server to send the backup files to</li>
+<li>The directory that you will be saving the off-site backups to is <code class="docutils literal"><span class="pre">/home/usery/sitebackups/</span></code></li>
+<li>You will be restoring the site to a second shared hosting provider in the <code class="docutils literal"><span class="pre">/home/usery/public_html</span></code> directory</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Be sure to replace <code class="docutils literal"><span class="pre">userx</span></code>, <code class="docutils literal"><span class="pre">usery</span></code>, <code class="docutils literal"><span class="pre">http://mynewdomain.com</span></code> and all passwords with values that reflect your actual installation!</p>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-usable-backup-automatically">
+<h2><a class="toc-backref" href="#id5">Creating a usable backup - automatically</a><a class="headerlink" href="#creating-a-usable-backup-automatically" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="customize-the-backup-script">
+<h3><a class="toc-backref" href="#id6">Customize the backup script</a><a class="headerlink" href="#customize-the-backup-script" title="Permalink to this headline">¶</a></h3>
+<p>The script that you will use can be found <a class="reference internal" href="backup/ftp-backup-script.html"><em>here</em></a> .</p>
+<p>Just copy the script to a text file and name the file with a .pl extension. You can use any text editor to update the file.</p>
+<p>Change the following to reflect your directory structure:</p>
+<div class="code perl highlight-python"><div class="highlight"><pre># ENTER THE PATH TO THE DIRECTORY YOU WANT TO BACKUP, NO TRAILING SLASH
+$directory_to_backup = &#39;/home/userx/public_html&#39;;
+$directory_to_backup2 = &#39;/home/userx/elggdata&#39;;
+# ENTER THE PATH TO THE DIRECTORY YOU WISH TO SAVE THE BACKUP FILE TO, NO TRAILING SLASH
+$backup_dest_dir = &#39;/home/userx/sitebackups&#39;;
+</pre></div>
+</div>
+<p>Change the following to reflect your database parameters:</p>
+<div class="code perl highlight-python"><div class="highlight"><pre># MYSQL BACKUP PARAMETERS
+$dbhost = &#39;localhost&#39;;
+$dbuser = &#39;userx_elgg&#39;;
+$dbpwd = &#39;dbpassword&#39;;
+# ENTER DATABASE NAME
+$database_names_elgg = &#39;userx_elgg&#39;;
+</pre></div>
+</div>
+<p>Change the following to reflect your off-site FTP server parameters:</p>
+<div class="code perl highlight-python"><div class="highlight"><pre># FTP PARAMETERS
+$ftp_host = &quot;FTP HOSTNAME/IP&quot;;
+$ftp_user = &quot;ftpuser&quot;;
+$ftp_pwd = &quot;ftppassword&quot;;
+$ftp_dir = &quot;/&quot;;
+</pre></div>
+</div>
+<p>Save the file with the <code class="docutils literal"><span class="pre">.pl</span></code> extension (for the purposes of this article we will name the file: <code class="docutils literal"><span class="pre">elgg-ftp-backup-script.pl</span></code>) and upload it to the following directory <code class="docutils literal"><span class="pre">/home/userx/sitebackups</span></code></p>
+<p>Be aware that you can turn off FTP and flip a bit in the script so that it does not delete the local backup file in the event that you don&#8217;t want to use off-site storage for your backups.</p>
+</div>
+<div class="section" id="configure-the-backup-cron-job">
+<h3><a class="toc-backref" href="#id7">Configure the backup Cron job</a><a class="headerlink" href="#configure-the-backup-cron-job" title="Permalink to this headline">¶</a></h3>
+<p>Login to your CPanel application and click on the &#8220;Cron Jobs&#8221; link. In the Common Settings dropdown choose &#8220;Once a day&#8221; and type the following in the command field <code class="docutils literal"><span class="pre">/usr/bin/perl</span> <span class="pre">/home/userx/sitebackups/elgg-ftp-backup-script.pl</span></code></p>
+<p>Click on the &#8220;Add New Cron Job&#8221; button. Daily full backups are now scheduled and will be transferred off-site.</p>
+</div>
+<div class="section" id="configure-the-cleanup-cron-job">
+<h3><a class="toc-backref" href="#id8">Configure the cleanup Cron job</a><a class="headerlink" href="#configure-the-cleanup-cron-job" title="Permalink to this headline">¶</a></h3>
+<p>If you are sending your backups, via FTP, to another shared hosting provider that uses the CPanel application or you&#8217;ve turned off FTP altogether you can configure your data retention as follows.</p>
+<p>Login to your CPanel application for your FTP site, or locally if you&#8217;re not using FTP, and click on the &#8220;Cron Jobs&#8221; link. In the Common Settings dropdown choose &#8220;Once a day&#8221; and type the following in the command field <code class="docutils literal"><span class="pre">find</span> <span class="pre">/home/usery/sitebackups/full_*</span> <span class="pre">-mtime</span> <span class="pre">+4</span> <span class="pre">-exec</span> <span class="pre">rm</span> <span class="pre">{}</span> <span class="pre">\;</span></code></p>
+<p>The <code class="docutils literal"><span class="pre">-mtime</span> <span class="pre">X</span></code> parameter will set the number of days to retain backups. All files older than <code class="docutils literal"><span class="pre">x</span></code> number of days will be deleted. Click on the &#8220;Add New Cron Job&#8221; button. You have now configured your backup retention time.</p>
+</div>
+</div>
+<div class="section" id="restoring-from-backup">
+<h2><a class="toc-backref" href="#id9">Restoring from backup</a><a class="headerlink" href="#restoring-from-backup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prepare-your-backup-files">
+<h3><a class="toc-backref" href="#id10">Prepare your backup files</a><a class="headerlink" href="#prepare-your-backup-files" title="Permalink to this headline">¶</a></h3>
+<p>The assumption is that you&#8217;re restoring your site to another shared hosting provider with CPanel.</p>
+<p>When the script backed the files up the original directory structure was maintained in the zip file. We need to do a little cleanup. Perform the following:</p>
+<ul>
+<li><p class="first">Download the backup file that you wish to restore from</p>
+</li>
+<li><p class="first">Extract the contents of the backup file</p>
+</li>
+<li><dl class="first docutils">
+<dt>Drill down and you will find your site backup and SQL backup. Extract both of these. You will then have:</dt>
+<dd><ul class="first last">
+<li><p class="first">a MySQL dump file with a <code class="docutils literal"><span class="pre">.sql</span></code> extension</p>
+</li>
+<li><dl class="first docutils">
+<dt>another directory structure with the contents of:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">/home/userx/public_html</span></code></li>
+<li><code class="docutils literal"><span class="pre">/home/userx/elggdata</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Repackage the contents of the <code class="docutils literal"><span class="pre">/home/userx/public_html</span></code> directory as a zip file so that the files are in the root of the zip file</dt>
+<dd><ul class="first last simple">
+<li>The reason for doing this is simple. It&#8217;s much more efficient to upload one zip file than it is to ftp the contents of the <code class="docutils literal"><span class="pre">/home/userx/public_html</span></code> directory to your new host.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Repackage the contents of the /home/userx/elggdata directory as a zip file so that the files are in the root of the zip file</p>
+</li>
+</ul>
+<p>You should now have the following files:</p>
+<ul class="simple">
+<li>the <code class="docutils literal"><span class="pre">.sql</span></code> file</li>
+<li>the zip file with the contents of <code class="docutils literal"><span class="pre">/home/userx/public_html</span></code> in the root</li>
+<li>the zip file with the contents of <code class="docutils literal"><span class="pre">/home/userx/elggdata</span></code> in the root</li>
+</ul>
+</div>
+<div class="section" id="restore-the-files">
+<h3><a class="toc-backref" href="#id11">Restore the files</a><a class="headerlink" href="#restore-the-files" title="Permalink to this headline">¶</a></h3>
+<p>This is written with the assumption that you&#8217;re restoring to a different host but maintaining the original directory structure. Perform the following:</p>
+<ul>
+<li><p class="first">Login to the CPanel application on the host that you wish to restore the site to and open the File Manager.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Navigate to <code class="docutils literal"><span class="pre">/home/usery/public_html</span></code></dt>
+<dd><ul class="first last">
+<li><p class="first">Upload the zip file that contains the <code class="docutils literal"><span class="pre">/home/userx/public_html</span></code> files</p>
+</li>
+<li><dl class="first docutils">
+<dt>Extract the zip file</dt>
+<dd><p class="first last">You should now see all of the files in <code class="docutils literal"><span class="pre">/home/usery/public_html</span></code></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Delete the zip file</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Navigate to <code class="docutils literal"><span class="pre">/home/usery/elggdata</span></code></dt>
+<dd><ul class="first last">
+<li><p class="first">Upload the zip file that contains the <code class="docutils literal"><span class="pre">/home/userx/elggdata</span></code> files</p>
+</li>
+<li><dl class="first docutils">
+<dt>Extract the zip file</dt>
+<dd><p class="first last">You should now see all of the files in /home/usery/elggdata</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Delete the zip file</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Program and data file restoration is complete</p>
+</div>
+<div class="section" id="restore-the-mysql-database">
+<h3><a class="toc-backref" href="#id12">Restore the MySQL Database</a><a class="headerlink" href="#restore-the-mysql-database" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Again, the assumption here is that you&#8217;re restoring your Elgg installation to a second shared hosting provider. Each shared hosting provider prepends the account holder&#8217;s name to the databases associated with that account. For example, the username for our primary host is <code class="docutils literal"><span class="pre">userx</span></code> so the host will prepend <code class="docutils literal"><span class="pre">userx_</span></code> to give us a database name of <code class="docutils literal"><span class="pre">userx_elgg</span></code>. When we restore to our second shared hosting provider we&#8217;re doing so with a username of <code class="docutils literal"><span class="pre">usery</span></code> so our database name will be <code class="docutils literal"><span class="pre">usery_elgg</span></code>. The hosting providers don&#8217;t allow you to modify this behavior. So the process here isn&#8217;t as simple as just restoring the database from backup to the usery account. However, having said that, it&#8217;s not terribly difficult either.</p>
+</div>
+</div>
+<div class="section" id="edit-the-mysql-backup">
+<h3><a class="toc-backref" href="#id13">Edit the MySQL backup</a><a class="headerlink" href="#edit-the-mysql-backup" title="Permalink to this headline">¶</a></h3>
+<p>Open the <code class="docutils literal"><span class="pre">.sql</span></code> file that you extracted from your backup in your favorite text editor. Comment out the following lines with a hash mark:</p>
+<div class="code mysql highlight-python"><div class="highlight"><pre><span class="c">#CREATE DATABASE /*!32312 IF NOT EXISTS*/ `userx_elgg` /*!40100 DEFAULT CHARACTER SET latin1 */;</span>
+<span class="c">#USE `userx_elgg`;</span>
+</pre></div>
+</div>
+<p>Save the file.</p>
+</div>
+<div class="section" id="create-the-new-database">
+<h3><a class="toc-backref" href="#id14">Create the new database</a><a class="headerlink" href="#create-the-new-database" title="Permalink to this headline">¶</a></h3>
+<p>Perform the following:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Login to the CPanel application on the new host and click on the &#8220;MySQL Databases&#8221; icon</dt>
+<dd><ul class="first last">
+<li><p class="first">Fill in the database name and click the &#8220;create&#8221; button. For our example we are going to stick with <code class="docutils literal"><span class="pre">elgg</span></code> which will give us a database name of <code class="docutils literal"><span class="pre">usery_elgg</span></code></p>
+</li>
+<li><dl class="first docutils">
+<dt>You can associate an existing user with the new database, but to create a new user you will need to:</dt>
+<dd><ul class="first last simple">
+<li>Go to the &#8220;Add New User&#8221; section of the &#8220;MySQL Databases&#8221; page</li>
+<li>Enter the username and password. For our example we&#8217;re going to keep it simple and use <code class="docutils literal"><span class="pre">elgg</span></code> once again. This will give us a username of <code class="docutils literal"><span class="pre">usery_elgg</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Associate the new user with the new database</dt>
+<dd><ul class="first last simple">
+<li>Go to the &#8220;Add User To Database&#8221; section of the &#8220;MySQL Databases&#8221; page. Add the <code class="docutils literal"><span class="pre">usery_elgg</span></code> user to the <code class="docutils literal"><span class="pre">usery_elgg</span></code> database</li>
+<li>Select &#8220;All Privileges&#8221; and click the &#8220;Make Changes&#8221; button</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="restore-the-production-database">
+<h3><a class="toc-backref" href="#id15">Restore the production database</a><a class="headerlink" href="#restore-the-production-database" title="Permalink to this headline">¶</a></h3>
+<p>Now it&#8217;s time to restore the MySQL backup file by importing it into our new database named &#8220;usery_elgg&#8221;.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Login to the CPanel application on the new host and click on the &#8220;phpMyAdmin icon</dt>
+<dd><ul class="first last simple">
+<li>Choose the <code class="docutils literal"><span class="pre">usery_elgg</span></code> database in the left hand column</li>
+<li>Click on the &#8220;import&#8221; tab at the top of the page</li>
+<li>Browse to the <code class="docutils literal"><span class="pre">.sql</span></code> backup on your local computer and select it</li>
+<li>Click the &#8220;Go&#8221; button on the bottom right side of the page</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>You should now see a message stating that the operation was successful</p>
+</div>
+<div class="section" id="bringing-it-all-together">
+<h3><a class="toc-backref" href="#id16">Bringing it all together</a><a class="headerlink" href="#bringing-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p>The restored elgg installation knows <strong>nothing</strong> about the new database name, database username, directory structure, etc. That&#8217;s what we&#8217;re going to address here.</p>
+<p>Edit <code class="docutils literal"><span class="pre">/public_html/engine/settings.php</span></code> on the new hosting provider to reflect the database information for the database that you just created.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Database username
+$CONFIG-&gt;dbuser = &#39;usery_elgg&#39;;
+
+// Database password
+$CONFIG-&gt;dbpass = &#39;dbpassword&#39;;
+
+// Database name
+$CONFIG-&gt;dbname = &#39;usery_elgg&#39;;
+
+// Database server
+// (For most configurations, you can leave this as &#39;localhost&#39;)
+$CONFIG-&gt;dbhost = &#39;localhost&#39;;
+</pre></div>
+</div>
+<p>Upload the <code class="docutils literal"><span class="pre">settings.php</span></code> file back to the new host - overwriting the existing file.</p>
+<p>Open the phpMyAdmin tool on the new host from the CPanel. Select the <code class="docutils literal"><span class="pre">usery_elgg</span></code> database on the left and click the SQL tab on the top of the page. Run the following SQL queries against the <code class="docutils literal"><span class="pre">usery_elgg</span></code> database:</p>
+<p>Change the installation path</p>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE `elgg_datalists` SET `value` = &quot;/home/usery/public_html/grid/&quot; WHERE `name` = &quot;path&quot;;
+</pre></div>
+</div>
+<p>Change the data directory</p>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE `elgg_datalists` SET `value` = &quot;/home/usery/elggdata/&quot; WHERE `name` = &quot;dataroot&quot;;
+</pre></div>
+</div>
+<p>Change the site URL (if this has changed)</p>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE `elgg_sites_entity` SET `url` = &quot;http://mynewdomain.com&quot;;
+</pre></div>
+</div>
+<p>Change the filestore data directory</p>
+<div class="code sql highlight-python"><div class="highlight"><pre>UPDATE elgg_metastrings set string = &#39;/home/usery/elggdata/&#39; WHERE id = (SELECT value_id from elgg_metadata where name_id = (SELECT * FROM (SELECT id FROM elgg_metastrings WHERE string = &#39;filestore::dir_root&#39;) as ms2) LIMIT 1);
+</pre></div>
+</div>
+</div>
+<div class="section" id="finalizing-the-new-installation">
+<h3><a class="toc-backref" href="#id17">Finalizing the new installation</a><a class="headerlink" href="#finalizing-the-new-installation" title="Permalink to this headline">¶</a></h3>
+<p>Run the upgrade script by visiting the following URL: <code class="docutils literal"><span class="pre">http://mynewdomain.com/upgrade.php</span></code> . Do this step twice - back to back.</p>
+<p>Update your DNS records so that your host name resolves to the new host&#8217;s IP address if this is a permanent move.</p>
+</div>
+</div>
+<div class="section" id="congratulations">
+<h2><a class="toc-backref" href="#id18">Congratulations!</a><a class="headerlink" href="#congratulations" title="Permalink to this headline">¶</a></h2>
+<p>If you followed the steps outlined here you should now have a fully functional copy of your primary Elgg installation.</p>
+</div>
+<div class="section" id="related">
+<h2><a class="toc-backref" href="#id19">Related</a><a class="headerlink" href="#related" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backup/ftp-backup-script.html">FTP backup script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="duplicate-installation.html">Duplicate Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#introduction">Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#why-duplicate-an-elgg-installation">Why Duplicate an Elgg Installation?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#what-is-not-covered-in-this-tutorial">What Is Not Covered in This Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#before-you-start">Before You Start</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#copy-elgg-code-to-the-test-server">Copy Elgg Code to the Test Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#copy-data-to-the-test-server">Copy Data to the Test Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#edit-engine-settings-php">Edit engine/settings.php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#copy-elgg-database">Copy Elgg Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#database-entries">Database Entries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#change-the-installation-path">Change the installation path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#change-the-data-directory">Change the data directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#change-the-site-url">Change the site URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="duplicate-installation.html#change-the-filestore-data-directory">Change the filestore data directory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#check-htaccess">Check .htaccess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#update-webserver-config">Update Webserver Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#run-upgrade-php">Run upgrade.php</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="duplicate-installation.html#related">Related</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backup/ftp-backup-script.html" class="btn btn-neutral float-right" title="FTP backup script">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cron.html" class="btn btn-neutral" title="Cron"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

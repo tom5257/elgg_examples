@@ -1,0 +1,615 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaScript &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Menus" href="menus.html"/>
+        <link rel="prev" title="Internationalization" href="i18n.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>JavaScript</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/javascript.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="javascript">
+<h1>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<p>As of Elgg 1.9, we encourage all developers to adopt the <a class="reference external" href="http://requirejs.org/docs/whyamd.html">AMD (Asynchronous Module
+Definition)</a> standard for writing JavaScript code in Elgg.
+The 1.8 version is still functional and is <a class="reference internal" href="#js"><span>described below</span></a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#amd" id="id1">AMD</a></li>
+<li><a class="reference internal" href="#executing-a-module-in-the-current-page" id="id2">Executing a module in the current page</a></li>
+<li><a class="reference internal" href="#defining-the-module" id="id3">Defining the Module</a><ul>
+<li><a class="reference internal" href="#making-modules-dependent-on-other-modules" id="id4">Making modules dependent on other modules</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#migrating-js-from-elgg-1-8-to-amd-1-9" id="id5">Migrating JS from Elgg 1.8 to AMD / 1.9</a></li>
+<li><a class="reference internal" href="#traditional-javascript-1-8" id="id6">Traditional JavaScript (1.8)</a></li>
+<li><a class="reference internal" href="#core-functions-available-in-js" id="id7">Core functions available in JS</a><ul>
+<li><a class="reference internal" href="#module-elgg-spinner" id="id8">Module <code class="docutils literal"><span class="pre">elgg/spinner</span></code></a></li>
+<li><a class="reference internal" href="#hooks" id="id9">Hooks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="amd">
+<h2><a class="toc-backref" href="#id1">AMD</a><a class="headerlink" href="#amd" title="Permalink to this headline">¶</a></h2>
+<p>Here we&#8217;ll describe making and executing AMD modules. The RequireJS documentation for
+<a class="reference external" href="http://requirejs.org/docs/api.html#define">defining modules</a> may also be of use.</p>
+</div>
+<div class="section" id="executing-a-module-in-the-current-page">
+<h2><a class="toc-backref" href="#id2">Executing a module in the current page</a><a class="headerlink" href="#executing-a-module-in-the-current-page" title="Permalink to this headline">¶</a></h2>
+<p>Telling Elgg to load an existing module in the current page is easy:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nx">elgg_require_js</span><span class="p">(</span><span class="s2">&quot;myplugin/say_hello&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>On the client-side, this will asynchronously load the module, load any dependencies, and
+execute the module&#8217;s definition function, if it has one.</p>
+</div>
+<div class="section" id="defining-the-module">
+<h2><a class="toc-backref" href="#id3">Defining the Module</a><a class="headerlink" href="#defining-the-module" title="Permalink to this headline">¶</a></h2>
+<p>Here we define a basic module that alters the page, by passing a &#8220;definition function&#8221; to <code class="docutils literal"><span class="pre">define()</span></code>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// in views/default/js/myplugin/say_hello.js</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">elgg</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;elgg&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jquery&quot;</span><span class="p">);</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">elgg</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="s1">&#39;hello_world&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The module&#8217;s name is determined by the view name, which here is <code class="docutils literal"><span class="pre">js/myplugin/say_hello.js</span></code>.
+We strip the leading <code class="docutils literal"><span class="pre">js/</span></code> and the <code class="docutils literal"><span class="pre">.js</span></code> extension, leaving <code class="docutils literal"><span class="pre">myplugin/say_hello</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The definition function <strong>must</strong> have one argument named <code class="docutils literal"><span class="pre">require</span></code>.</p>
+</div>
+<div class="section" id="making-modules-dependent-on-other-modules">
+<h3><a class="toc-backref" href="#id4">Making modules dependent on other modules</a><a class="headerlink" href="#making-modules-dependent-on-other-modules" title="Permalink to this headline">¶</a></h3>
+<p>Below we refactor a bit so that the module depends on a new <code class="docutils literal"><span class="pre">myplugin/hello</span></code> module to provide
+the greeting:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// in views/default/js/myplugin/hello.js</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">elgg</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;elgg&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">elgg</span><span class="p">.</span><span class="nx">echo</span><span class="p">(</span><span class="s1">&#39;hello_world&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// in views/default/js/myplugin/say_hello.js</span>
+
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jquery&quot;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;myplugin/hello&quot;</span><span class="p">);</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">hello</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="section" id="passing-plugin-elgg-settings-to-modules">
+<h4>Passing plugin/Elgg settings to modules<a class="headerlink" href="#passing-plugin-elgg-settings-to-modules" title="Permalink to this headline">¶</a></h4>
+<p>You can use a PHP-based module to pass values from the server. To make the module <code class="docutils literal"><span class="pre">myplugin/settings</span></code>,
+create the view file <code class="docutils literal"><span class="pre">views/default/js/myplugin/settings.js.php</span></code> (note the double extension
+<code class="docutils literal"><span class="pre">.js.php</span></code>).</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$settings</span> <span class="o">=</span> <span class="nx">elgg_get_plugin_by_id</span><span class="p">(</span><span class="s1">&#39;myplugin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getAllSettings</span><span class="p">();</span>
+<span class="nv">$settings</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="nx">elgg_extract</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="nv">$settings</span><span class="p">),</span>
+    <span class="s1">&#39;bar&#39;</span> <span class="o">=&gt;</span> <span class="nx">elgg_extract</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nv">$settings</span><span class="p">),</span>
+<span class="p">];</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">define(</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$settings</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">);</span>
+</pre></div>
+</div>
+<p>You must also manually register the view as an external resource:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// note the view name does not include &quot;.php&quot;</span>
+<span class="nx">elgg_register_simplecache_view</span><span class="p">(</span><span class="s1">&#39;js/myplugin/settings.js&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The PHP view is cached, so you should treat the output as static (the same for all users) and
+avoid session-specific logic.</p>
+</div>
+</div>
+<div class="section" id="setting-the-url-of-a-module">
+<h4>Setting the URL of a module<a class="headerlink" href="#setting-the-url-of-a-module" title="Permalink to this headline">¶</a></h4>
+<p>You may have a script outside your views you wish to make available as a module.</p>
+<p>In your PHP <code class="docutils literal"><span class="pre">init,</span> <span class="pre">system</span></code> event handler, you can use <code class="docutils literal"><span class="pre">elgg_define_js()</span></code> to do this:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="nx">elgg_define_js</span><span class="p">(</span><span class="s1">&#39;underscore&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;src&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/mod/myplugin/vendors/underscore/underscore-min.js&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">src</span></code> option in <code class="docutils literal"><span class="pre">elgg_define_js()</span></code> is passed through <code class="docutils literal"><span class="pre">elgg_normalize_url</span></code>, so you can use paths
+relative to the site URL.</p>
+</div>
+</div>
+<div class="section" id="using-traditional-js-libraries-as-modules">
+<h4>Using traditional JS libraries as modules<a class="headerlink" href="#using-traditional-js-libraries-as-modules" title="Permalink to this headline">¶</a></h4>
+<p>JavaScript libraries that define global resources can also be defined as AMD modules if you shim them by
+setting <code class="docutils literal"><span class="pre">exports</span></code> and optionally <code class="docutils literal"><span class="pre">deps</span></code>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// set the path, define its dependencies, and what value it returns</span>
+<span class="nx">elgg_define_js</span><span class="p">(</span><span class="s1">&#39;jquery.form&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;src&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/mod/myplugin/vendors/jquery.form.js&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;deps&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;jquery&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;exports&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;jQuery.fn.ajaxForm&#39;</span><span class="p">,</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<p>When this is requested client-side:</p>
+<ol class="arabic simple">
+<li>The jQuery module is loaded, as it&#8217;s marked as a dependency.</li>
+<li><code class="docutils literal"><span class="pre">http://example.org/elgg/mod/myplugin/vendors/jquery/jquery.form.js</span></code> is loaded and executed.</li>
+<li>The value of <code class="docutils literal"><span class="pre">window.jQuery.fn.ajaxForm</span></code> is returned by the module.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Calls to <code class="docutils literal"><span class="pre">elgg_define_js()</span></code> must be in an <code class="docutils literal"><span class="pre">init,</span> <span class="pre">system</span></code> event handler.</p>
+</div>
+</div>
+<div class="section" id="some-things-to-note">
+<h4>Some things to note<a class="headerlink" href="#some-things-to-note" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li>Do not use <code class="docutils literal"><span class="pre">elgg.provide()</span></code> anymore nor other means to attach code to <code class="docutils literal"><span class="pre">elgg</span></code> or other
+global objects. Use modules.</li>
+<li>Return the value of the module instead of adding to a global variable.</li>
+<li>JS and CSS views (names starting with <code class="docutils literal"><span class="pre">js/</span></code> or <code class="docutils literal"><span class="pre">css/</span></code>) as well as static (.js/.css) files
+are automatically minified and cached by Elgg&#8217;s simplecache system.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="migrating-js-from-elgg-1-8-to-amd-1-9">
+<h2><a class="toc-backref" href="#id5">Migrating JS from Elgg 1.8 to AMD / 1.9</a><a class="headerlink" href="#migrating-js-from-elgg-1-8-to-amd-1-9" title="Permalink to this headline">¶</a></h2>
+<p><strong>Current 1.8 JavaScript modules will continue to work with Elgg</strong>.</p>
+<p>We do not anticipate any backwards compatibility issues with this new direction and will fix any
+issues that do come up. The old system will still be functional in Elgg 1.9, but developers are
+encouraged to begin looking to AMD as the future of JS in Elgg.</p>
+</div>
+<div class="section" id="traditional-javascript-1-8">
+<span id="js"></span><h2><a class="toc-backref" href="#id6">Traditional JavaScript (1.8)</a><a class="headerlink" href="#traditional-javascript-1-8" title="Permalink to this headline">¶</a></h2>
+<p>Register third-party libraries with <code class="docutils literal"><span class="pre">elgg_register_js</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_register_js(&#39;jquery&#39;, $cdnjs_url);
+</pre></div>
+</div>
+<p>This will override any URLs previously registered under this name.</p>
+<p>Load a library on the current page with <code class="docutils literal"><span class="pre">elgg_load_js</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre><span class="n">elgg_load_js</span><span class="p">(</span><span class="s">&#39;jquery&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This will include and execute the linked code.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<dl class="docutils">
+<dt>Using inline scripts is strongly discouraged because:</dt>
+<dd><ul class="first last simple">
+<li>They are not testable (maintainability)</li>
+<li>They are not cacheable (performance)</li>
+<li>Doing so forces some scripts to be loaded in <code class="docutils literal"><span class="pre">&lt;head&gt;</span></code> (performance)</li>
+</ul>
+</dd>
+</dl>
+<p class="last">Inline scripts in core or bundled plugins are considered legacy bugs.</p>
+</div>
+</div>
+<div class="section" id="core-functions-available-in-js">
+<h2><a class="toc-backref" href="#id7">Core functions available in JS</a><a class="headerlink" href="#core-functions-available-in-js" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">elgg.echo()</span></code></p>
+<p>Translate interface text</p>
+<div class="code js highlight-python"><div class="highlight"><pre><span class="n">elgg</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s">&#39;example:text&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;arg1&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.system_message()</span></code></p>
+<p>Display a status message to the user.</p>
+<div class="code js highlight-python"><div class="highlight"><pre><span class="n">elgg</span><span class="o">.</span><span class="n">system_message</span><span class="p">(</span><span class="n">elgg</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s">&#39;success&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.register_error()</span></code></p>
+<p>Display an error message to the user.</p>
+<div class="code js highlight-python"><div class="highlight"><pre><span class="n">elgg</span><span class="o">.</span><span class="n">register_error</span><span class="p">(</span><span class="n">elgg</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s">&#39;error&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.forward()</span></code></p>
+<p><code class="docutils literal"><span class="pre">elgg.normalize_url()</span></code></p>
+<p>Normalize a URL relative to the elgg root:</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// &quot;http://localhost/elgg/blog&quot;
+elgg.normalize_url(&#39;/blog&#39;);
+</pre></div>
+</div>
+<p>Redirect to a new page.</p>
+<div class="code js highlight-python"><div class="highlight"><pre><span class="n">elgg</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="s">&#39;/blog&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This function automatically normalizes the URL.</p>
+<p><code class="docutils literal"><span class="pre">elgg.parse_url()</span></code></p>
+<p>Parse a URL into its component parts:</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// returns {
+//   fragment: &quot;fragment&quot;,
+//   host: &quot;community.elgg.org&quot;,
+//   path: &quot;/file.php&quot;,
+//   query: &quot;arg=val&quot;
+// }
+elgg.parse_url(
+  &#39;http://community.elgg.org/file.php?arg=val#fragment&#39;);
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.get_page_owner_guid()</span></code></p>
+<p>Get the GUID of the current page&#8217;s owner.</p>
+<p><code class="docutils literal"><span class="pre">elgg.register_hook_handler()</span></code></p>
+<p>Register a hook handler with the event system.</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// old initialization style
+elgg.register_hook_handler(&#39;init&#39;, &#39;system&#39;, my_plugin.init);
+
+// new: AMD module
+define(function (require) {
+    var elgg = require(&#39;elgg&#39;);
+
+    // [init, system] has fired
+});
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.trigger_hook()</span></code></p>
+<p>Emit a hook event in the event system.</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// allow other plugins to alter value
+value = elgg.trigger_hook(&#39;my_plugin:filter&#39;, &#39;value&#39;, {}, value);
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.security.refreshToken()</span></code></p>
+<p>Force a refresh of all XSRF tokens on the page.</p>
+<p>This is automatically called every 5 minutes by default.</p>
+<p>This requires a valid security token in 1.8, but not in 1.9.</p>
+<p>The user will be warned if their session has expired.</p>
+<p><code class="docutils literal"><span class="pre">elgg.security.addToken()</span></code></p>
+<p>Add a security token to an object, URL, or query string:</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// returns {
+//   __elgg_token: &quot;1468dc44c5b437f34423e2d55acfdd87&quot;,
+//   __elgg_ts: 1328143779,
+//   other: &quot;data&quot;
+// }
+elgg.security.addToken({&#39;other&#39;: &#39;data&#39;});
+
+// returns: &quot;action/add?__elgg_ts=1328144079&amp;__elgg_token=55fd9c2d7f5075d11e722358afd5fde2&quot;
+elgg.security.addToken(&quot;action/add&quot;);
+
+// returns &quot;?arg=val&amp;__elgg_ts=1328144079&amp;__elgg_token=55fd9c2d7f5075d11e722358afd5fde2&quot;
+elgg.security.addToken(&quot;?arg=val&quot;);
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.get_logged_in_user_entity()</span></code></p>
+<p>Returns the logged in user as an JS ElggUser object.</p>
+<p><code class="docutils literal"><span class="pre">elgg.get_logged_in_user_guid()</span></code></p>
+<p>Returns the logged in user&#8217;s guid.</p>
+<p><code class="docutils literal"><span class="pre">elgg.is_logged_in()</span></code></p>
+<p>True if the user is logged in.</p>
+<p><code class="docutils literal"><span class="pre">elgg.is_admin_logged_in()</span></code></p>
+<p>True if the user is logged in and is an admin.</p>
+<p><code class="docutils literal"><span class="pre">elgg.config.get_language()</span></code></p>
+<p>Get the current page&#8217;s language.</p>
+<p>There are a number of configuration values set in the elgg object:</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// The root of the website.
+elgg.config.wwwroot;
+// The default site language.
+elgg.config.language;
+// The current page&#39;s viewtype
+elgg.config.viewtype;
+// The Elgg version (YYYYMMDDXX).
+elgg.config.version;
+// The Elgg release (X.Y.Z).
+elgg.config.release;
+</pre></div>
+</div>
+<div class="section" id="module-elgg-spinner">
+<h3><a class="toc-backref" href="#id8">Module <code class="docutils literal"><span class="pre">elgg/spinner</span></code></a><a class="headerlink" href="#module-elgg-spinner" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">elgg/spinner</span></code> module can be used to create an Ajax loading indicator fixed to the top of the window.</p>
+<div class="code js highlight-python"><div class="highlight"><pre>define(function (require) {
+   var spinner = require(&#39;elgg/spinner&#39;);
+
+   elgg.action(&#39;friend/add&#39;, {
+       beforeSend: spinner.start,
+       complete: spinner.stop,
+       success: function (json) {
+           // ...
+       }
+   });
+});
+</pre></div>
+</div>
+</div>
+<div class="section" id="hooks">
+<h3><a class="toc-backref" href="#id9">Hooks</a><a class="headerlink" href="#hooks" title="Permalink to this headline">¶</a></h3>
+<p>The JS engine has a hooks system similar to the PHP engine&#8217;s plugin hooks: hooks are triggered and plugins can register callbacks to react or alter information. There is no concept of Elgg events in the JS engine; everything in the JS engine is implemented as a hook.</p>
+<div class="section" id="registering-a-callback-to-a-hook">
+<h4>Registering a callback to a hook<a class="headerlink" href="#registering-a-callback-to-a-hook" title="Permalink to this headline">¶</a></h4>
+<p>Callbacks are registered using <code class="docutils literal"><span class="pre">elgg.register_hook_handler()</span></code>. Multiple callbacks can be registered for the same hook.</p>
+<p>The following example registers the <code class="docutils literal"><span class="pre">elgg.ui.initDatePicker</span></code> callback for the <em>init</em>, <em>system</em> event. Note that a difference in the JS engine is that instead of passing a string you pass the function itself to <code class="docutils literal"><span class="pre">elgg.register_hook_handler()</span></code> as the callback.</p>
+<div class="code javascript highlight-python"><div class="highlight"><pre>elgg.provide(&#39;elgg.ui.initDatePicker&#39;);
+elgg.ui.initDatePicker = function() { ... }
+
+elgg.register_hook_handler(&#39;init&#39;, &#39;system&#39;, elgg.ui.initDatePicker);
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-callback">
+<h4>The callback<a class="headerlink" href="#the-callback" title="Permalink to this headline">¶</a></h4>
+<p>The callback accepts 4 arguments:</p>
+<ul class="simple">
+<li><strong>hook</strong> - The hook name</li>
+<li><strong>type</strong> - The hook type</li>
+<li><strong>params</strong> - An object or set of parameters specific to the hook</li>
+<li><strong>value</strong> - The current value</li>
+</ul>
+<p>The <code class="docutils literal"><span class="pre">value</span></code> will be passed through each hook. Depending on the hook, callbacks can simply react or alter data.</p>
+</div>
+<div class="section" id="triggering-custom-hooks">
+<h4>Triggering custom hooks<a class="headerlink" href="#triggering-custom-hooks" title="Permalink to this headline">¶</a></h4>
+<p>Plugins can trigger their own hooks:</p>
+<div class="code javascript highlight-python"><div class="highlight"><pre><span class="n">elgg</span><span class="o">.</span><span class="n">hook</span><span class="o">.</span><span class="n">trigger_hook</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;type&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">params</span><span class="p">},</span> <span class="s">&quot;value&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="available-hooks">
+<h4>Available hooks<a class="headerlink" href="#available-hooks" title="Permalink to this headline">¶</a></h4>
+<dl class="docutils">
+<dt>init, system</dt>
+<dd>This hook is fired when the JS system is ready. Plugins should register their init functions for this hook.</dd>
+<dt>ready, system</dt>
+<dd>This hook is fired when the system has fully booted.</dd>
+<dt>getOptions, ui.popup</dt>
+<dd>This hook is fired for pop up displays (&#8220;rel&#8221;=&#8221;popup&#8221;) and allows for customized placement options.</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="menus.html" class="btn btn-neutral float-right" title="Menus">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="i18n.html" class="btn btn-neutral" title="Internationalization"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

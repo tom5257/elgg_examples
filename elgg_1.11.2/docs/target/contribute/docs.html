@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Writing Documentation &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Contributor Guides" href="index.html"/>
+        <link rel="next" title="Becoming a Financial Supporter" href="money.html"/>
+        <link rel="prev" title="Writing Code" href="code.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contributor Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Writing Code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Contributor Guides</a> &raquo;</li>
+      
+    <li>Writing Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/contribute/docs.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="writing-documentation">
+<h1>Writing Documentation<a class="headerlink" href="#writing-documentation" title="Permalink to this headline">¶</a></h1>
+<p>New documentation should fit well with the rest of Elgg&#8217;s docs.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#testing-docs-locally" id="id1">Testing docs locally</a></li>
+<li><a class="reference internal" href="#follow-the-existing-document-organization" id="id2">Follow the existing document organization</a></li>
+<li><a class="reference internal" href="#use-elgg-in-a-grammatically-correct-way" id="id3">Use &#8220;Elgg&#8221; in a grammatically correct way</a></li>
+<li><a class="reference internal" href="#avoid-first-person-pronouns" id="id4">Avoid first person pronouns</a></li>
+<li><a class="reference internal" href="#eliminate-fluff" id="id5">Eliminate fluff</a></li>
+<li><a class="reference internal" href="#prefer-absolute-dates-over-relative-ones" id="id6">Prefer absolute dates over relative ones</a></li>
+<li><a class="reference internal" href="#do-not-remind-the-reader-to-contribute" id="id7">Do not remind the reader to contribute</a></li>
+</ul>
+</div>
+<div class="section" id="testing-docs-locally">
+<h2><a class="toc-backref" href="#id1">Testing docs locally</a><a class="headerlink" href="#testing-docs-locally" title="Permalink to this headline">¶</a></h2>
+<p>Elgg has a <a class="reference external" href="http://gruntjs.com/">grunt</a> script that automatically builds the docs, opens them in a browser
+window, and automatically reloads as you make changes (the reload takes just a few
+seconds).</p>
+<div class="code sh highlight-python"><div class="highlight"><pre>cd path/to/elgg/
+npm install
+grunt
+</pre></div>
+</div>
+<p>It&#8217;s that easy! Grunt will continue running, watching the docs for changes and
+automatically rebuilding.</p>
+</div>
+<div class="section" id="follow-the-existing-document-organization">
+<h2><a class="toc-backref" href="#id2">Follow the existing document organization</a><a class="headerlink" href="#follow-the-existing-document-organization" title="Permalink to this headline">¶</a></h2>
+<p>The current breakdown is not necessarily the One True Way to organize docs,
+but consistency is better than randomness.</p>
+<div class="section" id="intro">
+<h3>intro/*<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h3>
+<p>This is everything that brand new users need to know (installation, features, license, etc.)</p>
+</div>
+<div class="section" id="admin">
+<h3>admin/*<a class="headerlink" href="#admin" title="Permalink to this headline">¶</a></h3>
+<p>Guides for administrators. Task-oriented.</p>
+</div>
+<div class="section" id="guides">
+<h3>guides/*<a class="headerlink" href="#guides" title="Permalink to this headline">¶</a></h3>
+<p>API guides for plugin developers. Cookbook-style. Example heavy. Code snippet heavy.
+Broken down by services (actions, i18n, routing, db, etc.).
+This should only discuss the public API and its behavior, not implementation details or reasoning.</p>
+</div>
+<div class="section" id="design">
+<h3>design/*<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h3>
+<p>Design docs for people who want to get a better understanding of how/why core is built the way it is.
+This should discuss internal implementation details of the various services, what tradeoffs were made,
+and the reasoning behind the final decision. Should be useful for people who want to contribute and
+for communication b/w core devs.</p>
+</div>
+<div class="section" id="contribute">
+<h3>contribute/*<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h3>
+<p>Contributors guides for the various ways people can participate in the project.</p>
+</div>
+<div class="section" id="appendix">
+<h3>appendix/*<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h3>
+<p>More detailed/meta/background information about the project (history, roadmap, etc.)</p>
+</div>
+</div>
+<div class="section" id="use-elgg-in-a-grammatically-correct-way">
+<h2><a class="toc-backref" href="#id3">Use &#8220;Elgg&#8221; in a grammatically correct way</a><a class="headerlink" href="#use-elgg-in-a-grammatically-correct-way" title="Permalink to this headline">¶</a></h2>
+<p>Elgg is not an acronym, so writing it in all caps (ELGG or E-LGG) is incorrect. Please don’t do this.</p>
+<dl class="docutils">
+<dt>In English, Elgg does not take an article when used as a noun. Here are some examples to emulate:</dt>
+<dd><ul class="first last simple">
+<li>“I’m using Elgg to run my website”</li>
+<li>“Install Elgg to get your community online”</li>
+</ul>
+</dd>
+<dt>When used as an adjective, the article applies to the main noun, so you should use one. For example:</dt>
+<dd><ul class="first last simple">
+<li>&#8220;Go to the Elgg community website to get help.&#8221;</li>
+<li>&#8220;I built an Elgg-based network yesterday&#8221;</li>
+</ul>
+</dd>
+</dl>
+<p>This advice may not apply in languages other than English.</p>
+</div>
+<div class="section" id="avoid-first-person-pronouns">
+<h2><a class="toc-backref" href="#id4">Avoid first person pronouns</a><a class="headerlink" href="#avoid-first-person-pronouns" title="Permalink to this headline">¶</a></h2>
+<p>Refer to the reader as “you.” Do not include yourself in the normal narrative.</p>
+<p>Before:</p>
+<blockquote>
+<div>When we’re done installing Elgg, we’ll look for some plugins!</div></blockquote>
+<p>After:</p>
+<blockquote>
+<div>When you’re done installing Elgg, look for some plugins!</div></blockquote>
+<p>To refer to yourself (avoid this if possible), use your name and write in the third person.
+This clarifies to future readers/editors whose opinions are being expressed.</p>
+<p>Before:</p>
+<blockquote>
+<div>I think the best way to do X is to use Y.</div></blockquote>
+<p>After:</p>
+<blockquote>
+<div>Evan thinks the best way to do X is to use Y.</div></blockquote>
+</div>
+<div class="section" id="eliminate-fluff">
+<h2><a class="toc-backref" href="#id5">Eliminate fluff</a><a class="headerlink" href="#eliminate-fluff" title="Permalink to this headline">¶</a></h2>
+<p>Before:</p>
+<blockquote>
+<div>If you want to use a third-party javascript library within the Elgg framework, you should take care to call the <code class="docutils literal"><span class="pre">elgg_register_js</span></code> function to register it.</div></blockquote>
+<p>After:</p>
+<blockquote>
+<div>To use a third-party javascript library, call <code class="docutils literal"><span class="pre">elgg_register_js</span></code> to register it.</div></blockquote>
+</div>
+<div class="section" id="prefer-absolute-dates-over-relative-ones">
+<h2><a class="toc-backref" href="#id6">Prefer absolute dates over relative ones</a><a class="headerlink" href="#prefer-absolute-dates-over-relative-ones" title="Permalink to this headline">¶</a></h2>
+<p>It is not easy to tell when a particular sentence or paragraph was written, so relative dates quickly become meaningless.
+Absolute dates also give the reader a good indication of whether a project has been abandoned, or whether some advice might be out of date.</p>
+<p>Before:</p>
+<blockquote>
+<div>Recently the foo was barred. Soon, the baz will be barred too.</div></blockquote>
+<p>After:</p>
+<blockquote>
+<div>Recently (as of September 2013), the foo was barred.
+The baz is expected to be barred by October 2013.</div></blockquote>
+</div>
+<div class="section" id="do-not-remind-the-reader-to-contribute">
+<h2><a class="toc-backref" href="#id7">Do not remind the reader to contribute</a><a class="headerlink" href="#do-not-remind-the-reader-to-contribute" title="Permalink to this headline">¶</a></h2>
+<p>Focus on addressing only the topic at hand.
+Constant solicitation for free work is annoying and makes the project look needy.
+If people want to contribute to the project, they can visit the contributor guide.</p>
+</div>
+</div>
+<div class="section" id="internationalizing-documentation">
+<h1>Internationalizing documentation<a class="headerlink" href="#internationalizing-documentation" title="Permalink to this headline">¶</a></h1>
+<p>When you change documentation, remember to update the documentation translation
+templates before you commit:</p>
+<div class="code sh highlight-python"><div class="highlight"><pre>cd docs/
+make gettext
+</pre></div>
+</div>
+<p>For more information, see
+<a class="reference external" href="http://sphinx-doc.org/latest/intl.html#translating-with-sphinx-intl">http://sphinx-doc.org/latest/intl.html#translating-with-sphinx-intl</a></p>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="money.html" class="btn btn-neutral float-right" title="Becoming a Financial Supporter">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="code.html" class="btn btn-neutral" title="Writing Code"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

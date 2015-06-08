@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing Elgg on XAMPP &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../../index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../../index.html"><img src="../../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Installing Elgg on XAMPP</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/intro/install/xampp.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="installing-elgg-on-xampp">
+<h1>Installing Elgg on XAMPP<a class="headerlink" href="#installing-elgg-on-xampp" title="Permalink to this headline">¶</a></h1>
+<p>These intructions are provided in case you want to test your Elgg
+installation on your local computer running Windows.</p>
+<ul>
+<li><p class="first">Download and install XAMPP to your computer from
+<a class="reference external" href="http://www.apachefriends.org/en/xampp.html">http://www.apachefriends.org/en/xampp.html</a></p>
+</li>
+<li><p class="first">Once the installation is completed, it will prompt you to start the
+XAMPP controller panel. Leave it for now.</p>
+</li>
+<li><p class="first">Open <code class="docutils literal"><span class="pre">C:\xampp\apache\conf\httpd.conf</span></code> file with notepad and uncomment
+these lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#LoadModule rewrite_module modules/mod_rewrite.so</span>
+<span class="c">#LoadModule filter_module modules/mod_filter.so</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Edit the php.ini file and change
+<code class="docutils literal"><span class="pre">arg_separator.output</span> <span class="pre">=</span> <span class="pre">&amp;amp;amp;</span></code> to <code class="docutils literal"><span class="pre">arg_separator.output</span> <span class="pre">=</span> <span class="pre">&amp;</span></code></p>
+</li>
+<li><p class="first">Go to <code class="docutils literal"><span class="pre">C:\xampp</span></code> and double click on the xampp_start application</p>
+</li>
+<li><p class="first">Go to <a class="reference external" href="http://localhost/">http://localhost/</a></p>
+</li>
+<li><p class="first">Change your server&#8217;s password in the security option</p>
+</li>
+<li><p class="first">Go to <a class="reference external" href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> and login with the username and the
+password of your server</p>
+</li>
+<li><p class="first">Create a database called &#8220;elgg&#8221; in your phpmyadmin panel</p>
+</li>
+<li><p class="first">Now download Elgg. Unzip it and extract to <code class="docutils literal"><span class="pre">C:\xampp\htdocs\sites\elgg</span></code></p>
+</li>
+<li><p class="first">Create the Elgg data folder as <code class="docutils literal"><span class="pre">C:\xampp\htdocs\sites\data</span></code></p>
+</li>
+<li><p class="first">Go to <a class="reference external" href="http://localhost/sites/elgg">http://localhost/sites/elgg</a></p>
+</li>
+<li><p class="first">You will be taken to the Elgg installation steps. Install it and enjoy.</p>
+</li>
+</ul>
+<div class="section" id="a-note-on-xampp-1-7-4-and-eaccelerator">
+<h2>A note on XAMPP 1.7.4 and eAccelerator<a class="headerlink" href="#a-note-on-xampp-1-7-4-and-eaccelerator" title="Permalink to this headline">¶</a></h2>
+<p>Elgg is compatible with opcode caches and it is highly recommended that
+you enable a PHP opcode caching tool for a faster experience.  XAMPP comes
+with support for eAccelerator out of the box, but unfortunately, the 1.7.4
+build of XAMPP leaves out the DLL that&#8217;s required.  To get eAccelerator
+working, follow these steps:</p>
+<ul>
+<li><p class="first">Download the DLL from <a class="reference external" href="http://eac.qme.nl/eAccelerator_v1_0_svn427_for_v5_3_5-VC6.zip">http://eac.qme.nl/eAccelerator_v1_0_svn427_for_v5_3_5-VC6.zip</a></p>
+</li>
+<li><p class="first">Copy eAccelerator_ts.dll to <code class="docutils literal"><span class="pre">C:\xampp\php\ext\php_eaccelerator.dll</span></code></p>
+</li>
+<li><p class="first">Uncomment this line in <code class="docutils literal"><span class="pre">C:\xampp\php\php.ini</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>;zend_extension = &quot;C:\xampp\php\ext\php_eaccelerator.dll&quot;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Restart apache</p>
+</li>
+</ul>
+<p>To verify that it is on:</p>
+<ul class="simple">
+<li>Go to localhost/xampp</li>
+<li>Click on phpinfo() from the left sidebar</li>
+<li>Ctrl+F for eaccelerator.  If you get no results, eAccelerator is not active</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Web services &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="HMAC Authentication" href="web-services/hmac.html"/>
+        <link rel="prev" title="Walled Garden" href="walled-garden.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Web services</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/web-services.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="web-services">
+<h1>Web services<a class="headerlink" href="#web-services" title="Permalink to this headline">¶</a></h1>
+<p>Build an HTTP API for your site.</p>
+<p>Elgg provides a powerful framework for building web services. This
+allows developers to expose functionality to other web sites and desktop
+applications along with doing integrations with third-party web
+applications. While we call the API RESTful, it is actually a REST/RPC
+hybrid similar to the APIs provided by sites like Flickr and Twitter.</p>
+<p>To create an API for your Elgg site, you need to do 4 things:</p>
+<ul class="simple">
+<li>enable the web services plugin</li>
+<li>expose methods</li>
+<li>setup API authentication</li>
+<li>setup user authentication</li>
+</ul>
+<p>Additionally, you may want to control what types of authentication are
+available on your site. This will also be covered.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#exposing-methods" id="id1">Exposing methods</a><ul>
+<li><a class="reference internal" href="#response-formats" id="id2">Response formats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api-authentication" id="id3">API authentication</a><ul>
+<li><a class="reference internal" href="#key-based-authentication" id="id4">Key-based authentication</a></li>
+<li><a class="reference internal" href="#signature-based-authentication" id="id5">Signature-based authentication</a></li>
+<li><a class="reference internal" href="#oauth" id="id6">OAuth</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-authentication" id="id7">User authentication</a></li>
+<li><a class="reference internal" href="#building-out-your-api" id="id8">Building out your API</a></li>
+<li><a class="reference internal" href="#determining-the-authentication-available" id="id9">Determining the authentication available</a></li>
+<li><a class="reference internal" href="#related" id="id10">Related</a></li>
+</ul>
+</div>
+<div class="section" id="exposing-methods">
+<h2><a class="toc-backref" href="#id1">Exposing methods</a><a class="headerlink" href="#exposing-methods" title="Permalink to this headline">¶</a></h2>
+<p>The function to use to expose a method is <code class="docutils literal"><span class="pre">elgg_ws_expose_function()</span></code>. As an
+example, let&#8217;s assume you want to expose a function that echos text back
+to the calling application. The function could look like this</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function my_echo($string) {
+    return $string;
+}
+</pre></div>
+</div>
+<p>Since we are providing this function to allow developers to test their
+API clients, we will require neither API authentication nor user
+authentication. This call registers the function with the web services
+API framework:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_ws_expose_function(&quot;test.echo&quot;,
+                &quot;my_echo&quot;,
+                 array(&quot;string&quot; =&gt; array(&#39;type&#39; =&gt; &#39;string&#39;)),
+                 &#39;A testing method which echos back a string&#39;,
+                 &#39;GET&#39;,
+                 false,
+                 false
+                );
+</pre></div>
+</div>
+<p>If you add this code to a plugin and then go to
+<a class="reference external" href="http://yoursite.com/services/api/rest/xml/?method=system.api.list">http://yoursite.com/services/api/rest/xml/?method=system.api.list</a>, you
+should now see your test.echo method listed as an API call. Further, to
+test the exposed method from a web browser, you could hit the url:
+<a class="reference external" href="http://yoursite.com/services/api/rest/xml/?method=test.echo&amp;string=testing">http://yoursite.com/services/api/rest/xml/?method=test.echo&amp;string=testing</a>
+and you should see xml data like this:</p>
+<div class="code xml highlight-python"><div class="highlight"><pre>&lt;elgg&gt;
+    &lt;status&gt;0&lt;/status&gt;
+    &lt;result&gt;testing&lt;/result&gt;
+&lt;/elgg&gt;
+</pre></div>
+</div>
+<div class="section" id="response-formats">
+<h3><a class="toc-backref" href="#id2">Response formats</a><a class="headerlink" href="#response-formats" title="Permalink to this headline">¶</a></h3>
+<p>The web services API framework provides three different response formats
+by default: xml, json, and serialized php. You can request the different
+formats for substituting “json” or “php” for “xml” in the above URLs.
+You can also add additional response formats by defining new viewtypes.</p>
+</div>
+</div>
+<div class="section" id="api-authentication">
+<h2><a class="toc-backref" href="#id3">API authentication</a><a class="headerlink" href="#api-authentication" title="Permalink to this headline">¶</a></h2>
+<p>You may want to control access to some of the functions that you expose.
+Perhaps you are exposing functions in order to integrate Elgg with
+another open source platform on the same server. In that case, you only
+want to allow that other application access to these methods. Another
+possibility is that you want to limit what external developers have
+access to your API. Or maybe you want to limit how many calls a
+developer can make against your API in a single day.</p>
+<p>In all of these cases, you can use Elgg&#8217;s API authentication functions
+to control access. Elgg provides two built-in methods to perform API
+authentication: key based and HMAC signature based. You can also add
+your own authentication methods. The key based approach is very similar
+to what Google, Flickr, or Twitter. Developers can request a key (a
+random string) and pass that key with all calls that require API
+authentication. The keys are stored in the database and if an API call
+is made without a key or a bad key, the call is denied and an error
+message is returned.</p>
+<div class="section" id="key-based-authentication">
+<h3><a class="toc-backref" href="#id4">Key-based authentication</a><a class="headerlink" href="#key-based-authentication" title="Permalink to this headline">¶</a></h3>
+<p>As an example, let&#8217;s write a function that returns the number of users
+that have viewed the site in the last x minutes.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function count_active_users($minutes=10) {
+    $seconds = 60 * $minutes;
+    $count = count(find_active_users($seconds, 9999));
+    return $count;
+}
+</pre></div>
+</div>
+<p>Now, let&#8217;s expose it and make the number of minutes an optional
+parameter:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_ws_expose_function(&quot;users.active&quot;,
+                &quot;count_active_users&quot;,
+                 array(&quot;minutes&quot; =&gt; array(&#39;type&#39; =&gt; &#39;int&#39;,
+                                          &#39;required&#39; =&gt; false)),
+                 &#39;Number of users who have used the site in the past x minutes&#39;,
+                 &#39;GET&#39;,
+                 true,
+                 false
+                );
+</pre></div>
+</div>
+<p>This function is now available and if you check <code class="docutils literal"><span class="pre">system.api.list</span></code>, you
+will see that it requires API authentication. If you hit the method with
+a web browser, it will return an error message about failing the API
+authentication. To test this method, you need an API key. Fortunately,
+there is a plugin called apiadmin that creates keys for you. It is
+available in the Elgg plugin repository. It will return a public and
+private key and you will use the public key for this kind of API
+authentication. Grab a key and then do a GET request with your browser
+on this API method passing in the key string as the parameter
+<code class="docutils literal"><span class="pre">api_key</span></code>. It might look something like this:
+<a class="reference external" href="http://yoursite.com/services/api/rest/xml/?method=users.active&amp;api_key=1140321cb56c71710c38feefdf72bc462938f59f">http://yoursite.com/services/api/rest/xml/?method=users.active&amp;api_key=1140321cb56c71710c38feefdf72bc462938f59f</a>.</p>
+</div>
+<div class="section" id="signature-based-authentication">
+<h3><a class="toc-backref" href="#id5">Signature-based authentication</a><a class="headerlink" href="#signature-based-authentication" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="web-services/hmac.html"><em>HMAC Authentication</em></a> is similar to what is used with OAuth or
+Amazon&#8217;s S3 service. This involves both the public and private key. If
+you want to be very sure that the API calls are coming from the
+developer you think they are coming from and you want to make sure the
+data is not being tampered with during transmission, you would use this
+authentication method. Be aware that it is much more involved and could
+turn off developers when there are other sites out there with key-based
+authentication.</p>
+</div>
+<div class="section" id="oauth">
+<h3><a class="toc-backref" href="#id6">OAuth</a><a class="headerlink" href="#oauth" title="Permalink to this headline">¶</a></h3>
+<p>With the addition of the OAuth plugin, Elgg also fully supports the
+OAuth 1.0a authorization standard. Clients can then use standard OAuth
+libraries to make any API calls to the site.</p>
+</div>
+</div>
+<div class="section" id="user-authentication">
+<h2><a class="toc-backref" href="#id7">User authentication</a><a class="headerlink" href="#user-authentication" title="Permalink to this headline">¶</a></h2>
+<p>So far you have been allowing developers to pull data out of your Elgg
+site. Now we&#8217;ll move on to pushing data into Elgg. In this case, it is
+going to be done by a user. Maybe you have created a desktop application
+that allows your Users to post to the wire without going to the site.
+You need to expose a method for posting to the wire and you need to make
+sure that a user cannot post using someone else&#8217;s account. Elgg provides
+a token-based approach for user authentication. It allows a user to
+submit their username and password in exchange for a token using the
+method <code class="docutils literal"><span class="pre">auth.gettoken</span></code>. This token can then be used for some amount of
+time to authenticate all calls to the API before it expires by passing
+it as the parameter <code class="docutils literal"><span class="pre">auth_token</span></code>. If you do not want to have your
+users trusting their passwords to 3rd-party applications, you can also
+extend the current capability to use an approach like OAuth.</p>
+<p>Let&#8217;s write our wire posting function:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function my_post_to_wire($text) {
+
+    $text = substr($text, 0, 140);
+
+    $access = ACCESS_PUBLIC;
+
+    // returns guid of wire post
+    return thewire_save_post($text, $access, &quot;api&quot;);
+}
+</pre></div>
+</div>
+<p>Exposing this function is the same as the previous except we require
+user authentication and we&#8217;re going to make this use POST rather than
+GET HTTP requests.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_ws_expose_function(&quot;thewire.post&quot;,
+                &quot;my_post_to_wire&quot;,
+                 array(&quot;text&quot; =&gt; array(&#39;type&#39; =&gt; &#39;string&#39;)),
+                 &#39;Post to the wire. 140 characters or less&#39;,
+                 &#39;POST&#39;,
+                 true,
+                 true
+                );
+</pre></div>
+</div>
+<p>Please note that you will not be able to test this using a web browser
+as you did with the other methods. You need to write some client code to
+do this. There is some example client code in <code class="docutils literal"><span class="pre">/engine/lib/api.php</span></code>.
+Take a look at <a class="reference external" href="http://reference.elgg.org/lib_2api_8php.html#ee7382c2cbf1ad49ac6892556d3eaff2">send_api_post_call()</a>. You can also do a search for
+clients that have been written for the APIs of Flickr or Twitter or any
+other similar API. You will find a wide variety written in almost any
+language you can think of.</p>
+</div>
+<div class="section" id="building-out-your-api">
+<h2><a class="toc-backref" href="#id8">Building out your API</a><a class="headerlink" href="#building-out-your-api" title="Permalink to this headline">¶</a></h2>
+<p>As soon as you feel comfortable with Elgg&#8217;s web services API framework,
+you will want to step back and design your API. What sort of data are
+you trying to expose? Who or what will be API users? How do you want
+them to get access to authentication keys? How are you going to document
+your API? Be sure to take a look at the APIs created by popular Web 2.0
+sites for inspiration. If you are looking for 3rd party developers to
+build applications using your API, you will probably want to provide one
+or more language-specific clients.</p>
+</div>
+<div class="section" id="determining-the-authentication-available">
+<h2><a class="toc-backref" href="#id9">Determining the authentication available</a><a class="headerlink" href="#determining-the-authentication-available" title="Permalink to this headline">¶</a></h2>
+<p>Elgg&#8217;s web services API uses a type of <a class="reference external" href="http://en.wikipedia.org/wiki/Pluggable_Authentication_Modules">pluggable authentication module
+(PAM)</a> architecture to manage how users and developers are
+authenticated. This provides you the flexibility to add and remove
+authentication modules. Do you want to not use the default user
+authentication PAM but would prefer using OAuth? You can do this.</p>
+<p>The first step is registering a callback function for the <em>rest, init</em>
+plugin hook:</p>
+<div class="code php highlight-python"><div class="highlight"><pre><span class="n">register_plugin_hook</span><span class="p">(</span><span class="s">&#39;rest&#39;</span><span class="p">,</span> <span class="s">&#39;init&#39;</span><span class="p">,</span> <span class="s">&#39;rest_plugin_setup_pams&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Then in the callback function, you register the PAMs that you want to
+use:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function rest_plugin_setup_pams() {
+    // user token can also be used for user authentication
+    register_pam_handler(&#39;pam_auth_usertoken&#39;);
+
+    // simple API key check
+    register_pam_handler(&#39;api_auth_key&#39;, &quot;sufficient&quot;, &quot;api&quot;);
+
+    // override the default pams
+    return true;
+}
+</pre></div>
+</div>
+<p>When testing, you may find it useful to register the
+<code class="docutils literal"><span class="pre">pam_auth_session</span></code> PAM so that you can easily test your methods from
+the browser. Be careful not to use this PAM on a production site because
+it could open up your users to a <a class="reference external" href="http://en.wikipedia.org/wiki/Csrf">CSRF attack</a>.</p>
+<p>Right now, the only other PAMs publicly available besides those provided
+by the Elgg core are the OAuth PAMs. See <a class="reference external" href="http://community.elgg.org/pg/plugins/jricher/read/385119/oauth">Justin Richer&#8217;s OAuth plugin</a>
+for more detail.</p>
+</div>
+<div class="section" id="related">
+<h2><a class="toc-backref" href="#id10">Related</a><a class="headerlink" href="#related" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="web-services/hmac.html">HMAC Authentication</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="web-services/hmac.html" class="btn btn-neutral float-right" title="HMAC Authentication">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="walled-garden.html" class="btn btn-neutral" title="Walled Garden"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

@@ -1,0 +1,597 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Database &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Forms + Actions" href="actions.html"/>
+        <link rel="prev" title="Context" href="context.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Database</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/database.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="database">
+<h1>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h1>
+<p>Persist user-generated content and settings with Elgg&#8217;s generic storage API.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#entities" id="id1">Entities</a><ul>
+<li><a class="reference internal" href="#creating-an-object" id="id2">Creating an object</a></li>
+<li><a class="reference internal" href="#loading-an-object" id="id3">Loading an object</a></li>
+<li><a class="reference internal" href="#displaying-entities" id="id4">Displaying entities</a></li>
+<li><a class="reference internal" href="#adding-reading-and-deleting-annotations" id="id5">Adding, reading and deleting annotations</a></li>
+<li><a class="reference internal" href="#extending-elggentity" id="id6">Extending ElggEntity</a></li>
+<li><a class="reference internal" href="#advanced-features" id="id7">Advanced features</a></li>
+<li><a class="reference internal" href="#pre-1-8-notes" id="id8">Pre-1.8 Notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#custom-database-functionality" id="id9">Custom database functionality</a><ul>
+<li><a class="reference internal" href="#example-run-sql-script-on-plugin-activation" id="id10">Example: Run SQL script on plugin activation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#systemlog" id="id11">Systemlog</a><ul>
+<li><a class="reference internal" href="#system-log-storage" id="id12">System log storage</a></li>
+<li><a class="reference internal" href="#creating-your-own-system-log" id="id13">Creating your own system log</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="entities">
+<h2><a class="toc-backref" href="#id1">Entities</a><a class="headerlink" href="#entities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-an-object">
+<h3><a class="toc-backref" href="#id2">Creating an object</a><a class="headerlink" href="#creating-an-object" title="Permalink to this headline">¶</a></h3>
+<p>To create an object in your code, you need to instantiate an
+<code class="docutils literal"><span class="pre">ElggObject</span></code>. Setting data is simply a matter of adding instance
+variables or properties. The built-in properties are:</p>
+<ul class="simple">
+<li><strong>``guid``</strong> The entity&#8217;s GUID; set automatically</li>
+<li><strong>``owner_guid``</strong> The owning user&#8217;s GUID</li>
+<li><strong>``site_guid``</strong> The owning site&#8217;s GUID. This is set automatically
+when an instance of <code class="docutils literal"><span class="pre">ElggObject</span></code> gets created)</li>
+<li><strong>``subtype``</strong> A single-word arbitrary string that defines what kind
+of object it is, for example <code class="docutils literal"><span class="pre">blog</span></code></li>
+<li><strong>``access_id``</strong> An integer representing the access level of the
+object</li>
+<li><strong>``title``</strong> The title of the object</li>
+<li><strong>``description``</strong> The description of the object</li>
+</ul>
+<p>The object subtype is a special property. This is an arbitrary string
+that describes what the object is. For example, if you were writing a
+blog plugin, your subtype string might be <em>blog</em>. It&#8217;s a good idea to
+make this unique, so that other plugins don&#8217;t accidentally try and use
+the same subtype. For the purposes of this document, let&#8217;s assume we&#8217;re
+building a simple forum. Therefore, the subtype will be <em>forum</em>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$object = new ElggObject();
+$object-&gt;subtype = &quot;forum&quot;;
+$object-&gt;access_id = 2;
+$object-&gt;save();
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">access_id</span></code> is another important property. If you don&#8217;t set this, your
+object will be private, and only the creator user will be able to see
+it. Elgg defines constants for the special values of <code class="docutils literal"><span class="pre">access_id</span></code>:</p>
+<ul class="simple">
+<li><strong>ACCESS_PRIVATE</strong> Only the owner can see it</li>
+<li><strong>ACCESS_FRIENDS</strong> Only the owner and his/her friends can see it</li>
+<li><strong>ACCESS_LOGGED_IN</strong> Any logged in user can see it</li>
+<li><strong>ACCESS_PUBLIC</strong> Even visitors not logged in can see it</li>
+</ul>
+<p>Saving the object will automatically populate the <code class="docutils literal"><span class="pre">$object-&gt;guid</span></code>
+property if successful. If you change any more base properties, you can
+call <code class="docutils literal"><span class="pre">$object-&gt;save()</span></code> again, and it will update the database for you.</p>
+<p>You can set metadata on an object just like a standard property. Let&#8217;s
+say we want to set the SKU of a product:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$object-&gt;SKU = 62784;
+</pre></div>
+</div>
+<p>If you assign an array, all the values will be set for that metadata.
+This is how, for example, you set tags.</p>
+<p>Metadata cannot be persisted to the database until the entity has been
+saved, but for convenience, ElggEntity can cache it internally and save
+it when saving the entity.</p>
+</div>
+<div class="section" id="loading-an-object">
+<h3><a class="toc-backref" href="#id3">Loading an object</a><a class="headerlink" href="#loading-an-object" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="by-guid">
+<h4>By GUID<a class="headerlink" href="#by-guid" title="Permalink to this headline">¶</a></h4>
+<div class="code php highlight-python"><div class="highlight"><pre>$entity = get_entity($guid);
+if (!$entity) {
+    // The entity does not exist or you&#39;re not allowed to access it.
+}
+</pre></div>
+</div>
+<p>But what if you don&#8217;t know the GUID? There are several options.</p>
+</div>
+<div class="section" id="by-user-subtype-or-site">
+<h4>By user, subtype or site<a class="headerlink" href="#by-user-subtype-or-site" title="Permalink to this headline">¶</a></h4>
+<p>If you know the user ID you want to get objects for, or the subtype, or
+the site, you have several options. The easiest is probably to call the
+procedural function <code class="docutils literal"><span class="pre">elgg_get_entities</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$entities = elgg_get_entities(array(
+    &#39;type&#39; =&gt; $entity_type,
+    &#39;subtype&#39; =&gt; $subtype,
+    &#39;owner_guid&#39; =&gt; $owner_guid,
+));
+</pre></div>
+</div>
+<p>This will return an array of <code class="docutils literal"><span class="pre">ElggEntity</span></code> objects that you can iterate
+through. <code class="docutils literal"><span class="pre">elgg_get_entities</span></code> paginates by default, with a limit of 10;
+and offset 0.</p>
+<p>You can leave out <code class="docutils literal"><span class="pre">owner_guid</span></code> to get all objects and leave out subtype
+or type to get objects of all types/subtypes.</p>
+<p>If you already have an <code class="docutils literal"><span class="pre">ElggUser</span></code> – e.g. <code class="docutils literal"><span class="pre">elgg_get_logged_in_user_entity</span></code>,
+which always has the current user&#8217;s object when you&#8217;re logged in – you can
+simply use:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$objects = $user-&gt;getObjects($subtype, $limit, $offset)
+</pre></div>
+</div>
+<p>But what about getting objects with a particular piece of metadata?</p>
+</div>
+<div class="section" id="by-metadata">
+<h4>By metadata<a class="headerlink" href="#by-metadata" title="Permalink to this headline">¶</a></h4>
+<p>The function <code class="docutils literal"><span class="pre">elgg_get_entities_from_metadata</span></code> allows fetching entities
+with metadata in a variety of ways.</p>
+</div>
+<div class="section" id="by-annotation">
+<h4>By annotation<a class="headerlink" href="#by-annotation" title="Permalink to this headline">¶</a></h4>
+<p>The function <code class="docutils literal"><span class="pre">elgg_get_entities_from_annotations</span></code> allows fetching entities
+with metadata in a variety of ways.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>As of Elgg 1.10 the default behaviour of <cite>elgg_get_entities_from_annotations</cite> was brought inline with the rest of the <cite>elgg_get_entities*</cite> functions.</p>
+<p>Pre Elgg 1.10 the sorting of the entities was based on the latest addition of an annotation (in $options your could add <cite>$options[&#8216;order_by&#8217;] = &#8216;maxtime ASC&#8217;</cite> or <cite>$options[&#8216;order_by&#8217;] = &#8216;maxtime DESC&#8217;</cite>. As of Elgg 1.10 this was changed to the creation time of the entity, just like the rest of the <cite>elgg_get_entities*</cite> functions.
+To get the old behaviour back add the following to your <cite>$options</cite>:</p>
+<div class="code php last highlight-python"><div class="highlight"><pre>$options[&#39;selects&#39;] = array(&#39;MAX(n_table.time_created) AS maxtime&#39;);
+$options[&#39;group_by&#39;] = &#39;n_table.entity_guid&#39;;
+$options[&#39;order_by&#39;] = &#39;maxtime ASC&#39;
+
+or
+
+$options[&#39;order_by&#39;] = &#39;maxtime DESC&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-entities">
+<h3><a class="toc-backref" href="#id4">Displaying entities</a><a class="headerlink" href="#displaying-entities" title="Permalink to this headline">¶</a></h3>
+<p>In order for entities to be displayed in listing functions you need
+to provide a view for the entity in the views system.</p>
+<p>To display an entity, create a view EntityType/subtype where EntityType
+is one of the following:</p>
+<p>object: for entities derived from ElggObject
+user: for entities derived from ElggUser
+site: for entities derived from ElggSite
+group: for entities derived from ElggGroup</p>
+<p>A default view for all entities has already been created, this is called
+EntityType/default.</p>
+<div class="section" id="entity-icons">
+<span id="guides-database-entity-icons"></span><h4>Entity Icons<a class="headerlink" href="#entity-icons" title="Permalink to this headline">¶</a></h4>
+<p>Every entity can be assigned an icon which is retrieved using the <code class="docutils literal"><span class="pre">ElggEntity::getIconURL($params)</span></code> method.
+This method accepts a <code class="docutils literal"><span class="pre">$params</span></code> argument that can be either a string specifying on of the configured icon sizes,
+or an array of parameters, that specify the size and provide additional context for the hook to determine the icon
+to serve.</p>
+<p>Use <code class="docutils literal"><span class="pre">elgg_get_config('icon_sizes')</span></code> to get all possible values. The following sizes exist by default:
+<code class="docutils literal"><span class="pre">'large'</span></code>, <code class="docutils literal"><span class="pre">'medium'</span></code>, <code class="docutils literal"><span class="pre">'small'</span></code>, <code class="docutils literal"><span class="pre">'tiny'</span></code>, and <code class="docutils literal"><span class="pre">'topbar'</span></code>. The method triggers the
+<code class="docutils literal"><span class="pre">entity:icon:url</span></code> <a class="reference internal" href="hooks-list.html#guides-hooks-list-other"><span>hook</span></a>.</p>
+<p>Use <code class="docutils literal"><span class="pre">elgg_view_entity_icon($entity,</span> <span class="pre">$size,</span> <span class="pre">$vars)</span></code> to render an icon. This will scan the following
+locations for a view and include the first match.</p>
+<ol class="arabic simple">
+<li>views/$viewtype/icon/$type/$subtype.php</li>
+<li>views/$viewtype/icon/$type/default.php</li>
+<li>views/$viewtype/icon/default.php</li>
+</ol>
+<p>Where</p>
+<dl class="docutils">
+<dt>$viewtype</dt>
+<dd>Type of view, e.g. <code class="docutils literal"><span class="pre">'default'</span></code> or <code class="docutils literal"><span class="pre">'json'</span></code>.</dd>
+<dt>$type</dt>
+<dd>Type of entity, e.g. <code class="docutils literal"><span class="pre">'group'</span></code> or <code class="docutils literal"><span class="pre">'user'</span></code>.</dd>
+<dt>$subtype</dt>
+<dd>Entity subtype, e.g. <code class="docutils literal"><span class="pre">'blog'</span></code> or <code class="docutils literal"><span class="pre">'page'</span></code>.</dd>
+</dl>
+<p>By convention entities that have an uploaded avatar or icon will have the <code class="docutils literal"><span class="pre">icontime</span></code> property
+assigned. This means that you can use <code class="docutils literal"><span class="pre">$entity-&gt;icontime</span></code> to check if an icon exists for the given
+entity.</p>
+</div>
+</div>
+<div class="section" id="adding-reading-and-deleting-annotations">
+<h3><a class="toc-backref" href="#id5">Adding, reading and deleting annotations</a><a class="headerlink" href="#adding-reading-and-deleting-annotations" title="Permalink to this headline">¶</a></h3>
+<p>Annotations could be used, for example, to track ratings. To annotate an
+entity you can use the object&#8217;s <code class="docutils literal"><span class="pre">annotate()</span></code> method. For example, to
+give a blog post a rating of 5, you could use:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$blog_post-&gt;annotate(&#39;rating&#39;, 5);
+</pre></div>
+</div>
+<p>To retrieve the ratings on the blog post, use
+<code class="docutils literal"><span class="pre">$blogpost-&gt;getAnnotations('rating')</span></code> and if you want to delete an
+annotation, you can operate on the <code class="docutils literal"><span class="pre">ElggAnnotation</span></code> class, eg
+<code class="docutils literal"><span class="pre">$annotation-&gt;delete()</span></code>.</p>
+<p>Retrieving a single annotation can be done with <code class="docutils literal"><span class="pre">get_annotation()</span></code> if
+you have the annotation&#8217;s ID. If you delete an ElggEntity of any kind,
+all its metadata, annotations, and relationships will be automatically
+deleted as well.</p>
+</div>
+<div class="section" id="extending-elggentity">
+<h3><a class="toc-backref" href="#id6">Extending ElggEntity</a><a class="headerlink" href="#extending-elggentity" title="Permalink to this headline">¶</a></h3>
+<p>If you derive from one of the Elgg core classes, you&#8217;ll need to tell
+Elgg how to properly instantiate the new type of object so that
+get_entity() et al. will return the appropriate PHP class. For example,
+if I customize ElggGroup in a class called &#8220;Committee&#8221;, I need to make
+Elgg aware of the new mapping. Following is an example class extension:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Class source
+class Committee extends ElggGroup {
+
+    protected function initializeAttributes() {
+        parent::initializeAttributes();
+        $this-&gt;attributes[&#39;subtype&#39;] = &#39;committee&#39;;
+    }
+
+    // more customizations here
+}
+
+function committee_init() {
+
+    register_entity_type(&#39;group&#39;, &#39;committee&#39;);
+
+    // Tell Elgg that group subtype &quot;committee&quot; should be loaded using the Committee class
+    // If you ever change the name of the class, use update_subtype() to change it
+    add_subtype(&#39;group&#39;, &#39;committee&#39;, &#39;Committee&#39;);
+}
+
+register_elgg_event_handler(&#39;init&#39;, &#39;system&#39;, &#39;committee_init&#39;);
+</pre></div>
+</div>
+<p>Now if you invoke <code class="docutils literal"><span class="pre">get_entity()</span></code> with the GUID of a committee object,
+you&#8217;ll get back an object of type Committee.</p>
+<p>This template was extracted from the definition of ElggFile.</p>
+</div>
+<div class="section" id="advanced-features">
+<h3><a class="toc-backref" href="#id7">Advanced features</a><a class="headerlink" href="#advanced-features" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="entity-urls">
+<h4>Entity URLs<a class="headerlink" href="#entity-urls" title="Permalink to this headline">¶</a></h4>
+<p>Entity urls are provided by the <code class="docutils literal"><span class="pre">getURL()</span></code> interface and provide the
+Elgg framework with a common way of directing users to the appropriate
+display handler for any given object.</p>
+<p>For example, a profile page in the case of users.</p>
+<p>The url is set using the <code class="docutils literal"><span class="pre">elgg\_register\_entity\_url\_handler()</span></code>
+function. The function you register must return the appropriate url for
+the given type - this itself can be an address set up by a page handler.</p>
+<p>The default handler is to use the default export interface.</p>
+</div>
+<div class="section" id="entity-loading-performance">
+<h4>Entity loading performance<a class="headerlink" href="#entity-loading-performance" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal"><span class="pre">elgg_get_entities</span></code> has a couple options that can sometimes be useful to improve performance.</p>
+<ul class="simple">
+<li><strong>preload_owners</strong>: If the entities fetched will be displayed in a list with the owner information, you can set this option to <code class="docutils literal"><span class="pre">true</span></code> to efficiently load the owner users of the fetched entities.</li>
+<li><strong>preload_containers</strong>: If the entities fetched will be displayed in a list using info from their containers, you can set this option to <code class="docutils literal"><span class="pre">true</span></code> to efficiently load them.</li>
+<li><strong>distinct</strong>: When Elgg fetches entities using an SQL query, Elgg must be sure that each entity row appears only once in the result set. By default it includes a <code class="docutils literal"><span class="pre">DISTINCT</span></code> modifier on the GUID column to enforce this, but some queries naturally return unique entities. Setting the <code class="docutils literal"><span class="pre">distinct</span></code> option to false will remove this modifier, and rely on the query to enforce its own uniqueness.</li>
+</ul>
+<p>The internals of Elgg entity queries is a complex subject and it&#8217;s recommended to seek help on the Elgg Community site before using the <code class="docutils literal"><span class="pre">distinct</span></code> option.</p>
+</div>
+</div>
+<div class="section" id="pre-1-8-notes">
+<h3><a class="toc-backref" href="#id8">Pre-1.8 Notes</a><a class="headerlink" href="#pre-1-8-notes" title="Permalink to this headline">¶</a></h3>
+<p>update_subtype(): This function is new in 1.8. In prior versions, you
+would need to edit the database by hand if you updated the class name
+associated with a given subtype.</p>
+<p>elgg_register_entity_url_handler(): This function is new in 1.8. It
+deprecates register_entity_url_handler(), which you should use if
+developing for a pre-1.8 version of Elgg.</p>
+<p>elgg_get_entities_from_metadata(): This function is new in 1.8. It
+deprecates get_entities_from_metadata(), which you should use if
+developing for a pre-1.8 version of Elgg.</p>
+</div>
+</div>
+<div class="section" id="custom-database-functionality">
+<h2><a class="toc-backref" href="#id9">Custom database functionality</a><a class="headerlink" href="#custom-database-functionality" title="Permalink to this headline">¶</a></h2>
+<p>It is strongly recommended to use entities wherever possible. However, Elgg
+supports custom SQL queries using the database API.</p>
+<div class="section" id="example-run-sql-script-on-plugin-activation">
+<h3><a class="toc-backref" href="#id10">Example: Run SQL script on plugin activation</a><a class="headerlink" href="#example-run-sql-script-on-plugin-activation" title="Permalink to this headline">¶</a></h3>
+<p>This example shows how you can populate your database on plugin activation.</p>
+<p>my_plugin/activate.php:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>if (!elgg_get_plugin_setting(&#39;database_version&#39;, &#39;my_plugin&#39;) {
+    run_sql_script(__DIR__ . &#39;/sql/activate.sql&#39;);
+    elgg_set_plugin_setting(&#39;database_version&#39;, 1, &#39;my_plugin&#39;);
+}
+</pre></div>
+</div>
+<p>my_plugin/sql/activate.sql:</p>
+<div class="code sql highlight-python"><div class="highlight"><pre>-- Create some table
+CREATE TABLE prefix_custom_table(
+    id INTEGER AUTO_INCREMENT,
+    name VARCHAR(32),
+    description VARCHAR(32),
+    PRIMARY KEY (id)
+);
+
+-- Insert initial values for table
+INSERT INTO prefix_custom_table (name, description)
+VALUES (&#39;Peter&#39;, &#39;Some guy&#39;), (&#39;Lisa&#39;, &#39;Some girl&#39;);
+</pre></div>
+</div>
+<p>Note that Elgg execute statements through PHPs built-in functions and have
+limited support for comments. I.e. only single line comments are supported
+and must be prefixed by &#8220;&#8211; &#8221; or &#8220;# &#8221;. A comment must start at the very beginning
+of a line.</p>
+</div>
+</div>
+<div class="section" id="systemlog">
+<h2><a class="toc-backref" href="#id11">Systemlog</a><a class="headerlink" href="#systemlog" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section need some attention and will contain outdated information</p>
+</div>
+<p>The default Elgg system log is a simple way of recording what happens within an Elgg system. It&#8217;s viewable and searchable directly from the administration panel.</p>
+<div class="section" id="system-log-storage">
+<h3><a class="toc-backref" href="#id12">System log storage</a><a class="headerlink" href="#system-log-storage" title="Permalink to this headline">¶</a></h3>
+<p>A system log row is stored whenever an event concerning an object whose class implements the <a class="reference internal" href="../design/loggable.html"><em>Loggable</em></a> interface is triggered. <code class="docutils literal"><span class="pre">ElggEntity</span></code> and <code class="docutils literal"><span class="pre">ElggExtender</span></code> implement <a class="reference internal" href="../design/loggable.html"><em>Loggable</em></a>, so a system log row is created whenever an event is performed on all objects, users, groups, sites, metadata and annotations.</p>
+<p>Common events include:</p>
+<ul class="simple">
+<li>create</li>
+<li>update</li>
+<li>delete</li>
+<li>login</li>
+</ul>
+</div>
+<div class="section" id="creating-your-own-system-log">
+<h3><a class="toc-backref" href="#id13">Creating your own system log</a><a class="headerlink" href="#creating-your-own-system-log" title="Permalink to this headline">¶</a></h3>
+<p>There are some reasons why you might want to create your own system log. For example, you might need to store a full copy of entities when they are updated or deleted, for auditing purposes. You might also need to notify an administrator when certain types of events occur.</p>
+<p>To do this, you can create a function that listens to all events for all types of object:</p>
+<div class="code php highlight-python"><div class="highlight"><pre><span class="n">register_elgg_event_handler</span><span class="p">(</span><span class="s">&#39;all&#39;</span><span class="p">,</span><span class="s">&#39;all&#39;</span><span class="p">,</span><span class="s">&#39;your_function_name&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Your function can then be defined as:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function your_function_name($object, $event) {
+   if ($object instanceof Loggable) {
+      ...
+   }
+}
+</pre></div>
+</div>
+<p>You can then use the extra methods defined by <a class="reference internal" href="../design/loggable.html"><em>Loggable</em></a> to extract the information you need.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="actions.html" class="btn btn-neutral float-right" title="Forms + Actions">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="context.html" class="btn btn-neutral" title="Context"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

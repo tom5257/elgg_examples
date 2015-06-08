@@ -1,0 +1,1068 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Database &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Design Docs" href="index.html"/>
+        <link rel="next" title="Events and Plugin Hooks" href="events.html"/>
+        <link rel="prev" title="Actions" href="actions.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Developer Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Design Docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Design Docs</a> &raquo;</li>
+      
+    <li>Database</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/design/database.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="database">
+<h1>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h1>
+<p>A thorough discussion of Elgg&#8217;s data model design and motivation.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id5">Overview</a></li>
+<li><a class="reference internal" href="#datamodel" id="id6">Datamodel</a></li>
+<li><a class="reference internal" href="#entities" id="id7">Entities</a><ul>
+<li><a class="reference internal" href="#users-objects-groups-sites" id="id8">Users, Objects, Groups, Sites</a></li>
+<li><a class="reference internal" href="#guids" id="id9">GUIDs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#elggobject" id="id10">ElggObject</a></li>
+<li><a class="reference internal" href="#elgguser" id="id11">ElggUser</a></li>
+<li><a class="reference internal" href="#elggsite" id="id12">ElggSite</a></li>
+<li><a class="reference internal" href="#elgggroup" id="id13">ElggGroup</a><ul>
+<li><a class="reference internal" href="#the-groups-plugin" id="id14">The Groups plugin</a></li>
+<li><a class="reference internal" href="#writing-a-group-aware-plugin" id="id15">Writing a group-aware plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ownership" id="id16">Ownership</a></li>
+<li><a class="reference internal" href="#containers" id="id17">Containers</a></li>
+<li><a class="reference internal" href="#annotations" id="id18">Annotations</a><ul>
+<li><a class="reference internal" href="#adding-an-annotation" id="id19">Adding an annotation</a></li>
+<li><a class="reference internal" href="#reading-annotations" id="id20">Reading annotations</a></li>
+<li><a class="reference internal" href="#useful-helper-functions" id="id21">Useful helper functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metadata" id="id22">Metadata</a><ul>
+<li><a class="reference internal" href="#the-simple-case" id="id23">The simple case</a></li>
+<li><a class="reference internal" href="#finer-control" id="id24">Finer control</a></li>
+<li><a class="reference internal" href="#common-mistakes" id="id25">Common mistakes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relationships" id="id26">Relationships</a><ul>
+<li><a class="reference internal" href="#working-with-relationships" id="id27">Working with relationships</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#access-control" id="id28">Access Control</a><ul>
+<li><a class="reference internal" href="#access-controls-in-the-data-model" id="id29">Access controls in the data model</a></li>
+<li><a class="reference internal" href="#how-access-affects-data-retrieval" id="id30">How access affects data retrieval</a></li>
+<li><a class="reference internal" href="#write-access" id="id31">Write access</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#schema" id="id32">Schema</a><ul>
+<li><a class="reference internal" href="#main-tables" id="id33">Main tables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id5">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In Elgg, everything runs on a unified data model based on atomic
+units of data called entities.</p>
+<p>Plugins are discouraged from interacting directly with the database,
+which creates a more stable system and a better user experience becase
+content created by different plugins can be mixed together in
+consistent ways. With this approach, plugins are faster to develop,
+and are at the same time much more powerful.</p>
+<p>Every entity in the system inherits the <code class="docutils literal"><span class="pre">ElggEntity</span></code> class. This class
+controls access permissions, ownership</p>
+<p>You can extend entities with extra information in two ways:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">Metadata</span></code>: This is information describing the entity, usually</dt>
+<dd>added by the author of the entity when the entity is created.
+For example, tags, an ISBN number, a file location, or
+source language is metadata.</dd>
+<dt><code class="docutils literal"><span class="pre">Annotations</span></code>: This is information about the entity, usually</dt>
+<dd>added by a third party after the entity is created.
+For example, ratings, likes, and votes are annotations.
+(Comments were before 1.9.)</dd>
+</dl>
+</div>
+<div class="section" id="datamodel">
+<h2><a class="toc-backref" href="#id6">Datamodel</a><a class="headerlink" href="#datamodel" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id4" style="width: 650px">
+<img alt="The Elgg data model diagram" src="../_images/data_model.png" />
+<p class="caption"><span class="caption-text">The Elgg data model diagram</span></p>
+</div>
+</div>
+<div class="section" id="entities">
+<h2><a class="toc-backref" href="#id7">Entities</a><a class="headerlink" href="#entities" title="Permalink to this headline">¶</a></h2>
+<p>ElggEntity is the base class for the Elgg data model.</p>
+<div class="section" id="users-objects-groups-sites">
+<h3><a class="toc-backref" href="#id8">Users, Objects, Groups, Sites</a><a class="headerlink" href="#users-objects-groups-sites" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">ElggEntity</span></code> has four main specializations, which provide extra
+properties and methods to more easily handle different kinds of data.</p>
+<p><code class="docutils literal"><span class="pre">ElggObject</span></code>: content like blog posts, uploaded files and bookmarks
+<code class="docutils literal"><span class="pre">ElggUser</span></code>: a system user
+<code class="docutils literal"><span class="pre">ElggSite</span></code>: each Elgg site within an Elgg installation
+<code class="docutils literal"><span class="pre">ElggGroup</span></code>: multi-user collaborative systems (called &#8220;Communities&#8221;
+in prior versions of Elgg)</p>
+<p>The benefit of such an approach is that, apart from modelling data with
+greater ease, a common set of functions is available to handle objects,
+regardless of their (sub)type.</p>
+<p>Each of these have their own properties that they bring to the table:
+ElggObjects have a title and description, ElggUsers have a username and
+password, and so on. However, because they all inherit ElggEntity, they
+each have a number of core properties and behaviours in common.</p>
+<ul class="simple">
+<li>A numeric Globally Unique IDentifier (See <a class="reference internal" href="#guids">GUIDs</a>).</li>
+<li>Access permissions. (When a plugin requests data, it never gets to
+touch data that the current user doesn&#8217;t have permission to see.)</li>
+<li>An arbitrary subtype. For example, a blog post is an ElggObject with
+a subtype of &#8220;blog&#8221;. Subtypes aren&#8217;t predefined; they can be any
+unique way to describe a particular kind of entity. &#8220;blog&#8221;, &#8220;forum&#8221;,
+&#8220;foo&#8221;, &#8220;bar&#8221;, &#8220;loafofbread&#8221; and &#8220;pyjamas&#8221; are all valid subtypes.</li>
+<li>An owner.</li>
+<li>The site that the entity belongs to.</li>
+<li>A container, usually used to associate a group&#8217;s content with the group.</li>
+</ul>
+</div>
+<div class="section" id="guids">
+<h3><a class="toc-backref" href="#id9">GUIDs</a><a class="headerlink" href="#guids" title="Permalink to this headline">¶</a></h3>
+<p>A GUID is an integer that uniquely identifies every entity in an Elgg
+installation (a Globally Unique IDentifier). It&#8217;s assigned automatically
+when the entity is first saved and can never be changed.</p>
+<p>Some Elgg API functions work with GUIDs instead of <code class="docutils literal"><span class="pre">ElggEntity</span></code> objects.</p>
+</div>
+</div>
+<div class="section" id="elggobject">
+<h2><a class="toc-backref" href="#id10">ElggObject</a><a class="headerlink" href="#elggobject" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">ElggObject</span></code> entity type represents arbitrary content within an
+Elgg install; things like blog posts, uploaded files, etc.</p>
+<p>Beyond the standard ElggEntity properties, ElggObjects also support:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">title</span></code> The title of the object (HTML escaped text)</li>
+<li><code class="docutils literal"><span class="pre">description</span></code> A description of the object (HTML)</li>
+</ul>
+<p>Most other data about the object is generally stored via metadata.</p>
+</div>
+<div class="section" id="elgguser">
+<h2><a class="toc-backref" href="#id11">ElggUser</a><a class="headerlink" href="#elgguser" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">ElggUser</span></code> entity type represents users within an Elgg install.
+These will be set to disabled until their accounts have been activated
+(unless they were created from within the admin panel).</p>
+<p>Beyond the standard ElggEntity properties, ElggUsers also support:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">name</span></code> The user&#8217;s plain text name. e.g. &#8220;Hugh Jackman&#8221;</li>
+<li><code class="docutils literal"><span class="pre">username</span></code> Their login name. E.g. &#8220;hjackman&#8221;</li>
+<li><code class="docutils literal"><span class="pre">password</span></code> A hashed version of their password</li>
+<li><code class="docutils literal"><span class="pre">salt</span></code> The salt that their password has been hashed with</li>
+<li><code class="docutils literal"><span class="pre">email</span></code> Their email address</li>
+<li><code class="docutils literal"><span class="pre">language</span></code> Their default language code.</li>
+<li><code class="docutils literal"><span class="pre">code</span></code> Their session code (moved to a separate table in 1.9).</li>
+<li><code class="docutils literal"><span class="pre">last_action</span></code> The UNIX timestamp of the last time they loaded a page</li>
+<li><code class="docutils literal"><span class="pre">prev_last_action</span></code> The previous value of <code class="docutils literal"><span class="pre">last_action</span></code></li>
+<li><code class="docutils literal"><span class="pre">last_login</span></code> The UNIX timestamp of their last log in</li>
+<li><code class="docutils literal"><span class="pre">prev_last_login</span></code> the previous value of <code class="docutils literal"><span class="pre">last_login</span></code></li>
+</ul>
+</div>
+<div class="section" id="elggsite">
+<h2><a class="toc-backref" href="#id12">ElggSite</a><a class="headerlink" href="#elggsite" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">ElggSite</span></code> entity type represents sites within your Elgg install.
+Most installs will have only one.</p>
+<p>Beyond the standard ElggEntity properties, ElggSites also support:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">name</span></code> The site name</li>
+<li><code class="docutils literal"><span class="pre">description</span></code> A description of the site</li>
+<li><code class="docutils literal"><span class="pre">url</span></code> The address of the site</li>
+</ul>
+</div>
+<div class="section" id="elgggroup">
+<h2><a class="toc-backref" href="#id13">ElggGroup</a><a class="headerlink" href="#elgggroup" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">ElggGroup</span></code> entity type represents an association of Elgg users.
+Users can join, leave, and post content to groups.</p>
+<p>Beyond the standard ElggEntity properties, ElggGroups also support:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">name</span></code> The group&#8217;s name (HTML escaped text)</li>
+<li><code class="docutils literal"><span class="pre">description</span></code> A description of the group (HTML)</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">ElggGroup</span></code> has addition methods to manage content and membership.</p>
+<div class="section" id="the-groups-plugin">
+<h3><a class="toc-backref" href="#id14">The Groups plugin</a><a class="headerlink" href="#the-groups-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Not to be confused with the entity type <code class="docutils literal"><span class="pre">ElggGroup</span></code>, Elgg comes with
+a plugin called &#8220;Groups&#8221; that provides a default UI/UX for site users
+to interact with groups. Each group is given a discussion forum and a
+profile page linking users to content within the group.</p>
+<p>You can alter the user experience via the traditional means of extending
+plugins or completely replace the Groups plugin with your own.</p>
+<p>Because <code class="docutils literal"><span class="pre">ElggGroup</span></code> can be subtyped like all other ElggEntities, you
+can have multiple types of groups running on the same site.</p>
+</div>
+<div class="section" id="writing-a-group-aware-plugin">
+<h3><a class="toc-backref" href="#id15">Writing a group-aware plugin</a><a class="headerlink" href="#writing-a-group-aware-plugin" title="Permalink to this headline">¶</a></h3>
+<p>Plugin owners need not worry too much about writing group-aware
+functionality, but there are a few key points:</p>
+<div class="section" id="adding-content">
+<h4>Adding content<a class="headerlink" href="#adding-content" title="Permalink to this headline">¶</a></h4>
+<p>By passing along the group as <code class="docutils literal"><span class="pre">container_guid</span></code> via a hidden input field,
+you can use a single form and action to add both user and group content.</p>
+<p>Use
+<a class="reference external" href="http://reference.elgg.org/entities_8php.html#16a972909c7cb75f646cb707be001a6f">can_write_to_container</a>
+to determine whether or not the current user has the right to
+add content to a group.</p>
+<p>Be aware that you will then need to pass the container GUID
+or username to the page responsible for posting and the accompanying
+value, so that this can then be stored in your form as a hidden input
+field, for easy passing to your actions. Within a &#8220;create&#8221; action,
+you&#8217;ll need to take in this input field and save it as a property of
+your new element (defaulting to the current user&#8217;s container):</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$user = elgg_get_logged_in_user_entity();
+$container_guid = (int)get_input(&#39;container_guid&#39;);
+if ($container_guid) {
+    if (!can_write_to_container($user-&gt;guid, $container_guid)) {
+        // register error and forward
+    }
+} else {
+    $container_guid = elgg_get_logged_in_user_guid();
+}
+
+$object = new ElggObject;
+$object-&gt;container_guid = $container_guid;
+
+...
+
+$container = get_entity($container_guid);
+forward($container-&gt;getURL());
+</pre></div>
+</div>
+</div>
+<div class="section" id="usernames-and-page-ownership">
+<h4>Usernames and page ownership<a class="headerlink" href="#usernames-and-page-ownership" title="Permalink to this headline">¶</a></h4>
+<p>Groups have a simulated username of the form <em>group:GUID</em>, which you
+can get the value of by checking <code class="docutils literal"><span class="pre">$group-&gt;username</span></code>. If you pass this
+username to a page on the URL line as part of the <code class="docutils literal"><span class="pre">username</span></code> variable
+(i.e., <code class="docutils literal"><span class="pre">/yourpage?username=group:nnn</span></code>), Elgg will automatically
+register that group as being the owner of the page (unless overridden).</p>
+</div>
+<div class="section" id="juggling-users-and-groups">
+<h4>Juggling users and groups<a class="headerlink" href="#juggling-users-and-groups" title="Permalink to this headline">¶</a></h4>
+<p>In fact, <code class="docutils literal"><span class="pre">[[Engine/DataModel/Entities/ElggGroup|ElggGroup]]</span></code> simulates
+most of the methods of
+<code class="docutils literal"><span class="pre">[[Engine/DataModel/Entities/ElggUser|ElggUser]]</span></code>. You can grab the
+icon, name etc using the same calls, and if you ask for a group&#8217;s
+friends, you&#8217;ll get its members. This has been designed specifically for
+you to alternate between groups and users in your code easily.</p>
+</div>
+<div class="section" id="menu-options">
+<h4>Menu options<a class="headerlink" href="#menu-options" title="Permalink to this headline">¶</a></h4>
+<p><strong>*This section is deprecated as of Elgg 1.8*</strong></p>
+<p>The final piece of the puzzle, for default groups, is to add a link to
+your functionality from the group&#8217;s profile. Here we&#8217;ll use the file
+plugin as an example.</p>
+<p>This involves creating a view within your plugin - in this case
+file/menu - which will extend the group&#8217;s menu. File/menu consists of a
+link within paragraph tags that points to the file repository of the
+page_owner():</p>
+<div class="code php highlight-python"><div class="highlight"><pre>&lt;p&gt;
+  &lt;a href=&quot;&lt;?php echo $vars[&#39;url&#39;]; ?&gt;pg/file/&lt;?php echo page_owner_entity()-&gt;username; ?&gt;&quot;&gt;
+    &lt;?php echo elgg_echo(&quot;file&quot;); ?&gt;
+  &lt;/a&gt;
+&lt;/p&gt;
+</pre></div>
+</div>
+<p>You can then extend the group&#8217;s menu view with this one, within your
+plugin&#8217;s input function (in this case file_init):</p>
+<div class="code php highlight-python"><div class="highlight"><pre><span class="n">extend_view</span><span class="p">(</span><span class="s">&#39;groups/menu/links&#39;</span><span class="p">,</span> <span class="s">&#39;file/menu&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ownership">
+<h2><a class="toc-backref" href="#id16">Ownership</a><a class="headerlink" href="#ownership" title="Permalink to this headline">¶</a></h2>
+<p>Entities have a <code class="docutils literal"><span class="pre">owner_guid</span></code> GUID property, which defines its
+owner. Typically this refers to the GUID of a user, although sites and
+users themselves often have no owner (a value of 0).</p>
+<p>The ownership of an entity dictates, in part, whether or not you can
+access or edit that entity.</p>
+</div>
+<div class="section" id="containers">
+<h2><a class="toc-backref" href="#id17">Containers</a><a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h2>
+<p>In order to easily search content by group or by user, content is generally
+set to be &#8220;contained&#8221; by either the user who posted it, or the group to which
+the user posted. This means the new object&#8217;s <code class="docutils literal"><span class="pre">container_guid</span></code> property
+will be set to the GUID of the current ElggUser or the target ElggGroup.</p>
+<p>E.g., three blog posts may be owned by different authors, but all be
+contained by the group they were posted to.</p>
+<p>Note: This is not always true. Comment entities are contained by the object
+commented upon, and in some 3rd party plugins the container may be used
+to model a parent-child relationship between entities (e.g. a &#8220;folder&#8221;
+object containing a file object).</p>
+</div>
+<div class="section" id="annotations">
+<h2><a class="toc-backref" href="#id18">Annotations</a><a class="headerlink" href="#annotations" title="Permalink to this headline">¶</a></h2>
+<p>Annotations are pieces of data attached to an entity that allow users
+to leave ratings, or other relevant feedback. A poll plugin might
+register votes as annotations. Before Elgg 1.9, comments and group
+discussion replies were stored as annotations.</p>
+<p>Annotations are stored as instances of the <code class="docutils literal"><span class="pre">ElggAnnotation</span></code> class.</p>
+<p>Each annotation has:</p>
+<ul class="simple">
+<li>An internal annotation type (like <em>comment</em>)</li>
+<li>A value (which can be a string or integer)</li>
+<li>An access permission distinct from the entity it&#8217;s attached to</li>
+<li>An owner</li>
+</ul>
+<div class="section" id="adding-an-annotation">
+<h3><a class="toc-backref" href="#id19">Adding an annotation</a><a class="headerlink" href="#adding-an-annotation" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to annotate is to use the <code class="docutils literal"><span class="pre">annotate</span></code> method on an
+entity, which is defined as:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>public function annotate(
+    $name,           // The name of the annotation type (eg &#39;comment&#39;)
+    $value,          // The value of the annotation
+    $access_id = 0,  // The access level of the annotation
+    $owner_id = 0,   // The annotation owner, defaults to current user
+    $vartype = &quot;&quot;    // &#39;text&#39; or &#39;integer&#39;
+)
+</pre></div>
+</div>
+<p>For example, to leave a rating on an entity, you might call:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$entity-&gt;annotate(&#39;rating&#39;, $rating_value, $entity-&gt;access_id);
+</pre></div>
+</div>
+</div>
+<div class="section" id="reading-annotations">
+<h3><a class="toc-backref" href="#id20">Reading annotations</a><a class="headerlink" href="#reading-annotations" title="Permalink to this headline">¶</a></h3>
+<p>To retrieve annotations on an object, you can call the following method:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$annotations = $entity-&gt;getAnnotations(
+    $name,    // The type of annotation
+    $limit,   // The number to return
+    $offset,  // Any indexing offset
+    $order,   // &#39;asc&#39; or &#39;desc&#39; (default &#39;asc&#39;)
+);
+</pre></div>
+</div>
+<p>If your annotation type largely deals with integer values, a couple of
+useful mathematical functions are provided:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$averagevalue = $entity-&gt;getAnnotationsAvg($name);  // Get the average value
+$total = $entity-&gt;getAnnotationsSum($name);         // Get the total value
+$minvalue = $entity-&gt;getAnnotationsMin($name);      // Get the minimum value
+$maxvalue = $entity-&gt;getAnnotationsMax($name);      // Get the maximum value
+</pre></div>
+</div>
+</div>
+<div class="section" id="useful-helper-functions">
+<h3><a class="toc-backref" href="#id21">Useful helper functions</a><a class="headerlink" href="#useful-helper-functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="comments">
+<h4>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h4>
+<p>If you want to provide comment functionality on your plugin objects, the
+following function will provide the full listing, form and actions:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function elgg_view_comments(ElggEntity $entity)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="metadata">
+<h2><a class="toc-backref" href="#id22">Metadata</a><a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h2>
+<p>Metadata in Elgg allows you to store extra data on an <code class="docutils literal"><span class="pre">entity</span></code> beyond
+the built-in fields that entity supports. For example, <code class="docutils literal"><span class="pre">ElggObjects</span></code>
+only support the basic entity fields plus title and description, but you
+might want to include tags or an ISBN number. Similarly, you might want
+users to be able to save a date of birth.</p>
+<p>Under the hood, metadata is stored as an instance of the
+<code class="docutils literal"><span class="pre">ElggMetadata</span></code> class, but you don&#8217;t need to worry about that in
+practice (although if you&#8217;re interested, see the <code class="docutils literal"><span class="pre">ElggMetadata</span></code> class
+reference). What you need to know is:</p>
+<ul class="simple">
+<li>Metadata has an owner and access ID, both of which may be different
+to the owner of the entity it&#8217;s attached to</li>
+<li>You can potentially have multiple items of each type of metadata
+attached to a single entity</li>
+</ul>
+<div class="section" id="the-simple-case">
+<h3><a class="toc-backref" href="#id23">The simple case</a><a class="headerlink" href="#the-simple-case" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="adding-metadata">
+<h4>Adding metadata<a class="headerlink" href="#adding-metadata" title="Permalink to this headline">¶</a></h4>
+<p>To add a piece of metadata to an entity, just call:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$entity-&gt;metadata_name = $metadata_value;
+</pre></div>
+</div>
+<p>For example, to add a date of birth to a user:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$user-&gt;dob = $dob_timestamp;
+</pre></div>
+</div>
+<p>Or to add a couple of tags to an object:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$object-&gt;tags = array(&#39;tag one&#39;, &#39;tag two&#39;, &#39;tag three&#39;);
+</pre></div>
+</div>
+<p>When adding metadata like this:</p>
+<ul class="simple">
+<li>The owner is set to the currently logged-in user</li>
+<li>Access permissions are inherited from the entity</li>
+<li>Reassigning a piece of metadata will overwrite the old value</li>
+</ul>
+<p>This is suitable for most purposes. Be careful to note which attributes
+are metadata and which are built in to the entity type that you are
+working with. You do not need to save an entity after adding or updating
+metadata. You do need to save an entity if you have changed one of its
+built in attributes. As an example, if you changed the access id of an
+ElggObject, you need to save it or the change isn&#8217;t pushed to the
+database.</p>
+</div>
+<div class="section" id="reading-metadata">
+<h4>Reading metadata<a class="headerlink" href="#reading-metadata" title="Permalink to this headline">¶</a></h4>
+<p>To retrieve metadata, treat it as a property of the entity:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$tags_value = $object-&gt;tags;
+</pre></div>
+</div>
+<p>Note that this will return the absolute value of the metadata. To get
+metadata as an ElggMetadata object, you will need to use the methods
+described in the <em>finer control</em> section below.</p>
+<p>If you stored multiple values in this piece of metadata (as in the
+&#8220;tags&#8221; example above), you will get an array of all those values back.
+If you stored only one value, you will get a string or integer back.
+Storing an array with only one value will return a string back to you.
+E.g.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$object-&gt;tags = array(&#39;tag&#39;);
+$tags = $object-&gt;tags;
+// $tags will be the string &quot;tag&quot;, NOT array(&#39;tag&#39;)
+</pre></div>
+</div>
+<p>To always get an array back, simply cast to an array;</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$tags = (array)$object-&gt;tags;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="finer-control">
+<h3><a class="toc-backref" href="#id24">Finer control</a><a class="headerlink" href="#finer-control" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Adding metadata<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>If you need more control, for example to assign an access ID other than
+the default, you can use the <code class="docutils literal"><span class="pre">create_metadata</span></code> function, which is
+defined as follows:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function create_metadata(
+    $entity_guid,           // The GUID of the parent entity
+    $name,                  // The name of the metadata (eg &#39;tags&#39;)
+    $value,                 // The metadata value
+    $value_type,            // Currently either &#39;string&#39; or &#39;integer&#39;
+    $owner_guid,            // The owner of the metadata
+    $access_id = 0,         // The access restriction
+    $allow_multiple = false // Do we have more than one value?
+    )
+</pre></div>
+</div>
+<p>For single values, you can therefore write metadata as follows (taking
+the example of a date of birth attached to a user):</p>
+<div class="code php highlight-python"><div class="highlight"><pre>create_metadata($user_guid, &#39;dob&#39;, $dob_timestamp, &#39;integer&#39;, $_SESSION[&#39;guid&#39;], $access_id);
+</pre></div>
+</div>
+<p>For multiple values, you will need to iterate through and call
+<code class="docutils literal"><span class="pre">create_metadata</span></code> on each one. The following piece of code comes from
+the profile save action:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$i = 0;
+foreach ($value as $interval) {
+    $i++;
+    $multiple = ($i != 1);
+    create_metadata($user-&gt;guid, $shortname, $interval, &#39;text&#39;, $user-&gt;guid, $access_id, $multiple);
+}
+</pre></div>
+</div>
+<p>Note that the <em>allow multiple</em> setting is set to <em>false</em> in the first
+iteration and <em>true</em> thereafter.</p>
+</div>
+<div class="section" id="id2">
+<h4>Reading metadata<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal"><span class="pre">elgg_get_metadata</span></code> is the best function for retrieving metadata as ElggMetadata
+objects:</p>
+<p>E.g., to retrieve a user&#8217;s DOB</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_get_metadata(array(
+    &#39;metadata_name&#39; =&gt; &#39;dob&#39;,
+    &#39;metadata_owner_guid&#39; =&gt; $user_guid,
+));
+</pre></div>
+</div>
+<p>Or to get all metadata objects:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_get_metadata(array(
+    &#39;metadata_owner_guid&#39; =&gt; $user_guid,
+    &#39;limit&#39; =&gt; 0,
+));
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="common-mistakes">
+<h3><a class="toc-backref" href="#id25">Common mistakes</a><a class="headerlink" href="#common-mistakes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="appending-metadata">
+<h4>&#8220;Appending&#8221; metadata<a class="headerlink" href="#appending-metadata" title="Permalink to this headline">¶</a></h4>
+<p>Note that you cannot &#8220;append&#8221; values to metadata arrays as if they were
+normal php arrays. For example, the following will not do what it looks
+like it should do.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$object-&gt;tags[] = &quot;tag four&quot;;
+</pre></div>
+</div>
+</div>
+<div class="section" id="trying-to-store-hashmaps">
+<h4>Trying to store hashmaps<a class="headerlink" href="#trying-to-store-hashmaps" title="Permalink to this headline">¶</a></h4>
+<p>Elgg does not support storing ordered maps (name/value pairs) in
+metadata. For example, the following does not work as you might first
+expect it to:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// Won&#39;t work!! Only the array values are stored
+$object-&gt;tags = array(&#39;one&#39; =&gt; &#39;a&#39;, &#39;two&#39; =&gt; &#39;b&#39;, &#39;three&#39; =&gt; &#39;c&#39;);
+</pre></div>
+</div>
+<p>You can instead store the information like so:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$object-&gt;one = &#39;a&#39;;
+$object-&gt;two = &#39;b&#39;;
+$object-&gt;three = &#39;c&#39;;
+</pre></div>
+</div>
+</div>
+<div class="section" id="storing-guids-in-metadata">
+<h4>Storing GUIDs in metadata<a class="headerlink" href="#storing-guids-in-metadata" title="Permalink to this headline">¶</a></h4>
+<p>Though there are some cases to store entity GUIDs in metadata,
+<a class="reference internal" href="#relationships">Relationships</a> are a much better construct for relating entities
+to each other.</p>
+</div>
+</div>
+</div>
+<div class="section" id="relationships">
+<h2><a class="toc-backref" href="#id26">Relationships</a><a class="headerlink" href="#relationships" title="Permalink to this headline">¶</a></h2>
+<p>Relationships allow you to bind entities together. Examples: an
+artist has fans, a user is a member of an organization, etc.</p>
+<p>The class <code class="docutils literal"><span class="pre">ElggRelationship</span></code> models a directed relationship between
+two entities, making the statement:</p>
+<blockquote>
+<div>&#8220;<strong>{subject}</strong> is a <strong>{noun}</strong> of <strong>{target}</strong>.&#8221;</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="16%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">API name</th>
+<th class="head">Models</th>
+<th class="head">Represents</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">guid_one</span></code></td>
+<td>The subject</td>
+<td>Which entity is being bound</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">relationship</span></code></td>
+<td>The noun</td>
+<td>The type of relationship</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">guid_two</span></code></td>
+<td>The target</td>
+<td>The entity to which the subject is bound</td>
+</tr>
+</tbody>
+</table>
+<p>The type of relationship may alternately be a verb, making the statement:</p>
+<blockquote>
+<div><p>&#8220;<strong>{subject}</strong> <strong>{verb}</strong> <strong>{target}</strong>.&#8221;</p>
+<p>E.g. User A &#8220;likes&#8221; blog post B</p>
+</div></blockquote>
+<p><strong>Each relationship has direction.</strong> Imagine an archer shoots
+an arrow at a target; The arrow moves in one direction, binding
+the subject (the archer) to the target.</p>
+<p><strong>A relationship does not imply reciprocity</strong>. <strong>A</strong> follows <strong>B</strong> does
+not imply that <strong>B</strong> follows <strong>A</strong>.</p>
+<p><strong>Relationships_ do not have access control.</strong> They&#8217;re never
+hidden from view and can be edited with code at any privilege
+level, with the caveat that <em>the entities</em> in a relationship
+may be invisible due to access control!</p>
+<div class="section" id="working-with-relationships">
+<h3><a class="toc-backref" href="#id27">Working with relationships</a><a class="headerlink" href="#working-with-relationships" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="creating-a-relationship">
+<h4>Creating a relationship<a class="headerlink" href="#creating-a-relationship" title="Permalink to this headline">¶</a></h4>
+<p>E.g. to establish that &#8220;<strong>$user</strong> is a <strong>fan</strong> of <strong>$artist</strong>&#8221;
+(user is the subject, artist is the target):</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// option 1
+$success = add_entity_relationship($user-&gt;guid, &#39;fan&#39;, $artist-&gt;guid);
+
+// option 2
+$success = $user-&gt;addRelationship($artist-&gt;guid, &#39;fan&#39;);
+</pre></div>
+</div>
+<p>This triggers the event [create, relationship], passing in
+the created <code class="docutils literal"><span class="pre">ElggRelationship</span></code> object. If a handler returns
+<code class="docutils literal"><span class="pre">false</span></code>, the relationship will not be created and <code class="docutils literal"><span class="pre">$success</span></code>
+will be <code class="docutils literal"><span class="pre">false</span></code>.</p>
+</div>
+<div class="section" id="verifying-a-relationship">
+<h4>Verifying a relationship<a class="headerlink" href="#verifying-a-relationship" title="Permalink to this headline">¶</a></h4>
+<p>E.g. to verify that &#8220;<strong>$user</strong> is a <strong>fan</strong> of <strong>$artist</strong>&#8221;:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>if (check_entity_relationship($user-&gt;guid, &#39;fan&#39;, $artist-&gt;guid)) {
+    // relationship exists
+}
+</pre></div>
+</div>
+<p>Note that, if the relationship exists, <code class="docutils literal"><span class="pre">check_entity_relationship()</span></code>
+returns an <code class="docutils literal"><span class="pre">ElggRelationship</span></code> object:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$relationship = check_entity_relationship($user-&gt;guid, &#39;fan&#39;, $artist-&gt;guid);
+if ($relationship) {
+    // use $relationship-&gt;id or $relationship-&gt;time_created
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-a-relationship">
+<h4>Deleting a relationship<a class="headerlink" href="#deleting-a-relationship" title="Permalink to this headline">¶</a></h4>
+<p>E.g. to be able to assert that &#8220;<strong>$user</strong> is no longer a <strong>fan</strong> of <strong>$artist</strong>&#8221;:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$was_removed = remove_entity_relationship($user-&gt;guid, &#39;fan&#39;, $artist-&gt;guid);
+</pre></div>
+</div>
+<p>This triggers the event [delete, relationship], passing in
+the associated <code class="docutils literal"><span class="pre">ElggRelationship</span></code> object. If a handler returns
+<code class="docutils literal"><span class="pre">false</span></code>, the relationship will remain, and <code class="docutils literal"><span class="pre">$was_removed</span></code> will
+be <code class="docutils literal"><span class="pre">false</span></code>.</p>
+<p>Other useful functions:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">delete_relationship()</span></code> : delete by ID</li>
+<li><code class="docutils literal"><span class="pre">remove_entity_relationships()</span></code> : delete those relating to an entity (<em>note:</em> in versions before Elgg 1.9, this did not trigger delete events)</li>
+</ul>
+</div>
+<div class="section" id="finding-relationships-and-related-entities">
+<h4>Finding relationships and related entities<a class="headerlink" href="#finding-relationships-and-related-entities" title="Permalink to this headline">¶</a></h4>
+<p>Below are a few functions to fetch relationship objects
+and/or related entities. A few are listed below:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">get_entity_relationships()</span></code> : fetch relationships by subject or target entity</li>
+<li><code class="docutils literal"><span class="pre">get_relationship()</span></code> : get a relationship object by ID</li>
+<li><code class="docutils literal"><span class="pre">elgg_get_entities_from_relationship()</span></code> : fetch entities in relationships in a
+variety of ways</li>
+</ul>
+<p>E.g. retrieving users who joined your site in January 2014.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$entities = elgg_get_entities_from_relationship(array(
+    &#39;relationship&#39; =&gt; &#39;member_of_site&#39;,
+    &#39;relationship_guid&#39; =&gt; elgg_get_site_entity()-&gt;guid,
+    &#39;inverse_relationship&#39; =&gt; true,
+
+    &#39;relationship_created_time_lower&#39; =&gt; 1388534400, // January 1st 2014
+    &#39;relationship_created_time_upper&#39; =&gt; 1391212800, // February 1st 2014
+));
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="access-control">
+<h2><a class="toc-backref" href="#id28">Access Control</a><a class="headerlink" href="#access-control" title="Permalink to this headline">¶</a></h2>
+<p>Granular access controls are one of the fundamental design principles in
+Elgg, and a feature that has been at the centre of the system throughout
+its development. The idea is simple: a user should have full control
+over who sees an item of data he or she creates.</p>
+<div class="section" id="access-controls-in-the-data-model">
+<h3><a class="toc-backref" href="#id29">Access controls in the data model</a><a class="headerlink" href="#access-controls-in-the-data-model" title="Permalink to this headline">¶</a></h3>
+<p>In order to achieve this, every entity, annotation and piece of
+metadata contains an <code class="docutils literal"><span class="pre">access_id</span></code> property, which in turn corresponds
+to one of the pre-defined access controls or an entry in the
+<code class="docutils literal"><span class="pre">access_collections</span></code> database table.</p>
+<div class="section" id="pre-defined-access-controls">
+<h4>Pre-defined access controls<a class="headerlink" href="#pre-defined-access-controls" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>0</strong> Private.</li>
+<li><strong>1</strong> Logged in users.</li>
+<li><strong>2</strong> Public data.</li>
+</ul>
+</div>
+<div class="section" id="user-defined-access-controls">
+<h4>User defined access controls<a class="headerlink" href="#user-defined-access-controls" title="Permalink to this headline">¶</a></h4>
+<p>You may define additional access groups and assign them to an entity,
+annotation or metadata. A number of functions have been defined to
+assist you; see the <a class="reference external" href="http://reference.elgg.org/engine_2lib_2access_8php.html">access library reference</a> for more information.</p>
+</div>
+</div>
+<div class="section" id="how-access-affects-data-retrieval">
+<h3><a class="toc-backref" href="#id30">How access affects data retrieval</a><a class="headerlink" href="#how-access-affects-data-retrieval" title="Permalink to this headline">¶</a></h3>
+<p>All data retrieval functions above the database layer - for example
+<code class="docutils literal"><span class="pre">get_entities</span></code> and its cousins - will only return items that the
+current user has access to see. It is not possible to retrieve items
+that the current user does not have access to. This makes it very hard
+to create a security hole for retrieval.</p>
+</div>
+<div class="section" id="write-access">
+<h3><a class="toc-backref" href="#id31">Write access</a><a class="headerlink" href="#write-access" title="Permalink to this headline">¶</a></h3>
+<p>The following rules govern write access:</p>
+<ul class="simple">
+<li>The owner of an entity can always edit it</li>
+<li>The owner of a container can edit anything therein (note that this
+does not mean that the owner of a group can edit anything therein)</li>
+<li>Admins can edit anything</li>
+</ul>
+<p>You can override this behaviour using a <a class="reference internal" href="events.html#design-events-plugin-hooks"><span>plugin hook</span></a> called
+<code class="docutils literal"><span class="pre">permissions_check</span></code>, which passes the entity in question to any
+function that has announced it wants to be referenced. Returning
+<code class="docutils literal"><span class="pre">true</span></code> will allow write access; returning <code class="docutils literal"><span class="pre">false</span></code> will deny it. See
+<a class="reference internal" href="../guides/hooks-list.html#guides-hooks-list-permission-hooks"><span>the plugin hook reference for permissions_check</span></a> for more details.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://reference.elgg.org/engine_2lib_2access_8php.html">Access library reference</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="schema">
+<h2><a class="toc-backref" href="#id32">Schema</a><a class="headerlink" href="#schema" title="Permalink to this headline">¶</a></h2>
+<p>The database contains a number of primary tables and secondary tables.
+Its schema table is stored in <code class="docutils literal"><span class="pre">/engine/schema/mysql.sql</span></code>.</p>
+<p>Each table is prefixed by &#8220;prefix_&#8221;, this is replaced by the Elgg
+framework during installation.</p>
+<div class="section" id="main-tables">
+<h3><a class="toc-backref" href="#id33">Main tables</a><a class="headerlink" href="#main-tables" title="Permalink to this headline">¶</a></h3>
+<p>This is a description of the main tables. Keep in mind that in a given
+Elgg installation, the tables will have a prefix (typically &#8220;elgg_&#8221;).</p>
+<div class="section" id="table-entities">
+<h4>Table: entities<a class="headerlink" href="#table-entities" title="Permalink to this headline">¶</a></h4>
+<p>This is the main <a class="reference internal" href="#entities">Entities</a> table containing Elgg users, sites,
+objects and groups. When you first install Elgg this is automatically
+populated with your first site.</p>
+<p>It contains the following fields:</p>
+<ul class="simple">
+<li><strong>guid</strong> An auto-incrementing counter producing a GUID that uniquely
+identifies this entity in the system.</li>
+<li><strong>type</strong> The type of entity - object, user, group or site</li>
+<li><strong>subtype</strong> A link to the <cite>entity_subtypes</cite> table.</li>
+<li><strong>owner_guid</strong> The GUID of the owner&#8217;s entity.</li>
+<li><strong>site_guid</strong> The site the entity belongs to.</li>
+<li><strong>container_guid</strong> The GUID this entity is contained by - either a user or
+a group.</li>
+<li><strong>access_id</strong> Access controls on this entity.</li>
+<li><strong>time_created</strong> Unix timestamp of when the entity is created.</li>
+<li><strong>time_updated</strong> Unix timestamp of when the entity was updated.</li>
+<li><strong>enabled</strong> If this is &#8216;yes&#8217; an entity is accessible, if &#8216;no&#8217; the entity
+has been disabled (Elgg treats it as if it were deleted without actually
+removing it from the database).</li>
+</ul>
+</div>
+<div class="section" id="table-entity-subtypes">
+<h4>Table: entity_subtypes<a class="headerlink" href="#table-entity-subtypes" title="Permalink to this headline">¶</a></h4>
+<p>This table contains entity subtype information:</p>
+<ul class="simple">
+<li><strong>id</strong> A counter.</li>
+<li><strong>type</strong> The type of entity - object, user, group or site.</li>
+<li><strong>subtype</strong> The subtype name as a string.</li>
+<li><strong>class</strong> Optional class name if this subtype is linked with a class</li>
+</ul>
+</div>
+<div class="section" id="table-metadata">
+<h4>Table: metadata<a class="headerlink" href="#table-metadata" title="Permalink to this headline">¶</a></h4>
+<p>This table contains <a class="reference internal" href="#metadata">Metadata</a>, extra information attached to an entity.</p>
+<ul class="simple">
+<li><strong>id</strong> A counter.</li>
+<li><strong>entity_guid</strong> The entity this is attached to.</li>
+<li><strong>name_id</strong> A link to the metastrings table defining the name
+table.</li>
+<li><strong>value_id</strong> A link to the metastrings table defining the value.</li>
+<li><strong>value_type</strong> The value class, either text or an integer.</li>
+<li><strong>owner_guid</strong> The owner GUID of the owner who set this item of
+metadata.</li>
+<li><strong>access_id</strong> An Access controls on this item of metadata.</li>
+<li><strong>time_created</strong> Unix timestamp of when the metadata is created.</li>
+<li><strong>enabled</strong> If this is &#8216;yes&#8217; an item is accessible, if &#8216;no&#8217; the item
+has been deleted.</li>
+</ul>
+</div>
+<div class="section" id="table-annotations">
+<h4>Table: annotations<a class="headerlink" href="#table-annotations" title="Permalink to this headline">¶</a></h4>
+<p>This table contains <a class="reference internal" href="#annotations">Annotations</a>, this is distinct from <a class="reference internal" href="#metadata">Metadata</a>.</p>
+<ul class="simple">
+<li><strong>id</strong> A counter.</li>
+<li><strong>entity_guid</strong> The entity this is attached to.</li>
+<li><strong>name_id</strong> A link to the metastrings table defining the type of
+annotation.</li>
+<li><strong>value_id</strong> A link to the metastrings table defining the value.</li>
+<li><strong>value_type</strong> The value class, either text or an integer.</li>
+<li><strong>owner_guid</strong> The owner GUID of the owner who set this item of
+metadata.</li>
+<li><strong>access_id</strong> An Access controls on this item of metadata.</li>
+<li><strong>time_created</strong> Unix timestamp of when the metadata is created.</li>
+<li><strong>enabled</strong> If this is &#8216;yes&#8217; an item is accessible, if &#8216;no&#8217; the item
+has been deleted.</li>
+</ul>
+</div>
+<div class="section" id="table-relationships">
+<h4>Table: relationships<a class="headerlink" href="#table-relationships" title="Permalink to this headline">¶</a></h4>
+<p>This table defines <a class="reference internal" href="#relationships">Relationships</a>, these link one entity with another.</p>
+<ul class="simple">
+<li><strong>guid_one</strong> The GUID of the subject entity.</li>
+<li><strong>relationship</strong> The type of the relationship.</li>
+<li><strong>guid_two</strong> The GUID of the target entity.</li>
+</ul>
+</div>
+<div class="section" id="table-objects-entity">
+<h4>Table: objects_entity<a class="headerlink" href="#table-objects-entity" title="Permalink to this headline">¶</a></h4>
+<p>Extra information specifically relating to objects. These are split in
+order to reduce load on the metadata table and make an obvious
+difference between attributes and metadata.</p>
+</div>
+<div class="section" id="table-sites-entity">
+<h4>Table: sites_entity<a class="headerlink" href="#table-sites-entity" title="Permalink to this headline">¶</a></h4>
+<p>Extra information specifically relating to sites. These are split in
+order to reduce load on the metadata table and make an obvious
+difference between attributes and metadata.</p>
+</div>
+<div class="section" id="table-users-entity">
+<h4>Table: users_entity<a class="headerlink" href="#table-users-entity" title="Permalink to this headline">¶</a></h4>
+<p>Extra information specifically relating to users. These are split in
+order to reduce load on the metadata table and make an obvious
+difference between attributes and metadata.</p>
+</div>
+<div class="section" id="table-groups-entity">
+<h4>Table: groups_entity<a class="headerlink" href="#table-groups-entity" title="Permalink to this headline">¶</a></h4>
+<p>Extra information specifically relating to groups. These are split in
+order to reduce load on the metadata table and make an obvious
+difference between attributes and metadata.</p>
+</div>
+<div class="section" id="table-metastrings">
+<h4>Table: metastrings<a class="headerlink" href="#table-metastrings" title="Permalink to this headline">¶</a></h4>
+<p>Metastrings contain the actual string of metadata which is linked to by
+the metadata and annotations tables.</p>
+<p>This is to avoid duplicating strings, saving space and making database
+lookups more efficient.</p>
+<p>Core developers will place schema upgrades in
+<code class="docutils literal"><span class="pre">/engine/schema/upgrades/*</span></code>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="events.html" class="btn btn-neutral float-right" title="Events and Plugin Hooks">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="actions.html" class="btn btn-neutral" title="Actions"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

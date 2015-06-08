@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ajax &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Authentication" href="authentication.html"/>
+        <link rel="prev" title="Accessibility" href="accessibility.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Ajax</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/ajax.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="ajax">
+<h1>Ajax<a class="headerlink" href="#ajax" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="actions">
+<h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
+<p>From JavaScript we can execute actions via XHR POST operations. Here&#8217;s an example action and script for some basic math:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// in myplugin/actions/do_math.php
+
+if (!elgg_is_xhr()) {
+    register_error(&#39;Sorry, Ajax only!&#39;);
+    forward();
+}
+
+$arg1 = (int)get_input(&#39;arg1&#39;);
+$arg2 = (int)get_input(&#39;arg2&#39;);
+
+system_message(&#39;We did it!&#39;);
+
+echo json_encode([
+    &#39;sum&#39; =&gt; $arg1 + $arg2,
+    &#39;product&#39; =&gt; $arg1 * $arg2,
+]);
+</pre></div>
+</div>
+<div class="code js highlight-python"><div class="highlight"><pre>elgg.action(&#39;do_math&#39;, {
+  data: {
+    arg1: 1,
+    arg2: 2
+  },
+  success: function (wrapper) {
+    if (wrapper.output) {
+      alert(wrapper.output.sum);
+      alert(wrapper.output.product);
+    } else {
+      // the system prevented the action from running
+    }
+  }
+});
+</pre></div>
+</div>
+<p>Basically what happens here:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>CSRF tokens are added to the data.</li>
+<li>The data is posted via XHR to <a class="reference external" href="http://localhost/elgg/action/example/add">http://localhost/elgg/action/example/add</a>.</li>
+<li>The action makes sure this is an XHR request, and returns a JSON string.</li>
+<li>Once the action completes, Elgg builds a JSON response wrapper containing the echoed output.</li>
+<li>Client-side Elgg extracts and displays the system message &#8220;We did it!&#8221; from the wrapper.</li>
+<li>The <code class="docutils literal"><span class="pre">success</span></code> function receives the full wrapper object and validates the <code class="docutils literal"><span class="pre">output</span></code> key.</li>
+<li>The browser alerts &#8220;3&#8221; then &#8220;2&#8221;.</li>
+</ol>
+</div></blockquote>
+<div class="section" id="elgg-action-notes">
+<h3>elgg.action notes<a class="headerlink" href="#elgg-action-notes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>It&#8217;s best to echo a non-empty string, as this is easy to validate in the <code class="docutils literal"><span class="pre">success</span></code> function. If the action
+was not allowed to run for some reason, <code class="docutils literal"><span class="pre">wrapper.output</span></code> will be an empty string.</li>
+<li>You may want to use the <a class="reference internal" href="javascript.html"><em>elgg/spinner</em></a> module.</li>
+<li>Elgg does not use <code class="docutils literal"><span class="pre">wrapper.status</span></code> for anything, but a call to <code class="docutils literal"><span class="pre">register_error()</span></code> causes it to be
+set to <code class="docutils literal"><span class="pre">-1</span></code>.</li>
+<li>If the action echoes a non-JSON string, <code class="docutils literal"><span class="pre">wrapper.output</span></code> will contain that string.</li>
+<li><code class="docutils literal"><span class="pre">elgg.action</span></code> is based on <code class="docutils literal"><span class="pre">jQuery.ajax</span></code> and returns a <code class="docutils literal"><span class="pre">jqXHR</span></code> object (like a Promise), if you should want to use it.</li>
+<li>After the PHP action completes, other plugins can alter the wrapper via the plugin hook <code class="docutils literal"><span class="pre">'output',</span> <span class="pre">'ajax'</span></code>,
+which filters the wrapper as an array (not a JSON string).</li>
+<li>A <code class="docutils literal"><span class="pre">forward()</span></code> call forces the action to be processed and output immediately, with the <code class="docutils literal"><span class="pre">wrapper.forward_url</span></code>
+value set to the normalized location given.</li>
+<li>To make sure Ajax actions can only be executed via XHR, check <code class="docutils literal"><span class="pre">elgg_is_xhr()</span></code> first.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-action-json-response-wrapper">
+<h3>The action JSON response wrapper<a class="headerlink" href="#the-action-json-response-wrapper" title="Permalink to this headline">¶</a></h3>
+<div class="code highlight-python"><div class="highlight"><pre>{
+  current_url: {String} &quot;http://example.org/action/example/math&quot;, // not very useful
+  forward_url: {String} &quot;http://example.org/foo&quot;, ...if forward(&#39;foo&#39;) was called
+  output: {String|Object} from echo in action
+  status: {Number} 0 = success. -1 = an error was registered.
+  system_messages: {Object}
+}
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It&#8217;s probably best to rely only on the <code class="docutils literal"><span class="pre">output</span></code> key, and validate it in case the PHP action could not run
+for some reason, e.g. the user was logged out or a CSRF attack did not provide tokens.</p>
+</div>
+</div>
+</div>
+<div class="section" id="fetching-views">
+<h2>Fetching Views<a class="headerlink" href="#fetching-views" title="Permalink to this headline">¶</a></h2>
+<p>A plugin can use a view script to handle XHR GET requests. Here&#8217;s a simple example of a view that returns a
+link to an object given by its GUID:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>// in myplugin_init()
+elgg_register_ajax_view(&#39;myplugin/get_link&#39;);
+</pre></div>
+</div>
+<div class="code php highlight-python"><div class="highlight"><pre>// in myplugin/views/default/myplugin/get_link.php
+
+if (empty($vars[&#39;entity&#39;]) || !$vars[&#39;entity&#39;] instanceof ElggObject) {
+    return;
+}
+
+$object = $vars[&#39;entity&#39;];
+/* @var ElggObject $object */
+
+echo elgg_view(&#39;output/url&#39;, [
+    &#39;text&#39; =&gt; $object-&gt;getDisplayName(),
+    &#39;href&#39; =&gt; $object-&gt;getUrl(),
+    &#39;is_trusted&#39; =&gt; true,
+]);
+</pre></div>
+</div>
+<div class="code js highlight-python"><div class="highlight"><pre>elgg.get(&#39;ajax/view/myplugin/get_link, {
+  data: {
+    guid: 123 // querystring
+  },
+  success: function (output) {
+    $(&#39;.myplugin-link&#39;).html(output);
+  }
+});
+</pre></div>
+</div>
+<p>The Ajax view system work significantly differently than the action system.</p>
+<blockquote>
+<div><ul class="simple">
+<li>There are no access controls based on session status.</li>
+<li>Non-XHR requests are automatically rejected.</li>
+<li>GET vars are injected into <code class="docutils literal"><span class="pre">$vars</span></code> in the view.</li>
+<li>If the request contains <code class="docutils literal"><span class="pre">$_GET['guid']</span></code>, the system sets <code class="docutils literal"><span class="pre">$vars['entity']</span></code> to the corresponding entity or
+<code class="docutils literal"><span class="pre">false</span></code> if it can&#8217;t be loaded.</li>
+<li>There&#8217;s no &#8220;wrapper&#8221; object placed around the view output.</li>
+<li>System messages/errors shouldn&#8217;t be used, as they don&#8217;t display until the user loads another page.</li>
+<li>If the view name begins with <code class="docutils literal"><span class="pre">js/</span></code> or <code class="docutils literal"><span class="pre">css/</span></code>, a corresponding Content-Type header is added.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="returning-json-from-a-view">
+<h3>Returning JSON from a view<a class="headerlink" href="#returning-json-from-a-view" title="Permalink to this headline">¶</a></h3>
+<p>If the view outputs encoded JSON, you must use <code class="docutils literal"><span class="pre">elgg.getJSON</span></code> to fetch it (or use some other method to set jQuery&#8217;s
+ajax option <code class="docutils literal"><span class="pre">dataType</span></code> to <code class="docutils literal"><span class="pre">json</span></code>). Your <code class="docutils literal"><span class="pre">success</span></code> function will be passed the decoded Object.</p>
+<p>Here&#8217;s an example of fetching a view that returns a JSON-encoded array of times:</p>
+<div class="code js highlight-python"><div class="highlight"><pre>elgg.getJSON(&#39;ajax/view/myplugin/get_times&#39;, {
+  success: function (data) {
+    alert(&#39;The time is &#39; + data.friendly_time);
+  }
+});
+</pre></div>
+</div>
+</div>
+<div class="section" id="ajax-helper-functions">
+<h3>Ajax helper functions<a class="headerlink" href="#ajax-helper-functions" title="Permalink to this headline">¶</a></h3>
+<p>These functions extend jQuery&#8217;s native Ajax features.</p>
+<p><code class="docutils literal"><span class="pre">elgg.get()</span></code> is a wrapper for jQuery&#8217;s <code class="docutils literal"><span class="pre">$.ajax()</span></code>, but forces GET and does URL normalization.</p>
+<div class="code js highlight-python"><div class="highlight"><pre>// normalizes the url to the current &lt;site_url&gt;/activity
+elgg.get(&#39;/activity&#39;, {
+   success: function(resultText, success, xhr) {
+      console.log(resultText);
+   }
+});
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">elgg.post()</span></code> is a wrapper for jQuery&#8217;s <code class="docutils literal"><span class="pre">$.ajax()</span></code>, but forces POST and does URL normalization.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="authentication.html" class="btn btn-neutral float-right" title="Authentication">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="accessibility.html" class="btn btn-neutral" title="Accessibility"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

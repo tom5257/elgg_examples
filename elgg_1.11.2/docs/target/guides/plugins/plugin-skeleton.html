@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plugin skeleton &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../../index.html"/>
+        <link rel="up" title="Plugins" href="../plugins.html"/>
+        <link rel="next" title="Plugin Dependencies" href="dependencies.html"/>
+        <link rel="prev" title="Plugins" href="../plugins.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../../index.html"><img src="../../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Developer Guides</a> &raquo;</li>
+      
+          <li><a href="../plugins.html">Plugins</a> &raquo;</li>
+      
+    <li>Plugin skeleton</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../../_sources/guides/plugins/plugin-skeleton.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="plugin-skeleton">
+<h1>Plugin skeleton<a class="headerlink" href="#plugin-skeleton" title="Permalink to this headline">¶</a></h1>
+<p>The following is the standard for plugin structure in Elgg as of Elgg 1.8. Plugins written for Elgg 1.7 and down are strongly encouraged to use this structure as well, though some of the benefits are not as apparent as when used in 1.8.</p>
+<div class="section" id="example-structure">
+<h2>Example Structure<a class="headerlink" href="#example-structure" title="Permalink to this headline">¶</a></h2>
+<p>The following is an example of a plugin with standard structure. For further explanation of this structure, see the details in the following sections. Your plugin may not need all the files listed</p>
+<p>The following files for plugin <code class="docutils literal"><span class="pre">example</span></code> would go in <code class="docutils literal"><span class="pre">/mod/example/</span></code></p>
+<div class="code highlight-python"><div class="highlight"><pre>actions/
+    example/
+        action.php
+    other_action.php
+classes/
+    ExampleClass.php
+graphics/
+    example.png
+js/
+    example.js
+languages/
+    en.php
+lib/
+    example.php
+pages/
+    example/
+        all.php
+        owner.php
+vendors/
+    example_3rd_party_lib/
+views/
+    default/
+        example/
+            css.php
+        forms/
+            example/
+                action.php
+                other_action.php
+        js/
+            example.php
+        object/
+             example.php
+            example/
+                context1.php
+                context2.php
+        plugins/
+            example/
+                settings.php
+                usersettings.php
+        widgets/
+            example_widget/
+                content.php
+                edit.php
+activate.php
+deactivate.php
+CHANGES.txt
+COPYRIGHT.txt
+INSTALL.txt
+LICENSE.txt
+manifest.xml
+README.txt
+start.php
+</pre></div>
+</div>
+</div>
+<div class="section" id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Permalink to this headline">¶</a></h2>
+<p>Plugins <strong>must</strong> provide a <code class="docutils literal"><span class="pre">start.php</span></code> and <code class="docutils literal"><span class="pre">manifest.xml</span></code> file in the plugin root in order to be recognized by Elgg.</p>
+<p>Therefore the following is the minimally compliant structure:</p>
+<div class="code highlight-python"><div class="highlight"><pre>mod/example/
+    start.php
+    manifest.xml
+</pre></div>
+</div>
+</div>
+<div class="section" id="actions">
+<h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
+<p>Plugins <em>should</em> place scripts for actions an <code class="docutils literal"><span class="pre">actions/</span></code> directory, and furthermore <em>should</em> use the name of the action to determine the location within that directory.</p>
+<p>For example, the action <code class="docutils literal"><span class="pre">my/example/action</span></code> would go in <code class="docutils literal"><span class="pre">my_plugin/actions/my/example/action.php</span></code>. This makes it very obvious which script is associated with which action.</p>
+<p>Similarly, the body of the form that submits to this action should be located in <code class="docutils literal"><span class="pre">forms/my/example/action.php</span></code>. Not only does this make the connection b/w action handler, form code, and action name obvious, but it allows you to use the new (as of Elgg 1.8) <code class="docutils literal"><span class="pre">elgg_view_form()</span></code> function easily.</p>
+</div>
+<div class="section" id="text-files">
+<h2>Text Files<a class="headerlink" href="#text-files" title="Permalink to this headline">¶</a></h2>
+<p>Plugins <em>may</em> provide various *.txt as additional documentation for the plugin. These files <strong>must</strong> be in Markdown syntax and will generate links on the plugin management sections.</p>
+<dl class="docutils">
+<dt>README.txt</dt>
+<dd><em>should</em> provide additional information about the plugin of an unspecified nature</dd>
+<dt>COPYRIGHT.txt</dt>
+<dd>If included, <strong>must</strong> provide an explanation of the plugin&#8217;s copyright, besides what is included in <code class="docutils literal"><span class="pre">manifest.xml</span></code></dd>
+<dt>LICENSE.txt</dt>
+<dd>If included, <strong>must</strong> provide the text of the license that the plugin is released under.</dd>
+<dt>INSTALL.txt</dt>
+<dd>If included, <strong>must</strong> provide additional instructions for installing the plugin if the process is sufficiently complicated (e.g. if it requires installing third party libraries on the host machine, or requires acquiring an API key from a third party).</dd>
+<dt>CHANGES.txt</dt>
+<dd>If included, <strong>must</strong> provide a list of changes for their plugin, grouped by version number, with the most recent version at the top.</dd>
+</dl>
+<p>Plugins <em>may</em> include additional *.txt files besides these, but no interface is given for reading them.</p>
+</div>
+<div class="section" id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h2>
+<p>Plugins <em>should</em> put page-generating scripts in a <code class="docutils literal"><span class="pre">pages/</span></code> directory inside their plugin root. Furthermore, plugins <em>should</em> put page-generating scripts under a directory named for their handler. For example, the script for page <code class="docutils literal"><span class="pre">yoursite.com/my_handler/view/1234</span></code> <em>should</em> be located at <code class="docutils literal"><span class="pre">mod/my_plugin/pages/my_handler/view.php</span></code>.</p>
+<p>In the past, these scripts were included directly in the plugin root. Plugins <em>should not</em> do this anymore, and if any core plugins are found to do this, that is a bug if not present solely for the sake of backwards compatibility.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The reason we encourage this structure is</p>
+<ul class="last simple">
+<li>To form a logical relationship between urls and scripts, so that people examining the code can have an idea of what it does just by examining the structure.</li>
+<li>To clean up the root plugin directory, which historically has quickly gotten cluttered with the page handling scripts.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p>All classes that your plugin defines <em>should</em> be included in a <code class="docutils literal"><span class="pre">classes/</span></code> directory. This directory has special meaning to Elgg. Classes placed in this directory are autoloaded on demand, and do not need to be included explicitly.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Each file <strong>must</strong> have exactly one class defined inside it.
+The file name <strong>must</strong> match the name of the one class that the file defines (except for the &#8221;.php&#8221; suffix).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Files with a &#8221;.class.php&#8221; extension will <strong>not</strong> be recognized by Elgg.</p>
+</div>
+</div>
+<div class="section" id="vendors">
+<h2>Vendors<a class="headerlink" href="#vendors" title="Permalink to this headline">¶</a></h2>
+<p>Included third-party libraries of any kind <em>should</em> be included in the <code class="docutils literal"><span class="pre">vendors/</span></code> folder in the plugin root. Though this folder has no special significance to the Elgg engine, this has historically been the location where Elgg core stores its third-party libraries, so we encourage the same format for the sake of consistency and familiarity.</p>
+</div>
+<div class="section" id="lib">
+<h2>Lib<a class="headerlink" href="#lib" title="Permalink to this headline">¶</a></h2>
+<p>Procedural code defined by your plugin <em>should</em> be placed in the <cite>lib/</cite> directory. Though this folder has no special significance to the Elgg engine, this has historically been the location where Elgg core stores its procedural code, so we encourage the same format for the sake of consistency and familiarity.</p>
+</div>
+<div class="section" id="views">
+<h2>Views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h2>
+<p>In order to override core views, a plugin&#8217;s views <strong>must</strong> be placed in a <code class="docutils literal"><span class="pre">views/</span></code>. This directory has special meaning to Elgg as views defined here automatically override Elgg core&#8217;s version of those views. For more info, see <a class="reference internal" href="../views.html"><em>Views</em></a>.</p>
+</div>
+<div class="section" id="javascript">
+<h2>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<p>Javascript that will be included on every page <em>should</em> be put in the <code class="docutils literal"><span class="pre">plugin/js</span></code> view and your plugin <em>should</em> extend <code class="docutils literal"><span class="pre">js/elgg</span></code> with this view. Javascript that does not need to be included on every page <em>should</em> be put in a static javascript file under the <code class="docutils literal"><span class="pre">js/</span></code> directory. For more information on Javascript in Elgg, see <a class="reference internal" href="../javascript.html"><em>JavaScript</em></a>.</p>
+</div>
+<div class="section" id="activate-php-and-deactivate-php">
+<h2>activate.php and deactivate.php<a class="headerlink" href="#activate-php-and-deactivate-php" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">activate.php</span></code> and <code class="docutils literal"><span class="pre">deactivate.php</span></code> files contain procedural code that will run respectively upon plugin activation or deactivation. Use these files to perform one-time events such as registering a persistent admin notice, registering subtypes, or performing garbage collection when deactivated.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dependencies.html" class="btn btn-neutral float-right" title="Plugin Dependencies">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../plugins.html" class="btn btn-neutral" title="Plugins"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+Version History
+===============
+
+4.0 (2014-18-12):
+
+- changes for Elgg 1.9
+
+3.1 (2014-18-12):
+
+- added: multi site support for fist login
+- fixed: custom redirect not working for general login
+- changed: updated manifest.xml
+- changed: layout of the plugin
+- applied coding standards
+
+3.0 (2012-04-20):
+
+- changed: updated for Elgg 1.8
+
+2.2 (2011-05-05):
+
+- added: different login on first login
+- changed: code cleanup
+
+2.1:
+
+- added: custom redirect list
+	
+2.0:
+
+- added: support for custom redirect options
+
+1.1:
+
+- added: dutch translation

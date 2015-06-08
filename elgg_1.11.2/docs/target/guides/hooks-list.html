@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>List of plugin hooks in core &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Plugin Tutorials" href="../tutorials/index.html"/>
+        <link rel="prev" title="List of events in core" href="events-list.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>List of plugin hooks in core</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/hooks-list.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="list-of-plugin-hooks-in-core">
+<h1>List of plugin hooks in core<a class="headerlink" href="#list-of-plugin-hooks-in-core" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#system-hooks" id="id1">System hooks</a></li>
+<li><a class="reference internal" href="#user-hooks" id="id2">User hooks</a></li>
+<li><a class="reference internal" href="#object-hooks" id="id3">Object hooks</a></li>
+<li><a class="reference internal" href="#action-hooks" id="id4">Action hooks</a></li>
+<li><a class="reference internal" href="#permission-hooks" id="id5">Permission hooks</a></li>
+<li><a class="reference internal" href="#views" id="id6">Views</a></li>
+<li><a class="reference internal" href="#files" id="id7">Files</a></li>
+<li><a class="reference internal" href="#other" id="id8">Other</a></li>
+<li><a class="reference internal" href="#plugins" id="id9">Plugins</a></li>
+</ul>
+</div>
+<div class="section" id="system-hooks">
+<h2><a class="toc-backref" href="#id1">System hooks</a><a class="headerlink" href="#system-hooks" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>email, system</strong></dt>
+<dd><p class="first">Triggered when sending email. <code class="docutils literal"><span class="pre">$params</span></code> contains:</p>
+<ul class="last simple">
+<li>to</li>
+<li>from</li>
+<li>subject</li>
+<li>body</li>
+<li>headers</li>
+<li>params</li>
+</ul>
+</dd>
+<dt><strong>page_owner, system</strong></dt>
+<dd>Filter the page_owner for the current page. No options are passed.</dd>
+</dl>
+<p><strong>siteid, system</strong></p>
+<dl class="docutils">
+<dt><strong>gc, system</strong></dt>
+<dd>Allows plugins to run garbage collection for <code class="docutils literal"><span class="pre">$params['period']</span></code>.</dd>
+<dt><strong>unit_test, system</strong></dt>
+<dd>Add a Simple Test test. (Deprecated.)</dd>
+<dt><strong>diagnostics:report, system</strong></dt>
+<dd>Filter the output for the diagnostics report download.</dd>
+</dl>
+<p><strong>search_types, get_types</strong></p>
+<dl class="docutils">
+<dt><strong>cron, &lt;period&gt;</strong></dt>
+<dd>Triggered by cron for each period.</dd>
+<dt><strong>validate, input</strong></dt>
+<dd>Filter GET and POST input. This is used by <code class="docutils literal"><span class="pre">get_input()</span></code> to sanitize user input.</dd>
+<dt><strong>geocode, location</strong></dt>
+<dd>Deprecated as of 1.9.</dd>
+<dt><strong>diagnostics:report, system</strong></dt>
+<dd>Filters the output for a diagnostic report.</dd>
+<dt><strong>debug, log</strong></dt>
+<dd><p class="first">Triggered by the Logger. Return false to stop the default logging method. <code class="docutils literal"><span class="pre">$params</span></code> includes:</p>
+<ul class="last">
+<li><dl class="first docutils">
+<dt>level - The debug level. One of:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">Elgg_Logger::OFF</span></code></li>
+<li><code class="docutils literal"><span class="pre">Elgg_Logger::ERROR</span></code></li>
+<li><code class="docutils literal"><span class="pre">Elgg_Logger::WARNING</span></code></li>
+<li><code class="docutils literal"><span class="pre">Elgg_Logger::NOTICE</span></code></li>
+<li><code class="docutils literal"><span class="pre">Elgg_Logger::INFO</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">msg - The message</p>
+</li>
+<li><p class="first">display - Should this message be displayed?</p>
+</li>
+</ul>
+</dd>
+<dt><strong>format, friendly:title</strong></dt>
+<dd>Formats the &#8220;friendly&#8221; title for strings. This is used for generating URLs.</dd>
+<dt><strong>format, friendly:time</strong></dt>
+<dd>Formats the &#8220;friendly&#8221; time for the timestamp <code class="docutils literal"><span class="pre">$params['time']</span></code>.</dd>
+<dt><strong>format, strip_tags</strong></dt>
+<dd>Filters a string to remove tags. The original string is passed as <code class="docutils literal"><span class="pre">$params['original_string']</span></code>
+and an optional set of allowed tags is passed as <code class="docutils literal"><span class="pre">$params['allowed_tags']</span></code>.</dd>
+<dt><strong>output:before, page</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_page()</span></code>, this filters <code class="docutils literal"><span class="pre">$vars</span></code> before it&#8217;s passed to the page shell
+view (<code class="docutils literal"><span class="pre">page/&lt;page_shell&gt;</span></code>). To stop sending the X-Frame-Options header, unregister the
+handler <code class="docutils literal"><span class="pre">_elgg_views_send_header_x_frame_options()</span></code> from this hook.</dd>
+<dt><strong>output, page</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_page()</span></code>, this filters the output return value.</dd>
+<dt><strong>output:before, layout</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_layout()</span></code>, filters <code class="docutils literal"><span class="pre">$params</span></code> before it&#8217;s passed to the layout view.</dd>
+<dt><strong>output:after, layout</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_layout()</span></code>, filters the return value of the layout view.</dd>
+<dt><strong>output, ajax</strong></dt>
+<dd>Triggered in the ajax forward hook that is called for ajax requests. Allows plugins to alter the
+output returned, including the forward URL, system messages, and errors.</dd>
+<dt><strong>parameters, menu:&lt;menu_name&gt;</strong></dt>
+<dd>Triggered by <code class="docutils literal"><span class="pre">elgg_view_menu()</span></code>. Used to change menu variables (like sort order) before it is generated.</dd>
+<dt><strong>register, menu:&lt;menu_name&gt;</strong></dt>
+<dd>Triggered by <code class="docutils literal"><span class="pre">elgg_view_menu()</span></code>. Used to add dynamic menu items.</dd>
+<dt><strong>prepare, menu:&lt;menu_name&gt;</strong></dt>
+<dd>Trigger by <code class="docutils literal"><span class="pre">elgg_view_menu()</span></code>. Used to sort, add, remove, and modify menu items.</dd>
+<dt><strong>creating, river</strong></dt>
+<dd>Triggered before a river item is created. Return false to prevent river item from being created.</dd>
+<dt><strong>simplecache:generate, &lt;view&gt;</strong></dt>
+<dd>Triggered when generating the cached content of a view.</dd>
+<dt><strong>get, subscriptions</strong></dt>
+<dd>Filter notification subscriptions for users for the Elgg_Notifications_Event <code class="docutils literal"><span class="pre">$params['event']</span></code>.
+Return an array like:</dd>
+</dl>
+<div class="code php highlight-python"><div class="highlight"><pre>array(
+        &lt;user guid&gt; =&gt; array(&#39;subscription&#39;, &#39;types&#39;),
+        &lt;user_guid2&gt; =&gt; array(&#39;email&#39;, &#39;sms&#39;, &#39;ajax&#39;)
+);
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>prepare, breadcrumbs</strong></dt>
+<dd>In elgg_get_breadcrumbs(), this filters the registered breadcrumbs before
+returning them, allowing a plugin to alter breadcrumb strategy site-wide.</dd>
+</dl>
+<p><strong>add, river</strong></p>
+</div>
+<div class="section" id="user-hooks">
+<h2><a class="toc-backref" href="#id2">User hooks</a><a class="headerlink" href="#user-hooks" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>usersettings:save, user</strong></dt>
+<dd>Triggered in the aggregate action to save user settings. Return false prevent sticky
+forms from being cleared.</dd>
+<dt><strong>access:collections:write, user</strong></dt>
+<dd>Filters an array of access permissions that the user <code class="docutils literal"><span class="pre">$params['user_id']</span></code> is allowed to save
+content with. Permissions returned are of the form (id =&gt; &#8216;Human Readable Name&#8217;).</dd>
+<dt><strong>registeruser:validate:username, all</strong></dt>
+<dd>Return boolean for if the string in <code class="docutils literal"><span class="pre">$params['username']</span></code> is valid for a username.</dd>
+<dt><strong>registeruser:validate:password, all</strong></dt>
+<dd>Return boolean for if the string in <code class="docutils literal"><span class="pre">$params['password']</span></code> is valid for a password.</dd>
+<dt><strong>registeruser:validate:email, all</strong></dt>
+<dd>Return boolean for if the string in <code class="docutils literal"><span class="pre">$params['email']</span></code> is valid for an email address.</dd>
+<dt><strong>register, user</strong></dt>
+<dd>Triggered after user registers. Return false to delete the user.</dd>
+<dt><strong>login:forward, user</strong></dt>
+<dd>Filters the URL to which the user will be forwarded after login.</dd>
+<dt><strong>find_active_users, system</strong></dt>
+<dd>Return the number of active users.</dd>
+<dt><strong>status, user</strong></dt>
+<dd>Triggered by The Wire when adding a post.</dd>
+<dt><strong>username:character_blacklist, user</strong></dt>
+<dd>Filters the string of blacklisted characters used to validate username during registration.
+The return value should be a string consisting of the disallowed characters. The default
+string can be found from <code class="docutils literal"><span class="pre">$params['blacklist']</span></code>.</dd>
+</dl>
+</div>
+<div class="section" id="object-hooks">
+<h2><a class="toc-backref" href="#id3">Object hooks</a><a class="headerlink" href="#object-hooks" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>comments, &lt;entity_type&gt;</strong></dt>
+<dd>Triggered in <code class="docutils literal"><span class="pre">elgg_view_comments()</span></code>. If returning content, this overrides the
+<code class="docutils literal"><span class="pre">page/elements/comments</span></code> view.</dd>
+<dt><strong>comments:count, &lt;entity_type&gt;</strong></dt>
+<dd>Return the number of comments on <code class="docutils literal"><span class="pre">$params['entity']</span></code>.</dd>
+<dt><strong>likes:count, &lt;entity_type&gt;</strong></dt>
+<dd>Return the number of likes for <code class="docutils literal"><span class="pre">$params['entity']</span></code>.</dd>
+</dl>
+</div>
+<div class="section" id="action-hooks">
+<h2><a class="toc-backref" href="#id4">Action hooks</a><a class="headerlink" href="#action-hooks" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>action, &lt;action&gt;</strong></dt>
+<dd>Triggered before executing action scripts. Return false to abort action.</dd>
+<dt><strong>action_gatekeeper:permissions:check, all</strong></dt>
+<dd>Triggered after a CSRF token is validated. Return false to prevent validation.</dd>
+<dt><strong>action_gatekeeper:upload_exceeded_msg, all</strong></dt>
+<dd>Triggered when a POST exceeds the max size allowed by the server. Return an error message
+to display.</dd>
+<dt><strong>forward, &lt;reason&gt;</strong></dt>
+<dd>Filter the URL to forward a user to when <code class="docutils literal"><span class="pre">forward($url,</span> <span class="pre">$reason)</span></code> is called.</dd>
+</dl>
+</div>
+<div class="section" id="permission-hooks">
+<span id="guides-hooks-list-permission-hooks"></span><h2><a class="toc-backref" href="#id5">Permission hooks</a><a class="headerlink" href="#permission-hooks" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>container_permissions_check, &lt;entity_type&gt;</strong></dt>
+<dd>Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> can use the entity <code class="docutils literal"><span class="pre">$params['container']</span></code>
+as a container for an entity of &lt;entity_type&gt; and subtype <code class="docutils literal"><span class="pre">$params['subtype']</span></code>.</dd>
+<dt><strong>permissions_check, &lt;entity_type&gt;</strong></dt>
+<dd>Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> can edit the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>.</dd>
+<dt><strong>permissions_check:delete, &lt;entity_type&gt;</strong></dt>
+<dd>Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> can delete the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>. Defaults to <code class="docutils literal"><span class="pre">$entity-&gt;canEdit()</span></code>.</dd>
+<dt><strong>permissions_check, widget_layout</strong></dt>
+<dd>Return boolean for if <code class="docutils literal"><span class="pre">$params['user']</span></code> can edit the widgets in the context passed as
+<code class="docutils literal"><span class="pre">$params['context']</span></code> and with a page owner of <code class="docutils literal"><span class="pre">$params['page_owner']</span></code>.</dd>
+<dt><strong>permissions_check:metadata, &lt;entity_type&gt;</strong></dt>
+<dd>Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> can edit the metadata <code class="docutils literal"><span class="pre">$params['metadata']</span></code>
+on the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>.</dd>
+<dt><strong>permissions_check:comment, &lt;entity_type&gt;</strong></dt>
+<dd>Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> can comment on the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>.</dd>
+<dt><strong>permissions_check:annotate</strong></dt>
+<dd><p class="first">Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> can create an annotation with the name
+<code class="docutils literal"><span class="pre">$params['annotation']</span></code> on the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>.</p>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is functions differently than the <code class="docutils literal"><span class="pre">permissions_check:metadata</span></code> hook by passing the annotation name instead of the metadata object.</p>
+</div>
+</dd>
+<dt><strong>permissions_check:annotation</strong></dt>
+<dd>Return boolean for if the user in <code class="docutils literal"><span class="pre">$params['user']</span></code> can edit the annotation <code class="docutils literal"><span class="pre">$params['annotation']</span></code> on the
+entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>. The user can be null.</dd>
+<dt><strong>fail, auth</strong></dt>
+<dd>Return the failure message if authentication failed. An array of previous PAM failure methods
+is passed as <code class="docutils literal"><span class="pre">$params</span></code>.</dd>
+<dt><strong>api_key, use</strong></dt>
+<dd>Triggered by <code class="docutils literal"><span class="pre">api_auth_key()</span></code>. Returning false prevents the key from being authenticated.</dd>
+<dt><strong>access:collections:read, user</strong></dt>
+<dd><p class="first">Filters an array of access IDs that the user <code class="docutils literal"><span class="pre">$params['user_id']</span></code> can see.</p>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The handler needs to either not use parts of the API that use the access system (triggering the hook again) or to ignore the second call. Otherwise, an infinite loop will be created.</p>
+</div>
+</dd>
+<dt><strong>access:collections:write, user</strong></dt>
+<dd><p class="first">Filters an array of access IDs that the user <code class="docutils literal"><span class="pre">$params['user_id']</span></code> can write to. In
+get_write_access_array(), this hook filters the return value, so it can be used to alter
+the available options in the input/access view. For core plugins, the value &#8220;input_params&#8221;
+has the keys &#8220;entity&#8221; (ElggEntity|false), &#8220;entity_type&#8221; (string), &#8220;entity_subtype&#8221; (string),
+&#8220;container_guid&#8221; (int) are provided. An empty entity value generally means the form is to
+create a new object.</p>
+<div class="last admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The handler needs to either not use parts of the API that use the access system (triggering the hook again) or to ignore the second call. Otherwise, an infinite loop will be created.</p>
+</div>
+</dd>
+<dt><strong>access:collections:addcollection, collection</strong></dt>
+<dd>Triggered after an access collection <code class="docutils literal"><span class="pre">$params['collection_id']</span></code> is created.</dd>
+<dt><strong>access:collections:deletecollection, collection</strong></dt>
+<dd>Triggered before an access collection <code class="docutils literal"><span class="pre">$params['collection_id']</span></code> is deleted.
+Return false to prevent deletion.</dd>
+<dt><strong>access:collections:add_user, collection</strong></dt>
+<dd>Triggered before adding user <code class="docutils literal"><span class="pre">$params['user_id']</span></code> to collection <code class="docutils literal"><span class="pre">$params['collection_id']</span></code>.
+Return false to prevent adding.</dd>
+<dt><strong>access:collections:remove_user, collection</strong></dt>
+<dd>Triggered before removing user <code class="docutils literal"><span class="pre">$params['user_id']</span></code> to collection <code class="docutils literal"><span class="pre">$params['collection_id']</span></code>.
+Return false to prevent removal.</dd>
+<dt><strong>get_sql, access</strong></dt>
+<dd>Filters the SQL clauses used in <code class="docutils literal"><span class="pre">_elgg_get_access_where_sql()</span></code>.</dd>
+</dl>
+</div>
+<div class="section" id="views">
+<span id="guides-hooks-list-views"></span><h2><a class="toc-backref" href="#id6">Views</a><a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>view_vars, &lt;view_name&gt;</strong></dt>
+<dd>Filters the <code class="docutils literal"><span class="pre">$vars</span></code> array passed to the view</dd>
+<dt><strong>view, &lt;view_name&gt;</strong></dt>
+<dd>Filters the returned content of the view</dd>
+<dt><strong>layout, page</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_layout()</span></code>, filters the layout name</dd>
+<dt><strong>shell, page</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_page()</span></code>, filters the page shell name</dd>
+<dt><strong>head, page</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_view_page()</span></code>, filters <code class="docutils literal"><span class="pre">$vars['head']</span></code></dd>
+</dl>
+</div>
+<div class="section" id="files">
+<h2><a class="toc-backref" href="#id7">Files</a><a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>mime_type, file</strong></dt>
+<dd>Return the mimetype for the filename <code class="docutils literal"><span class="pre">$params['filename']</span></code> with original filename <code class="docutils literal"><span class="pre">$params['original_filename']</span></code>
+and with the default detected mimetype of <code class="docutils literal"><span class="pre">$params['default']</span></code>.</dd>
+<dt><strong>simple_type, file</strong></dt>
+<dd>In <code class="docutils literal"><span class="pre">elgg_get_file_simple_type()</span></code>, filters the return value. The hook uses <code class="docutils literal"><span class="pre">$params['mime_type']</span></code>
+(e.g. <code class="docutils literal"><span class="pre">application/pdf</span></code> or <code class="docutils literal"><span class="pre">image/jpeg</span></code>) and determines an overall category like
+<code class="docutils literal"><span class="pre">document</span></code> or <code class="docutils literal"><span class="pre">image</span></code>. The bundled file plugin and other-third party plugins usually store
+<code class="docutils literal"><span class="pre">simpletype</span></code> metadata on file entities and make use of it when serving icons and constructing
+<code class="docutils literal"><span class="pre">ege*</span></code> filters and menus.</dd>
+</dl>
+</div>
+<div class="section" id="other">
+<span id="guides-hooks-list-other"></span><h2><a class="toc-backref" href="#id8">Other</a><a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>config, comments_per_page</strong></dt>
+<dd>Filters the number of comments displayed per page. Default is 25.</dd>
+<dt><strong>default, access</strong></dt>
+<dd>In get_default_access(), this hook filters the return value, so it can be used to alter
+the default value in the input/access view. For core plugins, the value &#8220;input_params&#8221; has
+the keys &#8220;entity&#8221; (ElggEntity|false), &#8220;entity_type&#8221; (string), &#8220;entity_subtype&#8221; (string),
+&#8220;container_guid&#8221; (int) are provided. An empty entity value generally means the form is to
+create a new object.</dd>
+<dt><strong>entity:icon:url, &lt;entity_type&gt;</strong></dt>
+<dd><p class="first">Triggered when entity icon URL is requested, see <a class="reference internal" href="database.html#guides-database-entity-icons"><span>entity icons</span></a>. Callback should
+return URL for the icon of size <code class="docutils literal"><span class="pre">$params['size']</span></code> for the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>.
+Following parameters are available through the <code class="docutils literal"><span class="pre">$params</span></code> array:</p>
+<dl class="docutils">
+<dt>entity</dt>
+<dd>Entity for which icon url is requested.</dd>
+<dt>viewtype</dt>
+<dd>The type of <a class="reference internal" href="views.html#guides-views-listing-entities"><span>view</span></a> e.g. <code class="docutils literal"><span class="pre">'default'</span></code> or <code class="docutils literal"><span class="pre">'json'</span></code>.</dd>
+<dt>size</dt>
+<dd>Size requested, see <a class="reference internal" href="database.html#guides-database-entity-icons"><span>entity icons</span></a> for possible values.</dd>
+</dl>
+<p class="last">Example on how one could default to a Gravatar icon for users that
+have not yet uploaded an avatar:</p>
+</dd>
+</dl>
+<div class="code php highlight-python"><div class="highlight"><pre>// Priority 600 so that handler is triggered after avatar handler
+elgg_register_plugin_hook_handler(&#39;entity:icon:url&#39;, &#39;user&#39;, &#39;gravatar_icon_handler&#39;, 600);
+
+/**
+ * Default to icon from gravatar for users without avatar.
+ */
+function gravatar_icon_handler($hook, $type, $url, $params) {
+        // Allow users to upload avatars
+        if ($params[&#39;entity&#39;]-&gt;icontime) {
+                return $url;
+        }
+
+        // Generate gravatar hash for user email
+        $hash = md5(strtolower(trim($params[&#39;entity&#39;]-&gt;email)));
+
+        // Default icon size
+        $size = &#39;150x150&#39;;
+
+        // Use configured size if possible
+        $config = elgg_get_config(&#39;icon_sizes&#39;);
+        $key = $params[&#39;size&#39;];
+        if (isset($config[$key])) {
+                $size = $config[$key][&#39;w&#39;] . &#39;x&#39; . $config[$key][&#39;h&#39;];
+        }
+
+        // Produce URL used to retrieve icon
+        return &quot;http://www.gravatar.com/avatar/$hash?s=$size&quot;;
+}
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>entity:url, &lt;entity_type&gt;</strong></dt>
+<dd>Return the URL for the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code>. Note: Generally it is better to override the
+<code class="docutils literal"><span class="pre">getUrl()</span></code> method of ElggEntity. This hook should be used when it&#8217;s not possible to subclass
+(like if you want to extend a bundled plugin without overriding many views).</dd>
+<dt><strong>to:object, &lt;entity_type|metadata|annotation|relationship|river_item&gt;</strong></dt>
+<dd>Converts the entity <code class="docutils literal"><span class="pre">$params['entity']</span></code> to a StdClass object. This is used mostly for exporting
+entity properties for portable data formats like JSON and XML.</dd>
+<dt><strong>extender:url, &lt;annotation|metadata&gt;</strong></dt>
+<dd>Return the URL for the annotation or metadatum <code class="docutils literal"><span class="pre">$params['extender']</span></code>.</dd>
+<dt><strong>file:icon:url, override</strong></dt>
+<dd>Override a file icon URL.</dd>
+<dt><strong>is_member, group</strong></dt>
+<dd>Return boolean for if the user <code class="docutils literal"><span class="pre">$params['user']</span></code> is a member of the group <code class="docutils literal"><span class="pre">$params['group']</span></code>.</dd>
+<dt><strong>entity:annotate, &lt;entity_type&gt;</strong></dt>
+<dd>Triggered in <code class="docutils literal"><span class="pre">elgg_view_entity_annotations()</span></code>, which is called by <code class="docutils literal"><span class="pre">elgg_view_entity()</span></code>. Can
+be used to add annotations to all full entity views.</dd>
+<dt><strong>usersetting, plugin</strong></dt>
+<dd><p class="first">Filter user settings for plugins. <code class="docutils literal"><span class="pre">$params</span></code> contains:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">user</span></code> - An ElggUser instance</li>
+<li><code class="docutils literal"><span class="pre">plugin</span></code> - An ElggPlugin instance</li>
+<li><code class="docutils literal"><span class="pre">plugin_id</span></code> - The plugin ID</li>
+<li><code class="docutils literal"><span class="pre">name</span></code> - The name of the setting</li>
+<li><code class="docutils literal"><span class="pre">value</span></code> - The value to set</li>
+</ul>
+</dd>
+<dt><strong>setting, plugin</strong></dt>
+<dd><p class="first">Filter plugin settings. <code class="docutils literal"><span class="pre">$params</span></code> contains:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">plugin</span></code> - An ElggPlugin instance</li>
+<li><code class="docutils literal"><span class="pre">plugin_id</span></code> - The plugin ID</li>
+<li><code class="docutils literal"><span class="pre">name</span></code> - The name of the setting</li>
+<li><code class="docutils literal"><span class="pre">value</span></code> - The value to set</li>
+</ul>
+</dd>
+<dt><strong>relationship:url, &lt;relationship_name&gt;</strong></dt>
+<dd>Filter the URL for the relationship object <code class="docutils literal"><span class="pre">$params['relationship']</span></code>.</dd>
+<dt><strong>profile:fields, group</strong></dt>
+<dd>Filter an array of profile fields. The result should be returned as an array in the format
+<code class="docutils literal"><span class="pre">name</span> <span class="pre">=&gt;</span> <span class="pre">input</span> <span class="pre">view</span> <span class="pre">name</span></code>. For example:</dd>
+</dl>
+<div class="code php highlight-python"><div class="highlight"><pre>array(
+        &#39;about&#39; =&gt; &#39;longtext&#39;
+);
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>profile:fields, profile</strong></dt>
+<dd>Filter an array of profile fields. The result should be returned as an array in the format
+<code class="docutils literal"><span class="pre">name</span> <span class="pre">=&gt;</span> <span class="pre">input</span> <span class="pre">view</span> <span class="pre">name</span></code>. For example:</dd>
+</dl>
+<div class="code php highlight-python"><div class="highlight"><pre>array(
+        &#39;about&#39; =&gt; &#39;longtext&#39;
+);
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>widget_settings, &lt;widget_handler&gt;</strong></dt>
+<dd>Triggered when saving a widget settings <code class="docutils literal"><span class="pre">$params['params']</span></code> for widget <code class="docutils literal"><span class="pre">$params['widget']</span></code>.
+If handling saving the settings, the handler should return true to prevent the default code from running.</dd>
+<dt><strong>get_list, default_widgets</strong></dt>
+<dd>Filters a list of default widgets to add for newly registered users. The list is an array
+of arrays in the format:</dd>
+</dl>
+<div class="code php highlight-python"><div class="highlight"><pre>array(
+        &#39;event&#39; =&gt; $event,
+        &#39;entity_type&#39; =&gt; $entity_type,
+        &#39;entity_subtype&#39; =&gt; $entity_subtype,
+        &#39;widget_context&#39; =&gt; $widget_context
+)
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><strong>rest, init</strong></dt>
+<dd>Triggered by the web services rest handler. Plugins can set up their own authentication
+handlers, then return true to prevent the default handlers from being registered.</dd>
+<dt><strong>public_pages, walled_garden</strong></dt>
+<dd>Filter the URLs that are can be seen by logged out users if Walled Garden is
+enabled. <code class="docutils literal"><span class="pre">$value</span></code> is an array of regex strings that will allow access if matched.</dd>
+<dt><strong>volatile, metadata</strong></dt>
+<dd>Triggered when exporting an entity through the export handler. This is rare.
+This allows handler to handle any volatile (non-persisted) metadata on the entity.
+It&#8217;s preferred to use the <code class="docutils literal"><span class="pre">to:object,</span> <span class="pre">&lt;type&gt;</span></code> hook.</dd>
+<dt><strong>maintenance:allow, url</strong></dt>
+<dd><dl class="first last docutils">
+<dt>Return boolean if the URL <code class="docutils literal"><span class="pre">$params['current_url']</span></code> and the path <code class="docutils literal"><span class="pre">$params['current_path']</span></code></dt>
+<dd>is allowed during maintenance mode.</dd>
+</dl>
+</dd>
+<dt><strong>robots.txt, site</strong></dt>
+<dd>Filter the robots.txt values for <code class="docutils literal"><span class="pre">$params['site']</span></code>.</dd>
+<dt><strong>config, amd</strong></dt>
+<dd>Filter the AMD config for the requirejs library.</dd>
+</dl>
+</div>
+<div class="section" id="plugins">
+<h2><a class="toc-backref" href="#id9">Plugins</a><a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="embed">
+<h3>Embed<a class="headerlink" href="#embed" title="Permalink to this headline">¶</a></h3>
+<p><strong>embed_get_items, &lt;active_section&gt;</strong></p>
+<p><strong>embed_get_sections, all</strong></p>
+<p><strong>embed_get_upload_sections, all</strong></p>
+</div>
+<div class="section" id="htmlawed">
+<h3>HTMLawed<a class="headerlink" href="#htmlawed" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>allowed_styles, htmlawed</strong></dt>
+<dd>Filter the HTMLawed allowed style array.</dd>
+<dt><strong>config, htmlawed</strong></dt>
+<dd>Filter the HTMLawed config array.</dd>
+</dl>
+</div>
+<div class="section" id="members">
+<h3>Members<a class="headerlink" href="#members" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>members:list, &lt;page_segment&gt;</strong></dt>
+<dd>To handle the page <code class="docutils literal"><span class="pre">/members/$page_segment</span></code>, register for this hook and return the HTML of the list.</dd>
+<dt><strong>members:config, tabs</strong></dt>
+<dd>This hook is used to assemble an array of tabs to be passed to the navigation/tabs view
+for the members pages.</dd>
+</dl>
+</div>
+<div class="section" id="twitter-api">
+<h3>Twitter API<a class="headerlink" href="#twitter-api" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>authorize, twitter_api</strong></dt>
+<dd>Triggered when a user is authorizes Twitter for a login. <code class="docutils literal"><span class="pre">$params['token']</span></code> contains the Twitter
+authorization token.</dd>
+</dl>
+</div>
+<div class="section" id="reported-content">
+<h3>Reported Content<a class="headerlink" href="#reported-content" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>reportedcontent:add, system</strong></dt>
+<dd>Triggered after adding the reported content object <code class="docutils literal"><span class="pre">$params['report']</span></code>. Return false to delete report.</dd>
+<dt><strong>reportedcontent:archive, system</strong></dt>
+<dd>Triggered before archiving the reported content object <code class="docutils literal"><span class="pre">$params['report']</span></code>. Return false to prevent archiving.</dd>
+<dt><strong>reportedcontent:delete, system</strong></dt>
+<dd>Triggered before deleting the reported content object <code class="docutils literal"><span class="pre">$params['report']</span></code>. Return false to prevent deleting.</dd>
+</dl>
+</div>
+<div class="section" id="search">
+<h3>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>search, &lt;type&gt;:&lt;subtype&gt;</strong></dt>
+<dd>Filter more granular search results than searching by type alone. Must return an array with <code class="docutils literal"><span class="pre">count</span></code> as the
+total count of results and  <code class="docutils literal"><span class="pre">entities</span></code> an array of ElggUser entities.</dd>
+</dl>
+<p><strong>search, tags</strong></p>
+<dl class="docutils">
+<dt><strong>search, &lt;type&gt;</strong></dt>
+<dd>Filter the search for entities for type <code class="docutils literal"><span class="pre">$type</span></code>. Must return an array with <code class="docutils literal"><span class="pre">count</span></code> as the
+total count of results and  <code class="docutils literal"><span class="pre">entities</span></code> an array of ElggUser entities.</dd>
+<dt><strong>search_types, get_types</strong></dt>
+<dd>Filter an array of search types. This allows plugins to add custom types that don&#8217;t correspond
+directly to entities.</dd>
+<dt><strong>search_types, get_queries</strong></dt>
+<dd>Before a search this filters the types queried. This can be used to reorder
+the display of search results.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Plugin Tutorials">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="events-list.html" class="btn btn-neutral" title="List of events in core"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

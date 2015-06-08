@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Authentication &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Context" href="context.html"/>
+        <link rel="prev" title="Ajax" href="ajax.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notifications.html">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/authentication.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+<p>Elgg provides everything needed to authenticate users via username/email and password
+out of the box, including:</p>
+<blockquote>
+<div><ul class="simple">
+<li>remember-me cookies for persistent login</li>
+<li>password reset logic</li>
+<li>secure storage of passwords</li>
+<li>logout</li>
+<li>UIs for accomplishing all of the above</li>
+</ul>
+</div></blockquote>
+<p>All that&#8217;s left for you to do as a developer is to use
+the built-in authentication functions to secure your pages and actions.</p>
+<div class="section" id="working-with-the-logged-in-user">
+<h2>Working with the logged in user<a class="headerlink" href="#working-with-the-logged-in-user" title="Permalink to this headline">¶</a></h2>
+<p>Check whether the current user is logged in with <code class="docutils literal"><span class="pre">elgg_is_logged_in()</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>if (elgg_is_logged_in()) {
+  // do something just for logged-in users
+}
+</pre></div>
+</div>
+<p>Check if the current user is an admin with <code class="docutils literal"><span class="pre">elgg_is_admin_logged_in()</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>if (elgg_is_admin_logged_in()) {
+  // do something just for admins
+}
+</pre></div>
+</div>
+<p>Get the currently logged in user with <code class="docutils literal"><span class="pre">elgg_get_logged_in_user_entity()</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>$user = elgg_get_logged_in_user_entity();
+</pre></div>
+</div>
+<p>The returned object is an <code class="docutils literal"><span class="pre">ElggUser</span></code> so you can use all the methods and properties
+of that class to access information about the user. If the user is not logged in,
+this will return <code class="docutils literal"><span class="pre">null</span></code>, so be sure to check for that first.</p>
+</div>
+<div class="section" id="gatekeepers">
+<h2>Gatekeepers<a class="headerlink" href="#gatekeepers" title="Permalink to this headline">¶</a></h2>
+<p>Gatekeeper functions allow you to manage how code gets executed by applying access control rules.</p>
+<p>Forward a user to the front page if they are not logged in with <code class="docutils literal"><span class="pre">elgg_gatekeeper()</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_gatekeeper();
+
+echo &quot;Information for logged-in users only&quot;;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In Elgg 1.8 and below this function was called <code class="docutils literal"><span class="pre">gatekeeper()</span></code></p>
+</div>
+<p>Forward a user to the front page unless they are an admin with <code class="docutils literal"><span class="pre">elgg_admin_gatekeeper()</span></code>:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>elgg_admin_gatekeeper();
+
+echo &quot;Information for admins only&quot;;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In Elgg 1.8 and below this function was called <code class="docutils literal"><span class="pre">admin_gatekeeper()</span></code></p>
+</div>
+<p>Prevent CSRF attacks with <code class="docutils literal"><span class="pre">action_gatekeeper()</span></code>.</p>
+<div class="code php highlight-python"><div class="highlight"><pre>action_gatekeeper();
+
+// Mutate some state in the database on behalf of the logged in user...
+</pre></div>
+</div>
+<p>This function should be used in <a class="reference internal" href="actions.html"><em>Forms + Actions</em></a> prior to Elgg 1.8.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As of Elgg version 1.8 this function is called for all registered actions.
+There is no longer a need to call this function in your own actions.
+If you wish to protect other pages with action tokens then you can call this function.</p>
+</div>
+</div>
+<div class="section" id="pluggable-authentication-modules">
+<h2>Pluggable Authentication Modules<a class="headerlink" href="#pluggable-authentication-modules" title="Permalink to this headline">¶</a></h2>
+<p>Elgg has support for pluggable authentication modules (PAM), which enables you to write your own authentication handlers. Whenever a request needs to get authenticated the system will call <code class="docutils literal"><span class="pre">elgg_authenticate()</span></code> which probes the registered PAM handlers until one returns success.</p>
+<p>The preferred approach is to create a separate Elgg plugin which will have one simple task: to process an authentication request. This involves setting up an authentication handler in the plugin&#8217;s <a class="reference internal" href="plugins.html"><em>start.php</em></a> file, and to register it with the PAM module so it will get processed whenever the system needs to authenticate a request.</p>
+<p>The authentication handler is a function and takes a single parameter. Registering the handler is being done by <code class="docutils literal"><span class="pre">register_pam_handler()</span></code> which takes the name of the authentication handler, the importance and the policy as parameters. It is advised to register the handler in the plugin&#8217;s init function, for example:</p>
+<div class="code php highlight-python"><div class="highlight"><pre>function your_plugin_init() {
+   // Register the authentication handler
+   register_pam_handler(&#39;your_plugin_auth_handler&#39;);
+}
+
+function your_plugin_auth_handler($credentials) {
+   // do things ...
+}
+
+// Add the plugin&#39;s init function to the system&#39;s init event
+elgg_register_elgg_event_handler(&#39;init&#39;, &#39;system&#39;, &#39;your_plugin_init&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="importance">
+<h2>Importance<a class="headerlink" href="#importance" title="Permalink to this headline">¶</a></h2>
+<p>By default an authentication module is registered with an importance of <strong>sufficient</strong>.</p>
+<p>In a list of authentication modules; if any one marked <em>sufficient</em> returns <code class="docutils literal"><span class="pre">true</span></code>, <code class="docutils literal"><span class="pre">pam_authenticate()</span></code> will also return <code class="docutils literal"><span class="pre">true</span></code>. The exception to this is when an authentication module is registered with an importance of <strong>required</strong>. All required modules must return <code class="docutils literal"><span class="pre">true</span></code> for <code class="docutils literal"><span class="pre">pam_authenticate()</span></code> to return <code class="docutils literal"><span class="pre">true</span></code>, regardless of whether all sufficient modules return <code class="docutils literal"><span class="pre">true</span></code>.</p>
+</div>
+<div class="section" id="passed-credentials">
+<h2>Passed credentials<a class="headerlink" href="#passed-credentials" title="Permalink to this headline">¶</a></h2>
+<p>The format of the credentials passed to the handler can vary, depending on the originating request. For example, a regular login via the login form will create a named array, with the keys <code class="docutils literal"><span class="pre">username</span></code> and <code class="docutils literal"><span class="pre">password</span></code>. If a request was made for example via XML-RPC then the credentials will be set in the HTTP header, so in this case nothing will get passed to the authentication handler and the handler will need to perform steps on its own to authenticate the request.</p>
+</div>
+<div class="section" id="return-value">
+<h2>Return value<a class="headerlink" href="#return-value" title="Permalink to this headline">¶</a></h2>
+<p>The authentication handle should return a <code class="docutils literal"><span class="pre">boolean</span></code>, indicating if the request could be authenticated or not. One caveat is that in case of a regular user login where credentials are available as username and password the user will get logged in. In case of the XML-RPC example the authentication handler will need to perform this step itself since the rest of the system will not have any idea of either possible formats of credentials passed nor its contents. Logging in a user is quite simple and is being done by <code class="docutils literal"><span class="pre">login()</span></code>, which expects an <code class="docutils literal"><span class="pre">ElggUser</span></code> object.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="context.html" class="btn btn-neutral float-right" title="Context">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ajax.html" class="btn btn-neutral" title="Ajax"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>

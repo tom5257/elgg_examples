@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Notifications &mdash; Elgg 1.x documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Elgg 1.x documentation" href="../index.html"/>
+        <link rel="up" title="Developer Guides" href="index.html"/>
+        <link rel="next" title="Page handler" href="pagehandler.html"/>
+        <link rel="prev" title="Menus" href="menus.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+        <a href="../index.html"><img src="../_static/elgg_logo.png" alt="Elgg" /></a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">Bundled plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/development.html">Developer Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/index.html">Administrator Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting_started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/upgrading.html">Upgrading Elgg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/cron.html">Cron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/backup-restore.html">Backup and Restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/duplicate-installation.html">Duplicate Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../admin/getting-help.html">Getting Help</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dont-modify-core.html">Don&#8217;t Modify Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Plugin coding guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accessibility.html">Accessibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ajax.html">Ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context.html">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Forms + Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagehandler.html">Page handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-owner.html">Page ownership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="permissions-check.html">Permissions Check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="river.html">River</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="themes.html">Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walled-garden.html">Walled Garden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web-services.html">Web services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events-list.html">List of events in core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks-list.html">List of plugin hooks in core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Plugin Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/hello_world.html">Hello world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/indexpage.html">Customizing the Home Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/blog.html">Building a Blog Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/wysiwyg.html">Integrating a Rich Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/widget.html">Basic Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">Design Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design/actions.html">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/events.html">Events and Plugin Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/amd.html">AMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/loggable.html">Loggable</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/i18n.html">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/issues.html">Reporting Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/code.html">Writing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html">Writing Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/docs.html#internationalizing-documentation">Internationalizing documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/money.html">Becoming a Financial Supporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/releases.html">Release Process Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/faqs.html">FAQs and Other Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/roadmap.html">Roadmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/releases.html">Release Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/support.html">Support policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/history.html">History</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Elgg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Developer Guides</a> &raquo;</li>
+      
+    <li>Notifications</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/guides/notifications.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="notifications">
+<h1>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>There are two ways to send notifications in Elgg:</dt>
+<dd><ul class="first last simple">
+<li>Instant notifications</li>
+<li>Event-based notifications send using a notifications queue</li>
+</ul>
+</dd>
+</dl>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#instant-notifications" id="id11">Instant notifications</a></li>
+<li><a class="reference internal" href="#enqueued-notifications" id="id12">Enqueued notifications</a></li>
+<li><a class="reference internal" href="#registering-a-new-notification-method" id="id13">Registering a new notification method</a></li>
+<li><a class="reference internal" href="#sending-the-notifications-using-your-own-method" id="id14">Sending the notifications using your own method</a></li>
+<li><a class="reference internal" href="#subscriptions" id="id15">Subscriptions</a></li>
+</ul>
+</div>
+<div class="section" id="instant-notifications">
+<h2><a class="toc-backref" href="#id11">Instant notifications</a><a class="headerlink" href="#instant-notifications" title="Permalink to this headline">¶</a></h2>
+<p>The generic method to send a notification to a user is via the function <a class="reference external" href="http://reference.elgg.org/notification_8php.html#a9d8de7faa63baf2dcd5d42eb8f76eaa1">notify_user()</a>.
+It is normally used when we want to notify only a single user. Notification like
+this might for example inform that someone has liked or commented the user&#8217;s post.</p>
+<p>The function usually gets called in an <a class="reference internal" href="actions.html"><em>action</em></a> file.</p>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>In this example a user (<code class="docutils literal"><span class="pre">$user</span></code>) is triggering an action to rate a post created
+by another user (<code class="docutils literal"><span class="pre">$owner</span></code>). After saving the rating (<code class="docutils literal"><span class="pre">ElggAnnotation</span> <span class="pre">$rating</span></code>)
+to database, we could use the following code to send a notification about the new
+rating to the owner.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">// Subject of the notification</span>
+<span class="x">$subject = elgg_echo(&#39;ratings:notification:subject&#39;, array(), $owner-&gt;language);</span>
+
+<span class="x">// Summary of the notification</span>
+<span class="x">$summary = elgg_echo(&#39;ratings:notification:summary&#39;, array($user-&gt;name), $owner-&gt;language);</span>
+
+<span class="x">// Body of the notification message</span>
+<span class="x">$subject = elgg_echo(&#39;ratings:notification:body&#39;, array(</span>
+<span class="x">        $user-&gt;name,</span>
+<span class="x">        $owner-&gt;name,</span>
+<span class="x">        $rating-&gt;getValue() // A value between 1-5</span>
+<span class="x">), $owner-&gt;language);</span>
+
+<span class="x">$params = array(</span>
+<span class="x">        &#39;object&#39; =&gt; $rating,</span>
+<span class="x">        &#39;action&#39; =&gt; &#39;create&#39;,</span>
+<span class="x">        &#39;summary&#39; =&gt; $summary</span>
+<span class="x">);</span>
+
+<span class="x">// Send the notification</span>
+<span class="x">notify_user($user-&gt;guid, $owner-&gt;guid, $subject, $body, $params);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The language used by the recipient isn&#8217;t necessarily the same as the language of the person
+who triggers the notification. Therefore you must always remember to pass the recipient&#8217;s
+language as the third parameter to <code class="docutils literal"><span class="pre">elgg_echo()</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <code class="docutils literal"><span class="pre">'summary'</span></code> parameter is meant for notification plugins that only want to display
+a short message instead of both the subject and the body. Therefore the summary should
+be terse but still contain all necessary information.</p>
+</div>
+</div>
+</div>
+<div class="section" id="enqueued-notifications">
+<h2><a class="toc-backref" href="#id12">Enqueued notifications</a><a class="headerlink" href="#enqueued-notifications" title="Permalink to this headline">¶</a></h2>
+<p>On large sites there may be many users who have subscribed to receive notifications
+about a particular event. Sending notifications immediately when a user triggers
+such an event might remarkably slow down page loading speed. This is why sending
+of such notifications shoud be left for Elgg&#8217;s notification queue.</p>
+<p>New notification events can be registered with the <a class="reference external" href="http://reference.elgg.org/notification_8php.html#af7a43dcb0cf13ba55567d9d7874a3b20">elgg_register_notification_event()</a>
+function. Notifications about registered events will be sent automatically to all
+subscribed users.</p>
+<div class="section" id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Tell Elgg to send notifications when a new object of subtype &#8220;photo&#8221; is created:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">/**</span>
+<span class="x"> * Initialize the photos plugin</span>
+<span class="x"> */</span>
+<span class="x">function photos_init() {</span>
+<span class="x">        elgg_register_notification_event(&#39;object&#39;, &#39;photo&#39;, array(&#39;create&#39;));</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to send the event-based notifications you must have the one-minute
+<a class="reference internal" href="../admin/cron.html"><em>CRON</em></a> interval configured.</p>
+</div>
+<p>Contents of the notification message can be defined with the
+<code class="docutils literal"><span class="pre">'prepare',</span> <span class="pre">'notification:[action]:[type]:[subtype]'</span></code> hook.</p>
+</div>
+<div class="section" id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Tell Elgg to use the function <code class="docutils literal"><span class="pre">photos_prepare_notification()</span></code> to format
+the contents of the notification when a new objects of subtype &#8216;photo&#8217; is created:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">/**</span>
+<span class="x"> * Initialize the photos plugin</span>
+<span class="x"> */</span>
+<span class="x">function photos_init() {</span>
+<span class="x">    elgg_register_notification_event(&#39;object&#39;, &#39;photo&#39;, array(&#39;create&#39;));</span>
+<span class="x">    elgg_register_plugin_hook_handler(&#39;prepare&#39;, &#39;notification:create:object:photo&#39;, &#39;photos_prepare_notification&#39;);</span>
+<span class="x">}</span>
+
+<span class="x">/**</span>
+<span class="x"> * Prepare a notification message about a new photo</span>
+<span class="x"> *</span>
+<span class="x"> * @param string                          $hook         Hook name</span>
+<span class="x"> * @param string                          $type         Hook type</span>
+<span class="x"> * @param Elgg_Notifications_Notification $notification The notification to prepare</span>
+<span class="x"> * @param array                           $params       Hook parameters</span>
+<span class="x"> * @return Elgg_Notifications_Notification</span>
+<span class="x"> */</span>
+<span class="x">function photos_prepare_notification($hook, $type, $notification, $params) {</span>
+<span class="x">    $entity = $params[&#39;event&#39;]-&gt;getObject();</span>
+<span class="x">    $owner = $params[&#39;event&#39;]-&gt;getActor();</span>
+<span class="x">    $recipient = $params[&#39;recipient&#39;];</span>
+<span class="x">    $language = $params[&#39;language&#39;];</span>
+<span class="x">    $method = $params[&#39;method&#39;];</span>
+
+<span class="x">    // Title for the notification</span>
+<span class="x">    $notification-&gt;subject = elgg_echo(&#39;photos:notify:subject&#39;, array($entity-&gt;title), $language);</span>
+
+<span class="x">    // Message body for the notification</span>
+<span class="x">    $notification-&gt;body = elgg_echo(&#39;photos:notify:body&#39;, array(</span>
+<span class="x">        $owner-&gt;name,</span>
+<span class="x">        $entity-&gt;title,</span>
+<span class="x">        $entity-&gt;getExcerpt(),</span>
+<span class="x">        $entity-&gt;getURL()</span>
+<span class="x">    ), $language);</span>
+
+<span class="x">    // Short summary about the notification</span>
+<span class="x">    $notification-&gt;summary = elgg_echo(&#39;photos:notify:summary&#39;, array($entity-&gt;title), $language);</span>
+
+<span class="x">    return $notification;</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure the notification will be in the correct language by passing
+the reciepient&#8217;s language into the <code class="docutils literal"><span class="pre">elgg_echo()</span></code> function.</p>
+</div>
+</div>
+</div>
+<div class="section" id="registering-a-new-notification-method">
+<h2><a class="toc-backref" href="#id13">Registering a new notification method</a><a class="headerlink" href="#registering-a-new-notification-method" title="Permalink to this headline">¶</a></h2>
+<p>By default Elgg has two notification methods: email and the bundled
+site_notifications plugin. You can register a new notification
+method with the <a class="reference external" href="http://reference.elgg.org/notification_8php.html#ac9e7b5583afbb992b8222ae1db072dd1">elgg_register_notification_method()</a> function.</p>
+<div class="section" id="id6">
+<h3>Example:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Register a handler that will send the notifications via SMS.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">/**</span>
+<span class="x"> * Initialize the plugin</span>
+<span class="x"> */</span>
+<span class="x">function sms_notifications_init () {</span>
+<span class="x">        elgg_register_notification_method(&#39;sms&#39;);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>After registering the new method, it will appear to the notification
+settings page at <code class="docutils literal"><span class="pre">www.example.com/notifications/personal/[username]</span></code>.</p>
+</div>
+</div>
+<div class="section" id="sending-the-notifications-using-your-own-method">
+<h2><a class="toc-backref" href="#id14">Sending the notifications using your own method</a><a class="headerlink" href="#sending-the-notifications-using-your-own-method" title="Permalink to this headline">¶</a></h2>
+<p>Besides registering the notification method, you also need to register
+a handler that takes care of actually sending the SMS notifications.
+This happens with the <code class="docutils literal"><span class="pre">'send',</span> <span class="pre">'notification:[method]'</span></code> hook.</p>
+<div class="section" id="id7">
+<h3>Example:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">/**</span>
+<span class="x"> * Initialize the plugin</span>
+<span class="x"> */</span>
+<span class="x">function sms_notifications_init () {</span>
+<span class="x">        elgg_register_notification_method(&#39;sms&#39;);</span>
+<span class="x">        elgg_register_plugin_hook_handler(&#39;send&#39;, &#39;notification:sms&#39;, &#39;sms_notifications_send&#39;);</span>
+<span class="x">}</span>
+
+<span class="x">/**</span>
+<span class="x"> * Send an SMS notification</span>
+<span class="x"> *</span>
+<span class="x"> * @param string $hook   Hook name</span>
+<span class="x"> * @param string $type   Hook type</span>
+<span class="x"> * @param bool   $result Has anyone sent a message yet?</span>
+<span class="x"> * @param array  $params Hook parameters</span>
+<span class="x"> * @return bool</span>
+<span class="x"> * @access private</span>
+<span class="x"> */</span>
+<span class="x">function sms_notifications_send($hook, $type, $result, $params) {</span>
+<span class="x">        /* @var Elgg_Notifications_Notification $message */</span>
+<span class="x">        $message = $params[&#39;notification&#39;];</span>
+
+<span class="x">        $recipient = $message-&gt;getRecipient();</span>
+
+<span class="x">        if (!$recipient || !$recipient-&gt;mobile) {</span>
+<span class="x">                return false;</span>
+<span class="x">        }</span>
+
+<span class="x">        // (A pseudo SMS API class)</span>
+<span class="x">        $sms = new SmsApi();</span>
+
+<span class="x">        return $sms-&gt;send($recipient-&gt;mobile, $message-&gt;body);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="subscriptions">
+<h2><a class="toc-backref" href="#id15">Subscriptions</a><a class="headerlink" href="#subscriptions" title="Permalink to this headline">¶</a></h2>
+<p>In most cases Elgg core takes care of handling the subscriptions,
+so notification plugins don&#8217;t usually have to alter them.</p>
+<dl class="docutils">
+<dt>Subscriptions can however be:</dt>
+<dd><ul class="first last simple">
+<li>Added using the <a class="reference external" href="http://reference.elgg.org/notification_8php.html#ab793c2e2a7027cfe3a1db3395f85917b">elgg_add_subscription()</a> function</li>
+<li>Removed using the <a class="reference external" href="http://reference.elgg.org/notification_8php.html#a619fcbadea86921f7a19fb09a6319de7">elgg_remove_subscription()</a> function</li>
+</ul>
+</dd>
+</dl>
+<p>It&#8217;s possible to modify the recipients of a notification dynamically
+with the <code class="docutils literal"><span class="pre">'get',</span> <span class="pre">'subscriptions'</span></code> hook.</p>
+<div class="section" id="id10">
+<h3>Example:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">/**</span>
+<span class="x"> * Initialize the plugin</span>
+<span class="x"> */</span>
+<span class="x">function discussion_init() {</span>
+<span class="x">        elgg_register_plugin_hook_handler(&#39;get&#39;, &#39;subscriptions&#39;, &#39;discussion_get_subscriptions&#39;);</span>
+<span class="x">}</span>
+
+<span class="x">/**</span>
+<span class="x"> * Get subscriptions for group notifications</span>
+<span class="x"> *</span>
+<span class="x"> * @param string $hook          &#39;get&#39;</span>
+<span class="x"> * @param string $type          &#39;subscriptions&#39;</span>
+<span class="x"> * @param array  $subscriptions Array containing subscriptions in the form</span>
+<span class="x"> *                       &lt;user guid&gt; =&gt; array(&#39;email&#39;, &#39;site&#39;, etc.)</span>
+<span class="x"> * @param array  $params        Hook parameters</span>
+<span class="x"> * @return array</span>
+<span class="x"> */</span>
+<span class="x">function discussion_get_subscriptions($hook, $type, $subscriptions, $params) {</span>
+<span class="x">        $reply = $params[&#39;event&#39;]-&gt;getObject();</span>
+
+<span class="x">        if (!elgg_instanceof($reply, &#39;object&#39;, &#39;discussion_reply&#39;, &#39;ElggDiscussionReply&#39;)) {</span>
+<span class="x">                return $subscriptions;</span>
+<span class="x">        }</span>
+
+<span class="x">        $group_guid = $reply-&gt;getContainerEntity()-&gt;container_guid;</span>
+<span class="x">        $group_subscribers = elgg_get_subscriptions_for_container($group_guid);</span>
+
+<span class="x">        return ($subscriptions + $group_subscribers);</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pagehandler.html" class="btn btn-neutral float-right" title="Page handler">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="menus.html" class="btn btn-neutral" title="Menus"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2013, Various.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a modified version of the <a href="https://github.com/snide/sphinx_rtd_theme">Read the Docs theme</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.x',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+   
+
+</body>
+</html>
