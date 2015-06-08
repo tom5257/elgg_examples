@@ -1,2 +1,2 @@
 <?php
-	echo 'lefthandside';
+	echo 'lefthandside test';
