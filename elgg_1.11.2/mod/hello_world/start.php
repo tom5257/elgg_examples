@@ -22,6 +22,8 @@ function hello_world_init() {
 	elgg_register_menu_item('page', array('name'=>'Dolly', 'text'=>'Hello Dolly', href=>'hello/dolly', 'contexts'=>array('hello'),));
 	
 	elgg_extend_view('hello_world/greetings', 'hello_world/pre_extend', '1');
+	
+// 	elgg_extend_view('page/elements/sidebar', 'hello_world/page/elements/info', '1');
 }
 
 function hello_page_handler($page, $identifier) {

@@ -23,7 +23,7 @@ function myplugin_init() {
     		'link_class' => 'elgg-topbar-logo',
     ));
     
-    elgg_extend_view('page/elements/sidebar', 'page/elements/info', '1');
+    elgg_extend_view('page/elements/sidebar', 'myplugin/page/elements/info', '1');
     
     
 }
